@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aventara Safaris | The Modern Explorer's Choice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#e6bfa1",
+              "surface-dim": "#ded9d3",
+              "surface-container-high": "#ece7e1",
+              "on-surface": "#1d1c18",
+              "tertiary-fixed": "#ffdcc1",
+              "on-primary-container": "#95ac8a",
+              "on-primary-fixed": "#0e2009",
+              "primary": "#182a12",
+              "on-surface-variant": "#444840",
+              "on-secondary-fixed-variant": "#6e3900",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#b6cdaa",
+              "inverse-on-surface": "#f5f0e9",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#ffb77d",
+              "inverse-surface": "#32302c",
+              "on-primary": "#ffffff",
+              "surface-container": "#f2ede6",
+              "on-background": "#1d1c18",
+              "error-container": "#ffdad6",
+              "tertiary": "#37210c",
+              "surface-tint": "#506447",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#663500",
+              "primary-fixed-dim": "#b6cdaa",
+              "on-secondary-fixed": "#2f1500",
+              "outline-variant": "#c4c8bd",
+              "secondary-fixed": "#ffdcc3",
+              "secondary-container": "#fe932c",
+              "secondary": "#904d00",
+              "surface-bright": "#fef9f2",
+              "surface-container-low": "#f8f3ec",
+              "outline": "#74786f",
+              "background": "#fef9f2",
+              "on-tertiary-fixed-variant": "#5c412a",
+              "surface": "#fef9f2",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#2b1704",
+              "tertiary-container": "#4f3620",
+              "surface-variant": "#e6e2db",
+              "on-primary-fixed-variant": "#384c31",
+              "on-tertiary-container": "#c39f82",
+              "primary-fixed": "#d2eac5",
+              "surface-container-highest": "#e6e2db",
+              "primary-container": "#2d4026",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 32px rgba(29, 28, 24, 0.04);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fef9f2]/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(29,28,24,0.04)]">
+<nav class="flex justify-between items-center px-8 py-6 max-w-full">
+<div class="flex items-center gap-2">
+<img alt="AVENTARA" class="h-8 w-auto grayscale" data-alt="Aventara luxury safari logo emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxONdpG19o2j1tw6xs3mfCyk_QWAK5vci7ZXCAKH-NaJoNY6WYJSURysNByfaJFFkCzrvCKukgip0XwBeCn0gmqtAE-wXZ3sJ2_g_u1kr_2cwQJfSAalWxJaajjzyDHKJVMLsp2A6nc0HZW5kmsEfql5pIASfqM7uIk74WDCjlUx4AiZeeSDf0zHMdGi9BOIehGuQLbez2s6wyfOjlbwTQiOfbAUas20XIFufPSXFq4r6vnwNtyPrB7gErwa9ifp5hZb-d0H4kV1DA"/>
+<span class="text-2xl font-headline font-bold tracking-widest text-[#182a12]">AVENTARA</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#182a12] font-semibold border-b-2 border-[#182a12] pb-1 font-headline tracking-tight" href="#">Expeditions</a>
+<a class="text-[#1d1c18]/60 hover:text-[#182a12] transition-colors duration-300 font-headline tracking-tight" href="#">Destinations</a>
+<a class="text-[#1d1c18]/60 hover:text-[#182a12] transition-colors duration-300 font-headline tracking-tight" href="#">Our Story</a>
+<a class="text-[#1d1c18]/60 hover:text-[#182a12] transition-colors duration-300 font-headline tracking-tight" href="#">Journal</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-md font-medium hover:bg-primary-container transition-all duration-300 scale-100 active:scale-95">
+                Book Now
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-105" data-alt="Cinematic sunrise over the Serengeti plains with acacia trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjvuoaywQbaDtlyjlMQk17paHlazkRlfkkmvo_Gubn2YnilIr1A1e5tyi_XYdnzT0ggV5eGbeFQE8FP6iv262zpYJ1q3jqcrhxzChpEMPgvnmWq6z66WQ0GQMdHFIIQ-Wfk9DxCMwFVJb-DPMgg1b1Uz6MceYkxmrNqsQY4Kd4lSDGUNObXgAovjEgk8r31yEoCIj0GVqkJYo2vkSwtI3-g72fI_D8U92Nt-hUctV-VZKycmXmKJMoapMp1icLFU_KAGPM11Y1W8zv"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-surface"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+<span class="inline-block label-md uppercase tracking-[0.4em] text-white/90 mb-6">Experience the Untamed</span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-white mb-8 tracking-tighter">The Soul of Wilderness</h1>
+<p class="text-xl md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+                    Transcending the ordinary to offer bespoke journeys that connect you with the heartbeat of Africa.
+                </p>
+<!-- Integrated Search Bar -->
+<div class="bg-surface/95 editorial-shadow rounded-xl p-2 max-w-4xl mx-auto flex flex-col md:flex-row items-stretch gap-2">
+<div class="flex-1 flex flex-col items-start px-6 py-3 border-r border-outline-variant/30">
+<span class="text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Destination</span>
+<input class="w-full bg-transparent border-none p-0 text-on-surface focus:ring-0 placeholder:text-on-surface/40 font-medium" placeholder="Maasai Mara, Kenya" type="text"/>
+</div>
+<div class="flex-1 flex flex-col items-start px-6 py-3 border-r border-outline-variant/30">
+<span class="text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Travel Dates</span>
+<input class="w-full bg-transparent border-none p-0 text-on-surface focus:ring-0 placeholder:text-on-surface/40 font-medium" placeholder="October 2024" type="text"/>
+</div>
+<div class="flex-1 flex flex-col items-start px-6 py-3">
+<span class="text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Expedition Type</span>
+<select class="w-full bg-transparent border-none p-0 text-on-surface focus:ring-0 font-medium appearance-none">
+<option>Private Jet Safari</option>
+<option>Photography Workshop</option>
+<option>Family Adventure</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-semibold hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">search</span>
+                        Explore
+                    </button>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-12 bg-surface-container-low overflow-hidden">
+<div class="container mx-auto px-6">
+<p class="text-center text-[10px] uppercase tracking-[0.3em] text-outline mb-10">Trusted by the World's Finest Explorers</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale contrast-125">
+<img alt="National Geographic" class="h-6 md:h-8" data-alt="National Geographic Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Dkxj6OGYc3aiGrHW_DcJ38H-XL1ugj2ee9B_U82M3magW9jlQigpKk9tj62XgcjooyLGjhouynAMNfl04E_kZfmYcY6GN89_C16LvEjBFJdSINptcqSjbJ0r17Y0SftIE9tjwP_RQIuYFAq7yRpfqev0b_Al4kcLvdHw4bXXPnbgoYVS_YsIS2XGn9tdbI2y2GNxvJUCwOFLMVAYwqebVCJMmJBggv0NompGQpEExlvfHChWP52kg8HGK7j6iHCzHV7EaZ5aJgHD"/>
+<img alt="Travel + Leisure" class="h-6 md:h-8" data-alt="Travel and Leisure Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVwIPSI2_2EwtennNzgKW7ztIHFmKjI-xLhjZ16PEE9mykYiZR0boD4bV3sgtNbjjnasBxyQ-IB5eSTT32Hr8Y2zw90m-qphCO0aRd6Q7cbnUzaquzBM7VFoP4qDYKHSUt1t72mjvcck5Nv8TlEExaw6PUSOdCZvI0dDxc5tAFzVzTQ7JJ-asC_ywZ5WozvHVYS2EK2RfbUKD7fmII0NOoIXJoldrya8yg_p4KXCxE4lCd9aV0iaPUqpeZ6-hkIQnxQiSBeQkmOjt7"/>
+<img alt="Conde Nast Traveler" class="h-6 md:h-8" data-alt="Conde Nast Traveler Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzMO50jPWxohN1Pm2RKwW-BIoOh9xhtG60BQFQ1FEfPEATJagCLrwru3e-7-eI0e8AnQrMd3rmmlQe1jIOj9mJFmNjP-AAPYe95qK5KT_OOGzpTSmAJ56u5cnJDedxGGOtpmuq1vx6ytOS3GgOu_QFSfAqTtsI3jr5RshCUB0wVmFdmUMB_x26OjZoH33xGYwTwjklHa2_GZ9KAOfNPCk-YshXXLeiToQ8rGDecMkbRZTKog4b0tewuVtpkAgFNow4fmvzw1mgPIPE"/>
+<img alt="BBC News" class="h-4 md:h-6" data-alt="BBC News Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6gPinclyanO0iP0ILEqp_daxNgC8flFz3eeytLgorvVhwvbAaAEG-0sQXVVcqhaZQJLGABLhqdyuu6yo1QxHGXirmUUyYLCtkeKtQNIoyuMTaNMrC0fMjUPKYwrNLQdZufCdBewKgrIGD73J_Nq1OMpxcUVvlmBDm5-D15yycGERvEua81sg8l77yCGw3vv42cGR07Qpv_GH7_TMR1rGlbchLwsWRhejLQ9PcLXC1e8sDkE0zoRss9uWiv9U31qx6vorzg9gp5dYK"/>
+</div>
+</div>
+</section>
+<!-- Curated Expeditions -->
+<section class="py-32 px-6 container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block">Seasonal Selections</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-primary">Handpicked Journeys</h2>
+</div>
+<a class="text-primary font-bold border-b border-primary/20 pb-1 hover:border-primary transition-all" href="#">View All Expeditions</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative h-[500px] overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wildebeest migration across the Mara river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5QdeeEbcBZZoFXT22Z-hfC58oNo0SzyEmc1lAsmiYSS9ZZzEsBaFS6JdilBDD4J6xDNOEjznlbB1DNLOO83M4whW3LUlH2L54s0kQCwedrjqqB4BH6LHtew6_TIm08j83EpwMIggMoF9bwIfosXa7-2jfYLk7SnLV8LH_mCJuLsxP7iVTs-9e2UhlajgIVe8ULZ4SB-sx668M2Y4tWg_nlTGTlVqC64Moo2oKcpngusQm_X7fF64U0bz8U1jM6ELjikWFe9z_WpZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-secondary/90 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block">Most Coveted</span>
+<h3 class="text-2xl font-headline font-bold">The Great Migration Luxe</h3>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div class="flex items-center gap-4 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">schedule</span> 12 Days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> Tanzania</span>
+</div>
+<p class="text-primary font-bold">from $8,450</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative h-[500px] overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Mokoro boat on the Okavango Delta waterways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_jIj5abaPNsILdX2m5YExuNCpUJ8p8758Ivjcg_tIqcPYYuMpK9vowP5Ak4l6Xkfy00Jt2YBXH5N_S9IsL3XxZVrJHdIB1i6mI21uGBkb7LJQfGlaRSgHeIIjno4U-lmFQKydXN5f-vSbAGoYk1iKNbkczg9U2oDnt-YFzIF7SgewHuw3kSKxUAKvIu5XfDgaDrAVgL3F6Of5_Tcsh1_RYUcYusxSLD0oSQbyFbtfhB3EVRWENSeGVAHAaH5CTYgdyXU_JvFjN_vg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-headline font-bold">Waterways of Okavango</h3>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div class="flex items-center gap-4 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">schedule</span> 8 Days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> Botswana</span>
+</div>
+<p class="text-primary font-bold">from $5,200</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative h-[500px] overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Lion pride resting in the Kruger National Park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ErsPrv189FrZeRtUh2iq8SfCXUbufMFLm-xhWfzhw1cV4scC7QiMeXc9x7iBQDInvZGPzvHkCNN7B1-aK8qjd3uOPZ92BXjzLPWSc6-lR4W4LP82zBYSqIvObhaFckkalse52FsbmYi5FEbYaXyev7mPtFKv0r4p01JsQpIq1W9cgKL54XM-2YF_3UwXyP_ltaTWt0a4FfldWoloQTAnyDCTgJZUyjh0dwmguLj3FQpCf44KL9OBpMxT0HOaGVTlkaAFn4n7a6pq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-headline font-bold">Ultimate Kruger Reserve</h3>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div class="flex items-center gap-4 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">schedule</span> 10 Days</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> South Africa</span>
+</div>
+<p class="text-primary font-bold">from $6,900</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Aventara Difference -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-6">
+<div class="text-center mb-24 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">The Aventara Difference</h2>
+<p class="text-on-surface-variant leading-relaxed">Beyond the scenery, we offer a philosophy of travel that prioritizes deep connection, profound comfort, and lasting impact.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Expedition Log Path (Dashed line) -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] border-t-2 border-dashed border-outline-variant/50 -z-0"></div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-on-primary mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h4 class="text-xl font-headline font-bold mb-4">Expert Guides</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed px-4">Local naturalists with 20+ years of experience, sharing the secrets of the bush through stories and tracks.</p>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-on-primary mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">key</span>
+</div>
+<h4 class="text-xl font-headline font-bold mb-4">Exclusive Access</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed px-4">Private conservancies and hidden lodges far from the crowds, offering intimacy with the wild.</p>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-on-primary mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">nature_people</span>
+</div>
+<h4 class="text-xl font-headline font-bold mb-4">Conservation First</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed px-4">Every booking supports local wildlife protection and community empowerment initiatives.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Iconic Destinations Grid -->
+<section class="py-32 container mx-auto px-6">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-16 text-center">Iconic Destinations</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[1000px] md:h-[700px]">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Aerial view of Mount Kilimanjaro in Tanzania" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsCVBrlthDd6e8--F7gZ9_iH_9s6nAV9QmDXPYyRx9LGph-IEUxb-gNLVBcBn5Tt4ziFh00tAabI1ZrZMxEslpSOPwXDGO1iFcEqghD-DwcKd91dcQqGf-KwbYcGEUod-W3oD-c_air23iVs8jCOz0zy6Aj8xajHymibQOIdgLQnuZSMGe2m3WRSc1ysTzzqeHqbBsA6yIcgCKYyFEfkif4dYRo4n1hJ_9-XozPzk51JgnwG5wbYIr1DzXYxYqQnvqu7L7LLLC7U4A"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-10 left-10">
+<h3 class="text-4xl font-headline text-white font-bold">Tanzania</h3>
+<p class="text-white/80 font-light mt-2">The Heart of the Serengeti</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Elephant family walking in Kenya savanna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9fyNE_fJMixTZdmFPM0eiP24yIWPO4U1PLfLO_dBjasVSZSXg9i_HHhA_5EQ3v_Dp7n3I-5WAy15qPpUiNUMRrLlDai_610_KEwZduHUaI8kTMYrAfD6lOlENLEHTQNfTsfvtij1sivVsKbvLUrOhMd4ok1rZtfFqWWRAxbGW3atc7Wddx76PT0XKWYeQM3rh3iI6_AP2kJhju7hBKPksPKqtox0xfWAThOPJ44esQkC0QBDJxabs2leIUdcpF7JwtjMiGdnhJvZA"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-2xl font-headline text-white font-bold">Kenya</h3>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Mountain gorillas in the lush forest of Rwanda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjGKNf1sKjrj4rtm52xa1kpKWXPKE9GOp1Ym-ERUB3N3qtIjjXln-xD8OE1mjeM2TJ4ZnPn4ck9QaAsGE6Y2QXMYByYo_CKtNcl5YtlPo6LOs42uNeYnCcDMUs_Banry89f1lSI_vGVTlp_LD_gv9okMKuPSzYk2S0zEl5T1qYOe-eLQopo0XBNnzDUKNZODFCRcYl92XMFYhqsCR1dnNOyE_HGuY-kudCklQGTauNEdAhFuNmk0r2N-J9btJMWoNkYRSK3-X7nfzJ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-2xl font-headline text-white font-bold">Rwanda</h3>
+</div>
+</div>
+<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Luxury tented camp in the Botswana delta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwhq40BgNXV172zTn--MQD_8AL3VpEiG_JlqTOCmLjPWeskD53_NeG_LD9HRJruN_FlwKdgNNL_yhREXx5pV_XiIHb4ItFxKCumTIdb9IE2svk1Yb6dsJQ-vBs5FwU2GtFCuNfqs8iBJoaO-9O8DcdlBbbB98tpwbpCIkfm56tbG7fbzmk_bBWG6KNqzx-nrbJDo0YkjMDerye-IK8RcOzTUc_hzQY2iYSIXkQQHkKAQScQewq-I-bV22AhPUSelHZKRQt8IG4tjxG"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-6 left-10">
+<h3 class="text-2xl font-headline text-white font-bold">Botswana</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Traveler Chronicles -->
+<section class="py-32 bg-primary text-on-primary">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="relative flex-shrink-0">
+<div class="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl rotate-3 translate-x-4">
+<img class="w-full h-full object-cover" data-alt="Sophisticated male traveler looking into the horizon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrPa-tB7czNUJwqtN6LxahDxPGprEPoyKjnou9hvRvZw8H9IwdLXlEAmZULOiAEbIteHulHXNnaAJ0aPsv3K6s6f_wdFJMuqkf0ph5awBrbZfB0WkCwoTTqmIK9s8C6uxpLVA9QzwZwBFi0OXsMAWN2MA_j_1K7fuQ3uECWJM0F7-OS0EeJfyqMooMMtoPZk_IdNHo5Rcz4QfN4JcVUH8U9FV_Bq3J7bkwcWDJlpyXlCeVJAbcglREpTcvRm15DAQTP3W6niT018f"/>
+</div>
+<div class="absolute inset-0 border-2 border-primary-container rounded-2xl -translate-x-4 -translate-y-4 -z-10"></div>
+</div>
+<div class="flex-1">
+<span class="material-symbols-outlined text-6xl text-primary-container mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="text-3xl font-headline leading-tight italic mb-8">
+                            "Aventara didn't just show me Africa; they allowed me to feel it. From the private star-beds in the Kalahari to the silent mornings on the Mara, every detail was a masterclass in luxury and authenticity."
+                        </blockquote>
+<div>
+<p class="text-xl font-bold">Julian Sterling</p>
+<p class="text-primary-container text-sm uppercase tracking-widest mt-1">Founding Partner, Sterling &amp; Co.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 container mx-auto px-6 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-headline font-bold text-primary mb-8 tracking-tighter">Begin Your Next Chapter</h2>
+<p class="text-xl text-on-surface-variant mb-12 leading-relaxed">Whether you seek solitude, adventure, or a family legacy trip, our safari designers are ready to craft your narrative.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-md font-bold text-lg hover:bg-primary-container transition-all active:scale-95">
+                        Book Expedition
+                    </button>
+<button class="w-full md:w-auto border-2 border-primary text-primary px-12 py-5 rounded-md font-bold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                        Download Brochure
+                    </button>
+</div>
+<div class="mt-16 flex items-center justify-center gap-8">
+<div class="flex -space-x-3">
+<img class="w-12 h-12 rounded-full border-4 border-surface object-cover" data-alt="Traveler profile 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu5lQmi6AlMJUYmoAzCxLObGlPhIQTKukmVTK54DAOATIJC6x_Y4J5sxhJyrWziSY0pmJMjKj4zShzfGJWogeuRrI68KNGCpaWjzvl1_b8olmoDXtDxXfNeItgZoqMc2zTFw87Yw55g3gyC_jtJjE997oiKSx-jNBklgzOZC4Qw2BzO5jyQd42H3pu_cKe_MKhwQQEvdjp_LSVCO_MWDNulwQemA29WzH9CAZ3UGQu3qjSAJlfsgXE8nyrYYd9A_9ywCTdLe7lJMuk"/>
+<img class="w-12 h-12 rounded-full border-4 border-surface object-cover" data-alt="Traveler profile 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXDui9WQBVHIMelM2xs9dF317bSUv5iByXTI7Vyijl5Eb5F9ppglJOb3pUcBXXwTgnGAxpXTgNT6nIqvQ_bAVO87lXg4F6i1Goa6KvpEjJ_ZTf9BGkgCcgaZwhubh7CPp41Eh7Us9BwimREsxEeVRKmNEqDbE1pChifmIb65lzgKgbRcKqKXu3jDztKSkSfD8vRyp8uYfxlcxmI6dVYY6OJupdwe28m1DQPS0rqE0zs9Lcn0qWDvpeN166E4ji0bVKWXxpUfDGOEKR"/>
+<img class="w-12 h-12 rounded-full border-4 border-surface object-cover" data-alt="Traveler profile 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbz6M4qMJ0vdu1nHSjT10-UOcu4Is8qJ1zytNc3cGna3AgRC-yrnlfzWgqeRHhkucgaCLxYE-W7wlpaAup22D_mnBj1xrdsHhKN7QefCPYN6U3kHF9Z8eZAyZpH69nIhs4Iwf5gje6um3KQI07jYzxOwiQVF4-Qm2rQKFlHO6UtzP3fsM_5_SW8o-m-rxrkTfpj2dRQhA7k9N3uQFSejA_Vzy9jWOUAvhayH7cg9Pg5130m2Tofz30suvHvqE-uvSzv6-gG2VNXe9x"/>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Joined by 12,000+ elite explorers worldwide</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#182a12] text-[#fef9f2] font-body text-sm tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-16 py-20 w-full">
+<div class="space-y-6">
+<span class="text-3xl font-headline italic tracking-widest">AVENTARA</span>
+<p class="text-[#fef9f2]/70 leading-relaxed max-w-xs">
+                    Curating elevated African experiences for those who value the profound, the private, and the preserved.
+                </p>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-[0.2em] text-[#fef9f2]/50">Expeditions</h5>
+<ul class="space-y-4">
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Private Jet Safari</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Photographic Safaris</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Walking Expeditions</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Family Voyages</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-[0.2em] text-[#fef9f2]/50">The Archive</h5>
+<ul class="space-y-4">
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Conservation</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Our Lodges</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Press Kit</a></li>
+<li><a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">The Journal</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-[0.2em] text-[#fef9f2]/50">Connect</h5>
+<div class="flex gap-4 mb-6">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#fef9f2]/70 hover:text-[#fef9f2] transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="px-16 py-8 border-t border-white/5 text-center text-[#fef9f2]/40 text-xs">
+            © 2024 Aventara Safaris. The Modern Explorer's Choice.
+        </div>
+</footer>
+</body></html>
