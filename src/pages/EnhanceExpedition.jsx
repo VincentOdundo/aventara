@@ -124,7 +124,7 @@ export default function EnhanceExpedition() {
 </div>
 
 <aside className="lg:w-[400px]">
-<div className="sticky top-32 p-10 rounded-xl bg-primary-container text-on-primary shadow-2xl overflow-hidden">
+<div className="sticky top-[80px] p-10 rounded-xl bg-primary-container text-on-primary shadow-2xl overflow-hidden">
 
 <div className="absolute inset-0 opacity-5 pointer-events-none">
 <svg className="w-full h-full" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

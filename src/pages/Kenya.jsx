@@ -110,7 +110,7 @@ export default function Kenya() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 sticky top-32 space-y-16">
+            <div className="lg:col-span-5 sticky top-[80px] space-y-16">
               <div className="bg-surface-container-low p-10 rounded-xl editorial-shadow">
                 <span className="font-label text-xs uppercase tracking-widest text-secondary mb-4 block">
                   Curated Journeys

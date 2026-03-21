@@ -225,7 +225,7 @@ export default function FourteenDayEpicDetail() {
           </div>
 
           <div className="lg:col-span-4">
-            <div className="sticky top-32 space-y-6">
+            <div className="sticky top-[80px] space-y-6">
               <div className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 editorial-shadow">
                 <div className="flex justify-between items-start mb-6">
                   <div>

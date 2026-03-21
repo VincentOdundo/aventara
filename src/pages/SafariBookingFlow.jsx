@@ -24,7 +24,7 @@ export default function SafariBookingFlow() {
 <div className="flex flex-col lg:flex-row gap-12">
 
 <aside className="w-full lg:w-72 flex-shrink-0">
-<div className="sticky top-32 space-y-10">
+<div className="sticky top-[80px] space-y-10">
 <div>
 <h3 className="font-headline text-xl font-bold mb-6 text-primary">Refine Expedition</h3>
 

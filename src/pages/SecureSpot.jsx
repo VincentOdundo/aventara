@@ -85,7 +85,7 @@ export default function SecureSpot() {
 </form>
 </div>
 
-<aside className="lg:col-span-5 lg:sticky lg:top-32">
+<aside className="lg:col-span-5 lg:sticky lg:top-[80px]">
 <div className="bg-surface-container rounded-xl overflow-hidden">
 
 <div className="relative h-48 w-full">

@@ -103,7 +103,7 @@ export default function DestinationDetail() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-[100px] space-y-6">
+            <div className="sticky top-[80px] space-y-6">
               {/* Quick Info */}
               <div className="bg-surface-container-lowest rounded-2xl editorial-shadow p-6">
                 <h4 className="font-headline font-bold text-lg mb-4">

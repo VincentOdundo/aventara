@@ -59,7 +59,7 @@ export default function SafariDetail() {
       </section>
 
       {/* Sticky Nav Bar */}
-      <section className="bg-surface-container-lowest editorial-shadow sticky top-[88px] md:top-[104px] lg:top-[120px] z-30 border-b border-outline-variant/10">
+      <section className="bg-surface-container-lowest editorial-shadow sticky top-[64px] lg:top-[72px] z-30 border-b border-outline-variant/10">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-8 overflow-x-auto py-3 text-sm">
           <a
             href="#itinerary"
@@ -146,7 +146,7 @@ export default function SafariDetail() {
             </AnimatedSection>
 
             {/* Itinerary */}
-            <div id="itinerary" className="mb-16 scroll-mt-[140px] md:scroll-mt-[160px] lg:scroll-mt-[180px]">
+            <div id="itinerary" className="mb-16 scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]">
               <h2 className="text-3xl font-headline font-bold text-primary mb-8">
                 Day-by-Day Itinerary
               </h2>
@@ -215,7 +215,7 @@ export default function SafariDetail() {
             </div>
 
             {/* Included / Excluded */}
-            <div id="included" className="scroll-mt-[140px] md:scroll-mt-[160px] lg:scroll-mt-[180px]">
+            <div id="included" className="scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]">
               <h2 className="text-3xl font-headline font-bold text-primary mb-8">
                 What's Included
               </h2>
@@ -260,7 +260,7 @@ export default function SafariDetail() {
           <div className="lg:col-span-1">
             <div
               id="booking"
-              className="sticky top-[150px] md:top-[170px] lg:top-[190px] bg-surface-container-lowest rounded-2xl editorial-shadow p-8 scroll-mt-[140px] md:scroll-mt-[160px] lg:scroll-mt-[180px]"
+              className="sticky top-[120px] lg:top-[128px] bg-surface-container-lowest rounded-2xl editorial-shadow p-8 scroll-mt-[120px] lg:scroll-mt-[136px]"
             >
               <SeasonBadge className="mb-4" />
               <PriceDisplay safari={safari} className="mb-6" />
