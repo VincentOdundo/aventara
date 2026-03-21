@@ -3,13 +3,28 @@ import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
 import { Shield, Heart, Globe, Award, Users, TreePine } from "lucide-react";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 export default function About() {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2067"
+          src={imgAsset_2}
           alt="About Aventara Safaris"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -62,7 +77,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=2000"
+                  src={imgAsset_3}
                   alt="Safari experience"
                   className="w-full h-96 object-cover"
                 />

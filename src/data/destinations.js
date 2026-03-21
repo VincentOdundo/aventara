@@ -1,3 +1,18 @@
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 // Destinations data - all parks, reserves, and key locations
 
 export const destinations = [
@@ -18,11 +33,11 @@ export const destinations = [
     ],
     bestTime: "July – October (Migration season)",
     image:
-      "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=2071",
+      imgAsset_0,
     gallery: [
-      "https://images.unsplash.com/photo-1557456170-0cf4f4d0d362?auto=format&fit=crop&q=80&w=2069",
-      "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2067",
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068",
+      imgAsset_1,
+      imgAsset_2,
+      imgAsset_3,
     ],
   },
   {
@@ -42,7 +57,7 @@ export const destinations = [
     ],
     bestTime: "Year-round",
     image:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068",
+      imgAsset_4,
     gallery: [],
   },
   {
@@ -62,7 +77,7 @@ export const destinations = [
     ],
     bestTime: "Year-round",
     image:
-      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&q=80&w=2070",
+      imgAsset_5,
     gallery: [],
   },
   {
@@ -82,7 +97,7 @@ export const destinations = [
     ],
     bestTime: "Year-round",
     image:
-      "https://images.unsplash.com/photo-1508233620467-f79f1e317a05?auto=format&fit=crop&q=80&w=2000",
+      imgAsset_6,
     gallery: [],
   },
   {
@@ -102,7 +117,7 @@ export const destinations = [
     ],
     bestTime: "June – October (dry season, Kilimanjaro clearest)",
     image:
-      "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2073",
+      imgAsset_7,
     gallery: [],
   },
   {
@@ -122,7 +137,7 @@ export const destinations = [
     ],
     bestTime: "June – October",
     image:
-      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&q=80&w=2000",
+      imgAsset_8,
     gallery: [],
   },
   {
@@ -142,7 +157,7 @@ export const destinations = [
     ],
     bestTime: "Year-round",
     image:
-      "https://images.unsplash.com/photo-1508233620467-f79f1e317a05?auto=format&fit=crop&q=80&w=2070",
+      imgAsset_9,
     gallery: [],
   },
   {
@@ -162,7 +177,7 @@ export const destinations = [
     ],
     bestTime: "June – October (dry season), December – March (calving)",
     image:
-      "https://images.unsplash.com/photo-1557456170-0cf4f4d0d362?auto=format&fit=crop&q=80&w=2069",
+      imgAsset_10,
     gallery: [],
   },
   {
@@ -182,7 +197,7 @@ export const destinations = [
     ],
     bestTime: "Year-round",
     image:
-      "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2067",
+      imgAsset_11,
     gallery: [],
   },
   {
@@ -202,7 +217,7 @@ export const destinations = [
     ],
     bestTime: "June – October (dry season)",
     image:
-      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&q=80&w=2000",
+      imgAsset_12,
     gallery: [],
   },
 ];

@@ -3,56 +3,71 @@ import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection } from "../components/ui";
 import { X } from "lucide-react";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=2071",
+    src: imgAsset_3,
     caption: "Wildebeest Migration, Masai Mara",
     tall: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&q=80&w=2000",
+    src: imgAsset_4,
     caption: "African Elephant, Amboseli",
   },
   {
-    src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068",
+    src: imgAsset_5,
     caption: "Golden Sunrise, Serengeti",
   },
   {
-    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=2069",
+    src: imgAsset_6,
     caption: "Lion Pride, Masai Mara",
     tall: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2067",
+    src: imgAsset_7,
     caption: "Sunset Safari Drive",
   },
   {
-    src: "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&q=80&w=2070",
+    src: imgAsset_8,
     caption: "Lake Naivasha Boat Ride",
   },
   {
-    src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=2000",
+    src: imgAsset_9,
     caption: "Flamingos, Lake Nakuru",
     tall: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1611601322175-ef8dbb8eb636?auto=format&fit=crop&q=80&w=2073",
+    src: imgAsset_10,
     caption: "Mt. Kilimanjaro from Amboseli",
   },
   {
-    src: "https://images.unsplash.com/photo-1508233620467-f79f1e317a05?auto=format&fit=crop&q=80&w=2070",
+    src: imgAsset_11,
     caption: "Giraffe, Tarangire",
   },
   {
-    src: "https://images.unsplash.com/photo-1562283995-17a42111ae98?auto=format&fit=crop&q=80&w=1000",
+    src: imgAsset_12,
     caption: "Ngorongoro Crater",
   },
   {
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+    src: imgAsset_13,
     caption: "Maasai Culture",
   },
   {
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
+    src: imgAsset_0,
     caption: "Safari Explorer",
     tall: true,
   },
@@ -66,7 +81,7 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src="https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=2071"
+          src={imgAsset_2}
           alt="Safari Gallery"
           className="absolute inset-0 w-full h-full object-cover"
         />

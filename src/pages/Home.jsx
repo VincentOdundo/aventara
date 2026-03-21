@@ -28,6 +28,21 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
   return (
@@ -44,10 +59,10 @@ function StatCounter({ target, suffix = "", label }) {
 }
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=2071",
-  "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068",
-  "https://images.unsplash.com/photo-1557456170-0cf4f4d0d362?auto=format&fit=crop&q=80&w=2069",
-  "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80&w=2067",
+  imgAsset_3,
+  imgAsset_4,
+  imgAsset_5,
+  imgAsset_6,
 ];
 
 export default function Home() {
@@ -101,7 +116,7 @@ export default function Home() {
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
           >
             <img
-              src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=2071"
+              src={imgAsset_1}
               alt="Great Migration"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
@@ -140,7 +155,7 @@ export default function Home() {
           {/* Wide Image Block - Spans 2x1 */}
           <div className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto hidden md:block">
             <img
-              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068"
+              src={imgAsset_2}
               alt="Savannah"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />

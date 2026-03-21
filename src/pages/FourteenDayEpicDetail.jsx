@@ -2,6 +2,21 @@ import React from "react";
 import Layout from "../components/layout/Layout";
 import { Button, Section, ItineraryDay, IncludedItem } from "../components/ui";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 export default function FourteenDayEpicDetail() {
   return (
     <Layout>
@@ -12,7 +27,7 @@ export default function FourteenDayEpicDetail() {
           <img
             className="absolute inset-0 w-full h-full object-cover scale-105 z-0"
             alt="Stunning sunset over the Masai Mara plains"
-            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068&ixlib=rb-4.0.3"
+            src={imgAsset_6}
           />
           <div className="relative z-20 px-8 max-w-7xl mx-auto w-full">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -79,7 +94,7 @@ export default function FourteenDayEpicDetail() {
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     alt="Masai Mara"
-                    src="https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3"
+                    src={imgAsset_7}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
@@ -95,7 +110,7 @@ export default function FourteenDayEpicDetail() {
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     alt="Serengeti"
-                    src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3"
+                    src={imgAsset_8}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
@@ -111,7 +126,7 @@ export default function FourteenDayEpicDetail() {
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     alt="Ngorongoro Crater"
-                    src="https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3"
+                    src={imgAsset_9}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
@@ -136,7 +151,7 @@ export default function FourteenDayEpicDetail() {
                   title="Arrival &amp; Nairobi Highlands"
                   subtitle="Giraffe Manor &amp; David Sheldrick Wildlife Trust"
                   desc="Welcome to Nairobi. Begin your journey with an intimate encounter at Giraffe Manor, where these gentle giants may join you for morning tea. In the afternoon, visit the David Sheldrick elephant orphanage to support conservation efforts."
-                  image="https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                  image=imgAsset_12
                   tags={["Stay: Hemmingways Nairobi", "Activity: Private Tour"]}
                   defaultOpen={true}
                 />
@@ -145,7 +160,7 @@ export default function FourteenDayEpicDetail() {
                   title="Into the Wild: Masai Mara"
                   subtitle="3 Nights in Private Conservancies"
                   desc="Fly directly into the heart of the Mara. Your stay at a boutique tented camp offers off-road game driving, walking safaris, and night drives—experiences forbidden in the main reserve."
-                  image="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                  image=imgAsset_13
                   tags={["Stay: Angama Mara", "Activity: Hot Air Balloon"]}
                 />
                 <ItineraryDay
@@ -153,7 +168,7 @@ export default function FourteenDayEpicDetail() {
                   title="The Great Serengeti Migration"
                   subtitle="Across the Border to Tanzania"
                   desc="Witness the endless plains. We move following the migration herds. Expect dramatic river crossings or the quiet majesty of the calving season depending on the time of year."
-                  image="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                  image=imgAsset_0
                   tags={["Stay: Sayari Camp", "Meals: All Inclusive"]}
                 />
                 <ItineraryDay
@@ -161,7 +176,7 @@ export default function FourteenDayEpicDetail() {
                   title="Crater Living &amp; Lake Manyara"
                   subtitle="A World Within a World"
                   desc="Descend into the Ngorongoro Crater, a UNESCO World Heritage site home to nearly 30,000 animals. Conclude your safari with the tree-climbing lions of Lake Manyara."
-                  image="https://images.unsplash.com/photo-1547471080-7fc2caa6ec71?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                  image=imgAsset_1
                   tags={["Stay: Ngorongoro Crater Lodge"]}
                 />
               </div>
@@ -177,7 +192,7 @@ export default function FourteenDayEpicDetail() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Luxury safari tent"
-                      src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                      src={imgAsset_10}
                     />
                   </div>
                   <h5 className="text-lg font-headline font-bold">
@@ -194,7 +209,7 @@ export default function FourteenDayEpicDetail() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Infinity pool"
-                      src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
+                      src={imgAsset_11}
                     />
                   </div>
                   <h5 className="text-lg font-headline font-bold">

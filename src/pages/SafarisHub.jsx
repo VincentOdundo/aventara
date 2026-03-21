@@ -10,6 +10,21 @@ import {
 } from "../data/safaris";
 import { ArrowRight, MapPin, Calendar, Filter, X } from "lucide-react";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 export default function SafarisHub() {
   const { country } = useParams();
   const season = getCurrentSeason();
@@ -55,7 +70,7 @@ export default function SafarisHub() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden text-center">
         <img
-          src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068"
+          src={imgAsset_7}
           alt={pageTitle}
           className="absolute inset-0 w-full h-full object-cover"
         />

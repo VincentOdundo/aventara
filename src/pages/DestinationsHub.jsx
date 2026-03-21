@@ -5,6 +5,21 @@ import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
 import { destinations } from "../data/destinations";
 import { ArrowRight, MapPin } from "lucide-react";
 
+import imgAsset_0 from "../assets/cheater.jpeg";
+import imgAsset_1 from "../assets/cheater_plain.jpeg";
+import imgAsset_2 from "../assets/elefpalin.jpeg";
+import imgAsset_3 from "../assets/elephant.jpeg";
+import imgAsset_4 from "../assets/elephtain.jpeg";
+import imgAsset_5 from "../assets/flamingo.jpeg";
+import imgAsset_6 from "../assets/lion.jpeg";
+import imgAsset_7 from "../assets/lioness.jpeg";
+import imgAsset_8 from "../assets/lioness_open.jpeg";
+import imgAsset_9 from "../assets/mountain.jpeg";
+import imgAsset_10 from "../assets/plain_elefabt.jpeg";
+import imgAsset_11 from "../assets/rhino.jpeg";
+import imgAsset_12 from "../assets/rhino_plain.jpeg";
+import imgAsset_13 from "../assets/treecheta.jpeg";
+
 export default function DestinationsHub() {
   const kenyaDestinations = destinations.filter((d) => d.country === "Kenya");
   const tzDestinations = destinations.filter((d) => d.country === "Tanzania");
@@ -14,7 +29,7 @@ export default function DestinationsHub() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=2069"
+          src={imgAsset_5}
           alt="Safari destinations"
           className="absolute inset-0 w-full h-full object-cover"
         />
