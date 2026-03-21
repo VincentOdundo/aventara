@@ -348,77 +348,91 @@ export default function Home() {
 
           <AnimatedSection>
             <div className="bg-surface-container-lowest rounded-2xl overflow-hidden editorial-shadow">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left">
-                  <thead>
-                    <tr className="bg-primary text-on-primary">
-                      <th className="px-6 py-4 font-headline font-semibold text-sm">
-                        Safari Package
-                      </th>
-                      <th className="px-6 py-4 font-headline font-semibold text-sm">
-                        Days
-                      </th>
-                      <th className="px-6 py-4 font-headline font-semibold text-sm">
-                        Destinations
-                      </th>
-                      <th className="px-6 py-4 font-headline font-semibold text-sm text-center">
-                        Low Season
-                      </th>
-                      <th className="px-6 py-4 font-headline font-semibold text-sm text-center">
-                        High Season
-                      </th>
-                      <th className="px-6 py-4 font-headline font-semibold text-sm"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {safariPackages.map((safari, idx) => (
-                      <tr
-                        key={safari.id}
-                        className={`border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors ${
-                          idx % 2 === 0 ? "" : "bg-surface-container-low/50"
-                        }`}
-                      >
-                        <td className="px-6 py-5">
-                          <Link
-                            to={`/safari/${safari.slug}`}
-                            className="font-bold text-on-surface hover:text-primary transition-colors"
-                          >
-                            {safari.title}
-                          </Link>
-                        </td>
-                        <td className="px-6 py-5 text-sm font-medium">
+              <div className="flex flex-col">
+                {/* Desktop Header */}
+                <div className="hidden md:grid grid-cols-12 gap-4 bg-primary text-on-primary px-6 py-4 font-headline font-semibold text-sm">
+                  <div className="col-span-3">Safari Package</div>
+                  <div className="col-span-2">Days</div>
+                  <div className="col-span-3">Destinations</div>
+                  <div className="col-span-2 text-center">Low Season</div>
+                  <div className="col-span-2 text-center">High Season</div>
+                </div>
+
+                {/* Rows */}
+                <div className="divide-y divide-outline-variant/10">
+                  {safariPackages.map((safari, idx) => (
+                    <div
+                      key={safari.id}
+                      className={`group relative flex flex-col md:grid md:grid-cols-12 md:gap-4 md:items-center p-6 md:px-6 md:py-5 transition-colors ${
+                        idx % 2 === 0 ? "bg-surface-container-lowest" : "bg-surface-container-low/30"
+                      } hover:bg-surface-container-low`}
+                    >
+                      {/* Mobile Title & Badge */}
+                      <div className="flex justify-between items-start md:col-span-3 mb-4 md:mb-0">
+                        <Link
+                          to={`/safari/${safari.slug}`}
+                          className="font-bold text-xl md:text-base text-on-surface group-hover:text-primary transition-colors pr-4"
+                        >
+                          {safari.title}
+                        </Link>
+                        <span className="md:hidden bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
                           {safari.days} Days
-                        </td>
-                        <td className="px-6 py-5 text-sm text-on-surface-variant">
+                        </span>
+                      </div>
+
+                      {/* Desktop Days */}
+                      <div className="hidden md:block md:col-span-2 text-sm font-medium">
+                        {safari.days} Days
+                      </div>
+
+                      {/* Destinations */}
+                      <div className="md:col-span-3 mb-6 md:mb-0 text-sm text-on-surface-variant flex items-start gap-2 md:block">
+                        <MapPin size={16} className="md:hidden text-primary shrink-0 mt-0.5" />
+                        <span>
                           {safari.destinations.slice(0, 3).join(", ")}
                           {safari.destinations.length > 3 && "..."}
-                        </td>
-                        <td className="px-6 py-5 text-center">
+                        </span>
+                      </div>
+
+                      {/* Pricing Grid */}
+                      <div className="grid grid-cols-2 md:contents gap-3 mb-6 md:mb-0 border-t border-outline-variant/10 pt-4 md:border-0 md:pt-0">
+                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">Low Season</span>
                           <span
-                            className={`font-bold ${season === "low" ? "text-primary text-lg" : "text-on-surface-variant"}`}
+                            className={`font-bold ${season === "low" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
                           >
                             ${safari.price.low.toLocaleString()}
                           </span>
-                        </td>
-                        <td className="px-6 py-5 text-center">
+                        </div>
+                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">High Season</span>
                           <span
-                            className={`font-bold ${season === "high" ? "text-primary text-lg" : "text-on-surface-variant"}`}
+                            className={`font-bold ${season === "high" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
                           >
                             ${safari.price.high.toLocaleString()}
                           </span>
-                        </td>
-                        <td className="px-6 py-5">
-                          <Link
-                            to={`/safari/${safari.slug}`}
-                            className="inline-flex items-center gap-1 text-primary text-sm font-bold hover:gap-2 transition-all"
-                          >
-                            View <ArrowRight size={14} />
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                        </div>
+                      </div>
+
+                      {/* Mobile View Button - Appears below on mobile, hidden on desktop if whole row is clickable, but let's just make it visible on both to match design */}
+                      <div className="md:hidden">
+                        <Link
+                          to={`/safari/${safari.slug}`}
+                          className="flex items-center justify-center gap-2 w-full bg-primary/10 text-primary py-3 rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-colors"
+                        >
+                          View Itinerary <ArrowRight size={16} />
+                        </Link>
+                      </div>
+                      
+                      {/* Desktop View Link (Optional overlay or explicit link) */}
+                      <Link
+                        to={`/safari/${safari.slug}`}
+                        className="hidden md:flex absolute inset-0 z-0"
+                        aria-label={`View ${safari.title}`}
+                      ></Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </AnimatedSection>
