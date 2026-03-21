@@ -12,6 +12,7 @@ import imgAsset_10 from "../assets/plain_elefabt.jpeg";
 import imgAsset_11 from "../assets/rhino.jpeg";
 import imgAsset_12 from "../assets/rhino_plain.jpeg";
 import imgAsset_13 from "../assets/treecheta.jpeg";
+import imgAsset_14 from "../assets/wildbeasts.jpg";
 
 // Safari packages data - all pricing, itineraries, and metadata
 // LOW SEASON: Jan 1 – Jun 30, 2026 | HIGH SEASON: Jul 1 – Dec 31, 2026
@@ -896,7 +897,7 @@ export const safariPackages = [
       "Ngorongoro",
     ],
     price: { low: 2700, high: 3180 },
-    image: imgAsset_11,
+    image: imgAsset_14,
     gallery: [],
     highlights: [
       "14 days of adventure",
