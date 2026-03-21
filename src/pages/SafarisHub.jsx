@@ -76,7 +76,7 @@ export default function SafarisHub() {
       </section>
 
       {/* Country Tabs */}
-      <section className="bg-surface-container-low border-b border-outline-variant/10">
+      <section className="bg-surface-container-lowest border-b border-outline-variant/10 sticky top-[64px] lg:top-[72px] z-30 editorial-shadow">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-1 overflow-x-auto py-2">
           {[
             { label: "All Safaris", to: "/safaris" },
