@@ -42,6 +42,7 @@ import imgAsset_10 from "../assets/plain_elefabt.jpeg";
 import imgAsset_11 from "../assets/rhino.jpeg";
 import imgAsset_12 from "../assets/rhino_plain.jpeg";
 import imgAsset_13 from "../assets/treecheta.jpeg";
+import imgAsset_14 from "../assets/widbeast.jpg";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
@@ -116,7 +117,7 @@ export default function Home() {
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
           >
             <img
-              src={imgAsset_1}
+              src={imgAsset_14}
               alt="Great Migration"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
@@ -155,7 +156,7 @@ export default function Home() {
           {/* Wide Image Block - Spans 2x1 */}
           <div className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto hidden md:block">
             <img
-              src={imgAsset_2}
+              src={imgAsset_11}
               alt="Savannah"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
