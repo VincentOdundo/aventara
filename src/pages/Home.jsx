@@ -73,47 +73,78 @@ export default function Home() {
       {/* ========== HERO BENTO ========== */}
       <section className="pt-32 pb-16 px-6 max-w-screen-2xl mx-auto md:h-[100svh] flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-full md:max-h-[800px] min-h-[600px]">
-          
           {/* Main Title Block - Spans 2x2 */}
           <div className="md:col-span-2 md:row-span-2 bg-primary rounded-[2rem] p-8 md:p-10 flex flex-col justify-between text-on-primary hover:scale-[0.98] transition-transform duration-500 overflow-hidden relative">
             <div className="relative z-10">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md">Aventara Safaris</span>
-              <h1 className="text-6xl md:text-8xl mt-8 font-headline leading-[0.9] font-extrabold tracking-tight">WILD.</h1>
-              <h1 className="text-6xl md:text-8xl font-headline leading-[0.9] font-extrabold text-white/50 tracking-tight">FREE.</h1>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+                Aventara Safaris
+              </span>
+              <h1 className="text-6xl md:text-8xl mt-8 font-headline leading-[0.9] font-extrabold tracking-tight">
+                WILD.
+              </h1>
+              <h1 className="text-6xl md:text-8xl font-headline leading-[0.9] font-extrabold text-white/50 tracking-tight">
+                FREE.
+              </h1>
             </div>
             <div className="relative z-10 mt-8">
-              <p className="text-xl max-w-sm">Handcrafted East African safaris that redefine adventure.</p>
+              <p className="text-xl max-w-sm">
+                Handcrafted East African safaris that redefine adventure.
+              </p>
             </div>
             {/* Cool abstract circle */}
             <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
           </div>
 
           {/* Video/Image Block - Spans 2x1 */}
-          <Link to="/safari/masai-mara-express" className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto">
-             <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=2071" alt="Great Migration" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
-             <div className="absolute inset-0 p-6 flex items-end">
-                <p className="text-white font-headline font-bold text-2xl">The Great Migration</p>
-             </div>
+          <Link
+            to="/safari/masai-mara-express"
+            className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=2071"
+              alt="Great Migration"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+            <div className="absolute inset-0 p-6 flex items-end">
+              <p className="text-white font-headline font-bold text-2xl">
+                The Great Migration
+              </p>
+            </div>
           </Link>
 
           {/* Small stat block 1 */}
           <div className="md:col-span-1 md:row-span-1 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col justify-center text-center group hover:bg-secondary hover:text-white transition-colors h-64 md:h-auto">
-             <div className="text-6xl font-headline font-extrabold text-secondary group-hover:text-white transition-colors">4K+</div>
-             <div className="text-sm font-bold uppercase tracking-wider mt-2">Happy Travelers</div>
+            <div className="text-6xl font-headline font-extrabold text-secondary group-hover:text-white transition-colors">
+              4K+
+            </div>
+            <div className="text-sm font-bold uppercase tracking-wider mt-2">
+              Happy Travelers
+            </div>
           </div>
 
           {/* Small CTA Block */}
-          <Link to="/safaris" className="md:col-span-1 md:row-span-1 bg-tertiary rounded-[2rem] p-8 flex flex-col justify-between text-white group cursor-pointer hover:bg-[#059669] transition-all h-64 md:h-auto">
-             <ArrowRight size={40} className="group-hover:translate-x-2 transition-transform" />
-             <h3 className="text-2xl font-headline font-bold">Book Your Safari</h3>
+          <Link
+            to="/safaris"
+            className="md:col-span-1 md:row-span-1 bg-tertiary rounded-[2rem] p-8 flex flex-col justify-between text-white group cursor-pointer hover:bg-[#059669] transition-all h-64 md:h-auto"
+          >
+            <ArrowRight
+              size={40}
+              className="group-hover:translate-x-2 transition-transform"
+            />
+            <h3 className="text-2xl font-headline font-bold">
+              Book Your Safari
+            </h3>
           </Link>
 
           {/* Wide Image Block - Spans 2x1 */}
           <div className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto hidden md:block">
-             <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068" alt="Savannah" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <img
+              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2068"
+              alt="Savannah"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
           </div>
-
         </div>
       </section>
 
@@ -207,8 +238,8 @@ export default function Home() {
               The Aventara Difference
             </h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-              We don't just organize safaris — we craft transformative
-              experiences that connect you with the soul of East Africa.
+              We organize safaris and craft transformative experiences that
+              connect you with the soul of East Africa.
             </p>
           </AnimatedSection>
 
@@ -364,7 +395,9 @@ export default function Home() {
                     <div
                       key={safari.id}
                       className={`group relative flex flex-col md:grid md:grid-cols-12 md:gap-4 md:items-center p-6 md:px-6 md:py-5 transition-colors ${
-                        idx % 2 === 0 ? "bg-surface-container-lowest" : "bg-surface-container-low/30"
+                        idx % 2 === 0
+                          ? "bg-surface-container-lowest"
+                          : "bg-surface-container-low/30"
                       } hover:bg-surface-container-low`}
                     >
                       {/* Mobile Title & Badge */}
@@ -387,7 +420,10 @@ export default function Home() {
 
                       {/* Destinations */}
                       <div className="md:col-span-3 mb-6 md:mb-0 text-sm text-on-surface-variant flex items-start gap-2 md:block">
-                        <MapPin size={16} className="md:hidden text-primary shrink-0 mt-0.5" />
+                        <MapPin
+                          size={16}
+                          className="md:hidden text-primary shrink-0 mt-0.5"
+                        />
                         <span>
                           {safari.destinations.slice(0, 3).join(", ")}
                           {safari.destinations.length > 3 && "..."}
@@ -397,7 +433,9 @@ export default function Home() {
                       {/* Pricing Grid */}
                       <div className="grid grid-cols-2 md:contents gap-3 mb-6 md:mb-0 border-t border-outline-variant/10 pt-4 md:border-0 md:pt-0">
                         <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
-                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">Low Season</span>
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">
+                            Low Season
+                          </span>
                           <span
                             className={`font-bold ${season === "low" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
                           >
@@ -405,7 +443,9 @@ export default function Home() {
                           </span>
                         </div>
                         <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
-                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">High Season</span>
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">
+                            High Season
+                          </span>
                           <span
                             className={`font-bold ${season === "high" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
                           >
@@ -423,7 +463,7 @@ export default function Home() {
                           View Itinerary <ArrowRight size={16} />
                         </Link>
                       </div>
-                      
+
                       {/* Desktop View Link (Optional overlay or explicit link) */}
                       <Link
                         to={`/safari/${safari.slug}`}
