@@ -46,12 +46,8 @@ export const safariPackages = [
     country: "kenya",
     destinations: ["Masai Mara"],
     price: { low: 530, high: 770 },
-    image:
-      imgAsset_13,
-    gallery: [
-      imgAsset_0,
-      imgAsset_1,
-    ],
+    image: imgAsset_1,
+    gallery: [imgAsset_6, imgAsset_3],
     highlights: [
       "Big Five game drives",
       "Mara River area",
@@ -83,8 +79,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_2,
+        image: imgAsset_1,
       },
       {
         day: 2,
@@ -94,8 +89,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
       {
         day: 3,
@@ -105,8 +99,7 @@ export const safariPackages = [
         destination: "Masai Mara – Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_4,
+        image: imgAsset_6,
       },
     ],
   },
@@ -119,12 +112,8 @@ export const safariPackages = [
     country: "kenya",
     destinations: ["Masai Mara", "Lake Nakuru"],
     price: { low: 770, high: 1110 },
-    image:
-      imgAsset_5,
-    gallery: [
-      imgAsset_6,
-      imgAsset_7,
-    ],
+    image: imgAsset_5,
+    gallery: [imgAsset_11, imgAsset_12],
     highlights: [
       "Big Five game drives",
       "Rhino sanctuary",
@@ -156,8 +145,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 2,
@@ -167,8 +155,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 3,
@@ -178,8 +165,7 @@ export const safariPackages = [
         destination: "Lake Nakuru National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
       {
         day: 4,
@@ -189,8 +175,7 @@ export const safariPackages = [
         destination: "Lake Nakuru – Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_11,
+        image: imgAsset_11,
       },
     ],
   },
@@ -203,8 +188,7 @@ export const safariPackages = [
     country: "kenya",
     destinations: ["Masai Mara", "Lake Nakuru", "Lake Naivasha"],
     price: { low: 950, high: 1190 },
-    image:
-      imgAsset_12,
+    image: imgAsset_12,
     gallery: [],
     highlights: [
       "Hell's Gate cycling",
@@ -236,8 +220,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_13,
+        image: imgAsset_13,
       },
       {
         day: 2,
@@ -247,8 +230,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_0,
+        image: imgAsset_0,
       },
       {
         day: 3,
@@ -258,8 +240,7 @@ export const safariPackages = [
         destination: "Lake Nakuru",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_1,
+        image: imgAsset_1,
       },
       {
         day: 4,
@@ -269,8 +250,7 @@ export const safariPackages = [
         destination: "Hell's Gate",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Blooming Suites",
-        image:
-          imgAsset_2,
+        image: imgAsset_2,
       },
       {
         day: 5,
@@ -280,8 +260,7 @@ export const safariPackages = [
         destination: "Naivasha – Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
     ],
   },
@@ -294,8 +273,7 @@ export const safariPackages = [
     country: "kenya",
     destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
     price: { low: 1130, high: 1370 },
-    image:
-      imgAsset_4,
+    image: imgAsset_4,
     gallery: [],
     highlights: [
       "Mt. Kilimanjaro backdrop",
@@ -326,8 +304,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_5,
+        image: imgAsset_5,
       },
       {
         day: 2,
@@ -337,8 +314,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_6,
+        image: imgAsset_6,
       },
       {
         day: 3,
@@ -347,8 +323,7 @@ export const safariPackages = [
         destination: "Lake Nakuru",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_7,
+        image: imgAsset_7,
       },
       {
         day: 4,
@@ -358,8 +333,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 5,
@@ -369,8 +343,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 6,
@@ -379,8 +352,7 @@ export const safariPackages = [
         destination: "Amboseli – Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
     ],
   },
@@ -393,8 +365,7 @@ export const safariPackages = [
     country: "kenya",
     destinations: ["Masai Mara", "Lake Nakuru", "Lake Naivasha", "Amboseli"],
     price: { low: 1310, high: 1550 },
-    image:
-      imgAsset_11,
+    image: imgAsset_11,
     gallery: [],
     highlights: [
       "4 national parks",
@@ -426,8 +397,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_12,
+        image: imgAsset_12,
       },
       {
         day: 2,
@@ -436,8 +406,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_13,
+        image: imgAsset_13,
       },
       {
         day: 3,
@@ -447,8 +416,7 @@ export const safariPackages = [
         destination: "Lake Nakuru",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_0,
+        image: imgAsset_0,
       },
       {
         day: 4,
@@ -458,8 +426,7 @@ export const safariPackages = [
         destination: "Hell's Gate / Lake Naivasha",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Blooming Suites",
-        image:
-          imgAsset_1,
+        image: imgAsset_1,
       },
       {
         day: 5,
@@ -469,8 +436,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_2,
+        image: imgAsset_2,
       },
       {
         day: 6,
@@ -480,8 +446,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
       {
         day: 7,
@@ -490,8 +455,7 @@ export const safariPackages = [
         destination: "Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_4,
+        image: imgAsset_4,
       },
     ],
   },
@@ -510,8 +474,7 @@ export const safariPackages = [
       "Amboseli",
     ],
     price: { low: 1550, high: 2030 },
-    image:
-      imgAsset_5,
+    image: imgAsset_5,
     gallery: [],
     highlights: [
       "Extended Mara time",
@@ -542,8 +505,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_6,
+        image: imgAsset_6,
       },
       {
         day: 2,
@@ -553,8 +515,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_7,
+        image: imgAsset_7,
       },
       {
         day: 3,
@@ -564,8 +525,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 4,
@@ -575,8 +535,7 @@ export const safariPackages = [
         destination: "Lake Nakuru",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 5,
@@ -586,8 +545,7 @@ export const safariPackages = [
         destination: "Hell's Gate / Lake Naivasha",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Blooming Suites",
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
       {
         day: 6,
@@ -596,8 +554,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_11,
+        image: imgAsset_11,
       },
       {
         day: 7,
@@ -607,8 +564,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_12,
+        image: imgAsset_12,
       },
       {
         day: 8,
@@ -617,8 +573,7 @@ export const safariPackages = [
         destination: "Nairobi",
         meals: "Breakfast Only",
         accommodation: null,
-        image:
-          imgAsset_13,
+        image: imgAsset_13,
       },
     ],
   },
@@ -639,8 +594,7 @@ export const safariPackages = [
       "Serengeti",
     ],
     price: { low: 2130, high: 2610 },
-    image:
-      imgAsset_0,
+    image: imgAsset_0,
     gallery: [],
     highlights: [
       "Two countries",
@@ -672,8 +626,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_1,
+        image: imgAsset_1,
       },
       {
         day: 2,
@@ -683,8 +636,7 @@ export const safariPackages = [
         destination: "Masai Mara",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_2,
+        image: imgAsset_2,
       },
       {
         day: 3,
@@ -693,8 +645,7 @@ export const safariPackages = [
         destination: "Lake Nakuru",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
       {
         day: 4,
@@ -704,8 +655,7 @@ export const safariPackages = [
         destination: "Hell's Gate",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Blooming Suites",
-        image:
-          imgAsset_4,
+        image: imgAsset_4,
       },
       {
         day: 5,
@@ -714,8 +664,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_5,
+        image: imgAsset_5,
       },
       {
         day: 6,
@@ -725,8 +674,7 @@ export const safariPackages = [
         destination: "Amboseli",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_6,
+        image: imgAsset_6,
       },
       {
         day: 7,
@@ -736,8 +684,7 @@ export const safariPackages = [
         destination: "Arusha",
         meals: "Breakfast & Lunch",
         accommodation: "Charity Hotel",
-        image:
-          imgAsset_7,
+        image: imgAsset_7,
       },
       {
         day: 8,
@@ -747,8 +694,7 @@ export const safariPackages = [
         destination: "Tarangire",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Tarangire Campsite",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 9,
@@ -758,8 +704,7 @@ export const safariPackages = [
         destination: "Serengeti",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Nyani Camp",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 10,
@@ -769,8 +714,7 @@ export const safariPackages = [
         destination: "Serengeti",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Nyani Camp",
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
       {
         day: 11,
@@ -780,8 +724,7 @@ export const safariPackages = [
         destination: "Nairobi",
         meals: "Breakfast & Lunch",
         accommodation: null,
-        image:
-          imgAsset_11,
+        image: imgAsset_11,
       },
     ],
   },
@@ -803,8 +746,7 @@ export const safariPackages = [
       "Ngorongoro",
     ],
     price: { low: 2320, high: 2796 },
-    image:
-      imgAsset_12,
+    image: imgAsset_12,
     gallery: [],
     highlights: [
       "Ngorongoro Crater",
@@ -829,8 +771,7 @@ export const safariPackages = [
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
         description: "Depart Nairobi for Masai Mara. Evening game drive.",
-        image:
-          imgAsset_13,
+        image: imgAsset_13,
       },
       {
         day: 2,
@@ -839,8 +780,7 @@ export const safariPackages = [
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
         description: "Full-day game drive with picnic lunch.",
-        image:
-          imgAsset_0,
+        image: imgAsset_0,
       },
       {
         day: 3,
@@ -849,8 +789,7 @@ export const safariPackages = [
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
         description: "Drive to Lake Nakuru. Afternoon game drive.",
-        image:
-          imgAsset_1,
+        image: imgAsset_1,
       },
       {
         day: 4,
@@ -860,8 +799,7 @@ export const safariPackages = [
         accommodation: "Blooming Suites",
         description:
           "Morning game drive then Hell's Gate cycling and gorge hiking.",
-        image:
-          imgAsset_2,
+        image: imgAsset_2,
       },
       {
         day: 5,
@@ -870,8 +808,7 @@ export const safariPackages = [
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
         description: "Drive to Amboseli at foot of Kilimanjaro.",
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
       {
         day: 6,
@@ -881,8 +818,7 @@ export const safariPackages = [
         accommodation: "Ositua Rafiki Camp",
         description:
           "Full day exploring Amboseli. Elephant herds and Kilimanjaro.",
-        image:
-          imgAsset_4,
+        image: imgAsset_4,
       },
       {
         day: 7,
@@ -891,8 +827,7 @@ export const safariPackages = [
         meals: "Breakfast & Lunch",
         accommodation: "Charity Hotel",
         description: "Border crossing at Namanga. Continue to Arusha.",
-        image:
-          imgAsset_5,
+        image: imgAsset_5,
       },
       {
         day: 8,
@@ -901,8 +836,7 @@ export const safariPackages = [
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Tarangire Campsite",
         description: "Full-day game drive among baobabs and elephants.",
-        image:
-          imgAsset_6,
+        image: imgAsset_6,
       },
       {
         day: 9,
@@ -912,8 +846,7 @@ export const safariPackages = [
         accommodation: "Nyani Camp",
         description:
           "Drive through Ngorongoro to the Serengeti. Afternoon drive.",
-        image:
-          imgAsset_7,
+        image: imgAsset_7,
       },
       {
         day: 10,
@@ -922,8 +855,7 @@ export const safariPackages = [
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Nyani Camp",
         description: "Full day on the endless Serengeti plains.",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 11,
@@ -933,8 +865,7 @@ export const safariPackages = [
         accommodation: "Simba Campsite",
         description:
           "Descend into Ngorongoro Crater for a game drive on the floor. Rhinos, lions, flamingos.",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 12,
@@ -943,8 +874,7 @@ export const safariPackages = [
         meals: "Breakfast & Lunch",
         accommodation: null,
         description: "Drive back to Arusha then transfer to Nairobi.",
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
     ],
   },
@@ -966,8 +896,7 @@ export const safariPackages = [
       "Ngorongoro",
     ],
     price: { low: 2700, high: 3180 },
-    image:
-      imgAsset_11,
+    image: imgAsset_11,
     gallery: [],
     highlights: [
       "14 days of adventure",
@@ -1003,8 +932,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_12,
+        image: imgAsset_12,
       },
       {
         day: 2,
@@ -1014,8 +942,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_13,
+        image: imgAsset_13,
       },
       {
         day: 3,
@@ -1025,8 +952,7 @@ export const safariPackages = [
         destination: "Masai Mara National Reserve",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Miti Mingi Eco Camp",
-        image:
-          imgAsset_0,
+        image: imgAsset_0,
       },
       {
         day: 4,
@@ -1036,8 +962,7 @@ export const safariPackages = [
         destination: "Lake Nakuru National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Buraha Zenoni Hotel & Resort",
-        image:
-          imgAsset_1,
+        image: imgAsset_1,
       },
       {
         day: 5,
@@ -1047,8 +972,7 @@ export const safariPackages = [
         destination: "Hell's Gate / Lake Naivasha",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Blooming Suites",
-        image:
-          imgAsset_2,
+        image: imgAsset_2,
       },
       {
         day: 6,
@@ -1058,8 +982,7 @@ export const safariPackages = [
         destination: "Amboseli National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_3,
+        image: imgAsset_3,
       },
       {
         day: 7,
@@ -1069,8 +992,7 @@ export const safariPackages = [
         destination: "Amboseli National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Ositua Rafiki Camp",
-        image:
-          imgAsset_4,
+        image: imgAsset_4,
       },
       {
         day: 8,
@@ -1080,8 +1002,7 @@ export const safariPackages = [
         destination: "Arusha",
         meals: "Breakfast & Lunch",
         accommodation: "Charity Hotel",
-        image:
-          imgAsset_5,
+        image: imgAsset_5,
       },
       {
         day: 9,
@@ -1091,8 +1012,7 @@ export const safariPackages = [
         destination: "Tarangire National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Tarangire Campsite",
-        image:
-          imgAsset_6,
+        image: imgAsset_6,
       },
       {
         day: 10,
@@ -1102,8 +1022,7 @@ export const safariPackages = [
         destination: "Serengeti National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Nyani Camp",
-        image:
-          imgAsset_7,
+        image: imgAsset_7,
       },
       {
         day: 11,
@@ -1113,8 +1032,7 @@ export const safariPackages = [
         destination: "Serengeti National Park",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Nyani Camp",
-        image:
-          imgAsset_8,
+        image: imgAsset_8,
       },
       {
         day: 12,
@@ -1124,8 +1042,7 @@ export const safariPackages = [
         destination: "Ngorongoro Crater",
         meals: "Breakfast, Lunch & Dinner",
         accommodation: "Simba Campsite",
-        image:
-          imgAsset_9,
+        image: imgAsset_9,
       },
       {
         day: 13,
@@ -1135,8 +1052,7 @@ export const safariPackages = [
         destination: "Arusha",
         meals: "Breakfast & Lunch",
         accommodation: "Charity Hotel",
-        image:
-          imgAsset_10,
+        image: imgAsset_10,
       },
       {
         day: 14,
@@ -1146,8 +1062,7 @@ export const safariPackages = [
         destination: "Nairobi",
         meals: "Breakfast Only",
         accommodation: null,
-        image:
-          imgAsset_11,
+        image: imgAsset_11,
       },
     ],
   },

@@ -32,13 +32,8 @@ export const destinations = [
       "Nocturnal game drives",
     ],
     bestTime: "July – October (Migration season)",
-    image:
-      imgAsset_0,
-    gallery: [
-      imgAsset_1,
-      imgAsset_2,
-      imgAsset_3,
-    ],
+    image: imgAsset_1,
+    gallery: [imgAsset_6, imgAsset_13, imgAsset_12],
   },
   {
     id: "lake-nakuru",
@@ -56,8 +51,7 @@ export const destinations = [
       "Baboon Cliff viewpoint",
     ],
     bestTime: "Year-round",
-    image:
-      imgAsset_4,
+    image: imgAsset_5,
     gallery: [],
   },
   {
@@ -76,8 +70,7 @@ export const destinations = [
       "Rock climbing",
     ],
     bestTime: "Year-round",
-    image:
-      imgAsset_5,
+    image: imgAsset_5,
     gallery: [],
   },
   {
@@ -96,8 +89,7 @@ export const destinations = [
       "Scenic Rift Valley views",
     ],
     bestTime: "Year-round",
-    image:
-      imgAsset_6,
+    image: imgAsset_11,
     gallery: [],
   },
   {
@@ -116,8 +108,7 @@ export const destinations = [
       "Photography paradise",
     ],
     bestTime: "June – October (dry season, Kilimanjaro clearest)",
-    image:
-      imgAsset_7,
+    image: imgAsset_3,
     gallery: [],
   },
   {
@@ -136,8 +127,7 @@ export const destinations = [
       "Vast wilderness",
     ],
     bestTime: "June – October",
-    image:
-      imgAsset_8,
+    image: imgAsset_3,
     gallery: [],
   },
   {
@@ -156,8 +146,7 @@ export const destinations = [
       "Conservation tours",
     ],
     bestTime: "Year-round",
-    image:
-      imgAsset_9,
+    image: imgAsset_8,
     gallery: [],
   },
   {
@@ -176,8 +165,7 @@ export const destinations = [
       "Kopje rock formations",
     ],
     bestTime: "June – October (dry season), December – March (calving)",
-    image:
-      imgAsset_10,
+    image: imgAsset_1,
     gallery: [],
   },
   {
@@ -196,8 +184,7 @@ export const destinations = [
       "Crater rim panoramas",
     ],
     bestTime: "Year-round",
-    image:
-      imgAsset_11,
+    image: imgAsset_12,
     gallery: [],
   },
   {
@@ -216,8 +203,7 @@ export const destinations = [
       "Over 550 bird species",
     ],
     bestTime: "June – October (dry season)",
-    image:
-      imgAsset_12,
+    image: imgAsset_7,
     gallery: [],
   },
 ];
