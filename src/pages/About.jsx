@@ -52,7 +52,7 @@ export default function About() {
               </p>
               <p>
                 From the thundering wildebeest crossings of the Mara River to
-                the ancient volcanic floor of the Ngorongoro Crater — we
+                the ancient volcanic floor of the Ngorongoro Crater - we
                 organize safaris and create stories that last a lifetime.
               </p>
             </div>

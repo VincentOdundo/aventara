@@ -28,7 +28,7 @@ export default function SafarisHub() {
     ? country === "combined"
       ? "Epic cross-border adventures spanning both Kenya and Tanzania."
       : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
-    : "From 3-day getaways to 14-day epic expeditions — find the safari that matches your dream.";
+    : "From 3-day getaways to 14-day epic expeditions - find the safari that matches your dream.";
 
   const baseSafaris = country ? getSafarisByCountry(country) : safariPackages;
 

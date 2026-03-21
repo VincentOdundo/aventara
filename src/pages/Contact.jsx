@@ -25,7 +25,7 @@ export default function Contact() {
     const subject = formData.get("subject");
 
     // Redirect to WhatsApp with form details
-    const waText = `🌍 *Aventara Safaris Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n— Sent from aventarasafaris.com`;
+    const waText = `🌍 *Aventara Safaris Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent from aventarasafaris.com`;
     const waUrl = `https://wa.me/254700000000?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, "_blank");
   };
@@ -60,7 +60,7 @@ export default function Contact() {
               </h2>
               <p className="text-on-surface-variant leading-relaxed mb-10">
                 Whether you have a question about our packages, need help
-                choosing the right safari, or want a custom itinerary — we're
+                choosing the right safari, or want a custom itinerary - we're
                 here to help. Reach out through any channel and we'll respond
                 within 24 hours.
               </p>

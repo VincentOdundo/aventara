@@ -169,7 +169,7 @@ export default function Tanzania() {
               <div className="relative flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2 md:text-right">
                   <span className="text-secondary font-bold uppercase tracking-widest text-xs mb-2 block">
-                    June — October
+                    June - October
                   </span>
                   <h3 className="font-headline text-3xl text-primary font-bold mb-4">
                     The Long Dry Season
@@ -200,7 +200,7 @@ export default function Tanzania() {
               <div className="relative flex flex-col md:flex-row-reverse items-center gap-12">
                 <div className="md:w-1/2 text-left">
                   <span className="text-secondary font-bold uppercase tracking-widest text-xs mb-2 block">
-                    November — May
+                    November - May
                   </span>
                   <h3 className="font-headline text-3xl text-primary font-bold mb-4">
                     The Lush Green Season

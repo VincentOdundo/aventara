@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Intersection Observer hook for scroll-triggered animations.
@@ -21,8 +21,8 @@ export function useScrollAnimation(options = {}) {
       },
       {
         threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px 0px -50px 0px',
-      }
+        rootMargin: options.rootMargin || "0px 0px -50px 0px",
+      },
     );
 
     observer.observe(element);
@@ -33,7 +33,7 @@ export function useScrollAnimation(options = {}) {
 }
 
 /**
- * Animated counter hook — counts from 0 to target value.
+ * Animated counter hook - counts from 0 to target value.
  */
 export function useCounter(target, duration = 2000) {
   const [count, setCount] = useState(0);
@@ -41,22 +41,22 @@ export function useCounter(target, duration = 2000) {
 
   useEffect(() => {
     if (!isVisible) return;
-    
+
     let start = 0;
     const startTime = performance.now();
-    
+
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * target));
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate);
       }
     };
-    
+
     requestAnimationFrame(animate);
   }, [isVisible, target, duration]);
 

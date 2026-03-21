@@ -219,7 +219,7 @@ export default function Kenya() {
                     Peak Season
                   </h3>
                   <span className="font-label text-xs px-3 py-1 bg-primary-container text-on-primary-container rounded-full uppercase tracking-tighter">
-                    June — October
+                    June - October
                   </span>
                 </div>
                 <p className="text-on-surface-variant leading-relaxed">
@@ -234,7 +234,7 @@ export default function Kenya() {
                     The Green Season
                   </h3>
                   <span className="font-label text-xs px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full uppercase tracking-tighter">
-                    January — March
+                    January - March
                   </span>
                 </div>
                 <p className="text-on-surface-variant leading-relaxed">

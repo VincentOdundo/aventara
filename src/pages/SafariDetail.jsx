@@ -146,7 +146,10 @@ export default function SafariDetail() {
             </AnimatedSection>
 
             {/* Itinerary */}
-            <div id="itinerary" className="mb-16 scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]">
+            <div
+              id="itinerary"
+              className="mb-16 scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]"
+            >
               <h2 className="text-3xl font-headline font-bold text-primary mb-8">
                 Day-by-Day Itinerary
               </h2>
@@ -157,7 +160,7 @@ export default function SafariDetail() {
                     className="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow"
                     open={idx === openDay}
                     onClick={(e) => {
-                      // Don't prevent default — let <details> toggle naturally
+                      // Don't prevent default - let <details> toggle naturally
                       setOpenDay(idx === openDay ? -1 : idx);
                     }}
                   >
@@ -215,7 +218,10 @@ export default function SafariDetail() {
             </div>
 
             {/* Included / Excluded */}
-            <div id="included" className="scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]">
+            <div
+              id="included"
+              className="scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]"
+            >
               <h2 className="text-3xl font-headline font-bold text-primary mb-8">
                 What's Included
               </h2>
@@ -256,7 +262,7 @@ export default function SafariDetail() {
             </div>
           </div>
 
-          {/* Sidebar — Booking Card */}
+          {/* Sidebar - Booking Card */}
           <div className="lg:col-span-1">
             <div
               id="booking"

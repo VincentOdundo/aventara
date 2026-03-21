@@ -26,7 +26,7 @@ Our palette abandons earth tones in favor of bright, pure, high-contrast hues th
 ### Glassmorphism & UI Layers
 
 - **Glass Overlays:** Moving to a modern frosted glass aesthetic (`rgba(255, 255, 255, 0.85)` with a `24px` backdrop blur).
-- **Dark Glass (for image overlays):** Used when placing text over bright safari imagery (`rgba(15, 23, 42, 0.8)`). 
+- **Dark Glass (for image overlays):** Used when placing text over bright safari imagery (`rgba(15, 23, 42, 0.8)`).
 
 ---
 
@@ -54,11 +54,13 @@ We have removed subtle, organic shapes in favor of strict, structural architectu
 ## 5. Do's and Don'ts
 
 ### Do:
+
 - **Use Massive Shapes:** Wrap content in large, colorful, heavily rounded containers.
 - **Over-scale Text:** If you think a headline is big enough, make it one size larger.
 - **Maintain Grid Rigidity:** Keep gaps tight and consistent across the bento sections.
 
 ### Don't:
+
 - **Don't use subtle borders or borders with complex outlines.**
-- **Don't use muddy or earthy tones like olive or beige** — stick to crisp whites, slates, and vivid neon-adjacent accents.
+- **Don't use muddy or earthy tones like olive or beige** - stick to crisp whites, slates, and vivid neon-adjacent accents.
 - **Don't use Serif fonts.** The brand is exclusively geometric sans-serif and grotesque typefaces.

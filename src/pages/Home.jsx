@@ -160,7 +160,7 @@ export default function Home() {
                 Featured Safaris
               </h2>
               <p className="text-on-surface-variant mt-4 max-w-lg leading-relaxed">
-                From short getaways to grand multi-country expeditions — every
+                From short getaways to grand multi-country expeditions - every
                 journey is tailored to your sense of adventure.
               </p>
             </div>
@@ -585,7 +585,7 @@ export default function Home() {
           </h2>
           <p className="text-xl text-on-surface-variant mb-12 leading-relaxed">
             Whether you seek the thrill of the Great Migration, the serenity of
-            the Ngorongoro Crater, or a family legacy trip — let us craft your
+            the Ngorongoro Crater, or a family legacy trip - let us craft your
             narrative.
           </p>
 
