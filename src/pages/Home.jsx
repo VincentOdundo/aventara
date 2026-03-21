@@ -42,7 +42,7 @@ import imgAsset_10 from "../assets/plain_elefabt.jpeg";
 import imgAsset_11 from "../assets/rhino.jpeg";
 import imgAsset_12 from "../assets/rhino_plain.jpeg";
 import imgAsset_13 from "../assets/treecheta.jpeg";
-import imgAsset_14 from "../assets/widbeasts.jpg";
+import imgAsset_14 from "../assets/wildbeasts.jpg";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
