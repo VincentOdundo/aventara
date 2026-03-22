@@ -59,20 +59,26 @@ function StatCounter({ target, suffix = "", label }) {
   );
 }
 
-const heroImages = [
-  imgAsset_3,
-  imgAsset_4,
-  imgAsset_5,
-  imgAsset_6,
-];
+const heroImages = [imgAsset_3, imgAsset_4, imgAsset_5, imgAsset_6];
 
 export default function Home() {
   const [heroIdx, setHeroIdx] = useState(0);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const season = getCurrentSeason();
+  const featuredSlugs = [
+    "3-day-masai-mara-budget",
+    "6-day-tanzania-safari",
+    "12-day-kenya-tanzania-complete",
+  ];
   const featuredSafaris = safariPackages.filter((s) =>
-    [3, 7, 14].includes(s.days),
+    featuredSlugs.includes(s.slug),
   );
+  const safariCountsByCountry = {
+    all: safariPackages.length,
+    kenya: safariPackages.filter((s) => s.country === "kenya").length,
+    tanzania: safariPackages.filter((s) => s.country === "tanzania").length,
+    combined: safariPackages.filter((s) => s.country === "combined").length,
+  };
   const featuredDestinations = destinations.filter((d) =>
     ["masai-mara", "serengeti", "ngorongoro", "amboseli"].includes(d.slug),
   );
@@ -113,7 +119,7 @@ export default function Home() {
 
           {/* Video/Image Block - Spans 2x1 */}
           <Link
-            to="/safari/masai-mara-express"
+            to="/safari/3-day-masai-mara-budget"
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
           >
             <img
@@ -187,6 +193,49 @@ export default function Home() {
               View All Safaris
               <ArrowRight size={16} />
             </Link>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection className="mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                label: "All Packages",
+                to: "/safaris",
+                count: safariCountsByCountry.all,
+              },
+              {
+                label: "Kenya",
+                to: "/safaris/kenya",
+                count: safariCountsByCountry.kenya,
+              },
+              {
+                label: "Tanzania",
+                to: "/safaris/tanzania",
+                count: safariCountsByCountry.tanzania,
+              },
+              {
+                label: "Kenya & Tanzania",
+                to: "/safaris/combined",
+                count: safariCountsByCountry.combined,
+              },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                className="group rounded-xl border border-outline-variant/20 bg-surface-container-lowest px-5 py-4 hover:border-primary/30 hover:bg-surface-container-low transition-colors"
+              >
+                <p className="text-xs uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-2">
+                  Explore
+                </p>
+                <p className="text-lg font-headline font-bold text-primary group-hover:text-secondary transition-colors">
+                  {item.label}
+                </p>
+                <p className="text-sm text-on-surface-variant mt-2">
+                  {item.count} package{item.count !== 1 ? "s" : ""}
+                </p>
+              </Link>
+            ))}
           </div>
         </AnimatedSection>
 

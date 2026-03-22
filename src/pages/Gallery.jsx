@@ -81,7 +81,7 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src={imgAsset_2}
+          src={imgAsset_5}
           alt="Safari Gallery"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -12,6 +12,7 @@ const navLinks = [
       { label: "Kenya Safaris", to: "/safaris/kenya" },
       { label: "Tanzania Safaris", to: "/safaris/tanzania" },
       { label: "Kenya & Tanzania", to: "/safaris/combined" },
+      { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
     ],
   },
   {
@@ -51,9 +52,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "glass editorial-shadow py-3"
-            : "bg-transparent py-5"
+          scrolled ? "glass editorial-shadow py-3" : "bg-transparent py-5"
         }`}
       >
         <nav className="flex justify-between items-center px-6 lg:px-12 max-w-screen-2xl mx-auto">
@@ -76,9 +75,7 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown(idx)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button
-                    className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 text-on-surface/70 hover:text-primary hover:bg-surface-container-low"
-                  >
+                  <button className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 text-on-surface/70 hover:text-primary hover:bg-surface-container-low">
                     {item.label}
                     <ChevronDown
                       size={14}
@@ -121,7 +118,7 @@ export default function Navbar() {
                 >
                   {item.label}
                 </Link>
-              )
+              ),
             )}
           </div>
 
@@ -221,7 +218,7 @@ export default function Navbar() {
                 >
                   {item.label}
                 </Link>
-              )
+              ),
             )}
           </nav>
 

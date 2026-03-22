@@ -8,7 +8,7 @@ import {
   getCurrentSeason,
   getSafarisByCountry,
 } from "../data/safaris";
-import { ArrowRight, MapPin, Calendar, Filter, X } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Filter, X, Search } from "lucide-react";
 
 import imgAsset_0 from "../assets/cheater.jpeg";
 import imgAsset_1 from "../assets/cheater_plain.jpeg";
@@ -30,6 +30,7 @@ export default function SafarisHub() {
   const season = getCurrentSeason();
   const [daysFilter, setDaysFilter] = useState("all");
   const [budgetFilter, setBudgetFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const pageTitle =
     country === "kenya"
@@ -38,11 +39,15 @@ export default function SafarisHub() {
         ? "Tanzania Safaris"
         : country === "combined"
           ? "Kenya & Tanzania Safaris"
-          : "All Safari Packages";
+          : country === "nairobi"
+            ? "Nairobi Day Trips"
+            : "All Safari Packages";
   const pageDesc = country
     ? country === "combined"
       ? "Epic cross-border adventures spanning both Kenya and Tanzania."
-      : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
+      : country === "nairobi"
+        ? "Quick Nairobi experiences perfect for stopovers and city explorers."
+        : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
     : "From 3-day getaways to 14-day epic expeditions - find the safari that matches your dream.";
 
   const baseSafaris = country ? getSafarisByCountry(country) : safariPackages;
@@ -60,10 +65,20 @@ export default function SafarisHub() {
         return p >= min && p <= (max || 99999);
       });
     }
+    if (searchQuery.trim()) {
+      const term = searchQuery.trim().toLowerCase();
+      result = result.filter((s) => {
+        const haystack = [s.title, s.subtitle, ...(s.destinations || [])]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(term);
+      });
+    }
     return result;
-  }, [baseSafaris, daysFilter, budgetFilter, season]);
+  }, [baseSafaris, daysFilter, budgetFilter, season, searchQuery]);
 
-  const hasFilters = daysFilter !== "all" || budgetFilter !== "all";
+  const hasFilters =
+    daysFilter !== "all" || budgetFilter !== "all" || searchQuery.trim() !== "";
 
   return (
     <Layout>
@@ -98,6 +113,7 @@ export default function SafarisHub() {
             { label: "Kenya", to: "/safaris/kenya" },
             { label: "Tanzania", to: "/safaris/tanzania" },
             { label: "Kenya & Tanzania", to: "/safaris/combined" },
+            { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
           ].map((tab) => (
             <Link
               key={tab.to}
@@ -115,6 +131,26 @@ export default function SafarisHub() {
         </div>
       </section>
 
+      {/* Package Navigator */}
+      <section className="bg-surface-container-low border-b border-outline-variant/10">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-3">
+            Jump to package
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {baseSafaris.map((pkg) => (
+              <a
+                key={pkg.id}
+                href={`#pkg-${pkg.slug}`}
+                className="px-3 py-2 rounded-md text-xs font-bold bg-surface-container-high text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors"
+              >
+                {pkg.days}D · {pkg.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Filters + Grid */}
       <Section className="py-16 md:py-20">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10">
@@ -127,6 +163,18 @@ export default function SafarisHub() {
           </div>
 
           <div className="flex items-center gap-3 flex-wrap">
+            <div className="relative">
+              <Search
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+              />
+              <input
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search package or destination"
+                className="bg-surface-container-high rounded-md pl-9 pr-4 py-2 text-sm font-medium border-none focus:ring-2 focus:ring-surface-tint w-64 max-w-[80vw]"
+              />
+            </div>
             <div className="flex items-center gap-2">
               <Filter size={16} className="text-on-surface-variant" />
               <select
@@ -135,6 +183,7 @@ export default function SafarisHub() {
                 className="bg-surface-container-high rounded-md px-4 py-2 text-sm font-medium border-none focus:ring-2 focus:ring-surface-tint"
               >
                 <option value="all">All Durations</option>
+                <option value="0-2">0-2 Days</option>
                 <option value="3-5">3–5 Days</option>
                 <option value="6-8">6–8 Days</option>
                 <option value="9-14">9–14 Days</option>
@@ -156,6 +205,7 @@ export default function SafarisHub() {
                 onClick={() => {
                   setDaysFilter("all");
                   setBudgetFilter("all");
+                  setSearchQuery("");
                 }}
                 className="text-xs text-primary font-bold flex items-center gap-1 hover:text-secondary transition-colors"
               >
@@ -174,6 +224,7 @@ export default function SafarisHub() {
               onClick={() => {
                 setDaysFilter("all");
                 setBudgetFilter("all");
+                setSearchQuery("");
               }}
               className="mt-4 text-primary font-bold underline"
             >
@@ -187,6 +238,7 @@ export default function SafarisHub() {
                 key={safari.id}
                 to={`/safari/${safari.slug}`}
                 className="group"
+                id={`pkg-${safari.slug}`}
               >
                 <div className="bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-lg transition-all duration-500 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
