@@ -41,7 +41,7 @@ export default function Contact() {
 
     // Redirect to WhatsApp with form details
     const waText = `🌍 *Aventara Safaris Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent from aventarasafaris.com`;
-    const waUrl = `https://wa.me/254700000000?text=${encodeURIComponent(waText)}`;
+    const waUrl = `https://wa.me/254112346049?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, "_blank");
   };
 
@@ -88,7 +88,7 @@ export default function Contact() {
                   <div>
                     <p className="font-bold text-sm">Phone</p>
                     <p className="text-on-surface-variant text-sm">
-                      +254 700 000 000
+                      +254 112 346 049
                     </p>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export default function Contact() {
                   <div>
                     <p className="font-bold text-sm">Email</p>
                     <p className="text-on-surface-variant text-sm">
-                      hello@aventarasafaris.com
+                      aventarasafaris@gmail.com
                     </p>
                   </div>
                 </div>

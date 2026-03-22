@@ -233,7 +233,7 @@ export default function Navbar() {
               Book Safari
             </Link>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254112346049"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 mt-3 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"

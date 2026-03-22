@@ -206,6 +206,44 @@ export const destinations = [
     image: imgAsset_7,
     gallery: [],
   },
+  {
+    id: "lake-manyara",
+    slug: "lake-manyara",
+    name: "Lake Manyara",
+    country: "Tanzania",
+    tagline: "Where Lions Climb Trees",
+    description:
+      "Lake Manyara National Park is a scenic gem nestled at the base of the Great Rift Valley escarpment. Renowned for its lush groundwater forests, sparkling alkaline lake, and vibrant birdlife including flocks of flamingos. The park is famous for its unique tree-climbing lions and remarkably diverse ecosystem packed into a compact area.",
+    highlights: [
+      "Tree-climbing lions",
+      "Flamingo flocks",
+      "Groundwater forest canopy",
+      "Great Rift Valley escarpment",
+      "Over 400 bird species",
+    ],
+    bestTime: "June – October (dry season)",
+    image: imgAsset_5,
+    gallery: [],
+  },
+  {
+    id: "nairobi-np",
+    slug: "nairobi-national-park",
+    name: "Nairobi National Park",
+    country: "Kenya",
+    tagline: "Wildlife in the City",
+    description:
+      "Nairobi National Park is the only national park in the world located within a capital city. Just 7 km from Nairobi's city center, this unique park is home to lions, leopards, rhinos, giraffes, buffaloes, and over 400 bird species. The juxtaposition of wildlife against the Nairobi skyline makes for truly unforgettable photography.",
+    highlights: [
+      "Wildlife against city skyline",
+      "Black rhino sanctuary",
+      "David Sheldrick Elephant Orphanage nearby",
+      "Giraffe Centre nearby",
+      "Over 400 bird species",
+    ],
+    bestTime: "Year-round",
+    image: imgAsset_6,
+    gallery: [],
+  },
 ];
 
 export function getDestinationBySlug(slug) {

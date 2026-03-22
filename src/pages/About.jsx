@@ -53,22 +53,18 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-on-surface-variant leading-relaxed">
               <p>
-                Aventara Safaris was founded with a simple vision: to share the
-                breathtaking beauty and wildlife of Kenya and Tanzania with the
-                world, while ensuring every journey supports local communities
-                and conservation efforts.
+                Aventara Safaris is a Kenya-based safari and travel company dedicated to creating authentic, unforgettable, and well-curated African safari experiences. We specialize in personalized wildlife safaris, cultural tours, and adventure travel across Kenya and East Africa.
               </p>
               <p>
-                Based in Nairobi, our team of passionate safari designers and
-                expert local guides have spent over a decade crafting
-                unforgettable experiences. We know every hidden watering hole,
-                every secret leopard den, and every sunrise viewpoint that will
-                take your breath away.
+                Founded with a passion for nature, travel, and African heritage, Aventara Safaris was established to connect travelers with breathtaking landscapes, diverse wildlife, and rich cultural traditions. Our experienced team combines local expertise, professionalism, and attention to detail to deliver seamless and meaningful journeys.
               </p>
+              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">Our Vision</h3>
               <p>
-                From the thundering wildebeest crossings of the Mara River to
-                the ancient volcanic floor of the Ngorongoro Crater - we
-                organize safaris and create stories that last a lifetime.
+                To become Africa's most trusted and inspiring safari brand, renowned for creating unforgettable wildlife adventures that connect travelers to the heart of nature, rich cultural heritage, and meaningful conservation efforts. Aventara Safaris envisions a future where every journey fosters appreciation for Africa's landscapes, empowers local communities, and contributes to wildlife conservation for generations to come.
+              </p>
+              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">Our Mission</h3>
+              <p>
+                To provide safe, personalized, and truly memorable safari experiences through exceptional service, knowledgeable guides, and thoughtfully designed itineraries. We are committed to delivering authentic African adventures while promoting responsible tourism, supporting local communities, and ensuring sustainable conservation practices.
               </p>
             </div>
           </AnimatedSection>
@@ -108,34 +104,29 @@ export default function About() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Heart size={28} />,
-                title: "Passion for Africa",
-                desc: "We are deeply passionate about the landscapes, wildlife, and people of East Africa. This love drives every experience we create.",
+                icon: <Award size={28} />,
+                title: "Excellence",
+                desc: "We strive for the highest standards in service delivery and customer satisfaction.",
               },
               {
                 icon: <Shield size={28} />,
-                title: "Trust & Safety",
-                desc: "Your safety is our top priority. All our vehicles are fully insured and our drivers are certified and experienced professionals.",
+                title: "Integrity",
+                desc: "We operate with honesty, transparency, and professionalism.",
               },
               {
                 icon: <TreePine size={28} />,
-                title: "Conservation",
-                desc: "We believe travel should give back. Every booking contributes to wildlife protection and community development programs.",
-              },
-              {
-                icon: <Globe size={28} />,
-                title: "Global Standards",
-                desc: "While our heart is in Africa, our service standards are world-class. We cater to international travelers with premium experiences.",
+                title: "Sustainability",
+                desc: "We promote responsible tourism that protects wildlife and supports local communities.",
               },
               {
                 icon: <Users size={28} />,
-                title: "Community First",
-                desc: "We employ local guides, use community-owned lodges, and ensure tourism benefits reach the communities who need it most.",
+                title: "Customer-Centered Service",
+                desc: "Every journey is tailored to meet our clients' unique needs and expectations.",
               },
               {
-                icon: <Award size={28} />,
-                title: "Excellence",
-                desc: "From the first inquiry to your final sunset game drive, every detail is crafted with meticulous care and attention.",
+                icon: <Heart size={28} />,
+                title: "Passion for Adventure",
+                desc: "We are driven by a genuine love for travel, wildlife, and African culture.",
               },
             ].map((value, idx) => (
               <div

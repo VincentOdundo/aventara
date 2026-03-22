@@ -614,7 +614,7 @@ export default function Home() {
               <ArrowRight size={20} />
             </Link>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254112346049"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-outline text-primary px-10 py-4.5 rounded-md font-bold hover:bg-surface-container-low transition-all"
