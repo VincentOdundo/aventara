@@ -133,6 +133,14 @@
 .stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
 .stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
 .stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(7) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(8) { transition-delay: 700ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(9) { transition-delay: 800ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(10) { transition-delay: 900ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(11) { transition-delay: 1000ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(12) { transition-delay: 1100ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(13) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(n+14) { transition-delay: 1300ms; opacity: 1; transform: translateY(0); }
 
 /* === HERO PARALLAX === */
 .parallax-layer {
