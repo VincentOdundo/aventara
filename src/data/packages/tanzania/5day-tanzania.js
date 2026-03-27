@@ -1,5 +1,5 @@
 import imgAsset_9 from "../../../assets/mountain.jpeg";
-import imgAsset_5 from "../../../assets/flamingo.jpeg";
+import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
 import imgAsset_14 from "../../../assets/wildbeasts.jpg";
 
 export const package5DayTanzania = {

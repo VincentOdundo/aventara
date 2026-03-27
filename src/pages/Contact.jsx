@@ -13,20 +13,20 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
 
-import imgAsset_0 from "../assets/cheater.jpeg";
-import imgAsset_1 from "../assets/cheater_plain.jpeg";
-import imgAsset_2 from "../assets/elefpalin.jpeg";
-import imgAsset_3 from "../assets/elephant.jpeg";
-import imgAsset_4 from "../assets/elephtain.jpeg";
-import imgAsset_5 from "../assets/flamingo.jpeg";
-import imgAsset_6 from "../assets/lion.jpeg";
-import imgAsset_7 from "../assets/lioness.jpeg";
-import imgAsset_8 from "../assets/lioness_open.jpeg";
-import imgAsset_9 from "../assets/mountain.jpeg";
-import imgAsset_10 from "../assets/plain_elefabt.jpeg";
-import imgAsset_11 from "../assets/rhino.jpeg";
-import imgAsset_12 from "../assets/rhino_plain.jpeg";
-import imgAsset_13 from "../assets/treecheta.jpeg";
+import cheetahSafari from "../assets/cheater-safari.jpeg";
+import cheetahPlain from "../assets/cheater_plain.jpeg";
+import elephantGrass from "../assets/elefant-vegetation.jpeg";
+import elephantTusks from "../assets/elefant-tusk.jpeg";
+import flamingoWater from "../assets/flamingo-water.jpeg";
+import flamingoSolo from "../assets/flamingo-lonely.jpeg";
+import lionMale from "../assets/lion-lonely.jpeg";
+import lionessPortrait from "../assets/lioness.jpeg";
+import lionessRoar from "../assets/lioness_open.jpeg";
+import kilimanjaro from "../assets/mountain.jpeg";
+import rhinoPair from "../assets/rhino.jpeg";
+import rhinoClose from "../assets/rhino_plain.jpeg";
+import leopardTree from "../assets/treecheta.jpeg";
+import egretWater from "../assets/egret-water.jpeg";
 
 export default function Contact() {
   const { generateInquiry } = useWhatsApp();
@@ -50,7 +50,7 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src={imgAsset_4}
+          src={elephantTusks}
           alt="Contact Aventara Safaris"
           className="absolute inset-0 w-full h-full object-cover"
         />

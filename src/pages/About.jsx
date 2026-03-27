@@ -3,20 +3,20 @@ import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
 import { Shield, Heart, Globe, Award, Users, TreePine } from "lucide-react";
 
-import imgAsset_0 from "../assets/cheater.jpeg";
-import imgAsset_1 from "../assets/cheater_plain.jpeg";
-import imgAsset_2 from "../assets/elefpalin.jpeg";
-import imgAsset_3 from "../assets/elephant.jpeg";
-import imgAsset_4 from "../assets/elephtain.jpeg";
-import imgAsset_5 from "../assets/flamingo.jpeg";
-import imgAsset_6 from "../assets/lion.jpeg";
-import imgAsset_7 from "../assets/lioness.jpeg";
-import imgAsset_8 from "../assets/lioness_open.jpeg";
-import imgAsset_9 from "../assets/mountain.jpeg";
-import imgAsset_10 from "../assets/plain_elefabt.jpeg";
-import imgAsset_11 from "../assets/rhino.jpeg";
-import imgAsset_12 from "../assets/rhino_plain.jpeg";
-import imgAsset_13 from "../assets/treecheta.jpeg";
+import cheetahSafari from "../assets/cheater-safari.jpeg";
+import cheetahPlain from "../assets/cheater_plain.jpeg";
+import elephantGrass from "../assets/elefant-vegetation.jpeg";
+import elephantTusks from "../assets/elefant-tusk.jpeg";
+import flamingoWater from "../assets/flamingo-water.jpeg";
+import flamingoSolo from "../assets/flamingo-lonely.jpeg";
+import lionMale from "../assets/lion-lonely.jpeg";
+import lionessPortrait from "../assets/lioness.jpeg";
+import lionessRoar from "../assets/lioness_open.jpeg";
+import kilimanjaro from "../assets/mountain.jpeg";
+import rhinoPair from "../assets/rhino.jpeg";
+import rhinoClose from "../assets/rhino_plain.jpeg";
+import leopardTree from "../assets/treecheta.jpeg";
+import egretWater from "../assets/egret-water.jpeg";
 
 export default function About() {
   return (
@@ -24,7 +24,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src={imgAsset_2}
+          src={egretWater}
           alt="About Aventara Safaris"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -53,18 +53,42 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-on-surface-variant leading-relaxed">
               <p>
-                Aventara Safaris is a Kenya-based safari and travel company dedicated to creating authentic, unforgettable, and well-curated African safari experiences. We specialize in personalized wildlife safaris, cultural tours, and adventure travel across Kenya and East Africa.
+                Aventara Safaris is a Kenya-based safari and travel company
+                dedicated to creating authentic, unforgettable, and well-curated
+                African safari experiences. We specialize in personalized
+                wildlife safaris, cultural tours, and adventure travel across
+                Kenya and East Africa.
               </p>
               <p>
-                Founded with a passion for nature, travel, and African heritage, Aventara Safaris was established to connect travelers with breathtaking landscapes, diverse wildlife, and rich cultural traditions. Our experienced team combines local expertise, professionalism, and attention to detail to deliver seamless and meaningful journeys.
+                Founded with a passion for nature, travel, and African heritage,
+                Aventara Safaris was established to connect travelers with
+                breathtaking landscapes, diverse wildlife, and rich cultural
+                traditions. Our experienced team combines local expertise,
+                professionalism, and attention to detail to deliver seamless and
+                meaningful journeys.
               </p>
-              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">Our Vision</h3>
+              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">
+                Our Vision
+              </h3>
               <p>
-                To become Africa's most trusted and inspiring safari brand, renowned for creating unforgettable wildlife adventures that connect travelers to the heart of nature, rich cultural heritage, and meaningful conservation efforts. Aventara Safaris envisions a future where every journey fosters appreciation for Africa's landscapes, empowers local communities, and contributes to wildlife conservation for generations to come.
+                To become Africa's most trusted and inspiring safari brand,
+                renowned for creating unforgettable wildlife adventures that
+                connect travelers to the heart of nature, rich cultural
+                heritage, and meaningful conservation efforts. Aventara Safaris
+                envisions a future where every journey fosters appreciation for
+                Africa's landscapes, empowers local communities, and contributes
+                to wildlife conservation for generations to come.
               </p>
-              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">Our Mission</h3>
+              <h3 className="text-xl font-headline font-bold text-primary mt-6 mb-2">
+                Our Mission
+              </h3>
               <p>
-                To provide safe, personalized, and truly memorable safari experiences through exceptional service, knowledgeable guides, and thoughtfully designed itineraries. We are committed to delivering authentic African adventures while promoting responsible tourism, supporting local communities, and ensuring sustainable conservation practices.
+                To provide safe, personalized, and truly memorable safari
+                experiences through exceptional service, knowledgeable guides,
+                and thoughtfully designed itineraries. We are committed to
+                delivering authentic African adventures while promoting
+                responsible tourism, supporting local communities, and ensuring
+                sustainable conservation practices.
               </p>
             </div>
           </AnimatedSection>
@@ -73,7 +97,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={imgAsset_3}
+                  src={elephantGrass}
                   alt="Safari experience"
                   className="w-full h-96 object-cover"
                 />

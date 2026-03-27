@@ -1,4 +1,8 @@
-import imgAsset_1 from "../../../assets/cheater_plain.jpeg";
+import nairobiGiraffeCity from "../../../assets/nairobi/girafe-nairobi-city.jpeg";
+import nairobiLionVan from "../../../assets/nairobi/lion-safari-van.jpeg";
+import nairobiLionClose from "../../../assets/nairobi/lion-safari.jpeg";
+import nairobiSunset from "../../../assets/nairobi/sunset-exotic.jpeg";
+import nairobiBird from "../../../assets/nairobi/bird-exotic.jpeg";
 
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",
@@ -9,8 +13,8 @@ export const packageHalfDayNairobi = {
   country: "kenya",
   destinations: ["Nairobi"],
   price: { low: 150, high: 150 },
-  image: imgAsset_1,
-  gallery: [],
+  image: nairobiGiraffeCity,
+  gallery: [nairobiLionVan, nairobiLionClose, nairobiSunset, nairobiBird],
   difficulty: "Budget",
   highlights: [
     "City tour",
@@ -40,7 +44,7 @@ export const packageHalfDayNairobi = {
       destination: "Nairobi",
       meals: "None",
       accommodation: null,
-      image: imgAsset_1,
+      image: nairobiLionVan,
       highlights: [
         "City landmarks",
         "Cultural sites",

@@ -1,5 +1,5 @@
-import imgAsset_1 from "../../../assets/cheater_plain.jpeg";
-import imgAsset_3 from "../../../assets/elephant.jpeg";
+import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
+import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
 import imgAsset_6 from "../../../assets/lion.jpeg";
 
 export const package3DayMara = {

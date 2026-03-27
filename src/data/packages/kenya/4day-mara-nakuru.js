@@ -1,7 +1,7 @@
-import imgAsset_1 from "../../../assets/cheater_plain.jpeg";
-import imgAsset_3 from "../../../assets/elephant.jpeg";
-import imgAsset_5 from "../../../assets/flamingo.jpeg";
-import imgAsset_11 from "../../../assets/rhino.jpeg";
+import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
+import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
+import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
+import imgAsset_11 from "../../../assets/rhino_plain.jpeg";
 
 export const package4DayMaraNakuru = {
   id: "4-day-mara-nakuru",

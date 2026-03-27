@@ -1,17 +1,24 @@
-import imgAsset_0 from "../assets/cheater.jpeg";
-import imgAsset_1 from "../assets/cheater_plain.jpeg";
-import imgAsset_2 from "../assets/elefpalin.jpeg";
-import imgAsset_3 from "../assets/elephant.jpeg";
-import imgAsset_4 from "../assets/elephtain.jpeg";
-import imgAsset_5 from "../assets/flamingo.jpeg";
-import imgAsset_6 from "../assets/lion.jpeg";
-import imgAsset_7 from "../assets/lioness.jpeg";
-import imgAsset_8 from "../assets/lioness_open.jpeg";
-import imgAsset_9 from "../assets/mountain.jpeg";
-import imgAsset_10 from "../assets/plain_elefabt.jpeg";
-import imgAsset_11 from "../assets/rhino.jpeg";
-import imgAsset_12 from "../assets/rhino_plain.jpeg";
-import imgAsset_13 from "../assets/treecheta.jpeg";
+import cheetahSafari from "../assets/cheater-safari.jpeg";
+import cheetahPlain from "../assets/cheater_plain.jpeg";
+import elephantGrass from "../assets/elefant-vegetation.jpeg";
+import elephantTusks from "../assets/elefant-tusk.jpeg";
+import flamingoWater from "../assets/flamingo-water.jpeg";
+import flamingoSolo from "../assets/flamingo-lonely.jpeg";
+import lionMale from "../assets/lion-lonely.jpeg";
+import lionessPortrait from "../assets/lioness.jpeg";
+import lionessRoar from "../assets/lioness_open.jpeg";
+import kilimanjaro from "../assets/mountain.jpeg";
+import rhinoPair from "../assets/rhino.jpeg";
+import rhinoClose from "../assets/rhino_plain.jpeg";
+import leopardTree from "../assets/treecheta.jpeg";
+import egretWater from "../assets/egret-water.jpeg";
+import nairobiGiraffeCity from "../assets/nairobi/girafe-nairobi-city.jpeg";
+import nairobiLionVan from "../assets/nairobi/lion-safari-van.jpeg";
+import nairobiLionClose from "../assets/nairobi/lion-safari.jpeg";
+import nairobiSunset from "../assets/nairobi/sunset-exotic.jpeg";
+import nairobiGiraffeSunset from "../assets/nairobi/giraffe-sunsut.jpeg";
+import nairobiBird from "../assets/nairobi/bird-exotic.jpeg";
+import nairobiAntelopes from "../assets/nairobi/antelppes.jpeg";
 
 // Destinations data - all parks, reserves, and key locations
 
@@ -32,8 +39,8 @@ export const destinations = [
       "Nocturnal game drives",
     ],
     bestTime: "July – October (Migration season)",
-    image: imgAsset_1,
-    gallery: [imgAsset_6, imgAsset_13, imgAsset_12],
+    image: cheetahSafari,
+    gallery: [lionMale, leopardTree, cheetahPlain],
   },
   {
     id: "lake-nakuru",
@@ -51,8 +58,8 @@ export const destinations = [
       "Baboon Cliff viewpoint",
     ],
     bestTime: "Year-round",
-    image: imgAsset_5,
-    gallery: [],
+    image: flamingoWater,
+    gallery: [flamingoSolo],
   },
   {
     id: "hells-gate",
@@ -70,7 +77,7 @@ export const destinations = [
       "Rock climbing",
     ],
     bestTime: "Year-round",
-    image: imgAsset_5,
+    image: nairobiAntelopes,
     gallery: [],
   },
   {
@@ -89,8 +96,8 @@ export const destinations = [
       "Scenic Rift Valley views",
     ],
     bestTime: "Year-round",
-    image: imgAsset_11,
-    gallery: [],
+    image: egretWater,
+    gallery: [flamingoWater],
   },
   {
     id: "amboseli",
@@ -108,8 +115,8 @@ export const destinations = [
       "Photography paradise",
     ],
     bestTime: "June – October (dry season, Kilimanjaro clearest)",
-    image: imgAsset_3,
-    gallery: [],
+    image: elephantGrass,
+    gallery: [elephantTusks, kilimanjaro],
   },
   {
     id: "tsavo",
@@ -127,8 +134,8 @@ export const destinations = [
       "Vast wilderness",
     ],
     bestTime: "June – October",
-    image: imgAsset_3,
-    gallery: [],
+    image: elephantTusks,
+    gallery: [elephantGrass],
   },
   {
     id: "ol-pejeta",
@@ -146,8 +153,8 @@ export const destinations = [
       "Conservation tours",
     ],
     bestTime: "Year-round",
-    image: imgAsset_8,
-    gallery: [],
+    image: rhinoClose,
+    gallery: [rhinoPair],
   },
   {
     id: "serengeti",
@@ -165,8 +172,8 @@ export const destinations = [
       "Kopje rock formations",
     ],
     bestTime: "June – October (dry season), December – March (calving)",
-    image: imgAsset_1,
-    gallery: [],
+    image: cheetahPlain,
+    gallery: [cheetahSafari],
   },
   {
     id: "ngorongoro",
@@ -184,8 +191,8 @@ export const destinations = [
       "Crater rim panoramas",
     ],
     bestTime: "Year-round",
-    image: imgAsset_12,
-    gallery: [],
+    image: rhinoPair,
+    gallery: [flamingoSolo],
   },
   {
     id: "tarangire",
@@ -203,8 +210,8 @@ export const destinations = [
       "Over 550 bird species",
     ],
     bestTime: "June – October (dry season)",
-    image: imgAsset_7,
-    gallery: [],
+    image: lionessPortrait,
+    gallery: [lionessRoar],
   },
   {
     id: "lake-manyara",
@@ -222,8 +229,8 @@ export const destinations = [
       "Over 400 bird species",
     ],
     bestTime: "June – October (dry season)",
-    image: imgAsset_5,
-    gallery: [],
+    image: flamingoSolo,
+    gallery: [flamingoWater],
   },
   {
     id: "nairobi-np",
@@ -241,8 +248,15 @@ export const destinations = [
       "Over 400 bird species",
     ],
     bestTime: "Year-round",
-    image: imgAsset_6,
-    gallery: [],
+    image: nairobiGiraffeCity,
+    gallery: [
+      nairobiLionVan,
+      nairobiLionClose,
+      nairobiGiraffeSunset,
+      nairobiSunset,
+      nairobiBird,
+      nairobiAntelopes,
+    ],
   },
 ];
 
