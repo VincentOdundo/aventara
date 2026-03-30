@@ -35,6 +35,7 @@ import sunsetExotic from "../assets/nairobi/sunset-exotic.jpeg";
 import rhinoClose from "../assets/rhino_plain.jpeg";
 import kilimanjaro from "../assets/mountain.jpeg";
 import elephtain from "../assets/elephtain.jpeg";
+import wildImg from "../assets/wildbeasts.jpg";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
@@ -125,7 +126,7 @@ export default function Home() {
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
           >
             <img
-              src={heroImg}
+              src={wildImg}
               alt="Great Migration"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
