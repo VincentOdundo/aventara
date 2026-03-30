@@ -1,6 +1,13 @@
-import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
-import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
-import imgAsset_6 from "../../../assets/lion.jpeg";
+import genImg_0 from "../../../assets/lion pack.jpeg";
+import genImg_1 from "../../../assets/cheater.jpeg";
+import genImg_2 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
+import genImg_3 from "../../../assets/leapard-car.jpeg";
+import genImg_4 from "../../../assets/lioness_open.jpeg";
+import genImg_5 from "../../../assets/lioness_open.jpeg";
+
+;;
+;;
+;;
 
 export const package3DayMara = {
   id: "3-day-mara",
@@ -11,8 +18,8 @@ export const package3DayMara = {
   country: "kenya",
   destinations: ["Masai Mara"],
   price: { low: 530, high: 770 },
-  image: imgAsset_1,
-  gallery: [imgAsset_6, imgAsset_3],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Thrilling Big Five game drives in Kenya's premier wildlife reserve",
@@ -55,7 +62,7 @@ export const package3DayMara = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_1,
+      image: genImg_3,
       highlights: [
         "Panoramic Great Rift Valley viewpoint",
         "Thrilling evening sunset game drive",
@@ -71,7 +78,7 @@ export const package3DayMara = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_3,
+      image: genImg_4,
       highlights: [
         "In-depth pursuit of the Big Five",
         "Exploration of the iconic Mara River",
@@ -87,7 +94,7 @@ export const package3DayMara = {
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: imgAsset_6,
+      image: genImg_5,
       highlights: [
         "Authentic traditional Maasai village visit",
         "Unforgettable cultural immersion & dances",

@@ -1,6 +1,12 @@
-import imgAsset_9 from "../../../assets/mountain.jpeg";
-import imgAsset_11 from "../../../assets/rhino_plain.jpeg";
-import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
+import genImg_0 from "../../../assets/elephtain.jpeg";
+import genImg_1 from "../../../assets/cheater.jpeg";
+import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import genImg_3 from "../../../assets/plain_elefabt.jpeg";
+import genImg_4 from "../../../assets/elefabt-happy.jpeg";
+
+;;
+;;
+;;
 
 export const package3DayAmboseli = {
   id: "3-day-amboseli",
@@ -11,8 +17,8 @@ export const package3DayAmboseli = {
   country: "kenya",
   destinations: ["Amboseli"],
   price: { low: 450, high: 650 },
-  image: imgAsset_9,
-  gallery: [imgAsset_11],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Incredible encounters with Amboseli's famous Jumbo Elephants",
@@ -47,7 +53,7 @@ export const package3DayAmboseli = {
       destination: "Amboseli National Park",
       meals: "Dinner Only",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_9,
+      image: genImg_3,
       highlights: [
         "Scenic drive to Amboseli National Park",
         "Enchanting sunset evening game drive",
@@ -62,7 +68,7 @@ export const package3DayAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_11,
+      image: genImg_4,
       highlights: [
         "Iconic Mount Kilimanjaro scenic viewing",
         "Close-up encounters with bathing Elephants and Hippos",

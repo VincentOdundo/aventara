@@ -4,21 +4,18 @@ import elephantGrass from "../assets/elefant-vegetation.jpeg";
 import elephantTusks from "../assets/elefant-tusk.jpeg";
 import flamingoWater from "../assets/flamingo-water.jpeg";
 import flamingoSolo from "../assets/flamingo-lonely.jpeg";
-import lionMale from "../assets/lion-lonely.jpeg";
-import lionessPortrait from "../assets/lioness.jpeg";
-import lionessRoar from "../assets/lioness_open.jpeg";
-import kilimanjaro from "../assets/mountain.jpeg";
 import rhinoPair from "../assets/rhino.jpeg";
 import rhinoClose from "../assets/rhino_plain.jpeg";
-import leopardTree from "../assets/treecheta.jpeg";
 import egretWater from "../assets/egret-water.jpeg";
+import hellsGateImage from "../assets/nairobi/antelppes.jpeg";
+import lionessPortrait from "../assets/lioness.jpeg";
 import nairobiGiraffeCity from "../assets/nairobi/girafe-nairobi-city.jpeg";
-import nairobiLionVan from "../assets/nairobi/lion-safari-van.jpeg";
-import nairobiLionClose from "../assets/nairobi/lion-safari.jpeg";
-import nairobiSunset from "../assets/nairobi/sunset-exotic.jpeg";
-import nairobiGiraffeSunset from "../assets/nairobi/giraffe-sunsut.jpeg";
-import nairobiBird from "../assets/nairobi/bird-exotic.jpeg";
-import nairobiAntelopes from "../assets/nairobi/antelppes.jpeg";
+
+// Gallery safe images
+import lionStd from "../assets/lion.jpeg";
+import leopardTree from "../assets/treecheta.jpeg";
+import mountain from "../assets/mountain.jpeg";
+import plainEle from "../assets/plain_elefabt.jpeg";
 
 // Destinations data - all parks, reserves, and key locations
 
@@ -41,7 +38,7 @@ export const destinations = [
     ],
     bestTime: "July – October (Peak Migration season for river crossings)",
     image: cheetahSafari,
-    gallery: [lionMale, leopardTree, cheetahPlain],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "lake-nakuru",
@@ -61,7 +58,7 @@ export const destinations = [
     ],
     bestTime: "Year-round (Excellent birding and rhino spotting continuously)",
     image: flamingoWater,
-    gallery: [flamingoSolo],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "hells-gate",
@@ -80,8 +77,8 @@ export const destinations = [
       "Enjoy world-class rock climbing on stunning cliff faces",
     ],
     bestTime: "Year-round (Perfect for active, outdoor exploration)",
-    image: nairobiAntelopes,
-    gallery: [],
+    image: hellsGateImage,
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "lake-naivasha",
@@ -101,7 +98,7 @@ export const destinations = [
     ],
     bestTime: "Year-round (Exceptional birding and boating consistently)",
     image: egretWater,
-    gallery: [flamingoWater],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "amboseli",
@@ -122,7 +119,7 @@ export const destinations = [
     bestTime:
       "June – October (Dry season ensures the clearest views of Kilimanjaro)",
     image: elephantGrass,
-    gallery: [elephantTusks, kilimanjaro],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "tsavo",
@@ -143,7 +140,7 @@ export const destinations = [
     bestTime:
       "June – October (Best conditions for wildlife congregation at water sources)",
     image: elephantTusks,
-    gallery: [elephantGrass],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "ol-pejeta",
@@ -163,7 +160,7 @@ export const destinations = [
     ],
     bestTime: "Year-round (Excellent road conditions and consistent wildlife)",
     image: rhinoClose,
-    gallery: [rhinoPair],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "serengeti",
@@ -184,7 +181,7 @@ export const destinations = [
     bestTime:
       "June – October (Dry season), December – March (Epic wildebeest calving season)",
     image: cheetahPlain,
-    gallery: [cheetahSafari],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "ngorongoro",
@@ -204,7 +201,7 @@ export const destinations = [
     ],
     bestTime: "Year-round (Wildlife is permanently enclosed within the crater)",
     image: rhinoPair,
-    gallery: [flamingoSolo],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "tarangire",
@@ -224,7 +221,7 @@ export const destinations = [
     bestTime:
       "June – October (Dry season triggers massive wildlife migration to the river)",
     image: lionessPortrait,
-    gallery: [lionessRoar],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "lake-manyara",
@@ -244,7 +241,7 @@ export const destinations = [
     bestTime:
       "June – October (Dry season ensures easier driving and active wildlife)",
     image: flamingoSolo,
-    gallery: [flamingoWater],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
   {
     id: "nairobi-np",
@@ -265,14 +262,7 @@ export const destinations = [
     bestTime:
       "Year-round (Exceptional convenience and year-round urban wildlife viewing)",
     image: nairobiGiraffeCity,
-    gallery: [
-      nairobiLionVan,
-      nairobiLionClose,
-      nairobiGiraffeSunset,
-      nairobiSunset,
-      nairobiBird,
-      nairobiAntelopes,
-    ],
+    gallery: [lionStd, leopardTree, mountain, plainEle],
   },
 ];
 

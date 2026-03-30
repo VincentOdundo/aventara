@@ -1,8 +1,18 @@
-import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
-import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
-import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
-import imgAsset_9 from "../../../assets/mountain.jpeg";
-import imgAsset_11 from "../../../assets/rhino_plain.jpeg";
+import genImg_0 from "../../../assets/cheater.jpeg";
+import genImg_1 from "../../../assets/treecheta.jpeg";
+import genImg_2 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
+import genImg_3 from "../../../assets/cheater.jpeg";
+import genImg_4 from "../../../assets/lion.jpeg";
+import genImg_5 from "../../../assets/lioness_open.jpeg";
+import genImg_6 from "../../../assets/lion.jpeg";
+import genImg_7 from "../../../assets/cheater.jpeg";
+import genImg_8 from "../../../assets/leapard-car.jpeg";
+
+;;
+;;
+;;
+;;
+;;
 
 export const package7DayMaraNakuruNaivashaAmboseli = {
   id: "7-day-mara-nakuru-naivasha-amboseli",
@@ -19,8 +29,8 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
     "Amboseli",
   ],
   price: { low: 1350, high: 1750 },
-  image: imgAsset_9,
-  gallery: [imgAsset_11, imgAsset_3, imgAsset_5],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Witness the legendary Big Five in Masai Mara",
@@ -60,7 +70,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_1,
+      image: genImg_3,
       highlights: ["Panoramic Great Rift Valley Views", "Thrilling Sunset Game Drive", "Welcome to the Savannah"],
     },
     {
@@ -71,7 +81,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_3,
+      image: genImg_4,
       highlights: ["Unrestricted Big Five Tracking", "Legendary Mara River", "Spectacular Great Migration (seasonal)"],     
     },
     {
@@ -82,7 +92,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: imgAsset_5,
+      image: genImg_5,
       highlights: ["Optional Lake Naivasha Excursion", "Great Rift Valley Drive", "Relaxing Lodge Arrival"],
     },
     {
@@ -93,7 +103,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Lake Naivasha",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Leisure Apex Resort",
-      image: imgAsset_5,
+      image: genImg_6,
       highlights: [
         "Exclusive Rhino Sanctuary Visit",
         "Rare Black and White Rhinos",
@@ -108,7 +118,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_9,
+      image: genImg_7,
       highlights: [
         "Hell's Gate Cycling/Walking",
         "Breathtaking Scenic Landscapes",
@@ -123,7 +133,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_11,
+      image: genImg_8,
       highlights: [
         "Massive Free-Roaming Elephant Herds",
         "Iconic Mount Kilimanjaro Backdrops",

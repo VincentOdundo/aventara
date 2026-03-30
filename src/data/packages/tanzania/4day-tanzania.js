@@ -1,5 +1,12 @@
-import imgAsset_9 from "../../../assets/mountain.jpeg";
-import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
+import genImg_0 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import genImg_1 from "../../../assets/lion.jpeg";
+import genImg_2 from "../../../assets/nairobi/girfe-sunset.jpeg";
+import genImg_3 from "../../../assets/cheater.jpeg";
+import genImg_4 from "../../../assets/nairobi/girfe-sunset.jpeg";
+import genImg_5 from "../../../assets/nairobi/sunset-exotic.jpeg";
+
+;;
+;;
 
 export const package4DayTanzania = {
   id: "4-day-tanzania",
@@ -11,8 +18,8 @@ export const package4DayTanzania = {
   country: "tanzania",
   destinations: ["Serengeti", "Ngorongoro"],
   price: { low: 850, high: 1150 },
-  image: imgAsset_9,
-  gallery: [imgAsset_5],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Unforgettable full day immersed in the Serengeti National Park",
@@ -48,7 +55,7 @@ export const package4DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp (Immersive Wilderness)",
-      image: imgAsset_9,
+      image: genImg_3,
       highlights: [
         "Traverse the magnificent Ngorongoro Conservation Area",
         "Photography stops overlooking Northern Tanzania's epic landscapes",
@@ -63,7 +70,7 @@ export const package4DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Nyani Camp (Immersive Wilderness)",
-      image: imgAsset_9,
+      image: genImg_4,
       highlights: [
         "Intensive tracking of the legendary Big Five",
         "Unrivaled photography opportunities during the golden hours",
@@ -79,7 +86,7 @@ export const package4DayTanzania = {
       destination: "Ngorongoro Conservation Area",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite (Panoramic Crater Views)",
-      image: imgAsset_5,
+      image: genImg_5,
       highlights: [
         "Farewell morning game drive across the Serengeti plains",
         "Spectacular, varied scenery shifting from savanna to highlands",

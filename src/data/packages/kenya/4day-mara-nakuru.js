@@ -1,7 +1,14 @@
-import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
-import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
-import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
-import imgAsset_11 from "../../../assets/rhino_plain.jpeg";
+import genImg_0 from "../../../assets/lioness_open.jpeg";
+import genImg_1 from "../../../assets/lion-lonely.jpeg";
+import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import genImg_3 from "../../../assets/lioness_open.jpeg";
+import genImg_4 from "../../../assets/lion.jpeg";
+import genImg_5 from "../../../assets/treecheta.jpeg";
+
+;;
+;;
+;;
+;;
 
 export const package4DayMaraNakuru = {
   id: "4-day-mara-nakuru",
@@ -13,8 +20,8 @@ export const package4DayMaraNakuru = {
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru"],
   price: { low: 770, high: 1110 },
-  image: imgAsset_5,
-  gallery: [imgAsset_11, imgAsset_3],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Unforgettable Big Five game drives in the Masai Mara",
@@ -52,7 +59,7 @@ export const package4DayMaraNakuru = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_1,
+      image: genImg_3,
       highlights: [
         "Panoramic Great Rift Valley photography",
         "Thrilling evening Big Five game drive",
@@ -68,7 +75,7 @@ export const package4DayMaraNakuru = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_3,
+      image: genImg_4,
       highlights: [
         "Extensive tracking of the legendary Big Five",
         "Iconic Mara River exploration",
@@ -85,7 +92,7 @@ export const package4DayMaraNakuru = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: imgAsset_5,
+      image: genImg_5,
       highlights: [
         "Scenic Great Rift Valley ecosystem drive",
         "Exclusive endangered Rhino sanctuary visit",

@@ -1,8 +1,7 @@
+import genImg_0 from "../../../assets/lion-lonely.jpeg";
+import genImg_1 from "../../../assets/nairobi/sunset-exotic.jpeg";
 import nairobiGiraffeCity from "../../../assets/nairobi/girafe-nairobi-city.jpeg";
 import nairobiLionVan from "../../../assets/nairobi/lion-safari-van.jpeg";
-import nairobiLionClose from "../../../assets/nairobi/lion-safari.jpeg";
-import nairobiSunset from "../../../assets/nairobi/sunset-exotic.jpeg";
-import nairobiBird from "../../../assets/nairobi/bird-exotic.jpeg";
 
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",
@@ -15,7 +14,7 @@ export const packageHalfDayNairobi = {
   destinations: ["Nairobi"],
   price: { low: 150, high: 150 },
   image: nairobiGiraffeCity,
-  gallery: [nairobiLionVan, nairobiLionClose, nairobiSunset, nairobiBird],
+  gallery: [genImg_0, genImg_1],
   difficulty: "Budget",
   highlights: [
     "Comprehensive Nairobi City Tour",

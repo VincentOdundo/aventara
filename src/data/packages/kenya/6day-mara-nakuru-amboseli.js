@@ -1,8 +1,17 @@
-import imgAsset_1 from "../../../assets/cheater-safari.jpeg";
-import imgAsset_3 from "../../../assets/elefant-vegetation.jpeg";
-import imgAsset_5 from "../../../assets/flamingo-water.jpeg";
-import imgAsset_9 from "../../../assets/mountain.jpeg";
-import imgAsset_11 from "../../../assets/rhino_plain.jpeg";
+import genImg_0 from "../../../assets/lion-lonely.jpeg";
+import genImg_1 from "../../../assets/leapard-car.jpeg";
+import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import genImg_3 from "../../../assets/cheater.jpeg";
+import genImg_4 from "../../../assets/lion-lonely.jpeg";
+import genImg_5 from "../../../assets/lion pack.jpeg";
+import genImg_6 from "../../../assets/lioness_open.jpeg";
+import genImg_7 from "../../../assets/lion pack.jpeg";
+
+;;
+;;
+;;
+;;
+;;
 
 export const package6DayMaraNakuruAmboseli = {
   id: "6-day-mara-nakuru-amboseli",
@@ -14,8 +23,8 @@ export const package6DayMaraNakuruAmboseli = {
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
   price: { low: 1200, high: 1600 },
-  image: imgAsset_9,
-  gallery: [imgAsset_11, imgAsset_3],
+  image: genImg_0,
+  gallery: [genImg_1, genImg_2],
   difficulty: "Budget",
   highlights: [
     "Unrivaled Big Five encounters across Kenya's top parks",
@@ -53,7 +62,7 @@ export const package6DayMaraNakuruAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_1,
+      image: genImg_3,
       highlights: [
         "Stunning panoramic Great Rift Valley photography",
         "Thrilling golden-hour evening game drive",
@@ -69,7 +78,7 @@ export const package6DayMaraNakuruAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: imgAsset_3,
+      image: genImg_4,
       highlights: [
         "Intensive tracking of the legendary Big Five",
         "Spectacular dramatic Mara River exploration",
@@ -85,7 +94,7 @@ export const package6DayMaraNakuruAmboseli = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: imgAsset_5,
+      image: genImg_5,
       highlights: [
         "Incredibly scenic Great Rift Valley drive",
         "Optional Lake Naivasha aquatic activities",
@@ -101,7 +110,7 @@ export const package6DayMaraNakuruAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_9,
+      image: genImg_6,
       highlights: [
         "World-renowned, highly protected Rhino sanctuary",
         "Stunning sweeping Rift Valley scenic drive",
@@ -117,7 +126,7 @@ export const package6DayMaraNakuruAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: imgAsset_11,
+      image: genImg_7,
       highlights: [
         "Iconic massive, free-roaming elephant herds",
         "Unbeatable, pristine Mount Kilimanjaro views",

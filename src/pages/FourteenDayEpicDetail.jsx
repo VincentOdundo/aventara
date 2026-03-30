@@ -2,20 +2,20 @@ import React from "react";
 import Layout from "../components/layout/Layout";
 import { Button, Section, ItineraryDay, IncludedItem } from "../components/ui";
 
-import cheetahSafari from "../assets/cheater-safari.jpeg";
-import cheetahPlain from "../assets/cheater_plain.jpeg";
-import elephantGrass from "../assets/elefant-vegetation.jpeg";
-import elephantTusks from "../assets/elefant-tusk.jpeg";
-import flamingoWater from "../assets/flamingo-water.jpeg";
-import flamingoSolo from "../assets/flamingo-lonely.jpeg";
-import lionMale from "../assets/lion-lonely.jpeg";
-import lionessPortrait from "../assets/lioness.jpeg";
-import lionessRoar from "../assets/lioness_open.jpeg";
-import kilimanjaro from "../assets/mountain.jpeg";
-import rhinoPair from "../assets/rhino.jpeg";
-import rhinoClose from "../assets/rhino_plain.jpeg";
-import leopardTree from "../assets/treecheta.jpeg";
-import egretWater from "../assets/egret-water.jpeg";
+import cheetahSafari from "../assets/cheater-safari.jpeg";;;
+import cheetahPlain from "../assets/safari-van-sunrise.jpeg";;;
+import elephantGrass from "../assets/safari-van-sunrise.jpeg";;;
+import elephantTusks from "../assets/cheater-safari.jpeg";;;
+import flamingoWater from "../assets/safari-van-sunrise.jpeg";;;
+import flamingoSolo from "../assets/cheater-safari.jpeg";;;
+import lionMale from "../assets/cheater-safari.jpeg";;;
+import lionessPortrait from "../assets/safari-van-sunrise.jpeg";;;
+import lionessRoar from "../assets/safari-van-sunrise.jpeg";;;
+import kilimanjaro from "../assets/cheater-safari.jpeg";;;
+import rhinoPair from "../assets/cheater-safari.jpeg";;;
+import rhinoClose from "../assets/safari-van-sunrise.jpeg";;;
+import leopardTree from "../assets/safari-van-sunrise.jpeg";;;
+import egretWater from "../assets/safari-van-sunrise.jpeg";;;
 
 export default function FourteenDayEpicDetail() {
   return (

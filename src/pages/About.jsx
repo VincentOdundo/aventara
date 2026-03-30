@@ -3,20 +3,8 @@ import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
 import { Shield, Heart, Globe, Award, Users, TreePine } from "lucide-react";
 
-import cheetahSafari from "../assets/cheater-safari.jpeg";
-import cheetahPlain from "../assets/cheater_plain.jpeg";
-import elephantGrass from "../assets/elefant-vegetation.jpeg";
-import elephantTusks from "../assets/elefant-tusk.jpeg";
-import flamingoWater from "../assets/flamingo-water.jpeg";
-import flamingoSolo from "../assets/flamingo-lonely.jpeg";
-import lionMale from "../assets/lion-lonely.jpeg";
-import lionessPortrait from "../assets/lioness.jpeg";
-import lionessRoar from "../assets/lioness_open.jpeg";
-import kilimanjaro from "../assets/mountain.jpeg";
-import rhinoPair from "../assets/rhino.jpeg";
-import rhinoClose from "../assets/rhino_plain.jpeg";
-import leopardTree from "../assets/treecheta.jpeg";
-import egretWater from "../assets/egret-water.jpeg";
+import heroImg from "../assets/elephtain.jpeg";
+import elefantVegetation from "../assets/elefant-vegetation.jpeg";
 
 export default function About() {
   return (
@@ -24,7 +12,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src={egretWater}
+          src={heroImg}
           alt="About Aventara Safaris"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -97,7 +85,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={elephantGrass}
+                  src={elefantVegetation}
                   alt="Safari experience"
                   className="w-full h-96 object-cover"
                 />

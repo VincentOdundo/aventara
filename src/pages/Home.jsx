@@ -28,21 +28,13 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
 
-import cheetahSafari from "../assets/cheater-safari.jpeg";
-import cheetahPlain from "../assets/cheater_plain.jpeg";
 import elephantGrass from "../assets/elefant-vegetation.jpeg";
 import elephantTusks from "../assets/elefant-tusk.jpeg";
 import flamingoWater from "../assets/flamingo-water.jpeg";
-import flamingoSolo from "../assets/flamingo-lonely.jpeg";
-import lionMale from "../assets/lion-lonely.jpeg";
-import lionessPortrait from "../assets/lioness.jpeg";
-import lionessRoar from "../assets/lioness_open.jpeg";
-import kilimanjaro from "../assets/mountain.jpeg";
-import rhinoPair from "../assets/rhino.jpeg";
+import sunsetExotic from "../assets/nairobi/sunset-exotic.jpeg";
 import rhinoClose from "../assets/rhino_plain.jpeg";
-import leopardTree from "../assets/treecheta.jpeg";
-import egretWater from "../assets/egret-water.jpeg";
-import wildbeasts from "../assets/wildbeasts.jpg";
+import kilimanjaro from "../assets/mountain.jpeg";
+import elephtain from "../assets/elephtain.jpeg";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
@@ -59,7 +51,17 @@ function StatCounter({ target, suffix = "", label }) {
   );
 }
 
-const heroImages = [elephantGrass, elephantTusks, flamingoWater, lionMale];
+const heroImages = [
+  elephantGrass,
+  elephantTusks,
+  flamingoWater,
+  sunsetExotic,
+  rhinoClose,
+  kilimanjaro,
+  elephtain,
+];
+
+import heroImg from "../assets/cheater.jpeg";
 
 export default function Home() {
   const [heroIdx, setHeroIdx] = useState(0);
@@ -123,7 +125,7 @@ export default function Home() {
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
           >
             <img
-              src={wildbeasts}
+              src={heroImg}
               alt="Great Migration"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
@@ -162,7 +164,7 @@ export default function Home() {
           {/* Wide Image Block - Spans 2x1 */}
           <div className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto hidden md:block">
             <img
-              src={rhinoClose}
+              src={heroImg}
               alt="Savannah"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
