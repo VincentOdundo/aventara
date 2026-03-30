@@ -5,9 +5,6 @@ import genImg_3 from "../../../assets/cheater.jpeg";
 import genImg_4 from "../../../assets/nairobi/girfe-sunset.jpeg";
 import genImg_5 from "../../../assets/nairobi/sunset-exotic.jpeg";
 
-;;
-;;
-
 export const package4DayTanzania = {
   id: "4-day-tanzania",
   slug: "4-day-serengeti-ngorongoro-budget",
@@ -66,7 +63,7 @@ export const package4DayTanzania = {
       day: 2,
       title: "Full Day Explorer in Serengeti National Park",
       description:
-        "Rise early with the African sun for a spectacular full-day game drive in the Serengeti, undeniably one of Africa's most renowned and celebrated wildlife destinations. Today, the vast plains are yours to discover. With our expert guide leading the way, we'll traverse distinct ecosystems in search of the legendary Big Five—lions, leopards, rhinos, elephants, and buffalo—alongside a staggering array of other remarkable wildlife species. The Serengeti's seemingly endless savanna provides the ultimate backdrop for exceptional photography and intimate, undisturbed wildlife observation. Enjoy a scenic picnic lunch right in the heart of the wilderness before continuing your exploration until sunset.",
+        "Rise early with the African sun for a spectacular full-day game drive in the Serengeti, undeniably one of Africa's most renowned and celebrated wildlife destinations. Today, the vast plains are yours to discover. With our expert guide leading the way, we'll traverse distinct ecosystems in search of the legendary Big Five-lions, leopards, rhinos, elephants, and buffalo-alongside a staggering array of other remarkable wildlife species. The Serengeti's seemingly endless savanna provides the ultimate backdrop for exceptional photography and intimate, undisturbed wildlife observation. Enjoy a scenic picnic lunch right in the heart of the wilderness before continuing your exploration until sunset.",
       destination: "Serengeti National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Nyani Camp (Immersive Wilderness)",

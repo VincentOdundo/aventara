@@ -9,17 +9,12 @@ import genImg_7 from "../../../assets/lion pack.jpeg";
 import genImg_8 from "../../../assets/lion.jpeg";
 import genImg_9 from "../../../assets/treecheta.jpeg";
 
-;;
-;;
-;;
-;;
-;;
-
 export const package8DayMaraNakuruAmboseli = {
   id: "8-day-mara-nakuru-amboseli",
   slug: "8-day-mara-nakuru-amboseli-budget",
   title: "8-Days Masai Mara, Lake Nakuru and Amboseli Budget Safari",
-  subtitle: "An Epic 8-Day Safari: Discover Kenya's Big Five and Kilimanjaro Splendor",
+  subtitle:
+    "An Epic 8-Day Safari: Discover Kenya's Big Five and Kilimanjaro Splendor",
   days: 8,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
@@ -60,12 +55,16 @@ export const package8DayMaraNakuruAmboseli = {
       day: 1,
       title: "Arrival: Nairobi to Masai Mara's Golden Plains",
       description:
-        "Your transformational journey begins with an early pick up from your Nairobi hotel or airport. We embark on a descent through the dramatic escarpments of the Great Rift Valley, with stops for breathtaking panoramic photos. Arrive at your camp for a delightful lunch before heading out for an introductory evening game drive. The air is electric—predators begin to stir as the sun casts a golden glow over the savannah.",
+        "Your transformational journey begins with an early pick up from your Nairobi hotel or airport. We embark on a descent through the dramatic escarpments of the Great Rift Valley, with stops for breathtaking panoramic photos. Arrive at your camp for a delightful lunch before heading out for an introductory evening game drive. The air is electric-predators begin to stir as the sun casts a golden glow over the savannah.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_3,
-      highlights: ["Great Rift Valley Viewpoints", "First Evening Game Drive", "Sensational African Sunset"],        
+      highlights: [
+        "Great Rift Valley Viewpoints",
+        "First Evening Game Drive",
+        "Sensational African Sunset",
+      ],
     },
     {
       day: 2,
@@ -76,7 +75,11 @@ export const package8DayMaraNakuruAmboseli = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_4,
-      highlights: ["Thrilling Big Five Tracking", "Iconic Mara River Banks", "The Great Migration (seasonal)"],     
+      highlights: [
+        "Thrilling Big Five Tracking",
+        "Iconic Mara River Banks",
+        "The Great Migration (seasonal)",
+      ],
     },
     {
       day: 3,
@@ -103,7 +106,11 @@ export const package8DayMaraNakuruAmboseli = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_6,
-      highlights: ["Optional Lake Naivasha Stop", "Great Rift Valley Drive", "Lake Nakuru Arrival & Relaxation"],
+      highlights: [
+        "Optional Lake Naivasha Stop",
+        "Great Rift Valley Drive",
+        "Lake Nakuru Arrival & Relaxation",
+      ],
     },
     {
       day: 5,
@@ -156,7 +163,7 @@ export const package8DayMaraNakuruAmboseli = {
       day: 8,
       title: "Sunrise at Amboseli & Return to Nairobi",
       description:
-        "On your final morning, you may opt for an early dawn game drive to witness the savannah waking up as Kilimanjaro turns pink with the sunrise. Following a leisurely and reflective breakfast, we depart the wilderness and head back to Nairobi. Arriving in the afternoon, we bid you a fond farewell—leaving you with memories of an adventure that will echo in your heart forever.",
+        "On your final morning, you may opt for an early dawn game drive to witness the savannah waking up as Kilimanjaro turns pink with the sunrise. Following a leisurely and reflective breakfast, we depart the wilderness and head back to Nairobi. Arriving in the afternoon, we bid you a fond farewell-leaving you with memories of an adventure that will echo in your heart forever.",
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,

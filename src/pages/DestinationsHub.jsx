@@ -5,7 +5,6 @@ import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
 import { destinations } from "../data/destinations";
 import { ArrowRight, MapPin } from "lucide-react";
 
-
 import heroImg from "../assets/rhino.jpeg";
 
 export default function DestinationsHub() {
@@ -17,7 +16,8 @@ export default function DestinationsHub() {
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
         <img
-          src={heroImg} alt="Safari destinations"
+          src={heroImg}
+          alt="Safari destinations"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 img-overlay-full"></div>
@@ -29,7 +29,7 @@ export default function DestinationsHub() {
             Our Destinations
           </h1>
           <p className="text-white/80 mt-3 max-w-xl">
-            From Kenya's sweeping savannahs to Tanzania's ancient craters —
+            From Kenya's sweeping savannahs to Tanzania's ancient craters -
             explore the landscapes that make East Africa legendary.
           </p>
         </div>

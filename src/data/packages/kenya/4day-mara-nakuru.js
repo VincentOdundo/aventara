@@ -5,11 +5,6 @@ import genImg_3 from "../../../assets/lioness_open.jpeg";
 import genImg_4 from "../../../assets/lion.jpeg";
 import genImg_5 from "../../../assets/treecheta.jpeg";
 
-;;
-;;
-;;
-;;
-
 export const package4DayMaraNakuru = {
   id: "4-day-mara-nakuru",
   slug: "4-day-mara-nakuru-budget",
@@ -55,7 +50,7 @@ export const package4DayMaraNakuru = {
       title:
         "Discover the Great Rift Valley: Nairobi to the Majestic Masai Mara",
       description:
-        "Your once-in-a-lifetime safari begins with a premium early morning pick-up right from your Nairobi hotel or airport. Journey deep into the African landscape as we drive along the iconic Great Rift Valley, stopping at the most spectacular viewpoints to capture breathtaking photographs of the majestic escarpment. Descend into the legendary Maasai Mara territory, arriving just in time for a freshly prepared, authentic lunch at your scenic camp. After checking in and relaxing amidst nature, head out for your very first exhilarating evening game drive. Watch the savannah come alive as top predators—powerful lions, elusive leopards, and swift cheetahs—awaken to hunt under the golden African sunset. This is the Big Five territory you've been dreaming of. Secure your spot on this unforgettable tour today!",
+        "Your once-in-a-lifetime safari begins with a premium early morning pick-up right from your Nairobi hotel or airport. Journey deep into the African landscape as we drive along the iconic Great Rift Valley, stopping at the most spectacular viewpoints to capture breathtaking photographs of the majestic escarpment. Descend into the legendary Maasai Mara territory, arriving just in time for a freshly prepared, authentic lunch at your scenic camp. After checking in and relaxing amidst nature, head out for your very first exhilarating evening game drive. Watch the savannah come alive as top predators-powerful lions, elusive leopards, and swift cheetahs-awaken to hunt under the golden African sunset. This is the Big Five territory you've been dreaming of. Secure your spot on this unforgettable tour today!",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
@@ -71,7 +66,7 @@ export const package4DayMaraNakuru = {
       day: 2,
       title: "The Ultimate Wildlife Quest: Full-Day Masai Mara Game Drive",
       description:
-        "Awaken to the sounds of the African bush and enjoy an early breakfast before embarking on a premier full-day game drive across the vast, rolling plains of the Masai Mara. Armed with premium picnic lunch boxes, we venture deep into the heart of the reserve, tracking the legendary Big Five—lion, leopard, elephant, buffalo, and the rare rhinoceros. Keep your cameras ready for action-packed sightings of stealthy cheetahs, cackling hyenas, sweeping herds of wildebeests, and vibrant bird species. Depending on the season, we journey to the famous Mara River, the highly anticipated stage for the dramatic Great Migration river crossings—a true bucket-list spectacle! Enjoy your scenic picnic directly inside the national reserve, enveloped by pristine wilderness, before continuing your afternoon wildlife tracking. Book early to guarantee your front-row seat to the greatest show on earth.",
+        "Awaken to the sounds of the African bush and enjoy an early breakfast before embarking on a premier full-day game drive across the vast, rolling plains of the Masai Mara. Armed with premium picnic lunch boxes, we venture deep into the heart of the reserve, tracking the legendary Big Five-lion, leopard, elephant, buffalo, and the rare rhinoceros. Keep your cameras ready for action-packed sightings of stealthy cheetahs, cackling hyenas, sweeping herds of wildebeests, and vibrant bird species. Depending on the season, we journey to the famous Mara River, the highly anticipated stage for the dramatic Great Migration river crossings-a true bucket-list spectacle! Enjoy your scenic picnic directly inside the national reserve, enveloped by pristine wilderness, before continuing your afternoon wildlife tracking. Book early to guarantee your front-row seat to the greatest show on earth.",
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
@@ -88,7 +83,7 @@ export const package4DayMaraNakuru = {
       title:
         "From Savannah to Sanctuary: Masai Mara to Lake Nakuru National Park",
       description:
-        "After a hearty breakfast, bid farewell to the sweeping plains of the Mara and begin your journey toward the majestic Lake Nakuru National Park. Enjoy an incredibly picturesque drive through the dramatic landscapes of the Great Rift Valley, passing rural Kenyan communities and gorgeous scenic vistas. Arrive at your comfortable Nakuru hotel just in time to savor a delicious lunch. In the afternoon, dive right into your next adventure with a specialized game drive across the Lake Nakuru ecosystem. Internationally renowned as a premier rhino sanctuary, this is your best opportunity to photograph endangered black and white rhinos up close in their natural habitat. Marvel at the striking contrast of sweeping alkaline lake shores, occasionally painted pink by seasonal flocks of flamingos, and the magnificent Rothschild giraffes. Don't miss this incredible wildlife haven—reserve your journey now.",
+        "After a hearty breakfast, bid farewell to the sweeping plains of the Mara and begin your journey toward the majestic Lake Nakuru National Park. Enjoy an incredibly picturesque drive through the dramatic landscapes of the Great Rift Valley, passing rural Kenyan communities and gorgeous scenic vistas. Arrive at your comfortable Nakuru hotel just in time to savor a delicious lunch. In the afternoon, dive right into your next adventure with a specialized game drive across the Lake Nakuru ecosystem. Internationally renowned as a premier rhino sanctuary, this is your best opportunity to photograph endangered black and white rhinos up close in their natural habitat. Marvel at the striking contrast of sweeping alkaline lake shores, occasionally painted pink by seasonal flocks of flamingos, and the magnificent Rothschild giraffes. Don't miss this incredible wildlife haven-reserve your journey now.",
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
@@ -104,7 +99,7 @@ export const package4DayMaraNakuru = {
       day: 4,
       title: "Final Wildlife Encounters: Lake Nakuru back to bustling Nairobi",
       description:
-        "Rise early for one last incredible morning game drive in Lake Nakuru National Park. The cool morning air offers the absolute best lighting for wildlife photography and active animal spotting. Keep your eyes peeled for elusive leopards lounging in the yellow fever trees and lions patrolling their territory before the sun gets too hot. After maximizing every final moment of wildlife viewing, we gently exit the park. Sit back in your comfortable safari vehicle as we ascend the Great Rift Valley, reflecting on four days of life-changing memories, Big Five encounters, and world-class nature. We'll arrive back in Nairobi in the afternoon, ensuring a seamless drop-off at your hotel or the airport for your onward journey. Transform your travel dreams into reality—contact us today to book this spectacular Kenyan itinerary!",
+        "Rise early for one last incredible morning game drive in Lake Nakuru National Park. The cool morning air offers the absolute best lighting for wildlife photography and active animal spotting. Keep your eyes peeled for elusive leopards lounging in the yellow fever trees and lions patrolling their territory before the sun gets too hot. After maximizing every final moment of wildlife viewing, we gently exit the park. Sit back in your comfortable safari vehicle as we ascend the Great Rift Valley, reflecting on four days of life-changing memories, Big Five encounters, and world-class nature. We'll arrive back in Nairobi in the afternoon, ensuring a seamless drop-off at your hotel or the airport for your onward journey. Transform your travel dreams into reality-contact us today to book this spectacular Kenyan itinerary!",
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,

@@ -12,18 +12,12 @@ import genImg_10 from "../../../assets/leapard-car.jpeg";
 import genImg_11 from "../../../assets/nairobi/girfe-sunset.jpeg";
 import genImg_12 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
 
-;;
-;;
-;;
-;;
-;;
-;;
-
 export const package12DayKenyaTanzaniaSerengeti = {
   id: "12-day-kenya-tanzania-serengeti",
   slug: "12-day-serengeti-ngorongoro-focus",
-  title: "12-Days Kenya & Tanzania - Serengeti & Ngorongoro Budget Safari",   
-  subtitle: "Epic Migration Safari: An Extended Deep Dive into the Serengti & Maasai Mara",
+  title: "12-Days Kenya & Tanzania - Serengeti & Ngorongoro Budget Safari",
+  subtitle:
+    "Epic Migration Safari: An Extended Deep Dive into the Serengti & Maasai Mara",
   days: 12,
   country: "combined",
   destinations: [
@@ -78,18 +72,26 @@ export const package12DayKenyaTanzaniaSerengeti = {
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_3,
-      highlights: ["Great Rift Valley Drop", "Explosive First Game Drive", "Sunset on the Savannah"],
+      highlights: [
+        "Great Rift Valley Drop",
+        "Explosive First Game Drive",
+        "Sunset on the Savannah",
+      ],
     },
     {
       day: 2,
       title: "Epic Encounters: A Full Day in the Masai Mara",
       description:
-        "With a packed breakfast and lunch securely stowed, today is an all-out assault on the wild! Spend the entire daylight scanning the Mara’s vast plains for the venerated Big Five—lion, leopard, rhino, elephant, and buffalo. If the time is right, you'll be driven straight to the Mara River, holding your breath to witness thousands of wildebeest braving crocodile-infested waters.",
+        "With a packed breakfast and lunch securely stowed, today is an all-out assault on the wild! Spend the entire daylight scanning the Mara’s vast plains for the venerated Big Five-lion, leopard, rhino, elephant, and buffalo. If the time is right, you'll be driven straight to the Mara River, holding your breath to witness thousands of wildebeest braving crocodile-infested waters.",
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_4,
-      highlights: ["Unrestricted Big Five Check", "The Famed Mara River", "Witnessing the Great Migration (seasonal)"],     
+      highlights: [
+        "Unrestricted Big Five Check",
+        "The Famed Mara River",
+        "Witnessing the Great Migration (seasonal)",
+      ],
     },
     {
       day: 3,
@@ -100,7 +102,11 @@ export const package12DayKenyaTanzaniaSerengeti = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_5,
-      highlights: ["Elusive Predator Tracking", "Dynamic Herd Behaviour", "World-Class Avian Photography"],    
+      highlights: [
+        "Elusive Predator Tracking",
+        "Dynamic Herd Behaviour",
+        "World-Class Avian Photography",
+      ],
     },
     {
       day: 4,
@@ -111,7 +117,11 @@ export const package12DayKenyaTanzaniaSerengeti = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_6,
-      highlights: ["Optional Hippo Boat Ride", "Stunning Great Rift Ecosystem", "Tranquil Evening Arrival"],
+      highlights: [
+        "Optional Hippo Boat Ride",
+        "Stunning Great Rift Ecosystem",
+        "Tranquil Evening Arrival",
+      ],
     },
     {
       day: 5,
@@ -133,7 +143,7 @@ export const package12DayKenyaTanzaniaSerengeti = {
       day: 6,
       title: "Shadow of the Mountain: Lake Nakuru to Amboseli",
       description:
-        "Our compass points south towards the famed Amboseli National Park. We travel across dynamic Kenyan geographies, transitioning from lush central woodlands to arid, dramatic plains. Reaching our camp by late afternoon, you'll be greeted by what is undoubtedly the most famous backdrop in African photography—the magnificent snowy crown of Mount Kilimanjaro.",
+        "Our compass points south towards the famed Amboseli National Park. We travel across dynamic Kenyan geographies, transitioning from lush central woodlands to arid, dramatic plains. Reaching our camp by late afternoon, you'll be greeted by what is undoubtedly the most famous backdrop in African photography-the magnificent snowy crown of Mount Kilimanjaro.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
@@ -148,7 +158,7 @@ export const package12DayKenyaTanzaniaSerengeti = {
       day: 7,
       title: "The Land of Giants: Full-Day Amboseli Expedition",
       description:
-        "Amboseli commands respect as the optimal location in Africa to get intimately close to massive, free-ranging elephant herds. You’ll spend the morning capturing sensational photos of these giants dwarfed by Kilimanjaro. As the day heats up, we patrol the central emerald swamps—a vital oasis drawing vast quantities of buffalo, hippo, and stealthy big cats to its edges.",
+        "Amboseli commands respect as the optimal location in Africa to get intimately close to massive, free-ranging elephant herds. You’ll spend the morning capturing sensational photos of these giants dwarfed by Kilimanjaro. As the day heats up, we patrol the central emerald swamps-a vital oasis drawing vast quantities of buffalo, hippo, and stealthy big cats to its edges.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
@@ -179,7 +189,7 @@ export const package12DayKenyaTanzaniaSerengeti = {
       day: 9,
       title: "Towards the Endless Plains: Arusha to the Serengeti",
       description:
-        "Post-breakfast, the excitement peaks as we ascend the winding roads of the Ngorongoro Highlands, delivering sweeping vistas of dormant volcanoes. Continuing westward, we pass under the gates of the mighty Serengeti National Park. You enter right on time for lunch, immediately followed by an explosive afternoon game drive spanning the world’s most recognizable wildlife theater.",     
+        "Post-breakfast, the excitement peaks as we ascend the winding roads of the Ngorongoro Highlands, delivering sweeping vistas of dormant volcanoes. Continuing westward, we pass under the gates of the mighty Serengeti National Park. You enter right on time for lunch, immediately followed by an explosive afternoon game drive spanning the world’s most recognizable wildlife theater.",
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
@@ -210,7 +220,7 @@ export const package12DayKenyaTanzaniaSerengeti = {
       day: 11,
       title: "Into the Cauldron: Serengeti to the Ngorongoro Crater",
       description:
-        "Capitalize on one final dawn Serengeti game drive before starting our climb back up. We ascend to the lush rim of the Ngorongoro Crater—and then drop 600 meters straight down into it! Experiencing an unbroken caldera harboring 25,000 large mammals is totally unique globally. Spend the afternoon locked onto the trails of massive tuskers, flamingos, and the elusive black rhino.",
+        "Capitalize on one final dawn Serengeti game drive before starting our climb back up. We ascend to the lush rim of the Ngorongoro Crater-and then drop 600 meters straight down into it! Experiencing an unbroken caldera harboring 25,000 large mammals is totally unique globally. Spend the afternoon locked onto the trails of massive tuskers, flamingos, and the elusive black rhino.",
       destination: "Ngorongoro Crater",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite",
@@ -226,7 +236,7 @@ export const package12DayKenyaTanzaniaSerengeti = {
       day: 12,
       title: "Crater Rim Reflection & Safe Return to Arusha",
       description:
-        "Enjoy a final relaxed, panoramic breakfast looking completely out over the Ngorongoro Crater from your elevated lodge. As we wind down our immense 12-day adventure, we take a spectacularly scenic morning drive right back to Arusha. Here we say an emotional goodbye—a drop-off at your hotel or the international airport brings an epic expedition to a victorious close.",
+        "Enjoy a final relaxed, panoramic breakfast looking completely out over the Ngorongoro Crater from your elevated lodge. As we wind down our immense 12-day adventure, we take a spectacularly scenic morning drive right back to Arusha. Here we say an emotional goodbye-a drop-off at your hotel or the international airport brings an epic expedition to a victorious close.",
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,

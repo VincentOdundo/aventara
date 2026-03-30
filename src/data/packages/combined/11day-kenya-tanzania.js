@@ -11,17 +11,12 @@ import genImg_9 from "../../../assets/nairobi/sunset-exotic.jpeg";
 import genImg_10 from "../../../assets/lion pack.jpeg";
 import genImg_11 from "../../../assets/lion-lonely.jpeg";
 
-;;
-;;
-;;
-;;
-;;
-
 export const package11DayKenyaTanzania = {
   id: "11-day-kenya-tanzania",
   slug: "11-day-kenya-tanzania-budget",
   title: "11-Days Kenya and Tanzania Budget Safari",
-  subtitle: "An Epic Cross-Border Adventure: The Best of East Africa's Wildlife",
+  subtitle:
+    "An Epic Cross-Border Adventure: The Best of East Africa's Wildlife",
   days: 11,
   country: "combined",
   destinations: [
@@ -71,23 +66,31 @@ export const package11DayKenyaTanzania = {
       day: 1,
       title: "Departure from Nairobi: Discovering the Maasai Mara",
       description:
-        "Your adventure commences right from your Nairobi hotel or the airport! Meet your driver-guide and set off down the walls of the Great Rift Valley, enjoying postcard-worthy viewpoints. We arrive at the Masai Mara just in time to savor a wonderful lunch. Once refreshed, we launch into an unforgettable evening game drive—your first real taste of wild Africa.",
+        "Your adventure commences right from your Nairobi hotel or the airport! Meet your driver-guide and set off down the walls of the Great Rift Valley, enjoying postcard-worthy viewpoints. We arrive at the Masai Mara just in time to savor a wonderful lunch. Once refreshed, we launch into an unforgettable evening game drive-your first real taste of wild Africa.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_3,
-      highlights: ["Great Rift Valley Drop", "First Evening Safari", "Welcome to Masai Mara"],
+      highlights: [
+        "Great Rift Valley Drop",
+        "First Evening Safari",
+        "Welcome to Masai Mara",
+      ],
     },
     {
       day: 2,
       title: "The Ultimate Mara Expedition: In Search of Giants",
       description:
-        "Leave camp as dawn breaks, carrying a packed picnic lunch to fuel a monumental full-day safari. We meticulously comb the sprawling golden savannahs, scanning carefully for the Big Five—lions, elephants, leopards, buffalo, and rhinos. At the Mara River, witness the historic sites where immense herds bravely cross crocodile-infested waters during the Great Migration.",
+        "Leave camp as dawn breaks, carrying a packed picnic lunch to fuel a monumental full-day safari. We meticulously comb the sprawling golden savannahs, scanning carefully for the Big Five-lions, elephants, leopards, buffalo, and rhinos. At the Mara River, witness the historic sites where immense herds bravely cross crocodile-infested waters during the Great Migration.",
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_4,
-      highlights: ["Big Five Tracking", "Legendary Mara River", "The Great Migration Witness (seasonal)"],     
+      highlights: [
+        "Big Five Tracking",
+        "Legendary Mara River",
+        "The Great Migration Witness (seasonal)",
+      ],
     },
     {
       day: 3,
@@ -98,7 +101,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_5,
-      highlights: ["Intensive Wildlife Photography", "Untamed Predator Action", "Vast Savannah Views"],
+      highlights: [
+        "Intensive Wildlife Photography",
+        "Untamed Predator Action",
+        "Vast Savannah Views",
+      ],
     },
     {
       day: 4,
@@ -109,7 +116,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_6,
-      highlights: ["Optional Lake Naivasha Safari", "Beautiful Rift Valley Landscapes", "Arrive and Unwind"],
+      highlights: [
+        "Optional Lake Naivasha Safari",
+        "Beautiful Rift Valley Landscapes",
+        "Arrive and Unwind",
+      ],
     },
     {
       day: 5,
@@ -120,18 +131,26 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_7,
-      highlights: ["Renowned Rhino Sanctuary", "Endangered Rothschild Giraffes", "Incredible Avian Flocks"],
+      highlights: [
+        "Renowned Rhino Sanctuary",
+        "Endangered Rothschild Giraffes",
+        "Incredible Avian Flocks",
+      ],
     },
     {
       day: 6,
       title: "Tracing the Horizon: Lake Nakuru to Amboseli",
       description:
-        "Today traces a breathtaking cross-country path from the central Rift Valley to the southern borders. After breakfast, we drive past diverse Kenyan landscapes right to the boundary of Amboseli National Park. As we pull into camp in the late afternoon, keep an eye on the horizon—Mount Kilimanjaro often sheds its cloud cover just before sunset!",
+        "Today traces a breathtaking cross-country path from the central Rift Valley to the southern borders. After breakfast, we drive past diverse Kenyan landscapes right to the boundary of Amboseli National Park. As we pull into camp in the late afternoon, keep an eye on the horizon-Mount Kilimanjaro often sheds its cloud cover just before sunset!",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
       image: genImg_8,
-      highlights: ["Scenic Cross-Country Journey", "The Magic of Mount Kilimanjaro", "Elephant Domain"],
+      highlights: [
+        "Scenic Cross-Country Journey",
+        "The Magic of Mount Kilimanjaro",
+        "Elephant Domain",
+      ],
     },
     {
       day: 7,
@@ -142,7 +161,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
       image: genImg_9,
-      highlights: ["Massive Elephant Herds", "Picture-Perfect Kilimanjaro Views", "Wildlife-Rich Swamps"],
+      highlights: [
+        "Massive Elephant Herds",
+        "Picture-Perfect Kilimanjaro Views",
+        "Wildlife-Rich Swamps",
+      ],
     },
     {
       day: 8,
@@ -153,7 +176,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast & Dinner",
       accommodation: "Charity Hotel",
       image: null,
-      highlights: ["Seamless Border Crossing", "Welcome to Tanzania", "Expert Safari Briefing"],     
+      highlights: [
+        "Seamless Border Crossing",
+        "Welcome to Tanzania",
+        "Expert Safari Briefing",
+      ],
     },
     {
       day: 9,
@@ -164,7 +191,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
       image: genImg_10,
-      highlights: ["Scenic Highlands Drive", "Gateway to the Serengeti", "First Tanzanian Game Drive"],
+      highlights: [
+        "Scenic Highlands Drive",
+        "Gateway to the Serengeti",
+        "First Tanzanian Game Drive",
+      ],
     },
     {
       day: 10,
@@ -191,7 +222,11 @@ export const package11DayKenyaTanzania = {
       meals: "Breakfast & Lunch",
       accommodation: null,
       image: null,
-      highlights: ["Sweeping Sunrise Views", "Scenic Journey Back", "Triumphant Safari Conclusion"],
+      highlights: [
+        "Sweeping Sunrise Views",
+        "Scenic Journey Back",
+        "Triumphant Safari Conclusion",
+      ],
     },
   ],
 };

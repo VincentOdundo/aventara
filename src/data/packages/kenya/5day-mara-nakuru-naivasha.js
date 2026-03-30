@@ -6,11 +6,6 @@ import genImg_4 from "../../../assets/cheater.jpeg";
 import genImg_5 from "../../../assets/lion pack.jpeg";
 import genImg_6 from "../../../assets/treecheta.jpeg";
 
-;;
-;;
-;;
-;;
-
 export const package5DayMaraNakuruNaivasha = {
   id: "5-day-mara-nakuru-naivasha",
   slug: "5-day-triple-gem-kenya",
@@ -60,7 +55,7 @@ export const package5DayMaraNakuruNaivasha = {
       day: 1,
       title: "The Adventure Begins: Nairobi to the Majestic Masai Mara",
       description:
-        "Your spectacular 5-day Kenyan journey kicks off with a prompt pick-up from your Nairobi hotel or airport. Journey deep into the African wilderness as we descend into the majestic Great Rift Valley. We'll stop at the famous viewpoint, allowing you to capture stunning panoramic photographs of the dramatic escarpment before we continue to the legendary Maasai Mara. You'll arrive in perfect time for a hearty lunch at your authentic safari camp, followed by a brief period of relaxation. As the fierce African sun begins to soften, head out for a thrilling evening game drive. This is prime time to spot iconic apex predators—fierce lions, agile leopards, and towering giraffes—roaming the savannah. Watch the wilderness come alive under a breathtaking golden sunset. Ready to step into a documentary? Secure your booking now!",
+        "Your spectacular 5-day Kenyan journey kicks off with a prompt pick-up from your Nairobi hotel or airport. Journey deep into the African wilderness as we descend into the majestic Great Rift Valley. We'll stop at the famous viewpoint, allowing you to capture stunning panoramic photographs of the dramatic escarpment before we continue to the legendary Maasai Mara. You'll arrive in perfect time for a hearty lunch at your authentic safari camp, followed by a brief period of relaxation. As the fierce African sun begins to soften, head out for a thrilling evening game drive. This is prime time to spot iconic apex predators-fierce lions, agile leopards, and towering giraffes-roaming the savannah. Watch the wilderness come alive under a breathtaking golden sunset. Ready to step into a documentary? Secure your booking now!",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
@@ -93,7 +88,7 @@ export const package5DayMaraNakuruNaivasha = {
       title:
         "Journey Through the Rift: Masai Mara to Lake Nakuru (Optional Naivasha Stop)",
       description:
-        "Savor your final Mara sunrise and breakfast before checking out and setting your sights on the magnificent Lake Nakuru National Park. The drive offers incredibly scenic views along the floor of the Great Rift Valley. En route, time permitting, we can make an unforgettable stop at the beautiful freshwater Lake Naivasha. Here, you have the highly recommended option to embark on a serene boat ride ($20) amongst massive hippo pods, or take a phenomenal guided walking safari on Crescent Island ($33) walking freely alongside gentle giraffes and zebras. Afterwards, we proceed directly to Lake Nakuru, arriving in the afternoon to check into your comfortable hotel. Relax, unwind, and prepare for a rhino-filled adventure the next morning. Don't wait—upgrade your Rift Valley experience by booking this multi-park tour today!",
+        "Savor your final Mara sunrise and breakfast before checking out and setting your sights on the magnificent Lake Nakuru National Park. The drive offers incredibly scenic views along the floor of the Great Rift Valley. En route, time permitting, we can make an unforgettable stop at the beautiful freshwater Lake Naivasha. Here, you have the highly recommended option to embark on a serene boat ride ($20) amongst massive hippo pods, or take a phenomenal guided walking safari on Crescent Island ($33) walking freely alongside gentle giraffes and zebras. Afterwards, we proceed directly to Lake Nakuru, arriving in the afternoon to check into your comfortable hotel. Relax, unwind, and prepare for a rhino-filled adventure the next morning. Don't wait-upgrade your Rift Valley experience by booking this multi-park tour today!",
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",

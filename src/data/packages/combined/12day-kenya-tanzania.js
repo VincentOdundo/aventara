@@ -12,18 +12,12 @@ import genImg_10 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
 import genImg_11 from "../../../assets/lion pack.jpeg";
 import genImg_12 from "../../../assets/lion-lonely.jpeg";
 
-;;
-;;
-;;
-;;
-;;
-;;
-
 export const package12DayKenyaTanzania = {
   id: "12-day-kenya-tanzania",
   slug: "12-day-kenya-tanzania-complete",
   title: "12-Days Kenya & Tanzania Budget Safari",
-  subtitle: "The Complete East African Expedition: From the Mara to the Serengeti & Beyond",
+  subtitle:
+    "The Complete East African Expedition: From the Mara to the Serengeti & Beyond",
   days: 12,
   country: "combined",
   destinations: [
@@ -80,18 +74,26 @@ export const package12DayKenyaTanzania = {
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_3,
-      highlights: ["Great Rift Valley Viewpoints", "Thrilling Introductory Game Drive", "Sunset under Acacia Trees"],
+      highlights: [
+        "Great Rift Valley Viewpoints",
+        "Thrilling Introductory Game Drive",
+        "Sunset under Acacia Trees",
+      ],
     },
     {
       day: 2,
       title: "The Heart of the Action: Full-Day Masai Mara Explorer",
       description:
-        "Armed with a picnic lunch and an unyielding sense of adventure, we devote an entire day to conquering the Masai Mara. Traverse vast eco-zones in search of the coveted Big Five. You will journey to the historic Mara River, the perilous crossing point for over two million wildebeest and zebra during the Great Migration. An undisputed highlight of any African safari!",  
+        "Armed with a picnic lunch and an unyielding sense of adventure, we devote an entire day to conquering the Masai Mara. Traverse vast eco-zones in search of the coveted Big Five. You will journey to the historic Mara River, the perilous crossing point for over two million wildebeest and zebra during the Great Migration. An undisputed highlight of any African safari!",
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_4,
-      highlights: ["Extensive Big Five Tracking", "Legendary Mara River Crossings", "The Great Migration Witness (seasonal)"],     
+      highlights: [
+        "Extensive Big Five Tracking",
+        "Legendary Mara River Crossings",
+        "The Great Migration Witness (seasonal)",
+      ],
     },
     {
       day: 3,
@@ -102,51 +104,71 @@ export const package12DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_5,
-      highlights: ["Patient Wildlife Photography", "Exceptional Predator Sightings", "Vast Grazing Birdlife"],
+      highlights: [
+        "Patient Wildlife Photography",
+        "Exceptional Predator Sightings",
+        "Vast Grazing Birdlife",
+      ],
     },
     {
       day: 4,
       title: "Rift Valley Drive: Masai Mara to Lake Nakuru",
       description:
-        "Saying goodbye to the boundless plains of the Mara, we travel deeper into the Great Rift Valley. Enjoy the scenic journey, and perhaps indulge in an optional detour to Lake Naivasha for a serene hippopotamus boat ride. Arrive at the lush, forested boundaries of Lake Nakuru National Park with time to relax and recharge for tomorrow's incredible rhino encounters.",    
+        "Saying goodbye to the boundless plains of the Mara, we travel deeper into the Great Rift Valley. Enjoy the scenic journey, and perhaps indulge in an optional detour to Lake Naivasha for a serene hippopotamus boat ride. Arrive at the lush, forested boundaries of Lake Nakuru National Park with time to relax and recharge for tomorrow's incredible rhino encounters.",
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_6,
-      highlights: ["Optional Lake Naivasha Safari", "Iconic Great Rift Valley Scenery", "Arrival at Nakuru"],
+      highlights: [
+        "Optional Lake Naivasha Safari",
+        "Iconic Great Rift Valley Scenery",
+        "Arrival at Nakuru",
+      ],
     },
     {
       day: 5,
       title: "Lake Nakuru: Rhino Sanctuaries and Pink Waters",
       description:
-        "Embrace a spectacular full-day focus on Lake Nakuru, recognized as a globally crucial rhinoceros sanctuary. You'll likely encounter both the heavy-set black rhino and the more docile white rhino. Beyond rhinos, the park is famous for massive seasonal flocks of pink flamingos, towering Rothschild giraffes, and tree-climbing lions slumbering on thick branches.",       
+        "Embrace a spectacular full-day focus on Lake Nakuru, recognized as a globally crucial rhinoceros sanctuary. You'll likely encounter both the heavy-set black rhino and the more docile white rhino. Beyond rhinos, the park is famous for massive seasonal flocks of pink flamingos, towering Rothschild giraffes, and tree-climbing lions slumbering on thick branches.",
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_7,
-      highlights: ["Exclusive Rhino Safaris", "Unique Tree-Climbing Lions", "Flamingo Spectacles (seasonal)"],
+      highlights: [
+        "Exclusive Rhino Safaris",
+        "Unique Tree-Climbing Lions",
+        "Flamingo Spectacles (seasonal)",
+      ],
     },
     {
       day: 6,
       title: "Journey to the Giants: Lake Nakuru to Amboseli",
       description:
-        "Departing the central Rift Valley, we pass sprawling ranches and local communities en route to the arid, dramatic landscapes of Amboseli National Park in southern Kenya. Arriving into camp in the late afternoon, you'll be greeted by one of the most famous sights on Earth—the immense, snow-capped roof of Africa, Mount Kilimanjaro, breaking through the clouds.",
+        "Departing the central Rift Valley, we pass sprawling ranches and local communities en route to the arid, dramatic landscapes of Amboseli National Park in southern Kenya. Arriving into camp in the late afternoon, you'll be greeted by one of the most famous sights on Earth-the immense, snow-capped roof of Africa, Mount Kilimanjaro, breaking through the clouds.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
       image: genImg_8,
-      highlights: ["Cross-Country Safari", "First Sighting of Mount Kilimanjaro", "Vast Elephant Herds"],
+      highlights: [
+        "Cross-Country Safari",
+        "First Sighting of Mount Kilimanjaro",
+        "Vast Elephant Herds",
+      ],
     },
     {
       day: 7,
       title: "Amboseli Revealed: Elephants in the Shadow of Kilimanjaro",
       description:
-        "Your full day in Amboseli is a masterclass in iconic African photography. The park guarantees extraordinary close-up encounters with some of the continent's largest, oldest elephants. We traverse dry beds and lush, emerald swamps packed with hippopotamuses and vibrant waterbirds, all set against the breathtaking volcanic backdrop of majestic Kilimanjaro.",     
+        "Your full day in Amboseli is a masterclass in iconic African photography. The park guarantees extraordinary close-up encounters with some of the continent's largest, oldest elephants. We traverse dry beds and lush, emerald swamps packed with hippopotamuses and vibrant waterbirds, all set against the breathtaking volcanic backdrop of majestic Kilimanjaro.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
       image: genImg_9,
-      highlights: ["Massive Free-Roaming Elephants", "Unparalleled Kilimanjaro Views", "Wildlife-Rich Volcanic Swamps"],
+      highlights: [
+        "Massive Free-Roaming Elephants",
+        "Unparalleled Kilimanjaro Views",
+        "Wildlife-Rich Volcanic Swamps",
+      ],
     },
     {
       day: 8,
@@ -157,7 +179,11 @@ export const package12DayKenyaTanzania = {
       meals: "Breakfast & Dinner",
       accommodation: "Charity Hotel",
       image: null,
-      highlights: ["Seamless International Border Crossing", "Welcome to Tanzania", "Expert Safari Briefing"],     
+      highlights: [
+        "Seamless International Border Crossing",
+        "Welcome to Tanzania",
+        "Expert Safari Briefing",
+      ],
     },
     {
       day: 9,
@@ -168,18 +194,26 @@ export const package12DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
       image: genImg_10,
-      highlights: ["Unreal Tarangire Elephant Herds", "Ancient Super-Sized Baobabs", "Thrilling Serengeti Entry"],   
+      highlights: [
+        "Unreal Tarangire Elephant Herds",
+        "Ancient Super-Sized Baobabs",
+        "Thrilling Serengeti Entry",
+      ],
     },
     {
       day: 10,
       title: "Endless Horizons: A Full Day in the Serengeti",
       description:
-        "Wake up in the most renowned wildlife sanctuary in the world—The Serengeti. We harness a full day exploring these 'endless plains'. Expect heart-pounding predator-prey interactions as we monitor high-density lion prides and solitary cheetahs. Depending on the season, you will witness the thundering hooves of the Great Migration, stretching visually to the horizon.",    
+        "Wake up in the most renowned wildlife sanctuary in the world-The Serengeti. We harness a full day exploring these 'endless plains'. Expect heart-pounding predator-prey interactions as we monitor high-density lion prides and solitary cheetahs. Depending on the season, you will witness the thundering hooves of the Great Migration, stretching visually to the horizon.",
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
       image: genImg_11,
-      highlights: ["Epic Great Migration Focus", "High-Intensity Predator Tracking", "World-Class Nature Photography"],
+      highlights: [
+        "Epic Great Migration Focus",
+        "High-Intensity Predator Tracking",
+        "World-Class Nature Photography",
+      ],
     },
     {
       day: 11,
@@ -190,7 +224,12 @@ export const package12DayKenyaTanzania = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite",
       image: genImg_12,
-      highlights: ["Highland Safari Ascent", "Breathtaking 600m Crater Descent", "Unmatched Animal Density", "Rare Black Rhino Quest"],
+      highlights: [
+        "Highland Safari Ascent",
+        "Breathtaking 600m Crater Descent",
+        "Unmatched Animal Density",
+        "Rare Black Rhino Quest",
+      ],
     },
     {
       day: 12,
@@ -201,7 +240,11 @@ export const package12DayKenyaTanzania = {
       meals: "Breakfast & Lunch",
       accommodation: null,
       image: null,
-      highlights: ["Panoramic Crater Rim Views", "Scenic Descent to Arusha", "A Triumphant Safari Conclusion"],      
+      highlights: [
+        "Panoramic Crater Rim Views",
+        "Scenic Descent to Arusha",
+        "A Triumphant Safari Conclusion",
+      ],
     },
   ],
 };

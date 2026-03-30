@@ -42,7 +42,7 @@ export const packageHalfDayNairobi = {
       day: 1,
       title: "The Ultimate Half-Day Nairobi City Explorer Tour",
       description:
-        "Maximize your time in Kenya with our sensational half-day tour of Nairobi city! Dive deep into the vibrant culture, rich history, and bustling energy of East Africa's most dynamic metropolis. We'll whisk you through the beating heart of the city center, revealing hidden gems, iconic cultural sites, lively local markets, and monumental landmarks you simply can't miss. Specially designed for discerning travelers with limited time or those on a quick transit layover, this unforgettable excursion guarantees a profound connection with Nairobi's unique spirit without demanding a full day's commitment. Don't just pass through—experience the magic of Nairobi!",
+        "Maximize your time in Kenya with our sensational half-day tour of Nairobi city! Dive deep into the vibrant culture, rich history, and bustling energy of East Africa's most dynamic metropolis. We'll whisk you through the beating heart of the city center, revealing hidden gems, iconic cultural sites, lively local markets, and monumental landmarks you simply can't miss. Specially designed for discerning travelers with limited time or those on a quick transit layover, this unforgettable excursion guarantees a profound connection with Nairobi's unique spirit without demanding a full day's commitment. Don't just pass through-experience the magic of Nairobi!",
       destination: "Nairobi",
       meals:
         "None (Optional stops for authentic local cuisine or premium coffee can be arranged)",

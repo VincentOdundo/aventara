@@ -369,7 +369,7 @@ export default function Home() {
             Iconic Destinations
           </h2>
           <p className="text-on-surface-variant max-w-2xl leading-relaxed">
-            From Kenya's sweeping savannahs to Tanzania's ancient craters —
+            From Kenya's sweeping savannahs to Tanzania's ancient craters -
             explore the landscapes that make East Africa legendary.
           </p>
         </AnimatedSection>

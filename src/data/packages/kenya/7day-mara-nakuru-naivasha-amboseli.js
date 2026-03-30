@@ -8,17 +8,12 @@ import genImg_6 from "../../../assets/lion.jpeg";
 import genImg_7 from "../../../assets/cheater.jpeg";
 import genImg_8 from "../../../assets/leapard-car.jpeg";
 
-;;
-;;
-;;
-;;
-;;
-
 export const package7DayMaraNakuruNaivashaAmboseli = {
   id: "7-day-mara-nakuru-naivasha-amboseli",
   slug: "7-day-mara-nakuru-naivasha-amboseli-budget",
-  title: "7-Days Masai Mara, Lake Nakuru, Naivasha and Amboseli Budget Safari", 
-  subtitle: "Experience the Ultimate 7-Day Kenyan Adventure: Big Five, Rift Valley & Mount Kilimanjaro",
+  title: "7-Days Masai Mara, Lake Nakuru, Naivasha and Amboseli Budget Safari",
+  subtitle:
+    "Experience the Ultimate 7-Day Kenyan Adventure: Big Five, Rift Valley & Mount Kilimanjaro",
   days: 7,
   country: "kenya",
   destinations: [
@@ -71,18 +66,26 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_3,
-      highlights: ["Panoramic Great Rift Valley Views", "Thrilling Sunset Game Drive", "Welcome to the Savannah"],
+      highlights: [
+        "Panoramic Great Rift Valley Views",
+        "Thrilling Sunset Game Drive",
+        "Welcome to the Savannah",
+      ],
     },
     {
       day: 2,
       title: "Full-Day Masai Mara: In Search of the Big Five",
       description:
-        "Rise with the African sun for a spectacular full-day game drive across the boundless plains of the Masai Mara. Armed with a delicious picnic lunch, we will journey deep into the reserve, exploring varied habitats. Keep your camera ready as we track down the legendary Big Five—lions, leopards, rhinos, elephants, and cape buffaloes. If the season is right, witness the dramatic Great Migration river crossings at the Mara River!",
+        "Rise with the African sun for a spectacular full-day game drive across the boundless plains of the Masai Mara. Armed with a delicious picnic lunch, we will journey deep into the reserve, exploring varied habitats. Keep your camera ready as we track down the legendary Big Five-lions, leopards, rhinos, elephants, and cape buffaloes. If the season is right, witness the dramatic Great Migration river crossings at the Mara River!",
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       image: genImg_4,
-      highlights: ["Unrestricted Big Five Tracking", "Legendary Mara River", "Spectacular Great Migration (seasonal)"],     
+      highlights: [
+        "Unrestricted Big Five Tracking",
+        "Legendary Mara River",
+        "Spectacular Great Migration (seasonal)",
+      ],
     },
     {
       day: 3,
@@ -93,7 +96,11 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
       image: genImg_5,
-      highlights: ["Optional Lake Naivasha Excursion", "Great Rift Valley Drive", "Relaxing Lodge Arrival"],
+      highlights: [
+        "Optional Lake Naivasha Excursion",
+        "Great Rift Valley Drive",
+        "Relaxing Lodge Arrival",
+      ],
     },
     {
       day: 4,
@@ -114,7 +121,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       day: 5,
       title: "Hell's Gate to Amboseli: Geothermal Wonders to Mountain Peaks",
       description:
-        "Start your day with an exhilarating visit to Hell's Gate National Park, one of the few places in Africa where you can safely cycle or walk amidst wild grazing animals! After soaking in the towering cliffs and geothermal energy, we depart for Amboseli. As we approach, witness the awe-inspiring sight of Mount Kilimanjaro rising above the dusty plains. Check into your camp and prepare for tomorrow's giant encounters.",        
+        "Start your day with an exhilarating visit to Hell's Gate National Park, one of the few places in Africa where you can safely cycle or walk amidst wild grazing animals! After soaking in the towering cliffs and geothermal energy, we depart for Amboseli. As we approach, witness the awe-inspiring sight of Mount Kilimanjaro rising above the dusty plains. Check into your camp and prepare for tomorrow's giant encounters.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
@@ -129,7 +136,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       day: 6,
       title: "Full-Day Amboseli: The Land of Giants",
       description:
-        "Amboseli is globally famous for its massive elephant herds with impressive tusks. Today is dedicated to capturing the quintessential African postcard shot: majestic wildlife framed by the snow-capped peak of Mount Kilimanjaro. During morning and afternoon game drives, explore verdant swamps hosting hippos and incredible birdlife, while lions and cheetahs prowl the dry perimeters.",   
+        "Amboseli is globally famous for its massive elephant herds with impressive tusks. Today is dedicated to capturing the quintessential African postcard shot: majestic wildlife framed by the snow-capped peak of Mount Kilimanjaro. During morning and afternoon game drives, explore verdant swamps hosting hippos and incredible birdlife, while lions and cheetahs prowl the dry perimeters.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
@@ -145,12 +152,16 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       day: 7,
       title: "Amboseli to Nairobi: Farewell to the Wild",
       description:
-        "Savor an optional early morning game drive to catch the dawn light dancing on Kilimanjaro's peak—a deeply moving climax to your safari. After a fulfilling breakfast, we embark on a comfortable journey back to Nairobi. You'll carry home unforgettable memories of Kenya's Big Five, the Great Rift Valley, and the warmth of the African sun. Arrive in the afternoon for your onward travel or flight.",
+        "Savor an optional early morning game drive to catch the dawn light dancing on Kilimanjaro's peak-a deeply moving climax to your safari. After a fulfilling breakfast, we embark on a comfortable journey back to Nairobi. You'll carry home unforgettable memories of Kenya's Big Five, the Great Rift Valley, and the warmth of the African sun. Arrive in the afternoon for your onward travel or flight.",
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
       image: null,
-      highlights: ["Optional Sunrise Game Drive", "Final Kilimanjaro Views", "Safe Return to Nairobi"],
+      highlights: [
+        "Optional Sunrise Game Drive",
+        "Final Kilimanjaro Views",
+        "Safe Return to Nairobi",
+      ],
     },
   ],
 };

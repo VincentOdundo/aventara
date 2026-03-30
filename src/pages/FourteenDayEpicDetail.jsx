@@ -159,7 +159,7 @@ export default function FourteenDayEpicDetail() {
                   dayNum="03"
                   title="Into the Wild: Masai Mara"
                   subtitle="3 Nights in Private Conservancies"
-                  desc="Fly directly into the heart of the Mara. Your stay at a boutique tented camp offers off-road game driving, walking safaris, and night drives—experiences forbidden in the main reserve."
+                  desc="Fly directly into the heart of the Mara. Your stay at a boutique tented camp offers off-road game driving, walking safaris, and night drives-experiences forbidden in the main reserve."
                   image=leopardTree
                   tags={["Stay: Angama Mara", "Activity: Hot Air Balloon"]}
                 />
