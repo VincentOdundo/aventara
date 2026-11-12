@@ -332,3 +332,83 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-safari-brown);
 }
+
+/* === COMPANY PROFILE PRINT FRAME (inert on screen) === */
+.print-frame,
+.print-frame > tbody,
+.print-frame > * > tr,
+.print-frame > * > tr > td {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+.print-frame {
+  border-collapse: collapse;
+}
+.print-frame > thead,
+.print-frame > tfoot {
+  display: none;
+}
+
+/* === PRINT / PDF EXPORT FOR COMPANY PROFILE === */
+@media print {
+  /* Zero page margin so colour runs edge to edge; .print-frame restores
+     top and bottom breathing room on every page after the cover. */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  .print-frame {
+    display: table;
+  }
+  .print-frame > thead {
+    display: table-header-group;
+  }
+  .print-frame > tfoot {
+    display: table-footer-group;
+  }
+  .print-frame > tbody {
+    display: table-row-group;
+  }
+  .print-frame > * > tr {
+    display: table-row;
+  }
+  .print-frame > * > tr > td {
+    display: table-cell;
+  }
+  .print-frame > thead > tr > td,
+  .print-frame > tfoot > tr > td {
+    height: 11mm;
+  }
+  /* Blurred shadows and backdrop filters render unpredictably in PDF viewers */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Off-canvas menus and floating buttons */
+  .fixed {
+    display: none !important;
+  }
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  /* Scroll-reveal content must not stay hidden on paper */
+  .animate-on-scroll,
+  .animate-on-scroll-left,
+  .animate-on-scroll-right,
+  .animate-on-scroll-scale,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  header,
+  footer,
+  .whatsapp-float {
+    display: none !important;
+  }
+}

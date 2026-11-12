@@ -15,7 +15,8 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
     "Hell's Gate",
     "Amboseli",
   ],
-  price: { low: 1350, high: 1750 },
+  price: { low: 947, high: 1101 },
+  singlePrice: { low: 958, high: 1113 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

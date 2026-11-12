@@ -19,10 +19,19 @@ export function SeasonBadge({ className = "" }) {
   );
 }
 
-export function PriceDisplay({ safari, season = null, className = "" }) {
+export function PriceDisplay({
+  safari,
+  season = null,
+  guests = 2,
+  className = "",
+}) {
   const s = season || getCurrentSeason();
-  const price = safari.price[s];
-  const otherPrice = safari.price[s === "low" ? "high" : "low"];
+  const isSingle = guests === 1 && safari.singlePrice;
+  const price = isSingle ? safari.singlePrice[s] : safari.price[s];
+  const otherSeason = s === "low" ? "high" : "low";
+  const otherPrice = isSingle
+    ? safari.singlePrice[otherSeason]
+    : safari.price[otherSeason];
 
   return (
     <div className={className}>
@@ -34,9 +43,18 @@ export function PriceDisplay({ safari, season = null, className = "" }) {
           / person
         </span>
       </div>
-      <p className="text-xs text-safari-brown/65 mt-1 font-medium">
+      <p className="text-xs text-safari-brown/70 mt-1 font-medium">
+        {isSingle ? "Single (1 room)" : "2+ travelers (sharing)"} ·{" "}
         {s === "low" ? "High" : "Low"} season: ${otherPrice.toLocaleString()}/pp
       </p>
+      {safari.singlePrice &&
+        safari.singlePrice[s] !== safari.price[s] && (
+          <p className="text-xs text-safari-brown/65 mt-0.5 font-medium">
+            {isSingle
+              ? `2+ sharing rate: $${safari.price[s].toLocaleString()}/pp`
+              : `Solo traveler (1 room): $${safari.singlePrice[s].toLocaleString()}/pp`}
+          </p>
+        )}
     </div>
   );
 }

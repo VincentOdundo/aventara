@@ -51,22 +51,22 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-savannah-gold/25 editorial-shadow ${
           scrolled
-            ? "bg-midnight-black/95 backdrop-blur-md border-b border-savannah-gold/25 editorial-shadow py-3"
-            : "bg-gradient-to-b from-midnight-black/55 via-midnight-black/20 to-transparent py-4"
+            ? "bg-midnight-black/95 backdrop-blur-md py-2.5"
+            : "bg-gradient-to-r from-midnight-black/95 via-safari-brown/90 to-midnight-black/95 backdrop-blur-md py-3"
         }`}
       >
         <nav className="flex justify-between items-center px-6 lg:px-12 max-w-screen-2xl mx-auto">
-          {/* Logo */}
+          {/* Logo on Dark Theme Surface */}
           <Link
             to="/"
-            className="flex items-center gap-3 relative z-10 transition-opacity duration-300 hover:opacity-90"
+            className="flex items-center gap-3 relative z-10  px-3.5 py-1.5 shadow-md transition-all duration-300 hover:border-sunrise-yellow/70"
           >
             <img
               src={logo}
               alt="Cima Brava Adventures"
-              className="h-10 md:h-12 lg:h-14 w-auto"
+              className="h-9 md:h-11 lg:h-12 w-auto"
             />
           </Link>
 
@@ -166,11 +166,13 @@ export default function Navbar() {
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8 pb-4 border-b border-savannah-gold/20">
-            <img
-              src={logo}
-              alt="Cima Brava Adventures"
-              className="h-11 w-auto"
-            />
+            <div className="bg-midnight-black border border-savannah-gold/35 rounded-xl px-3 py-1.5">
+              <img
+                src={logo}
+                alt="Cima Brava Adventures"
+                className="h-10 w-auto"
+              />
+            </div>
             <button
               onClick={() => setMobileOpen(false)}
               className="p-2 rounded-full hover:bg-sand-cream/10 text-sand-cream border border-savannah-gold/25"

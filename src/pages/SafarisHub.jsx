@@ -35,7 +35,7 @@ export default function SafarisHub() {
       : country === "nairobi"
         ? "Quick Nairobi experiences perfect for stopovers and city explorers."
         : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
-    : "From 3-day getaways to 14-day epic expeditions - find the safari that matches your dream.";
+    : "From half-day Nairobi escapes & 2-day Mara getaways to 12-day cross-border expeditions — find the safari that matches your dream.";
 
   const baseSafaris = country ? getSafarisByCountry(country) : safariPackages;
 
@@ -238,7 +238,7 @@ export default function SafarisHub() {
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/35 via-transparent to-transparent"></div>
                     <div className="absolute top-4 left-4 flex gap-2">
                       <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-3 py-1 rounded-full text-xs font-body font-bold shadow-md">
-                        {safari.days} Days
+                        {safari.days === 0.5 ? "Half Day" : `${safari.days} Days`}
                       </span>
                       <span className="bg-safari-brown/90 text-sand-cream border border-savannah-gold/30 px-3 py-1 rounded-full text-xs font-body font-bold capitalize">
                         {safari.country === "combined"
@@ -263,7 +263,7 @@ export default function SafarisHub() {
                     <div className="flex items-center gap-4 mb-4 text-xs font-body text-safari-brown/75">
                       <span className="flex items-center gap-1">
                         <Calendar size={12} className="text-savannah-gold" />{" "}
-                        {safari.days} Days
+                        {safari.days === 0.5 ? "Half Day" : `${safari.days} Days`}
                       </span>
                       <span className="flex items-center gap-1">
                         <MapPin size={12} className="text-savannah-gold" />{" "}
@@ -278,6 +278,12 @@ export default function SafarisHub() {
                         <span className="text-xs font-body text-safari-brown/70 ml-1">
                           /pp
                         </span>
+                        {safari.singlePrice &&
+                          safari.singlePrice[season] !== safari.price[season] && (
+                            <span className="block text-[11px] font-body text-safari-brown/65">
+                              Single: ${safari.singlePrice[season].toLocaleString()}
+                            </span>
+                          )}
                       </div>
                       <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-4 py-2 rounded-full text-xs font-body font-bold uppercase tracking-wider shadow-md group-hover:brightness-105 flex items-center gap-1.5 transition-all">
                         Explore Trip <ArrowRight size={14} />

@@ -1,8 +1,11 @@
+export { package10DayKenyaTanzania } from "./10day-kenya-tanzania";
 export { package11DayKenyaTanzania } from "./11day-kenya-tanzania";
 export { package12DayKenyaTanzania } from "./12day-kenya-tanzania";
 export { package12DayKenyaTanzaniaSerengeti } from "./12day-kenya-tanzania-serengeti";
 
 export const combinedPackages = [
+  async () =>
+    (await import("./10day-kenya-tanzania")).package10DayKenyaTanzania,
   async () =>
     (await import("./11day-kenya-tanzania")).package11DayKenyaTanzania,
   async () =>

@@ -411,7 +411,7 @@ export default function Home() {
               {
                 icon: <Users size={28} />,
                 title: "Small Groups",
-                desc: "Maximum 6 guests per vehicle ensuring intimate, personalized wildlife encounters.",
+                desc: "Maximum 6–7 guests per 4x4 cruiser ensuring intimate, window-seat wildlife encounters.",
               },
               {
                 icon: <Clock size={28} />,
@@ -556,13 +556,13 @@ export default function Home() {
                           {safari.title}
                         </Link>
                         <span className="md:hidden bg-savannah-gold/20 text-safari-brown px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
-                          {safari.days} Days
+                          {safari.days === 0.5 ? "Half Day" : `${safari.days} Days`}
                         </span>
                       </div>
 
                       {/* Desktop Days */}
                       <div className="hidden md:block md:col-span-2 text-sm font-medium text-safari-brown">
-                        {safari.days} Days
+                        {safari.days === 0.5 ? "Half Day" : `${safari.days} Days`}
                       </div>
 
                       {/* Destinations */}
@@ -579,7 +579,7 @@ export default function Home() {
 
                       {/* Pricing Grid */}
                       <div className="grid grid-cols-2 md:contents gap-3 mb-6 md:mb-0 border-t border-savannah-gold/20 pt-4 md:border-0 md:pt-0">
-                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
+                        <div className="md:col-span-2 md:text-center flex flex-col items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
                           <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-safari-brown/70 mb-1">
                             Low Season
                           </span>
@@ -592,8 +592,14 @@ export default function Home() {
                           >
                             ${safari.price.low.toLocaleString()}
                           </span>
+                          {safari.singlePrice &&
+                            safari.singlePrice.low !== safari.price.low && (
+                              <span className="text-[11px] text-safari-brown/65 font-medium mt-0.5">
+                                Single: ${safari.singlePrice.low.toLocaleString()}
+                              </span>
+                            )}
                         </div>
-                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
+                        <div className="md:col-span-2 md:text-center flex flex-col items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
                           <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-safari-brown/70 mb-1">
                             High Season
                           </span>
@@ -606,6 +612,12 @@ export default function Home() {
                           >
                             ${safari.price.high.toLocaleString()}
                           </span>
+                          {safari.singlePrice &&
+                            safari.singlePrice.high !== safari.price.high && (
+                              <span className="text-[11px] text-safari-brown/65 font-medium mt-0.5">
+                                Single: ${safari.singlePrice.high.toLocaleString()}
+                              </span>
+                            )}
                         </div>
                       </div>
 

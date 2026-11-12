@@ -4,7 +4,7 @@
 
 ### Creative North Star: *"Wild by Nature. Guided by Heart."*
 
-The **Cima Brava Adventures** (Aventara Safaris) design system embodies the golden warmth, timeless elegance, and raw majesty of the East African savannah at sunrise and sunset. Anchored strictly to `theme.png`, it uses **only** the 7 official brand colors via `@theme` design tokens, pairing classic editorial authority (`Trajan Pro` / `Cinzel`) with modern digital readability (`Inter` / `Montserrat`).
+The **Cima Brava Adventures** design system embodies the golden warmth, timeless elegance, and raw majesty of the East African savannah at sunrise and sunset. Anchored strictly to `theme.png`, it uses **only** the 7 official brand colors via `@theme` design tokens, pairing classic editorial authority (`Trajan Pro` / `Cinzel`) with modern digital readability (`Inter` / `Montserrat`).
 
 ---
 

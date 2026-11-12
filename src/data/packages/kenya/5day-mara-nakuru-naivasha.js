@@ -9,7 +9,8 @@ export const package5DayMaraNakuruNaivasha = {
   days: 5,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Lake Naivasha", "Hell's Gate"],
-  price: { low: 950, high: 1250 },
+  price: { low: 761, high: 916 },
+  singlePrice: { low: 773, high: 927 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

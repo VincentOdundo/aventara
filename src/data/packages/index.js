@@ -1,4 +1,5 @@
 // Import all Kenya packages
+import { package2DayMara } from "./kenya/2day-mara";
 import { package3DayMara } from "./kenya/3day-mara";
 import { package3DayAmboseli } from "./kenya/3day-amboseli";
 import { package4DayMaraNakuru } from "./kenya/4day-mara-nakuru";
@@ -14,6 +15,7 @@ import { package5DayTanzania } from "./tanzania/5day-tanzania";
 import { package6DayTanzania } from "./tanzania/6day-tanzania";
 
 // Import all combined packages
+import { package10DayKenyaTanzania } from "./combined/10day-kenya-tanzania";
 import { package11DayKenyaTanzania } from "./combined/11day-kenya-tanzania";
 import { package12DayKenyaTanzania } from "./combined/12day-kenya-tanzania";
 import { package12DayKenyaTanzaniaSerengeti } from "./combined/12day-kenya-tanzania-serengeti";
@@ -61,6 +63,7 @@ function enrichPackageImages(pkg) {
 }
 
 [
+  package2DayMara,
   package3DayMara,
   package3DayAmboseli,
   package4DayMaraNakuru,
@@ -72,6 +75,7 @@ function enrichPackageImages(pkg) {
   package4DayTanzania,
   package5DayTanzania,
   package6DayTanzania,
+  package10DayKenyaTanzania,
   package11DayKenyaTanzania,
   package12DayKenyaTanzania,
   package12DayKenyaTanzaniaSerengeti,
@@ -81,6 +85,7 @@ function enrichPackageImages(pkg) {
 // Export individual packages
 export {
   // Kenya
+  package2DayMara,
   package3DayMara,
   package3DayAmboseli,
   package4DayMaraNakuru,
@@ -94,6 +99,7 @@ export {
   package5DayTanzania,
   package6DayTanzania,
   // Combined
+  package10DayKenyaTanzania,
   package11DayKenyaTanzania,
   package12DayKenyaTanzania,
   package12DayKenyaTanzaniaSerengeti,
@@ -104,6 +110,7 @@ export {
 // Consolidated list of all packages organized by category
 export const allPackages = {
   kenya: [
+    package2DayMara,
     package3DayMara,
     package3DayAmboseli,
     package4DayMaraNakuru,
@@ -119,6 +126,7 @@ export const allPackages = {
     package6DayTanzania,
   ],
   combined: [
+    package10DayKenyaTanzania,
     package11DayKenyaTanzania,
     package12DayKenyaTanzania,
     package12DayKenyaTanzaniaSerengeti,

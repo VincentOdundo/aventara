@@ -8,7 +8,8 @@ export const package3DayAmboseli = {
   days: 3,
   country: "kenya",
   destinations: ["Amboseli"],
-  price: { low: 450, high: 650 },
+  price: { low: 382, high: 382 },
+  singlePrice: { low: 382, high: 382 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

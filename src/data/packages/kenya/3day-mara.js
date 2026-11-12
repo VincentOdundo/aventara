@@ -8,7 +8,8 @@ export const package3DayMara = {
   days: 3,
   country: "kenya",
   destinations: ["Masai Mara"],
-  price: { low: 530, high: 770 },
+  price: { low: 477, high: 670 },
+  singlePrice: { low: 484, high: 687 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

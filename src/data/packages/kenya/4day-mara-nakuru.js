@@ -9,7 +9,8 @@ export const package4DayMaraNakuru = {
   days: 4,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru"],
-  price: { low: 770, high: 1110 },
+  price: { low: 632, high: 731 },
+  singlePrice: { low: 643, high: 742 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

@@ -1,3 +1,4 @@
+export { package2DayMara } from "./2day-mara";
 export { package3DayMara } from "./3day-mara";
 export { package3DayAmboseli } from "./3day-amboseli";
 export { package4DayMaraNakuru } from "./4day-mara-nakuru";
@@ -7,6 +8,7 @@ export { package7DayMaraNakuruNaivashaAmboseli } from "./7day-mara-nakuru-naivas
 export { package8DayMaraNakuruAmboseli } from "./8day-mara-nakuru-amboseli";
 
 export const kenyaPackages = [
+  async () => (await import("./2day-mara")).package2DayMara,
   async () => (await import("./3day-mara")).package3DayMara,
   async () => (await import("./3day-amboseli")).package3DayAmboseli,
   async () => (await import("./4day-mara-nakuru")).package4DayMaraNakuru,

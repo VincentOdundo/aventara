@@ -95,7 +95,7 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-safari-brown/85 leading-relaxed font-body">
               <p>
-                Cima Brava Adventures (Aventara Safaris) is a Kenya-based safari
+                Cima Brava Adventures is a Kenya-based safari
                 and travel company dedicated to creating authentic,
                 unforgettable, and well-curated African safari experiences. We
                 specialize in personalized wildlife safaris, cultural tours, and
@@ -252,6 +252,12 @@ export default function About() {
             >
               <span>View Destinations</span>
               <ArrowRight size={18} />
+            </Link>
+            <Link
+              to="/company-profile"
+              className="btn-plan inline-flex items-center justify-center gap-2 border-2 border-savannah-gold text-midnight-black bg-sand-cream px-10 py-4 rounded-full font-bold text-lg hover:bg-savannah-gold/15 transition-all"
+            >
+              <span>Company Profile &amp; Rates</span>
             </Link>
             <Link
               to="/contact"

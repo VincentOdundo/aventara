@@ -9,7 +9,8 @@ export const package6DayMaraNakuruAmboseli = {
   days: 6,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
-  price: { low: 1200, high: 1600 },
+  price: { low: 834, high: 988 },
+  singlePrice: { low: 845, high: 1000 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [

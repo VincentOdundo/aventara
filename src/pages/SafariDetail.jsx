@@ -20,15 +20,26 @@ import {
 export default function SafariDetail() {
   const { slug } = useParams();
   const safari = getSafariBySlug(slug);
-  const season = getCurrentSeason();
-  const seasonLabel = SEASONS[season].label;
-  const [guests, setGuests] = useState(1);
+  const defaultSeason = getCurrentSeason();
+  const [selectedSeason, setSelectedSeason] = useState(defaultSeason);
+  const seasonLabel = SEASONS[selectedSeason].label;
+  const [guests, setGuests] = useState(2);
   const [openDay, setOpenDay] = useState(0);
 
   if (!safari) return <Navigate to="/safaris" replace />;
 
-  const price = safari.price[season];
+  const isSingle = guests === 1 && Boolean(safari.singlePrice);
+  const price = isSingle
+    ? safari.singlePrice[selectedSeason]
+    : safari.price[selectedSeason];
   const totalPrice = price * guests;
+  const durationLabel =
+    safari.days === 0.5 ? "Half Day" : `${safari.days} Days`;
+  const maxGroupLabel =
+    safari.maxGroupSize ||
+    (safari.difficulty === "Budget" && safari.country !== "nairobi"
+      ? "Max 7"
+      : "Max 6");
 
   return (
     <Layout>
@@ -48,7 +59,7 @@ export default function SafariDetail() {
                 : safari.country}
             </span>
             <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-4 py-1.5 rounded-full text-xs font-body font-bold shadow-md">
-              {safari.days} Days
+              {durationLabel}
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-sand-cream tracking-[-0.02em] mb-2 drop-shadow-md">
@@ -110,7 +121,7 @@ export default function SafariDetail() {
                       Duration
                     </p>
                     <p className="font-headline font-bold text-lg text-safari-brown">
-                      {safari.days} Days
+                      {durationLabel}
                     </p>
                   </div>
                   <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
@@ -146,7 +157,7 @@ export default function SafariDetail() {
                       Group
                     </p>
                     <p className="font-headline font-bold text-lg text-safari-brown">
-                      Max 6
+                      {maxGroupLabel}
                     </p>
                   </div>
                 </div>
@@ -289,6 +300,30 @@ export default function SafariDetail() {
                     </ul>
                   </div>
                 </div>
+
+                {safari.optionalActivities &&
+                  safari.optionalActivities.length > 0 && (
+                    <div className="mt-8 bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-headline font-bold text-lg mb-4 text-safari-brown">
+                        Optional Add-On Experiences
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {safari.optionalActivities.map((act, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center justify-between gap-4 px-4 py-3 rounded-xl bg-savannah-gold/10 border border-savannah-gold/25 text-sm font-body"
+                          >
+                            <span className="font-medium text-safari-brown">
+                              {act.name}
+                            </span>
+                            <span className="font-bold text-sunset-orange shrink-0">
+                              ${act.price}/pp
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
               </div>
             </div>
 
@@ -299,7 +334,63 @@ export default function SafariDetail() {
                 className="sticky top-[120px] lg:top-[128px] bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-lg p-8 scroll-mt-[120px] lg:scroll-mt-[136px]"
               >
                 <SeasonBadge className="mb-4" />
-                <PriceDisplay safari={safari} className="mb-6" />
+                <PriceDisplay
+                  safari={safari}
+                  season={selectedSeason}
+                  guests={guests}
+                  className="mb-5"
+                />
+
+                {/* Season Toggle */}
+                <div className="mb-5">
+                  <label className="text-xs uppercase tracking-wider text-safari-brown/80 font-body font-bold block mb-2">
+                    Travel Season
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["low", "high"].map((sKey) => (
+                      <button
+                        key={sKey}
+                        type="button"
+                        onClick={() => setSelectedSeason(sKey)}
+                        className={`px-3 py-2 rounded-xl text-left border text-xs font-body transition-all ${
+                          selectedSeason === sKey
+                            ? "bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black border-savannah-gold font-bold shadow-sm"
+                            : "bg-sand-cream text-safari-brown border-savannah-gold/30 hover:border-savannah-gold"
+                        }`}
+                      >
+                        <span className="block font-bold">
+                          {SEASONS[sKey].label}
+                        </span>
+                        <span className="block text-[11px] opacity-80">
+                          {SEASONS[sKey].dates}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Room Rate Breakdown when singlePrice exists */}
+                {safari.singlePrice && (
+                  <div className="mb-5 rounded-xl border border-savannah-gold/30 bg-savannah-gold/10 p-3 text-xs font-body space-y-1.5">
+                    <div className="flex justify-between items-center">
+                      <span className="text-safari-brown/80">
+                        2+ People (Sharing)
+                      </span>
+                      <span className="font-bold text-safari-brown">
+                        ${safari.price[selectedSeason].toLocaleString()}/pp
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-safari-brown/80">
+                        Single (1 Private Room)
+                      </span>
+                      <span className="font-bold text-safari-brown">
+                        ${safari.singlePrice[selectedSeason].toLocaleString()}
+                        /pp
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Guest Selector */}
                 <div className="mb-6">
@@ -323,6 +414,13 @@ export default function SafariDetail() {
                       +
                     </button>
                   </div>
+                  {safari.singlePrice && (
+                    <p className="text-[11px] font-body text-safari-brown/70 mt-1.5">
+                      {isSingle
+                        ? "Single room rate applied for 1 traveler"
+                        : "Sharing room rate applied for 2+ travelers"}
+                    </p>
+                  )}
                 </div>
 
                 {/* Total */}
@@ -356,7 +454,7 @@ export default function SafariDetail() {
                 />
 
                 <a
-                  href={`mailto:cimabravaadventures@gmail.com?subject=${encodeURIComponent(`Safari Inquiry: ${safari.title}`)}`}
+                  href={`mailto:cimabravaadventures@gmail.com?subject=${encodeURIComponent(`Safari Inquiry: ${safari.title} (${seasonLabel})`)}`}
                   className="mt-3 w-full py-3 px-6 border-2 border-savannah-gold text-safari-brown hover:bg-savannah-gold/15 font-body font-bold text-sm rounded-full flex items-center justify-center gap-2 transition-all"
                 >
                   <Mail size={16} className="text-sunset-orange" />
@@ -364,7 +462,8 @@ export default function SafariDetail() {
                 </a>
 
                 <p className="text-xs font-body text-safari-brown/70 text-center mt-4">
-                  Free cancellation up to 30 days before departure
+                  Children under 4 travel free · Free cancellation up to 30 days
+                  before departure
                 </p>
 
                 {/* Quick Info */}
@@ -374,7 +473,9 @@ export default function SafariDetail() {
                     <div>
                       <p className="font-bold text-safari-brown">Duration</p>
                       <p className="text-safari-brown/80">
-                        {safari.days} Days / {safari.days - 1} Nights
+                        {safari.days === 0.5
+                          ? "Half Day Tour"
+                          : `${safari.days} Days / ${safari.days - 1} Nights`}
                       </p>
                     </div>
                   </div>

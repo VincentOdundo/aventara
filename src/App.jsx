@@ -12,6 +12,7 @@ const DestinationDetail = lazy(() => import('./pages/DestinationDetail'));
 const Kenya = lazy(() => import('./pages/Kenya'));
 const Tanzania = lazy(() => import('./pages/Tanzania'));
 const About = lazy(() => import('./pages/About'));
+const CompanyProfile = lazy(() => import('./pages/CompanyProfile'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 
@@ -57,6 +58,7 @@ export default function App() {
           
           {/* Pages */}
           <Route path="/about" element={<About />} />
+          <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
 
