@@ -1,0 +1,415 @@
+﻿=== FILE TO IMAGE MAPPING ===
+
+src\data\destinations.js:
+  cheetahSafari -> ../assets/cheater-safari.jpeg
+  cheetahPlain -> ../assets/cheater_plain.jpeg
+  elephantGrass -> ../assets/elefant-vegetation.jpeg
+  elephantTusks -> ../assets/elefant-tusk.jpeg
+  flamingoWater -> ../assets/flamingo-water.jpeg
+  flamingoSolo -> ../assets/flamingo-lonely.jpeg
+  rhinoPair -> ../assets/rhino.jpeg
+  rhinoClose -> ../assets/rhino_plain.jpeg
+  egretWater -> ../assets/egret-water.jpeg
+  hellsGateImage -> ../assets/nairobi/antelppes.jpeg
+  lionessPortrait -> ../assets/lioness.jpeg
+  nairobiGiraffeCity -> ../assets/nairobi/girafe-nairobi-city.jpeg
+  lionStd -> ../assets/lion.jpeg
+  leopardTree -> ../assets/treecheta.jpeg
+  mountain -> ../assets/mountain.jpeg
+  plainEle -> ../assets/plain_elefabt.jpeg
+
+src\data\packages\combined\11day-kenya-tanzania.js:
+  genImg_0 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_1 -> ../../../assets/lioness_open.jpeg
+  genImg_2 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_3 -> ../../../assets/lion pack.jpeg
+  genImg_4 -> ../../../assets/cheater.jpeg
+  genImg_5 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_6 -> ../../../assets/lioness_open.jpeg
+  genImg_7 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_8 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_9 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_10 -> ../../../assets/lion pack.jpeg
+  genImg_11 -> ../../../assets/lion-lonely.jpeg
+
+src\data\packages\combined\12day-kenya-tanzania-serengeti.js:
+  genImg_0 -> ../../../assets/treecheta.jpeg
+  genImg_1 -> ../../../assets/lion.jpeg
+  genImg_2 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_3 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_4 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_5 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_6 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_7 -> ../../../assets/leapard-car.jpeg
+  genImg_8 -> ../../../assets/cheater.jpeg
+  genImg_9 -> ../../../assets/leapard-car.jpeg
+  genImg_10 -> ../../../assets/leapard-car.jpeg
+  genImg_11 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_12 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+
+src\data\packages\combined\12day-kenya-tanzania.js:
+  genImg_0 -> ../../../assets/lion.jpeg
+  genImg_1 -> ../../../assets/leapard-car.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/treecheta.jpeg
+  genImg_4 -> ../../../assets/cheater.jpeg
+  genImg_5 -> ../../../assets/treecheta.jpeg
+  genImg_6 -> ../../../assets/cheater.jpeg
+  genImg_7 -> ../../../assets/leapard-car.jpeg
+  genImg_8 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_9 -> ../../../assets/lion pack.jpeg
+  genImg_10 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_11 -> ../../../assets/lion pack.jpeg
+  genImg_12 -> ../../../assets/lion-lonely.jpeg
+
+src\data\packages\kenya\3day-amboseli.js:
+  genImg_0 -> ../../../assets/elephtain.jpeg
+  genImg_1 -> ../../../assets/cheater.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/plain_elefabt.jpeg
+  genImg_4 -> ../../../assets/elefabt-happy.jpeg
+
+src\data\packages\kenya\3day-mara.js:
+  genImg_0 -> ../../../assets/lion pack.jpeg
+  genImg_1 -> ../../../assets/cheater.jpeg
+  genImg_2 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_3 -> ../../../assets/leapard-car.jpeg
+  genImg_4 -> ../../../assets/lioness_open.jpeg
+  genImg_5 -> ../../../assets/lioness_open.jpeg
+
+src\data\packages\kenya\4day-mara-nakuru.js:
+  genImg_0 -> ../../../assets/lioness_open.jpeg
+  genImg_1 -> ../../../assets/lion-lonely.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/lioness_open.jpeg
+  genImg_4 -> ../../../assets/lion.jpeg
+  genImg_5 -> ../../../assets/treecheta.jpeg
+
+src\data\packages\kenya\5day-mara-nakuru-naivasha.js:
+  genImg_0 -> ../../../assets/lion.jpeg
+  genImg_1 -> ../../../assets/lioness_open.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/lion.jpeg
+  genImg_4 -> ../../../assets/cheater.jpeg
+  genImg_5 -> ../../../assets/lion pack.jpeg
+  genImg_6 -> ../../../assets/treecheta.jpeg
+
+src\data\packages\kenya\6day-mara-nakuru-amboseli.js:
+  genImg_0 -> ../../../assets/lion-lonely.jpeg
+  genImg_1 -> ../../../assets/leapard-car.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/cheater.jpeg
+  genImg_4 -> ../../../assets/lion-lonely.jpeg
+  genImg_5 -> ../../../assets/lion pack.jpeg
+  genImg_6 -> ../../../assets/lioness_open.jpeg
+  genImg_7 -> ../../../assets/lion pack.jpeg
+
+src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js:
+  genImg_0 -> ../../../assets/cheater.jpeg
+  genImg_1 -> ../../../assets/treecheta.jpeg
+  genImg_2 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_3 -> ../../../assets/cheater.jpeg
+  genImg_4 -> ../../../assets/lion.jpeg
+  genImg_5 -> ../../../assets/lioness_open.jpeg
+  genImg_6 -> ../../../assets/lion.jpeg
+  genImg_7 -> ../../../assets/cheater.jpeg
+  genImg_8 -> ../../../assets/leapard-car.jpeg
+
+src\data\packages\kenya\8day-mara-nakuru-amboseli.js:
+  genImg_0 -> ../../../assets/treecheta.jpeg
+  genImg_1 -> ../../../assets/leapard-car.jpeg
+  genImg_2 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_3 -> ../../../assets/cheater.jpeg
+  genImg_4 -> ../../../assets/lion pack.jpeg
+  genImg_5 -> ../../../assets/treecheta.jpeg
+  genImg_6 -> ../../../assets/lion-lonely.jpeg
+  genImg_7 -> ../../../assets/lion pack.jpeg
+  genImg_8 -> ../../../assets/lion.jpeg
+  genImg_9 -> ../../../assets/treecheta.jpeg
+
+src\data\packages\nairobi\half-day-nairobi.js:
+  genImg_0 -> ../../../assets/lion-lonely.jpeg
+  genImg_1 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  nairobiGiraffeCity -> ../../../assets/nairobi/girafe-nairobi-city.jpeg
+  nairobiLionVan -> ../../../assets/nairobi/lion-safari-van.jpeg
+
+src\data\packages\tanzania\3day-serengeti-ngorongoro.js:
+  genImg_0 -> ../../../assets/lioness_open.jpeg
+  genImg_1 -> ../../../assets/treecheta.jpeg
+  genImg_2 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_3 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_4 -> ../../../assets/nairobi/sunset-exotic.jpeg
+
+src\data\packages\tanzania\4day-tanzania.js:
+  genImg_0 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_1 -> ../../../assets/lion.jpeg
+  genImg_2 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_3 -> ../../../assets/cheater.jpeg
+  genImg_4 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_5 -> ../../../assets/nairobi/sunset-exotic.jpeg
+
+src\data\packages\tanzania\5day-tanzania.js:
+  genImg_0 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_1 -> ../../../assets/cheater.jpeg
+  genImg_2 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_3 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_4 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_5 -> ../../../assets/nairobi/sunset-exotic.jpeg
+  genImg_6 -> ../../../assets/treecheta.jpeg
+
+src\data\packages\tanzania\6day-tanzania.js:
+  genImg_0 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_1 -> ../../../assets/treecheta.jpeg
+  genImg_2 -> ../../../assets/nairobi/giraffe-sunsut.jpeg
+  genImg_3 -> ../../../assets/lioness_open.jpeg
+  genImg_4 -> ../../../assets/lion-lonely.jpeg
+  genImg_5 -> ../../../assets/lioness_open.jpeg
+  genImg_6 -> ../../../assets/nairobi/girfe-sunset.jpeg
+  genImg_7 -> ../../../assets/nairobi/sunset-exotic.jpeg
+
+src\data\testimonials.js:
+  test1 -> ../assets/lion.jpeg
+  test2 -> ../assets/elephtain.jpeg
+  test3 -> ../assets/nairobi/bird-exotic.jpeg
+  test4 -> ../assets/plain_elefabt.jpeg
+
+
+=== IMAGE TO FILE USAGE (DUPLICATES) ===
+
+Image: ../assets/cheater-safari.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/cheater_plain.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/elefant-vegetation.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/elefant-tusk.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/flamingo-water.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/flamingo-lonely.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/rhino.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/rhino_plain.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/egret-water.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/nairobi/antelppes.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/lioness.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/nairobi/girafe-nairobi-city.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/lion.jpeg
+  Used in:
+    - src\data\destinations.js
+    - src\data\testimonials.js
+
+Image: ../assets/treecheta.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/mountain.jpeg
+  Used in:
+    - src\data\destinations.js
+
+Image: ../assets/plain_elefabt.jpeg
+  Used in:
+    - src\data\destinations.js
+    - src\data\testimonials.js
+
+Image: ../../../assets/nairobi/sunset-exotic.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-amboseli.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\nairobi\half-day-nairobi.js
+    - src\data\packages\tanzania\3day-serengeti-ngorongoro.js
+    - src\data\packages\tanzania\3day-serengeti-ngorongoro.js
+    - src\data\packages\tanzania\4day-tanzania.js
+    - src\data\packages\tanzania\4day-tanzania.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/lioness_open.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\tanzania\3day-serengeti-ngorongoro.js
+    - src\data\packages\tanzania\6day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/nairobi/giraffe-sunsut.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/lion pack.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+
+Image: ../../../assets/cheater.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-amboseli.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\tanzania\4day-tanzania.js
+    - src\data\packages\tanzania\5day-tanzania.js
+
+Image: ../../../assets/nairobi/girfe-sunset.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\tanzania\3day-serengeti-ngorongoro.js
+    - src\data\packages\tanzania\4day-tanzania.js
+    - src\data\packages\tanzania\4day-tanzania.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/lion-lonely.jpeg
+  Used in:
+    - src\data\packages\combined\11day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\nairobi\half-day-nairobi.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/treecheta.jpeg
+  Used in:
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\tanzania\3day-serengeti-ngorongoro.js
+    - src\data\packages\tanzania\5day-tanzania.js
+    - src\data\packages\tanzania\6day-tanzania.js
+
+Image: ../../../assets/lion.jpeg
+  Used in:
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\4day-mara-nakuru.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\5day-mara-nakuru-naivasha.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+    - src\data\packages\tanzania\4day-tanzania.js
+
+Image: ../../../assets/leapard-car.jpeg
+  Used in:
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania-serengeti.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\combined\12day-kenya-tanzania.js
+    - src\data\packages\kenya\3day-mara.js
+    - src\data\packages\kenya\6day-mara-nakuru-amboseli.js
+    - src\data\packages\kenya\7day-mara-nakuru-naivasha-amboseli.js
+    - src\data\packages\kenya\8day-mara-nakuru-amboseli.js
+
+Image: ../../../assets/elephtain.jpeg
+  Used in:
+    - src\data\packages\kenya\3day-amboseli.js
+
+Image: ../../../assets/plain_elefabt.jpeg
+  Used in:
+    - src\data\packages\kenya\3day-amboseli.js
+
+Image: ../../../assets/elefabt-happy.jpeg
+  Used in:
+    - src\data\packages\kenya\3day-amboseli.js
+
+Image: ../../../assets/nairobi/girafe-nairobi-city.jpeg
+  Used in:
+    - src\data\packages\nairobi\half-day-nairobi.js
+
+Image: ../../../assets/nairobi/lion-safari-van.jpeg
+  Used in:
+    - src\data\packages\nairobi\half-day-nairobi.js
+
+Image: ../assets/elephtain.jpeg
+  Used in:
+    - src\data\testimonials.js
+
+Image: ../assets/nairobi/bird-exotic.jpeg
+  Used in:
+    - src\data\testimonials.js

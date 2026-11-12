@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, StaggerContainer } from "../components/ui";
@@ -14,6 +15,17 @@ import heroImg from "../assets/lioness.jpeg";
 
 export default function SafarisHub() {
   const { country } = useParams();
+  const hubSeo = {
+    kenya: ["Kenya Safari Packages & Prices", "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included."],
+    tanzania: ["Tanzania Safari Packages & Prices", "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season."],
+    combined: ["Kenya & Tanzania Combined Safaris", "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking."],
+    nairobi: ["Nairobi Day Trips", "Short wildlife and city outings in Nairobi for stopovers and free days."],
+  }[country] || ["All Safari Packages & Prices", "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season."];
+  useSeo({
+    title: hubSeo[0],
+    description: hubSeo[1],
+    path: country ? `/safaris/${country}` : "/safaris",
+  });
   const season = getCurrentSeason();
   const [daysFilter, setDaysFilter] = useState("all");
   const [budgetFilter, setBudgetFilter] = useState("all");
@@ -31,7 +43,7 @@ export default function SafarisHub() {
             : "All Safari Packages";
   const pageDesc = country
     ? country === "combined"
-      ? "Epic cross-border adventures spanning both Kenya and Tanzania."
+      ? "Cross-border adventures spanning both Kenya and Tanzania."
       : country === "nairobi"
         ? "Quick Nairobi experiences perfect for stopovers and city explorers."
         : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`

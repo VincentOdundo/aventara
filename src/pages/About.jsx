@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
@@ -11,12 +12,18 @@ import {
   ArrowRight,
   Play,
 } from "lucide-react";
-import logo from "./cima_logo.svg";
+import logo from "./cima_logo.png";
 
 import heroImg from "../assets/nairobi/bird-exotic.jpeg";
 import elefantVegetation from "../assets/lion pack.jpeg";
 
 export default function About() {
+  useSeo({
+    title: "About Us",
+    description:
+      "Cima Brava Adventures is a Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania.",
+    path: "/about",
+  });
   return (
     <Layout>
       {/* Hero */}
@@ -97,13 +104,13 @@ export default function About() {
               <p>
                 Cima Brava Adventures is a Kenya-based safari
                 and travel company dedicated to creating authentic,
-                unforgettable, and well-curated African safari experiences. We
+                and well-curated African safari experiences. We
                 specialize in personalized wildlife safaris, cultural tours, and
                 adventure travel across Kenya and East Africa.
               </p>
               <p>
                 Founded with a passion for nature, travel, and African heritage,
-                we connect travelers with breathtaking landscapes, diverse
+                we connect travelers with landscapes, diverse
                 wildlife, and rich cultural traditions. Our experienced team
                 combines local expertise, professionalism, and attention to
                 detail to deliver seamless and meaningful journeys.
@@ -113,7 +120,7 @@ export default function About() {
               </h3>
               <p>
                 To become Africa&apos;s most trusted and inspiring safari brand,
-                renowned for creating unforgettable wildlife adventures that
+                renowned for creating wildlife adventures that
                 connect travelers to the heart of nature, rich cultural
                 heritage, and meaningful conservation efforts. We envision a
                 future where every journey fosters appreciation for
@@ -124,7 +131,7 @@ export default function About() {
                 Our Mission
               </h3>
               <p>
-                To provide safe, personalized, and truly memorable safari
+                To provide safe, personalized, and memorable safari
                 experiences through exceptional service, knowledgeable guides,
                 and thoughtfully designed itineraries. We are committed to
                 delivering authentic African adventures while promoting
@@ -145,10 +152,10 @@ export default function About() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-xl">
                 <p className="text-3xl font-headline font-bold text-sunrise-yellow">
-                  12+
+                  Nairobi
                 </p>
                 <p className="text-sm text-sand-cream/85">
-                  Years of Excellence
+                  Where every safari starts
                 </p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { useParams, Navigate } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { AnimatedSection } from "../components/ui";
@@ -20,6 +21,16 @@ import {
 export default function SafariDetail() {
   const { slug } = useParams();
   const safari = getSafariBySlug(slug);
+  useSeo(
+    safari
+      ? {
+          title: `${safari.title} from ${safari.price.low.toLocaleString("en-US")}`,
+          description: `${safari.subtitle} From ${safari.price.low.toLocaleString("en-US")} per person with park fees, accommodation, meals and transfers included.`,
+          path: `/safari/${safari.slug}`,
+          jsonLd: safariJsonLd(safari),
+        }
+      : {},
+  );
   const defaultSeason = getCurrentSeason();
   const [selectedSeason, setSelectedSeason] = useState(defaultSeason);
   const seasonLabel = SEASONS[selectedSeason].label;

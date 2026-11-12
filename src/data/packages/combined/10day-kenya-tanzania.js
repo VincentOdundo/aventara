@@ -3,8 +3,9 @@ import heroImg from "../../../assets/lioness.jpeg";
 export const package10DayKenyaTanzania = {
   id: "10-day-kenya-tanzania",
   slug: "10-day-kenya-tanzania-ultimate-budget",
-  title: "10-Days Kenya & Tanzania Ultimate Budget Safari",
-  subtitle: "Mara, Nakuru, Amboseli, Serengeti & Ngorongoro in one epic journey",
+  title: "10-Day Kenya & Tanzania Budget Safari",
+  subtitle:
+    "Kenya's main parks, then across the border to the Serengeti and Ngorongoro Crater.",
   days: 10,
   country: "combined",
   destinations: [
@@ -45,7 +46,7 @@ export const package10DayKenyaTanzania = {
   optionalActivities: [
     { name: "Maasai Village Visit", price: 20 },
     { name: "Lake Naivasha Scenic Boat ride", price: 20 },
-    { name: "Crescent Island Exclusive Guided Walking Safari", price: 33 },
+    { name: "Crescent Island Guided Walking Safari", price: 33 },
   ],
   accommodation: {
     mara: "Miti Mingi Eco Camp",
@@ -60,7 +61,7 @@ export const package10DayKenyaTanzania = {
       day: 1,
       title: "Nairobi to Masai Mara National Reserve",
       description:
-        "Depart Nairobi westwards toward the world-renowned Masai Mara. Stop at a Great Rift Valley viewpoint for panoramic views of the escarpment, then continue to Narok town – a vibrant Maasai hub – for a hot lunch. On arrival, check in and refresh before an afternoon game drive as the sun sets over the reserve. Buffet dinner and overnight at our fully furnished camp with hot showers.",
+        "Depart Nairobi westwards toward the Masai Mara. Stop at a Great Rift Valley viewpoint for panoramic views of the escarpment, then continue to Narok town – a vibrant Maasai hub – for a hot lunch. On arrival, check in and refresh before an afternoon game drive as the sun sets over the reserve. Buffet dinner and overnight at our fully furnished camp with hot showers.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
@@ -100,7 +101,7 @@ export const package10DayKenyaTanzania = {
       day: 5,
       title: "Full-Day Game Drive in Amboseli",
       description:
-        "Early breakfast, then a full-day game drive in Amboseli with breathtaking views of Mount Kilimanjaro. Get close to the park's iconic elephant herds, plus lions, giraffes, zebras and a rich variety of birdlife in the wetlands. Picnic lunch overlooking Kilimanjaro before returning to camp for dinner.",
+        "Early breakfast, then a full-day game drive in Amboseli with views of Mount Kilimanjaro. Get close to the park's elephant herds, plus lions, giraffes, zebras and a rich variety of birdlife in the wetlands. Picnic lunch overlooking Kilimanjaro before returning to camp for dinner.",
       destination: "Amboseli National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
@@ -140,7 +141,7 @@ export const package10DayKenyaTanzania = {
       day: 9,
       title: "Ngorongoro Crater & Return to Arusha",
       description:
-        "Descend 600 metres to the floor of the Ngorongoro Crater, a UNESCO World Heritage Site with an extraordinary concentration of wildlife – lions, black rhinos, buffaloes, zebras and hippos. Picnic lunch on the crater rim, then after about six hours of game viewing, ascend and drive to Arusha for the night.",
+        "Descend 600 metres to the floor of the Ngorongoro Crater, a UNESCO World Heritage Site with a concentration of wildlife – lions, black rhinos, buffaloes, zebras and hippos. Picnic lunch on the crater rim, then after about six hours of game viewing, ascend and drive to Arusha for the night.",
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: "The Charity Hotel",

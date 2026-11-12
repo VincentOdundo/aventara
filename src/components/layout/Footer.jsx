@@ -8,7 +8,7 @@ import {
   ArrowUpRight,
   ArrowRight,
 } from "lucide-react";
-import logo from "../../pages/cima_logo.svg";
+import logo from "../../pages/cima_logo.png";
 
 export default function Footer() {
   return (
@@ -70,7 +70,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sand-cream/75 text-sm leading-relaxed mb-8 max-w-sm">
-              Curating unforgettable East African safari expeditions that
+              Curating East African safari expeditions that
               connect travelers with the untamed wilderness, golden savannahs,
               and rich heritage of Kenya and Tanzania.
             </p>

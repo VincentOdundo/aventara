@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { ArrowRight } from "lucide-react";
@@ -16,6 +17,12 @@ import cultureImg1 from "../assets/nairobi/lion-safari.jpeg";
 import cultureImg2 from "../assets/flamingo-water.jpeg";
 
 export default function Tanzania() {
+  useSeo({
+    title: "Tanzania Safaris",
+    description:
+      "Northern Tanzania safaris from 3 to 6 days: Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara, starting in Arusha.",
+    path: "/tanzania",
+  });
   return (
     <Layout>
       <main className="bg-sand-cream text-midnight-black font-body">
@@ -73,12 +80,12 @@ export default function Tanzania() {
                 <p>
                   Tanzania is not merely a destination; it is a profound
                   immersion into the rhythms of the natural world. Home to the
-                  legendary Serengeti and the snow-capped peaks of Kilimanjaro,
-                  it stands as Africa's premier wildlife sanctuary.
+                  Serengeti and the snow-capped peaks of Kilimanjaro,
+                  it stands as Africa's wildlife sanctuary.
                 </p>
                 <p>
                   With over a third of its land dedicated to conservation, the
-                  biodiversity here is unparalleled. From the high-altitude
+                  biodiversity here is. From the high-altitude
                   forests to the spice-scented shores of Zanzibar, every mile
                   offers a new chapter in the Modern Explorer's journal.
                 </p>
@@ -88,7 +95,7 @@ export default function Tanzania() {
               <div className="aspect-[4/5] bg-surface-container-low border border-savannah-gold/25 relative overflow-hidden rounded-2xl editorial-shadow">
                 <img
                   className="w-full h-full object-cover scale-110"
-                  alt="Majestic Mount Kilimanjaro with acacia trees in foreground"
+                  alt="Mount Kilimanjaro with acacia trees in foreground"
                   src={kiliImg}
                 />
               </div>
@@ -109,7 +116,7 @@ export default function Tanzania() {
                 Untamed Encounters
               </span>
               <h2 className="font-headline text-5xl text-safari-brown font-bold mb-6">
-                Iconic Wildlife
+                Wildlife
               </h2>
               <p className="text-safari-brown/80 font-body">
                 The stage is set for nature's most dramatic performances.
@@ -248,7 +255,7 @@ export default function Tanzania() {
                     A landscape transformed into a verdant paradise. This is
                     calving season in the South Serengeti, where hundreds of
                     thousands of foals are born, attracting predators and
-                    creating incredible birdwatching opportunities.
+                    creating birdwatching opportunities.
                   </p>
                 </div>
                 <div className="relative z-10 w-12 h-12 bg-safari-brown rounded-full border-4 border-sand-cream flex items-center justify-center shrink-0 shadow-md">
@@ -301,7 +308,7 @@ export default function Tanzania() {
                     The Maasai
                   </h4>
                   <p className="font-body text-sand-cream/85 leading-relaxed">
-                    Meet the legendary guardians of the savanna. Their vibrant
+                    Meet the guardians of the savanna. Their vibrant
                     red Shúkà and deep spiritual connection to the land offer a
                     profound perspective on coexistence.
                   </p>

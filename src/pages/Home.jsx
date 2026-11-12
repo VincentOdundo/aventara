@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import {
@@ -9,7 +10,6 @@ import {
 import { SeasonBadge } from "../components/ui/SeasonPrice";
 import { safariPackages, getCurrentSeason } from "../data/safaris";
 import { destinations } from "../data/destinations";
-import { testimonials } from "../data/testimonials";
 import { useCounter } from "../hooks/useScrollAnimation";
 import {
   ArrowRight,
@@ -26,7 +26,7 @@ import {
   Play,
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
-import logo from "./cima_logo.svg";
+import logo from "./cima_logo.png";
 
 import elephantGrass from "../assets/nairobi/antelppes.jpeg";
 import elephantTusks from "../assets/rhino.jpeg";
@@ -64,8 +64,13 @@ const heroImages = [
 ];
 
 export default function Home() {
+  useSeo({
+    title: "Kenya & Tanzania Budget Safaris from Nairobi",
+    description:
+      "Shared and private 4x4 safaris to the Masai Mara, Amboseli, Serengeti and Ngorongoro. Published per-person prices include park fees, accommodation, meals and transfers.",
+    path: "/",
+  });
   const [heroIdx, setHeroIdx] = useState(0);
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
   const season = getCurrentSeason();
   const featuredSlugs = [
     "3-day-masai-mara-budget",
@@ -140,9 +145,8 @@ export default function Home() {
               </div>
 
               <p className="text-sm lg:text-base text-sand-cream/85 max-w-md mt-2 font-body line-clamp-3">
-                Handcrafted Kenya &amp; Tanzania safaris woven with golden
-                savannah horizons, expert local naturalists, and unforgettable
-                wildlife encounters.
+                Shared and private 4x4 safaris across Kenya and Tanzania, with
+                park fees, meals and transfers already in the price.
               </p>
             </div>
 
@@ -199,19 +203,19 @@ export default function Home() {
           {/* Small Stat Block - Spans 1x1 */}
           <div className="md:col-span-1 md:row-span-1 bg-sand-cream border border-savannah-gold/30 rounded-[2rem] p-6 flex flex-col justify-center text-center group hover:bg-safari-brown hover:text-sand-cream transition-colors h-52 md:h-full min-h-0 shadow-sm">
             <div className="text-4xl lg:text-5xl font-headline font-extrabold text-sunset-orange group-hover:text-sunrise-yellow transition-colors">
-              4K+
+              Max 7
             </div>
             <div className="text-xs lg:text-sm font-bold uppercase tracking-wider mt-2 text-safari-brown group-hover:text-sand-cream">
-              Happy Travelers
+              Guests per vehicle
             </div>
             <span className="text-xs text-safari-brown/75 group-hover:text-sand-cream/80 mt-1">
-              99% 5-Star Rated Expeditions
+              A window seat for every guest
             </span>
           </div>
 
           {/* Small CTA Block - Spans 1x1 */}
           <Link
-            to="/find-safari"
+            to="/contact"
             className="md:col-span-1 md:row-span-1 bg-gradient-to-br from-safari-brown via-midnight-black to-sunset-orange rounded-[2rem] p-6 flex flex-col justify-between text-sand-cream group cursor-pointer hover:brightness-110 transition-all h-52 md:h-full min-h-0 shadow-md border border-savannah-gold/30"
           >
             <div className="flex items-center justify-between">
@@ -238,10 +242,10 @@ export default function Home() {
       {/* ========== STATS STRIP ========== */}
       <section className="py-12 bg-sand-cream border-y border-savannah-gold/20">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <StatCounter target={4200} suffix="+" label="Happy Safari Guests" />
-          <StatCounter target={15} suffix="+" label="Iconic National Parks" />
-          <StatCounter target={12} suffix="+" label="Years of Bush Expertise" />
-          <StatCounter target={99} suffix="%" label="Five-Star Satisfaction" />
+          <StatCounter target={safariPackages.length} suffix="" label="Safari itineraries" />
+          <StatCounter target={10} suffix="" label="Parks and reserves" />
+          <StatCounter target={7} suffix="" label="Guests per vehicle, at most" />
+          <StatCounter target={24} suffix="h" label="Reply time on quotes" />
         </div>
       </section>
 
@@ -438,7 +442,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== ICONIC DESTINATIONS ========== */}
+      {/* ========== DESTINATIONS ========== */}
       <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center bg-sand-cream">
         <AnimatedSection className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
@@ -446,11 +450,11 @@ export default function Home() {
               East African Horizons
             </span>
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em] mb-4">
-              Iconic Destinations
+              Destinations
             </h2>
             <p className="text-safari-brown/80 max-w-2xl leading-relaxed font-body">
               From Kenya&apos;s sweeping savannahs to Tanzania&apos;s ancient
-              craters — explore the landscapes that make East Africa legendary.
+              craters — explore the landscapes that make East Africa.
             </p>
           </div>
           <Link
@@ -643,104 +647,6 @@ export default function Home() {
               </div>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ========== TESTIMONIALS ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-gradient-to-br from-midnight-black via-safari-brown to-midnight-black text-sand-cream overflow-hidden flex flex-col justify-center">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold block mb-4">
-              Testimonials
-            </span>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-[-0.02em] text-sand-cream">
-              Stories from the Wild
-            </h2>
-          </AnimatedSection>
-
-          <div className="relative max-w-4xl mx-auto">
-            {testimonials.map((t, idx) => (
-              <div
-                key={t.id}
-                className={`transition-all duration-700 ${
-                  idx === testimonialIdx
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 absolute inset-0 translate-x-8 pointer-events-none"
-                }`}
-              >
-                <div className="flex flex-col md:flex-row items-center gap-12">
-                  <div className="flex-shrink-0">
-                    <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-2xl rotate-2 border-2 border-savannah-gold/40">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex justify-center md:justify-start gap-1 mb-6">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={18}
-                          fill="currentColor"
-                          className="text-sunrise-yellow"
-                        />
-                      ))}
-                    </div>
-                    <blockquote className="text-2xl md:text-3xl font-headline leading-snug italic mb-8 text-sand-cream">
-                      &ldquo;{t.quote}&rdquo;
-                    </blockquote>
-                    <p className="text-lg font-bold text-sunrise-yellow">
-                      {t.name}
-                    </p>
-                    <p className="text-sm text-sand-cream/70 mt-1">{t.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Testimonial Nav */}
-            <div className="flex items-center justify-center gap-4 mt-12">
-              <button
-                onClick={() =>
-                  setTestimonialIdx(
-                    (prev) =>
-                      (prev - 1 + testimonials.length) % testimonials.length,
-                  )
-                }
-                className="w-10 h-10 rounded-full border border-savannah-gold/50 text-sunrise-yellow flex items-center justify-center hover:bg-savannah-gold/20 transition-colors"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <div className="flex gap-2">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setTestimonialIdx(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === testimonialIdx
-                        ? "w-8 bg-sunrise-yellow"
-                        : "w-3 bg-sand-cream/30"
-                    }`}
-                    aria-label={`Testimonial ${idx + 1}`}
-                  />
-                ))}
-              </div>
-              <button
-                onClick={() =>
-                  setTestimonialIdx((prev) => (prev + 1) % testimonials.length)
-                }
-                className="w-10 h-10 rounded-full border border-savannah-gold/50 text-sunrise-yellow flex items-center justify-center hover:bg-savannah-gold/20 transition-colors"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 

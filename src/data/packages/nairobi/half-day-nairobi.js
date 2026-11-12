@@ -3,9 +3,9 @@ import heroImg from "../../../assets/elefabt-happy.jpeg";
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",
   slug: "half-day-nairobi-tour",
-  title: "Half Day Trip in Nairobi - The Ultimate Quick Escape",
+  title: "Nairobi Half-Day Tour",
   subtitle:
-    "Experience the vibrant heart of Kenya's capital with this action-packed, quick Nairobi city experience. Perfect for layovers, business travelers, or anyone craving a taste of the 'Green City in the Sun'.",
+    "A half-day wildlife and city outing for stopovers and free days in Nairobi.",
   days: 0.5,
   country: "kenya",
   destinations: ["Nairobi"],
@@ -15,10 +15,10 @@ export const packageHalfDayNairobi = {
   difficulty: "Budget",
   highlights: [
     "Comprehensive Nairobi City Tour",
-    "Explore iconic cultural and historical sites",
+    "Explore cultural and historical sites",
     "Perfect quick getaway for transit travelers",
     "Immersive local Kenyan experience and markets",
-    "Capture breathtaking photography of urban wildlife",
+    "Capture photography of urban wildlife",
   ],
   included: [
     "Professional, English-speaking local tour guide",
@@ -29,7 +29,7 @@ export const packageHalfDayNairobi = {
   ],
   excluded: [
     "Meals and dining expenses",
-    "Entry fees to premium museums and wildlife parks (optional)",
+    "Entry fees to museums and wildlife parks (optional)",
     "Personal shopping and souvenirs",
     "Tips and gratuities for your expert guide",
   ],
@@ -37,19 +37,19 @@ export const packageHalfDayNairobi = {
   itinerary: [
     {
       day: 1,
-      title: "The Ultimate Half-Day Nairobi City Explorer Tour",
+      title: "The Half-Day Nairobi City Explorer Tour",
       description:
-        "Maximize your time in Kenya with our sensational half-day tour of Nairobi city! Dive deep into the vibrant culture, rich history, and bustling energy of East Africa's most dynamic metropolis. We'll whisk you through the beating heart of the city center, revealing hidden gems, iconic cultural sites, lively local markets, and monumental landmarks you simply can't miss. Specially designed for discerning travelers with limited time or those on a quick transit layover, this unforgettable excursion guarantees a profound connection with Nairobi's unique spirit without demanding a full day's commitment. Don't just pass through-experience the magic of Nairobi!",
+        "Maximize your time in Kenya with our half-day tour of Nairobi city! Dive deep into the vibrant culture, rich history, and bustling energy of East Africa's most dynamic metropolis. We'll whisk you through the beating heart of the city center, revealing hidden gems, cultural sites, lively local markets, and monumental landmarks you simply can't miss. Specially designed for discerning travelers with limited time or those on a quick transit layover, this excursion guarantees a profound connection with Nairobi's unique spirit without demanding a full day's commitment. Don't just pass through-experience the magic of Nairobi!",
       destination: "Nairobi",
       meals:
-        "None (Optional stops for authentic local cuisine or premium coffee can be arranged)",
+        "None (Optional stops for authentic local cuisine or coffee can be arranged)",
       accommodation: null,
       
       highlights: [
-        "Iconic Nairobi City landmarks and skyline",
+        "Nairobi City landmarks and skyline",
         "Deep dive into Kenyan cultural sites",
         "Vibrant Maasai markets and local bazaars",
-        "Unforgettable photo opportunities",
+        "Photo opportunities",
       ],
     },
   ],

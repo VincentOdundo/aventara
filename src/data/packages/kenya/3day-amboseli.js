@@ -3,8 +3,9 @@ import heroImg from "../../../assets/egret-water.jpeg";
 export const package3DayAmboseli = {
   id: "3-day-amboseli",
   slug: "3-day-amboseli-budget",
-  title: "Amboseli Budget Safari",
-  subtitle: "In the Shadow of Kilimanjaro",
+  title: "3-Day Amboseli Budget Safari",
+  subtitle:
+    "Two nights in Amboseli, elephant country below Mount Kilimanjaro.",
   days: 3,
   country: "kenya",
   destinations: ["Amboseli"],
@@ -13,11 +14,11 @@ export const package3DayAmboseli = {
   image: heroImg,
   difficulty: "Budget",
   highlights: [
-    "Incredible encounters with Amboseli's famous Jumbo Elephants",
-    "Breathtaking, iconic views of Mount Kilimanjaro's snow-capped peak",
-    "Thrilling exploration of diverse wildlife across dusty plains and wetlands",
-    "Spectacular birdwatching and hippo spotting in lush swampy areas",
-    "Unforgettable, picture-perfect photography opportunities at every turn",
+    "Encounters with Amboseli's famous Jumbo Elephants",
+    "Views of Mount Kilimanjaro's snow-capped peak",
+    "Exploration of diverse wildlife across dusty plains and wetlands",
+    "Birdwatching and hippo spotting in lush swampy areas",
+    "Photography opportunities at every turn",
   ],
   included: [
     "Expert, professional English-speaking safari guide & driver",
@@ -39,9 +40,9 @@ export const package3DayAmboseli = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to Amboseli: Into the Elephant Kingdom",
+      title: "Into the Elephant Kingdom",
       description:
-        "Kick off your dream Kenyan vacation with a convenient, personalized pick-up from your Nairobi hotel or the airport at our mutually agreed time. Sit back and enjoy the scenic, dramatic journey as we drive south through authentic rural Kenyan landscapes towards the legendary Amboseli National Park. Arriving in the late afternoon, you'll feel the immediate shift from city bustle to pure, untamed wilderness.\n\nAfter a warm welcome and check-in at the charming Ositua Rafiki Camp, we waste no time diving into the action. If time allows, we'll embark on a mesmerizing introductory evening game drive right up until sunset. Amboseli is globally renowned for its massive, majestic herds of Jumbo Elephants sporting magnificent tusks, and this golden hour presents the perfect, most atmospheric opportunity to witness them strolling peacefully across the plains. As dusk settles, we retreat to our comfortable camp for a hearty, authentic dinner under the vast African sky. Enquire today to secure your unforgettable escape!",
+        "Kick off your dream Kenyan vacation with a convenient, personalized pick-up from your Nairobi hotel or the airport at our mutually agreed time. Sit back and enjoy the scenic, dramatic journey as we drive south through authentic rural Kenyan landscapes towards the Amboseli National Park. Arriving in the late afternoon, you'll feel the immediate shift from city bustle to pure, untamed wilderness.\n\nAfter a warm welcome and check-in at the charming Ositua Rafiki Camp, we waste no time diving into the action. If time allows, we'll embark on an introductory evening game drive right up until sunset. Amboseli is globally renowned for its massive, herds of Jumbo Elephants sporting tusks, and this golden hour presents the perfect, most atmospheric opportunity to witness them strolling peacefully across the plains. As dusk settles, we retreat to our comfortable camp for a hearty, authentic dinner under the vast African sky. Enquire today to secure your escape!",
       destination: "Amboseli National Park",
       meals: "Dinner Only",
       accommodation: "Ositua Rafiki Camp",
@@ -49,20 +50,20 @@ export const package3DayAmboseli = {
       highlights: [
         "Scenic drive to Amboseli National Park",
         "Enchanting sunset evening game drive",
-        "First awe-inspiring encounter with Jumbo Elephants",
+        "First encounter with Jumbo Elephants",
       ],
     },
     {
       day: 2,
-      title: "Full-Day Exploration: Mount Kilimanjaro & Wetlands",
+      title: "Mount Kilimanjaro & Wetlands",
       description:
-        "Rise and shine to the sounds of the African bush! Following a hearty breakfast, prepare for an absolutely phenomenal full-day game drive that showcases the very best of Amboseli. As the morning mist clears, we'll actively seek out the awe-inspiring, unobstructed views of Mount Kilimanjaro, Africa's highest peak, serving as a staggering, snow-capped backdrop to the wildlife below (weather permitting). This is the quintessential, postcard-perfect African safari scene you've been waiting for!\n\nWe will journey deep into the park's vibrant heart, extensively exploring the verdant, lush green swampy areas fed by underground streams from Kilimanjaro's ice cap. Here, the contrast to the dusty plains is striking. These wetlands are absolute havens for wildlife-expect to get thrillingly close as massive elephant herds and lumbering hippos bathe and graze in the cool waters. The area also boasts a brilliant array of aquatic birdlife, including pelicans, kingfishers, and occasionally, flocks of flamingoes. We'll pause exactly mid-day for a delightful, scenic picnic lunch amidst nature. Our afternoon is dedicated to tracking down predators like lions and cheetahs, or observing graceful giraffes, wildebeests, and zebras sweeping across the plains. A truly magical, action-packed day awaits!",
+        "Rise and shine to the sounds of the African bush! Following a hearty breakfast, prepare for a full-day game drive that showcases the very best of Amboseli. As the morning mist clears, we'll actively seek out the unobstructed views of Mount Kilimanjaro, Africa's highest peak, serving as a staggering, snow-capped backdrop to the wildlife below (weather permitting). This is the quintessential, postcard-perfect African safari scene you've been waiting for!\n\nWe will journey deep into the park's vibrant heart, extensively exploring the verdant, lush green swampy areas fed by underground streams from Kilimanjaro's ice cap. Here, the contrast to the dusty plains is striking. These wetlands are havens for wildlife-expect to get thrillingly close as massive elephant herds and lumbering hippos bathe and graze in the cool waters. The area also boasts a brilliant array of aquatic birdlife, including pelicans, kingfishers, and occasionally, flocks of flamingoes. We'll pause exactly mid-day for a delightful, scenic picnic lunch amidst nature. Our afternoon is dedicated to tracking down predators like lions and cheetahs, or observing graceful giraffes, wildebeests, and zebras sweeping across the plains. A action-packed day awaits!",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
       
       highlights: [
-        "Iconic Mount Kilimanjaro scenic viewing",
+        "Mount Kilimanjaro scenic viewing",
         "Close-up encounters with bathing Elephants and Hippos",
         "Vibrant wetland and swamp exploration",
         "Memorable packed picnic lunch in the wild",
@@ -72,7 +73,7 @@ export const package3DayAmboseli = {
       day: 3,
       title: "Morning Safari & Scenic Return to Nairobi",
       description:
-        "Seize your final morning in the wilderness! After an early, energizing breakfast, we collect our packed picnic lunches and head straight back out for a rewarding final morning game drive. The early hours are fiercely active, offering a fantastic final chance to spot any elusive predators or capture that one last perfect photograph of the Kilimanjaro sunrise.\n\nWe will maximize every minute, conducting an extensive, sweeping game drive traversing the park all the way from the Amboseli Kimana Gate to the Amboseli Mashenani Gate. This engaging journey guarantees at least 2 solid hours of unparalleled wildlife viewing as we slowly exit the park boundaries. Bidding a fond farewell to the elephants and the majestic mountain, we begin our comfortable, scenic drive back to the bustling capital of Nairobi. Reflecting on a whirlwind three days of incredible sights, sounds, and memories, we arrive late in the afternoon, where you will be dropped off safely at your preferred location. Don't simply dream of Africa-book this top-rated Amboseli adventure now and make it a reality!",
+        "Seize your final morning in the wilderness! After an early, energizing breakfast, we collect our packed picnic lunches and head straight back out for a rewarding final morning game drive. The early hours are fiercely active, offering a fantastic final chance to spot any elusive predators or capture that one last perfect photograph of the Kilimanjaro sunrise.\n\nWe will maximize every minute, conducting an extensive, sweeping game drive traversing the park all the way from the Amboseli Kimana Gate to the Amboseli Mashenani Gate. This engaging journey guarantees at least 2 solid hours of wildlife viewing as we slowly exit the park boundaries. Bidding a fond farewell to the elephants and the mountain, we begin our comfortable, scenic drive back to the bustling capital of Nairobi. Reflecting on a whirlwind three days of sights, sounds, and memories, we arrive late in the afternoon, where you will be dropped off safely at your preferred location. Don't simply dream of Africa-book this top-rated Amboseli adventure now and make it a reality!",
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,

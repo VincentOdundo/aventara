@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection } from "../components/ui";
@@ -14,7 +15,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
-import logo from "./cima_logo.svg";
+import logo from "./cima_logo.png";
 
 import heroImg from "../assets/leapard-car.jpeg";
 
@@ -33,6 +34,12 @@ function TikTokIcon({ size = 18 }) {
 }
 
 export default function Contact() {
+  useSeo({
+    title: "Contact & Safari Quotes",
+    description:
+      "Send your travel dates and group size by WhatsApp or email. We reply within 24 hours with availability, the final price and a day-by-day plan.",
+    path: "/contact",
+  });
   const { generateInquiry } = useWhatsApp();
 
   const handleSubmit = (e) => {

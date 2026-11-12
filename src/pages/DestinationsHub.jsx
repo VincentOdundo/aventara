@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
@@ -9,6 +10,12 @@ import heroImg from "../assets/lioness.jpeg";
 import bannerImg from "../assets/safari-van-sunrise.jpeg";
 
 export default function DestinationsHub() {
+  useSeo({
+    title: "Safari Destinations in Kenya & Tanzania",
+    description:
+      "The parks and reserves on our routes: Masai Mara, Amboseli, Lake Nakuru, Lake Naivasha, Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara.",
+    path: "/destinations",
+  });
   const kenyaDestinations = destinations.filter((d) => d.country === "Kenya");
   const tzDestinations = destinations.filter((d) => d.country === "Tanzania");
 
@@ -31,7 +38,7 @@ export default function DestinationsHub() {
           </h1>
           <p className="text-sand-cream/85 font-body text-base md:text-lg mt-4 max-w-2xl leading-relaxed">
             From Kenya's sweeping golden savannahs to Tanzania's ancient volcanic craters —
-            explore the untamed landscapes that make East Africa legendary.
+            explore the untamed landscapes that make East Africa.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link

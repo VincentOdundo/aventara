@@ -30,8 +30,7 @@ export function useWhatsApp() {
         `🏷️ Season: ${season}\n` +
         `💰 Price: $${price} per person\n` +
         `💵 Estimated Total: $${total}\n\n` +
-        `I'd like to book this safari. Please confirm availability!\n\n` +
-        `- Cima Brava Adventures (cimabravaadventures@gmail.com)`,
+        `I'd like to book this safari. Please confirm availability!`,
     );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };
@@ -40,8 +39,7 @@ export function useWhatsApp() {
     const message = encodeURIComponent(
       `🌍 *Cima Brava Adventures Inquiry*\n\n` +
         `Subject: ${subject}\n\n` +
-        `Hi! I'd like to learn more about your safari packages.\n\n` +
-        `- Cima Brava Adventures (cimabravaadventures@gmail.com)`,
+        `Hi! I'd like to learn more about your safari packages.`,
     );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };

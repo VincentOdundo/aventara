@@ -3,8 +3,9 @@ import heroImg from "../../../assets/lion pack.jpeg";
 export const package2DayMara = {
   id: "2-day-mara",
   slug: "2-day-masai-mara-overnight-budget",
-  title: "2-Days Masai Mara Overnight Budget Safari",
-  subtitle: "A quick, unforgettable taste of the wild Mara",
+  title: "2-Day Masai Mara Budget Safari",
+  subtitle:
+    "One night in the Masai Mara with game drives on both days, by road from Nairobi.",
   days: 2,
   country: "kenya",
   destinations: ["Masai Mara"],
@@ -44,7 +45,7 @@ export const package2DayMara = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi – Masai Mara: Rift Valley Views & Evening Game Drive",
+      title: "Rift Valley Views & Evening Game Drive",
       description:
         "Starting from Nairobi, we travel west towards the Masai Mara, enjoying beautiful views of the Great Rift Valley escarpments. Our first stop is a viewpoint overlooking the expansive valley floor below, and our second is in Narok town for a hot lunch before continuing to the camp.\n\nAfter checking in and freshening up, we head out on an evening game drive across the Mara's golden savannah – prime time for lions, cheetahs, elephants, giraffes and vast herds of zebra and wildebeest. Dinner and overnight at our fully furnished camp with hot showers and buffet meals.",
       destination: "Masai Mara National Reserve",

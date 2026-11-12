@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
-import logo from "../../pages/cima_logo.svg";
+import logo from "../../pages/cima_logo.png";
 import WhatsAppIcon from "../ui/WhatsAppIcon";
 
 const navLinks = [

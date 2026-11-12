@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { useParams, Link, Navigate } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
@@ -9,6 +10,15 @@ import { MapPin, ArrowRight, Sparkles, Calendar } from "lucide-react";
 export default function DestinationDetail() {
   const { slug } = useParams();
   const dest = getDestinationBySlug(slug);
+  useSeo(
+    dest
+      ? {
+          title: `${dest.name} Safaris, ${dest.country}`,
+          description: `What to expect in ${dest.name}, ${dest.country}, and the safaris we run there with prices for low and high season.`,
+          path: `/destinations/${dest.slug}`,
+        }
+      : {},
+  );
   const season = getCurrentSeason();
 
   if (!dest) return <Navigate to="/destinations" replace />;

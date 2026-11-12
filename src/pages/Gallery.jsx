@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection } from "../components/ui";
@@ -9,7 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import logo from "./cima_logo.svg";
+import logo from "./cima_logo.png";
 
 import elephantGrass from "../assets/nairobi/lion-safari-van.jpeg";
 import elephantTusks from "../assets/elefant.jpeg";
@@ -81,6 +82,12 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  useSeo({
+    title: "Safari Photo Gallery",
+    description:
+      "Photos from our safaris in the Masai Mara, Amboseli, Lake Nakuru, Nairobi National Park and northern Tanzania.",
+    path: "/gallery",
+  });
   const [lightbox, setLightbox] = useState(null);
 
   return (

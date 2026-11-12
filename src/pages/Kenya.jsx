@@ -1,4 +1,5 @@
 import React from "react";
+import { useSeo, safariJsonLd } from "../hooks/useSeo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { ArrowRight } from "lucide-react";
@@ -14,6 +15,12 @@ import cultureImg3 from "../assets/elefant-tusk.jpeg";
 import bannerImg from "../assets/safari-van-sunrise.jpeg";
 
 export default function Kenya() {
+  useSeo({
+    title: "Kenya Safaris",
+    description:
+      "Budget 4x4 safaris in Kenya from 2 to 8 days: Masai Mara, Amboseli, Lake Nakuru and Lake Naivasha, with daily departures from Nairobi.",
+    path: "/kenya",
+  });
   return (
     <Layout>
       <main className="pt-24 lg:pt-0 bg-sand-cream text-midnight-black font-body">
@@ -68,7 +75,7 @@ export default function Kenya() {
                 Curated Journeys
               </span>
               <h2 className="font-headline font-bold text-4xl md:text-5xl text-safari-brown mb-12">
-                Iconic National Parks
+                National Parks
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Link to="/destinations/masai-mara" className="group cursor-pointer block">
@@ -173,7 +180,7 @@ export default function Kenya() {
                         Elephant Herds of Amboseli
                       </p>
                       <p className="text-sm text-safari-brown/80">
-                        Up-close encounters with legendary elephant families in
+                        Up-close encounters with elephant families in
                         their marshland habitat.
                       </p>
                     </div>
@@ -221,7 +228,7 @@ export default function Kenya() {
                   />
                   <img
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
-                    alt="Majestic elephant tusks"
+                    alt="Elephant tusks"
                     src={cultureImg3}
                   />
                 </div>
