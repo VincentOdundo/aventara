@@ -1,10 +1,4 @@
-import genImg_0 from "../../../assets/lion.jpeg";
-import genImg_1 from "../../../assets/lioness_open.jpeg";
-import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_3 from "../../../assets/lion.jpeg";
-import genImg_4 from "../../../assets/cheater.jpeg";
-import genImg_5 from "../../../assets/lion pack.jpeg";
-import genImg_6 from "../../../assets/treecheta.jpeg";
+import heroImg from "../../../assets/flamingo-lonely.jpeg";
 
 export const package5DayMaraNakuruNaivasha = {
   id: "5-day-mara-nakuru-naivasha",
@@ -16,8 +10,7 @@ export const package5DayMaraNakuruNaivasha = {
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Lake Naivasha", "Hell's Gate"],
   price: { low: 950, high: 1250 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Exhilarating cycle safaris in Hell's Gate National Park",
@@ -59,7 +52,7 @@ export const package5DayMaraNakuruNaivasha = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_3,
+      
       highlights: [
         "Dramatic Great Rift Valley viewpoints",
         "Thrilling golden-hour evening game drive",
@@ -75,7 +68,7 @@ export const package5DayMaraNakuruNaivasha = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_4,
+      
       highlights: [
         "Relentless tracking of the legendary Big Five",
         "Dramtic Mara River ecosystem exploration",
@@ -92,7 +85,7 @@ export const package5DayMaraNakuruNaivasha = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_5,
+      
       highlights: [
         "Incredible Lake Naivasha optional boat rides",
         "Awe-inspiring Lake Nakuru landscape scenery",
@@ -109,7 +102,7 @@ export const package5DayMaraNakuruNaivasha = {
       destination: "Lake Naivasha",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Leisure Apex Resort",
-      image: genImg_6,
+      
       highlights: [
         "World-famous, highly protected Rhino sanctuary",
         "Incredible White and black rhino photography",
@@ -125,7 +118,7 @@ export const package5DayMaraNakuruNaivasha = {
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Exhilarating cycle safari alongside wild animals",
         "Adventurous guided gorge and cliff walking safari",

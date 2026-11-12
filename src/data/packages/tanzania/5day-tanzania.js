@@ -1,14 +1,8 @@
-import genImg_0 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_1 from "../../../assets/cheater.jpeg";
-import genImg_2 from "../../../assets/nairobi/girfe-sunset.jpeg";
-import genImg_3 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_4 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_5 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_6 from "../../../assets/treecheta.jpeg";
+import heroImg from "../../../assets/nairobi/lion-safari.jpeg";
 
-;;
-;;
-;;
+
+
+
 
 export const package5DayTanzania = {
   id: "5-day-tanzania",
@@ -20,8 +14,7 @@ export const package5DayTanzania = {
   country: "tanzania",
   destinations: ["Tarangire", "Serengeti", "Ngorongoro", "Lake Manyara"],
   price: { low: 1050, high: 1400 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Marvel at the massive elephant herds in Tarangire",
@@ -59,7 +52,7 @@ export const package5DayTanzania = {
       destination: "Tarangire National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Tarangire Campsite (Riverside Wilderness)",
-      image: genImg_3,
+      
       highlights: [
         "Unforgettable encounters with massive elephant herds",
         "Iconic landscapes dotted with ancient baobab trees",
@@ -74,7 +67,7 @@ export const package5DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Nyani Camp (Heart of the Plains)",
-      image: genImg_4,
+      
       highlights: [
         "Traverse the dramatic Ngorongoro Conservation Area highlands",
         "Witness the awe-inspiring transition to the expansive Serengeti plains",
@@ -89,7 +82,7 @@ export const package5DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Nyani Camp (Heart of the Plains)",
-      image: genImg_5,
+      
       highlights: [
         "Follow the path of the legendary Great Migration (seasonal)",
         "Premium opportunities for observing high predator density and dramatic hunts",
@@ -104,7 +97,7 @@ export const package5DayTanzania = {
       destination: "Ngorongoro Conservation Area",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite (Panoramic Crater Rim)",
-      image: genImg_6,
+      
       highlights: [
         "Final thrilling morning game drive exiting the Serengeti plains",
         "Dramatic ascent back to the lush crater highlands",
@@ -119,7 +112,7 @@ export const package5DayTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Epic morning game drive inside the legendary Ngorongoro Crater",
         "Encounter the incredible biodiversity of the 'Eighth Wonder of the World'",

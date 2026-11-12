@@ -1,7 +1,4 @@
-import genImg_0 from "../../../assets/lion-lonely.jpeg";
-import genImg_1 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import nairobiGiraffeCity from "../../../assets/nairobi/girafe-nairobi-city.jpeg";
-import nairobiLionVan from "../../../assets/nairobi/lion-safari-van.jpeg";
+import heroImg from "../../../assets/elefabt-happy.jpeg";
 
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",
@@ -13,8 +10,8 @@ export const packageHalfDayNairobi = {
   country: "kenya",
   destinations: ["Nairobi"],
   price: { low: 150, high: 150 },
-  image: nairobiGiraffeCity,
-  gallery: [genImg_0, genImg_1],
+  image: heroImg,
+  
   difficulty: "Budget",
   highlights: [
     "Comprehensive Nairobi City Tour",
@@ -47,7 +44,7 @@ export const packageHalfDayNairobi = {
       meals:
         "None (Optional stops for authentic local cuisine or premium coffee can be arranged)",
       accommodation: null,
-      image: nairobiLionVan,
+      
       highlights: [
         "Iconic Nairobi City landmarks and skyline",
         "Deep dive into Kenyan cultural sites",

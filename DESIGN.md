@@ -1,66 +1,98 @@
-# Design System Specification: Neo-Brutalist Light / Bento Box
+# Cima Brava Adventures — Official Design System Specification (`theme.png`)
 
 ## 1. Overview & Creative North Star
 
-### Creative North Star: "Vibrant & Unapologetic"
+### Creative North Star: *"Wild by Nature. Guided by Heart."*
 
-The Aventara Safaris design system has pivoted from a muted, traditional "Safari-Chic" aesthetic to a highly modern, energetic **Neo-Brutalist Light Bento Box** layout. This is designed to appeal to modern adventurers, tech-forward travelers, and those who appreciate cutting-edge digital experiences.
-
-The UI is defined by massive typography, high-contrast bright colors, strict grid systems, and large, friendly border-radii (`2rem` / `32px`) on almost every block-level element. It feels less like a traditional travel agency and more like a high-end, disruptive startup.
+The **Cima Brava Adventures** (Aventara Safaris) design system embodies the golden warmth, timeless elegance, and raw majesty of the East African savannah at sunrise and sunset. Anchored strictly to `theme.png`, it uses **only** the 7 official brand colors via `@theme` design tokens, pairing classic editorial authority (`Trajan Pro` / `Cinzel`) with modern digital readability (`Inter` / `Montserrat`).
 
 ---
 
-## 2. Colors
+## 2. Official Color Palette (`theme.png`)
 
-Our palette abandons earth tones in favor of bright, pure, high-contrast hues that signify energy, action, and modernism.
+| Swatch Name | Hex Code | CSS Token | Tailwind Utility Prefix | Role & Usage |
+| :--- | :--- | :--- | :--- | :--- |
+| **Midnight Black** | `#0A0906` | `--color-midnight-black` | `*-midnight-black` | Deepest dark surface, primary text on light/gold surfaces, footer/hero backdrop |
+| **Safari Brown** | `#2A1500` | `--color-safari-brown` | `*-safari-brown` | Secondary dark CTA surface, rich espresso card/header surface, secondary body text |
+| **Sunset Orange** | `#C2410C` | `--color-sunset-orange` | `*-sunset-orange` | Warm burnt-orange accent, gradient stop, active tags & badges |
+| **Savannah Gold** | `#F59E0B` | `--color-savannah-gold` | `*-savannah-gold` | Primary brand gold, outline CTA border (`#F59E0B`), primary gradient bottom stop |
+| **Sunrise Yellow** | `#FFD34D` | `--color-sunrise-yellow` | `*-sunrise-yellow` | Luminous golden-yellow highlight, primary CTA top stop, script underline brush stroke |
+| **Sand Cream** | `#FDF6E3` | `--color-sand-cream` | `*-sand-cream` | Primary page canvas (`bg-surface` / `bg-sand-cream`), text on dark Safari Brown/Midnight Black |
+| **Crane Red** | `#D91E18` | `--color-crane-red` | `*-crane-red` | High-urgency accents, limited-spot alerts, error states, and Crowned Crane crest highlight |
 
-### Strict Neo-Brutalist Palette
-
-- **Base Layer (Surface):** Utterly clean White (`#ffffff`).
-- **Surface Containers:** We use a very cool grey (`#f3f4f6` and `#fafafa`) for backgrounds holding our white cards, ensuring the white pops visually.
-- **Aventara Sunset Orange (`primary` - `#f97316`):** The primary brand color. Unapologetic, vibrant, and used for massive hero elements and typography highlights.
-- **Emerald Green (`tertiary` - `#10b981`):** Used strictly for high-conversion CTAs (Book Now, WhatsApp). It provides incredible contrast against the orange.
-- **Cool Blue (`secondary` - `#0ea5e9`):** A secondary accent used for statistics and minor UI elements.
-- **Text (`on_surface`):** Deep Slate (`#0f172a`), avoiding pure black to maintain a sophisticated contrast level.
-
-### Glassmorphism & UI Layers
-
-- **Glass Overlays:** Moving to a modern frosted glass aesthetic (`rgba(255, 255, 255, 0.85)` with a `24px` backdrop blur).
-- **Dark Glass (for image overlays):** Used when placing text over bright safari imagery (`rgba(15, 23, 42, 0.8)`).
-
----
-
-## 3. Typography
-
-The typographic tension is created by pairing a thick, geometric trendy Display font with an ultra-clean, functional sans-serif.
-
-- **Display & Headlines (Syne):** Our unapologetic voice. Used for all major headlines (e.g., "WILD. FREE."). Syne is extremely geometric and slightly edgy. We type it often in all-caps or title-case with negative letter-spacing for impact.
-- **Body & Labels (Inter):** The ultimate functional sans-serif for UI. It is highly legible, precise, and gets out of the way so the user can read itineraries and pricing easily.
-- **Scale:** We over-index on size. Hero headlines reach up to `text-8xl`. If it isn't massive, it doesn't belong in the hero.
-
----
-
-## 4. Elevation & Shapes ("Bento Box")
-
-We have removed subtle, organic shapes in favor of strict, structural architecture.
-
-- **The Primary Shape:** The `2rem` (32px) rounded rectangle is our core structural unit. Everything from hero containers to safari cards uses this shape.
-- **The "Bento" Grid:** Information is chunked into distinct square or rectangular containers, laid out in a tight CSS Grid with small gaps (`gap-4`). This creates a dashboard-like feeling of total control and exploration.
-- **Shadows:** We do not use muddy drop shadows. Shadows are clean, light, and architectural (`0 4px 20px rgba(0,0,0,0.05)`).
-- **Interactions:** Cards hover with a physical "push" or "lift" effect (`scale-[0.98]` or `scale-110`).
+### Semantic Token Mapping (`src/index.css`)
+All semantic tokens map strictly via `var(--color-...)` to the 7 official palette tokens above:
+- `--color-primary`: `var(--color-savannah-gold)` (`#F59E0B`)
+- `--color-primary-container`: `var(--color-sunrise-yellow)` (`#FFD34D`)
+- `--color-on-primary`: `var(--color-midnight-black)` (`#0A0906`)
+- `--color-on-primary-container`: `var(--color-safari-brown)` (`#2A1500`)
+- `--color-secondary`: `var(--color-sunset-orange)` (`#C2410C`)
+- `--color-secondary-container`: `var(--color-sunrise-yellow)` (`#FFD34D`)
+- `--color-on-secondary`: `var(--color-sand-cream)` (`#FDF6E3`)
+- `--color-tertiary`: `var(--color-safari-brown)` (`#2A1500`)
+- `--color-tertiary-container`: `var(--color-sand-cream)` (`#FDF6E3`)
+- `--color-on-tertiary`: `var(--color-sand-cream)` (`#FDF6E3`)
+- `--color-error`: `var(--color-crane-red)` (`#D91E18`)
+- `--color-background` / `--color-surface`: `var(--color-sand-cream)` (`#FDF6E3`)
+- `--color-surface-dim`: `var(--color-midnight-black)` (`#0A0906`)
+- `--color-on-surface` / `--color-on-background`: `var(--color-midnight-black)` (`#0A0906`)
+- `--color-on-surface-variant`: `var(--color-safari-brown)` (`#2A1500`)
+- `--color-outline`: `var(--color-savannah-gold)` (`#F59E0B`)
+- `--color-outline-variant`: `var(--color-safari-brown)` (`#2A1500`)
 
 ---
 
-## 5. Do's and Don'ts
+## 3. Typography (`theme.png`)
 
-### Do:
+### Heading / Logo Font: **Trajan Pro**
+- **Character:** Bold · Elegant · Timeless
+- **CSS Stack (`--font-headline`):** `"Trajan Pro", "Cinzel", "Cormorant Garamond", Georgia, serif`
+- **Usage:** Hero titles, section headings, destination titles, brand wordmark, and editorial callouts.
 
-- **Use Massive Shapes:** Wrap content in large, colorful, heavily rounded containers.
-- **Over-scale Text:** If you think a headline is big enough, make it one size larger.
-- **Maintain Grid Rigidity:** Keep gaps tight and consistent across the bento sections.
+### Body & UI Font: **Inter / Montserrat**
+- **Character:** Clean · Modern · Readable
+- **CSS Stack (`--font-body` / `--font-label`):** `"Inter", "Montserrat", sans-serif`
+- **Usage:** Body copy, itineraries, pricing tables, navigation links, buttons, and metadata badges.
 
-### Don't:
+### Script / Signature Accent Font: **Caveat**
+- **Character:** Expressive · Handcrafted · Warm
+- **CSS Stack (`--font-script`):** `"Caveat", "Satisfy", cursive`
+- **Usage:** Signature brand motto *"Wild by Nature. Guided by Heart."* paired with a Sunrise Yellow (`var(--color-sunrise-yellow)`) brush-stroke underline.
 
-- **Don't use subtle borders or borders with complex outlines.**
-- **Don't use muddy or earthy tones like olive or beige** - stick to crisp whites, slates, and vivid neon-adjacent accents.
-- **Don't use Serif fonts.** The brand is exclusively geometric sans-serif and grotesque typefaces.
+---
+
+## 4. UI Components (Website) from `theme.png`
+
+### 1. Primary CTA — `"Explore Trips →"` (`.btn-explore`)
+- **Shape:** Pill (`rounded-full`)
+- **Background:** Golden vertical gradient `linear-gradient(180deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 100%)`
+- **Typography:** Bold `Inter`/`Montserrat`, `var(--color-midnight-black)` text with right arrow icon (`→`)
+
+### 2. Secondary Dark CTA — `"View Destinations →"` (`.btn-destinations`)
+- **Shape:** Pill (`rounded-full`)
+- **Background:** Rich Safari Brown horizontal gradient `linear-gradient(90deg, var(--color-midnight-black) 0%, var(--color-safari-brown) 100%)`
+- **Typography:** Semi-bold/Bold `Inter`/`Montserrat`, `var(--color-sand-cream)` text with right arrow icon (`→`)
+
+### 3. Outline CTA — `"Plan Your Adventure"` (`.btn-plan`)
+- **Shape:** Pill (`rounded-full`)
+- **Background:** Transparent or `bg-sand-cream`
+- **Border:** `1.5px solid var(--color-savannah-gold)`
+- **Typography:** Bold `Inter`/`Montserrat`, `text-midnight-black` (on light surfaces) or `text-sand-cream` (on dark surfaces)
+
+### 4. Media CTA — `"Watch Our Story"` (`.btn-story-play`)
+- **Play Badge:** Circular button (`rounded-full`) with sunrise-to-sunset gradient `linear-gradient(135deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 55%, var(--color-sunset-orange) 100%)` and solid `text-midnight-black` play triangle.
+- **Label:** Bold `"Watch Our Story"` text in `text-midnight-black` or `text-sand-cream`.
+
+### 5. Hero / Banner Card (`"Wild by Nature. Guided by Heart."`)
+- **Container:** Rounded panoramic card (`rounded-2xl` / `rounded-3xl`) featuring local East African safari photography from `src/assets/` with a rich `from-midnight-black` / `via-safari-brown` vignette.
+- **Quote Overlay:** Script typography (`font-script`, `text-sand-cream`) reading *"Wild by Nature. Guided by Heart."* underscored by a hand-drawn `text-sunrise-yellow` brush stroke.
+
+---
+
+## 5. Brand Assets & Contact Links
+
+- **Logo (`/cima_logo.svg`):** Uses an SVG luminance mask over embedded artwork. Display on `bg-midnight-black` or `bg-safari-brown` dark surfaces so the white emblem and typography remain crisp.
+- **Local Safari Photography (`src/assets/**`):** Always use the repository's authentic local safari photos in `src/assets/*.jpeg`, `src/assets/*.jpg`, and `src/assets/nairobi/*.jpeg`.
+- **Email:** `cimabravaadventures@gmail.com`
+- **TikTok:** `https://www.tiktok.com/@cima_brava_adventures`
+- **Instagram:** `https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr`

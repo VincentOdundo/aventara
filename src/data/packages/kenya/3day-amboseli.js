@@ -1,8 +1,4 @@
-import genImg_0 from "../../../assets/elephtain.jpeg";
-import genImg_1 from "../../../assets/cheater.jpeg";
-import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_3 from "../../../assets/plain_elefabt.jpeg";
-import genImg_4 from "../../../assets/elefabt-happy.jpeg";
+import heroImg from "../../../assets/egret-water.jpeg";
 
 export const package3DayAmboseli = {
   id: "3-day-amboseli",
@@ -13,8 +9,7 @@ export const package3DayAmboseli = {
   country: "kenya",
   destinations: ["Amboseli"],
   price: { low: 450, high: 650 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Incredible encounters with Amboseli's famous Jumbo Elephants",
@@ -49,7 +44,7 @@ export const package3DayAmboseli = {
       destination: "Amboseli National Park",
       meals: "Dinner Only",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_3,
+      
       highlights: [
         "Scenic drive to Amboseli National Park",
         "Enchanting sunset evening game drive",
@@ -60,11 +55,11 @@ export const package3DayAmboseli = {
       day: 2,
       title: "Full-Day Exploration: Mount Kilimanjaro & Wetlands",
       description:
-        "Rise and shine to the sounds of the African bush! Following a hearty breakfast, prepare for an absolutely phenomenal full-day game drive that showcases the very best of Amboseli. As the morning mist clears, we'll actively seek out the awe-inspiring, unobstructed views of Mount Kilimanjaro, Africa's highest peak, serving as a staggering, snow-capped backdrop to the wildlife below (weather permitting). This is the quintessential, postcard-perfect African safari scene you've been waiting for!\n\nWe will journey deep into the park's vibrant heart, extensively exploring the verdant, emerald-green swampy areas fed by underground streams from Kilimanjaro's ice cap. Here, the contrast to the dusty plains is striking. These wetlands are absolute havens for wildlife-expect to get thrillingly close as massive elephant herds and lumbering hippos bathe and graze in the cool waters. The area also boasts a brilliant array of aquatic birdlife, including pelicans, kingfishers, and occasionally, flocks of flamingoes. We'll pause exactly mid-day for a delightful, scenic picnic lunch amidst nature. Our afternoon is dedicated to tracking down predators like lions and cheetahs, or observing graceful giraffes, wildebeests, and zebras sweeping across the plains. A truly magical, action-packed day awaits!",
+        "Rise and shine to the sounds of the African bush! Following a hearty breakfast, prepare for an absolutely phenomenal full-day game drive that showcases the very best of Amboseli. As the morning mist clears, we'll actively seek out the awe-inspiring, unobstructed views of Mount Kilimanjaro, Africa's highest peak, serving as a staggering, snow-capped backdrop to the wildlife below (weather permitting). This is the quintessential, postcard-perfect African safari scene you've been waiting for!\n\nWe will journey deep into the park's vibrant heart, extensively exploring the verdant, lush green swampy areas fed by underground streams from Kilimanjaro's ice cap. Here, the contrast to the dusty plains is striking. These wetlands are absolute havens for wildlife-expect to get thrillingly close as massive elephant herds and lumbering hippos bathe and graze in the cool waters. The area also boasts a brilliant array of aquatic birdlife, including pelicans, kingfishers, and occasionally, flocks of flamingoes. We'll pause exactly mid-day for a delightful, scenic picnic lunch amidst nature. Our afternoon is dedicated to tracking down predators like lions and cheetahs, or observing graceful giraffes, wildebeests, and zebras sweeping across the plains. A truly magical, action-packed day awaits!",
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_4,
+      
       highlights: [
         "Iconic Mount Kilimanjaro scenic viewing",
         "Close-up encounters with bathing Elephants and Hippos",
@@ -80,7 +75,7 @@ export const package3DayAmboseli = {
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Action-packed final morning game drive",
         "Extensive park traversal (Kimana to Mashenani Gate)",

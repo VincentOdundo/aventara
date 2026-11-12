@@ -1,24 +1,23 @@
-import cheetahSafari from "../assets/cheater-safari.jpeg";
-import cheetahPlain from "../assets/cheater_plain.jpeg";
-import elephantGrass from "../assets/elefant-vegetation.jpeg";
-import elephantTusks from "../assets/elefant-tusk.jpeg";
-import flamingoWater from "../assets/flamingo-water.jpeg";
-import flamingoSolo from "../assets/flamingo-lonely.jpeg";
-import rhinoPair from "../assets/rhino.jpeg";
-import rhinoClose from "../assets/rhino_plain.jpeg";
-import egretWater from "../assets/egret-water.jpeg";
-import hellsGateImage from "../assets/nairobi/antelppes.jpeg";
-import lionessPortrait from "../assets/lioness.jpeg";
-import nairobiGiraffeCity from "../assets/nairobi/girafe-nairobi-city.jpeg";
+import destImg0 from "../assets/treecheta.jpeg";
+import destImg1 from "../assets/flamingo-lonely.jpeg";
+import destImg2 from "../assets/mountain.jpeg";
+import destImg3 from "../assets/nairobi/girafe-nairobi-city.jpeg";
+import destImg4 from "../assets/plain_elefabt.jpeg";
+import destImg5 from "../assets/wildbeasts.jpg";
+import destImg6 from "../assets/elefpalin.jpeg";
+import destImg7 from "../assets/lioness_open.jpeg";
+import destImg8 from "../assets/lion-lonely.jpeg";
+import destImg9 from "../assets/nairobi/girfe-sunset.jpeg";
+import destImg10 from "../assets/flamingo-water.jpeg";
+import destImg11 from "../assets/elefant-vegetation.jpeg";
+import extraImg1 from "../assets/lioness.jpeg";
+import extraImg2 from "../assets/safari-van-sunrise.jpeg";
+import extraImg3 from "../assets/elefant-tusk.jpeg";
+import extraImg4 from "../assets/rhino.jpeg";
+import extraImg5 from "../assets/cheater_plain.jpeg";
+import extraImg6 from "../assets/flamingo.jpeg";
 
-// Gallery safe images
-import lionStd from "../assets/lion.jpeg";
-import leopardTree from "../assets/treecheta.jpeg";
-import mountain from "../assets/mountain.jpeg";
-import plainEle from "../assets/plain_elefabt.jpeg";
-
-// Destinations data - all parks, reserves, and key locations
-
+// Destinations data
 export const destinations = [
   {
     id: "masai-mara",
@@ -37,8 +36,8 @@ export const destinations = [
       "Explore the African bush on exclusive, action-packed nocturnal game drives",
     ],
     bestTime: "July – October (Peak Migration season for river crossings)",
-    image: cheetahSafari,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg0,
+    gallery: [destImg5, extraImg1, extraImg2],
   },
   {
     id: "lake-nakuru",
@@ -57,8 +56,8 @@ export const destinations = [
       "Take in sweeping panoramic vistas from the iconic Baboon Cliff viewpoint",
     ],
     bestTime: "Year-round (Excellent birding and rhino spotting continuously)",
-    image: flamingoWater,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg1,
+    gallery: [extraImg6, destImg10, extraImg4],
   },
   {
     id: "hells-gate",
@@ -77,8 +76,8 @@ export const destinations = [
       "Enjoy world-class rock climbing on stunning cliff faces",
     ],
     bestTime: "Year-round (Perfect for active, outdoor exploration)",
-    image: hellsGateImage,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg2,
+    gallery: [destImg9, extraImg2, destImg5],
   },
   {
     id: "lake-naivasha",
@@ -97,8 +96,8 @@ export const destinations = [
       "Soak up dramatically scenic, sunset-drenched Rift Valley views",
     ],
     bestTime: "Year-round (Exceptional birding and boating consistently)",
-    image: egretWater,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg3,
+    gallery: [destImg10, destImg9, extraImg6],
   },
   {
     id: "amboseli",
@@ -108,7 +107,7 @@ export const destinations = [
     tagline:
       "Walk with Giants in the Majestic Shadow of Snow-Capped Mount Kilimanjaro",
     description:
-      "Amboseli National Park delivers the quintessential, deeply romanticized image of wild Africa: massive, ancient herds of large-tusked elephants slowly traversing a dusty, sun-baked plain, framed perfectly by the towering, snow-capped majesty of Mount Kilimanjaro in the background. Known as the best place in the world to get close to free-ranging elephants, Amboseli offers wildlife encounters that are both intimate and awe-inspiring. Despite its relatively small size, the park's underground water supply-fed by Kilimanjaro's ice cap-creates lush, emerald-green swamps that act as a magnet for a huge diversity of wildlife, especially during the dry season. Here, you will spot lions, cheetahs, hyenas, and a plethora of water birds congregating around the life-giving springs. The sweeping views from Observation Hill allow you to gaze across the entirety of the park, taking in the spectacular juxtaposition of harsh, dry lake beds against thriving wetlands. For wildlife photographers and lovers of iconic landscapes, Amboseli is a breathtaking, absolute must-visit paradise.",
+      "Amboseli National Park delivers the quintessential, deeply romanticized image of wild Africa: massive, ancient herds of large-tusked elephants slowly traversing a dusty, sun-baked plain, framed perfectly by the towering, snow-capped majesty of Mount Kilimanjaro in the background. Known as the best place in the world to get close to free-ranging elephants, Amboseli offers wildlife encounters that are both intimate and awe-inspiring. Despite its relatively small size, the park's underground water supply-fed by Kilimanjaro's ice cap-creates lush, verdant green swamps that act as a magnet for a huge diversity of wildlife, especially during the dry season. Here, you will spot lions, cheetahs, hyenas, and a plethora of water birds congregating around the life-giving springs. The sweeping views from Observation Hill allow you to gaze across the entirety of the park, taking in the spectacular juxtaposition of harsh, dry lake beds against thriving wetlands. For wildlife photographers and lovers of iconic landscapes, Amboseli is a breathtaking, absolute must-visit paradise.",
     highlights: [
       "Marvel at the iconic, unencumbered backdrop of Mount Kilimanjaro",
       "Observe and photograph some of the largest elephant herds in all of Africa",
@@ -118,8 +117,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season ensures the clearest views of Kilimanjaro)",
-    image: elephantGrass,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg4,
+    gallery: [destImg2, extraImg3, destImg11],
   },
   {
     id: "tsavo",
@@ -139,8 +138,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Best conditions for wildlife congregation at water sources)",
-    image: elephantTusks,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg5,
+    gallery: [destImg6, extraImg3, destImg8],
   },
   {
     id: "ol-pejeta",
@@ -159,8 +158,8 @@ export const destinations = [
       "Participate in hands-on, educational behind-the-scenes conservation tours",
     ],
     bestTime: "Year-round (Excellent road conditions and consistent wildlife)",
-    image: rhinoClose,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg6,
+    gallery: [extraImg4, destImg7, extraImg5],
   },
   {
     id: "serengeti",
@@ -180,8 +179,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season), December – March (Epic wildebeest calving season)",
-    image: cheetahPlain,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg7,
+    gallery: [destImg5, extraImg1, extraImg5],
   },
   {
     id: "ngorongoro",
@@ -200,8 +199,8 @@ export const destinations = [
       "Sip morning coffee while taking in mind-blowing panoramas from the crater rim",
     ],
     bestTime: "Year-round (Wildlife is permanently enclosed within the crater)",
-    image: rhinoPair,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg8,
+    gallery: [extraImg4, destImg10, destImg4],
   },
   {
     id: "tarangire",
@@ -220,8 +219,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season triggers massive wildlife migration to the river)",
-    image: lionessPortrait,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg9,
+    gallery: [destImg11, extraImg3, destImg6],
   },
   {
     id: "lake-manyara",
@@ -230,7 +229,7 @@ export const destinations = [
     country: "Tanzania",
     tagline: "A Lush, Scenic Gem Where Lions Leisurely Lounge in the Trees",
     description:
-      "Tucked dramatically at the sheer, towering base of the Great Rift Valley escarpment, Lake Manyara National Park is a wildly scenic, ecologically diverse gem described by Ernest Hemingway as 'the loveliest I had seen in Africa.' The park creates a striking visual contrast, moving rapidly from thick, dark, jungle-like groundwater forests teeming with swinging troops of olive baboons and blue monkeys, out to the sun-drenched, expansive alkaline shores of the lake itself. The waters are frequently coated in vibrant pink, drawn by the thousands of feeding flamingos, pelicans, and storks. However, the true icons of Lake Manyara are its uniquely adapted, deeply fascinating tree-climbing lions. Spotting a massive, maned lion draped lazily across the high branches of an umbrella acacia tree is a bizarre, breathtaking highlight that defies typical feline behavior. Packing a huge diversity of habits-forests, wetlands, and hot springs-into a highly compact area, Lake Manyara provides a rapid, overwhelmingly beautiful burst of concentrated African wildlife.",
+      "Tucked dramatically at the sheer, towering base of the Great Rift Valley escarpment, Lake Manyara National Park is a wildly scenic, ecologically diverse gem described by Ernest Hemingway as 'the loveliest I had seen in Africa.' The park creates a striking visual contrast, moving rapidly from thick, dark, jungle-like groundwater forests teeming with swinging troops of olive baboons and sykes monkeys, out to the sun-drenched, expansive alkaline shores of the lake itself. The waters are frequently coated in vibrant pink, drawn by the thousands of feeding flamingos, pelicans, and storks. However, the true icons of Lake Manyara are its uniquely adapted, deeply fascinating tree-climbing lions. Spotting a massive, maned lion draped lazily across the high branches of an umbrella acacia tree is a bizarre, breathtaking highlight that defies typical feline behavior. Packing a huge diversity of habits-forests, wetlands, and hot springs-into a highly compact area, Lake Manyara provides a rapid, overwhelmingly beautiful burst of concentrated African wildlife.",
     highlights: [
       "Search the high acacia branches for the legendary, elusive tree-climbing lions",
       "Photograph vibrant, shimmering flocks of flamingos stretching across the water",
@@ -240,8 +239,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season ensures easier driving and active wildlife)",
-    image: flamingoSolo,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg10,
+    gallery: [extraImg6, destImg1, destImg0],
   },
   {
     id: "nairobi-np",
@@ -261,8 +260,8 @@ export const destinations = [
     ],
     bestTime:
       "Year-round (Exceptional convenience and year-round urban wildlife viewing)",
-    image: nairobiGiraffeCity,
-    gallery: [lionStd, leopardTree, mountain, plainEle],
+    image: destImg11,
+    gallery: [destImg3, extraImg4, extraImg1],
   },
 ];
 

@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import {
-  Button,
   Section,
-  DestinationCard,
   AnimatedSection,
   StaggerContainer,
 } from "../components/ui";
-import { SeasonBadge, PriceDisplay } from "../components/ui/SeasonPrice";
+import { SeasonBadge } from "../components/ui/SeasonPrice";
 import { safariPackages, getCurrentSeason } from "../data/safaris";
 import { destinations } from "../data/destinations";
 import { testimonials } from "../data/testimonials";
@@ -25,27 +23,30 @@ import {
   MapPin,
   ChevronLeft,
   ChevronRight,
+  Play,
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
+import logo from "./cima_logo.svg";
 
-import elephantGrass from "../assets/elefant-vegetation.jpeg";
-import elephantTusks from "../assets/elefant-tusk.jpeg";
-import flamingoWater from "../assets/flamingo-water.jpeg";
-import sunsetExotic from "../assets/nairobi/sunset-exotic.jpeg";
-import rhinoClose from "../assets/rhino_plain.jpeg";
-import kilimanjaro from "../assets/mountain.jpeg";
-import elephtain from "../assets/elephtain.jpeg";
-import wildImg from "../assets/wildbeasts.jpg";
+import elephantGrass from "../assets/nairobi/antelppes.jpeg";
+import elephantTusks from "../assets/rhino.jpeg";
+import flamingoWater from "../assets/flamingo.jpeg";
+import sunsetExotic from "../assets/cheater_plain.jpeg";
+import rhinoClose from "../assets/nairobi/bird-exotic.jpeg";
+import kilimanjaro from "../assets/lion pack.jpeg";
+import elephtain from "../assets/leapard-car.jpeg";
+import wildImg from "../assets/cheater-safari.jpeg";
+import heroImg from "../assets/cheater-safari.jpeg";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
   return (
     <div ref={ref} className="text-center">
-      <span className="text-4xl md:text-5xl font-headline font-bold text-primary">
+      <span className="text-4xl md:text-5xl font-headline font-bold text-savannah-gold">
         {count.toLocaleString()}
         {suffix}
       </span>
-      <p className="text-sm text-on-surface-variant mt-2 font-medium">
+      <p className="text-sm text-safari-brown mt-2 font-body font-medium">
         {label}
       </p>
     </div>
@@ -61,8 +62,6 @@ const heroImages = [
   kilimanjaro,
   elephtain,
 ];
-
-import heroImg from "../assets/cheater.jpeg";
 
 export default function Home() {
   const [heroIdx, setHeroIdx] = useState(0);
@@ -83,7 +82,7 @@ export default function Home() {
     combined: safariPackages.filter((s) => s.country === "combined").length,
   };
   const featuredDestinations = destinations.filter((d) =>
-    ["masai-mara", "serengeti", "ngorongoro", "amboseli"].includes(d.slug),
+    ["masai-mara", "serengeti", "ngorongoro", "tarangire"].includes(d.slug),
   );
 
   useEffect(() => {
@@ -96,104 +95,177 @@ export default function Home() {
   return (
     <Layout>
       {/* ========== HERO BENTO ========== */}
-      <section className="pt-32 pb-16 px-6 max-w-screen-2xl mx-auto md:h-[100svh] flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-full md:max-h-[800px] min-h-[600px]">
-          {/* Main Title Block - Spans 2x2 */}
-          <div className="md:col-span-2 md:row-span-2 bg-primary rounded-[2rem] p-8 md:p-10 flex flex-col justify-between text-on-primary hover:scale-[0.98] transition-transform duration-500 overflow-hidden relative">
-            <div className="relative z-10">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-                Aventara Safaris
+      <section className="pt-24 pb-6 px-6 max-w-screen-2xl mx-auto md:h-[100svh] md:max-h-[100svh] flex flex-col justify-center bg-sand-cream text-midnight-black font-body overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 w-full flex-1 min-h-0">
+          {/* Main Hero Block - Spans 2x2 */}
+          <div className="md:col-span-2 md:row-span-2 bg-midnight-black rounded-[2rem] p-6 md:p-8 lg:p-10 flex flex-col justify-between text-sand-cream shadow-xl overflow-hidden relative border border-savannah-gold/20 min-h-0">
+            <img
+              src={heroImages[heroIdx]}
+              alt="East African Savannah Sunset"
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/80 via-midnight-black/25 to-transparent"></div>
+
+            <div className="relative z-10 flex items-center justify-between gap-4">
+              <span className="inline-flex items-center gap-2 text-sunrise-yellow text-xs font-bold uppercase tracking-widest">
+                Cima Brava Adventures
               </span>
-              <h1 className="text-6xl md:text-8xl mt-8 font-headline leading-[0.9] font-extrabold tracking-tight">
-                WILD.
-              </h1>
-              <h1 className="text-6xl md:text-8xl font-headline leading-[0.9] font-extrabold text-white/50 tracking-tight">
-                FREE.
-              </h1>
             </div>
-            <div className="relative z-10 mt-8">
-              <p className="text-xl max-w-sm">
-                Handcrafted East African safaris that redefine adventure.
+
+            <div className="relative z-10 my-auto py-2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-headline leading-[1.05] font-bold tracking-tight text-sand-cream">
+                UNTAMED
+                <span className="block text-sunrise-yellow">EAST AFRICA</span>
+              </h1>
+
+              {/* Signature Script Quote from theme.png */}
+              <div className="mt-3 inline-block">
+                <p className="font-script italic text-2xl lg:text-3xl text-sand-cream tracking-wide leading-tight">
+                  Wild by Nature. Guided by Heart.
+                </p>
+                <svg
+                  viewBox="0 0 320 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-56 lg:w-72 h-3.5 mt-0.5 text-sunrise-yellow"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 13C72 4 195 2 316 9C245 9 125 11 22 15"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+
+              <p className="text-sm lg:text-base text-sand-cream/85 max-w-md mt-2 font-body line-clamp-3">
+                Handcrafted Kenya &amp; Tanzania safaris woven with golden
+                savannah horizons, expert local naturalists, and unforgettable
+                wildlife encounters.
               </p>
             </div>
-            {/* Cool abstract circle */}
-            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+
+            {/* Primary & Story Play CTAs from theme.png */}
+            <div className="relative z-10 flex flex-wrap items-center gap-3 pt-2">
+              <Link
+                to="/safaris"
+                className="btn-explore inline-flex items-center gap-2.5 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-bold px-6 py-3 rounded-full shadow-lg hover:brightness-105 active:scale-95 transition-all text-sm"
+              >
+                <span>Explore Trips</span>
+                <ArrowRight size={16} />
+              </Link>
+
+              <Link
+                to="/about"
+                className="btn-story-play inline-flex items-center gap-2.5 group px-3 py-1.5 rounded-full bg-sand-cream/10 hover:bg-sand-cream/20 border border-sand-cream/20 backdrop-blur-sm transition-all"
+              >
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-sunrise-yellow via-savannah-gold to-sunset-orange text-midnight-black flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                  <Play size={15} fill="currentColor" className="ml-0.5" />
+                </span>
+                <span className="text-xs lg:text-sm font-bold text-sand-cream pr-2">
+                  Watch Our Story
+                </span>
+              </Link>
+            </div>
           </div>
 
-          {/* Video/Image Block - Spans 2x1 */}
+          {/* Great Migration Block - Spans 2x1 */}
           <Link
             to="/safari/3-day-masai-mara-budget"
-            className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto"
+            className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-56 md:h-full min-h-0 border border-safari-brown/15 shadow-md"
           >
             <img
               src={wildImg}
-              alt="Great Migration"
+              alt="The Great Migration"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
-            <div className="absolute inset-0 p-6 flex items-end">
-              <p className="text-white font-headline font-bold text-2xl">
+            <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-transparent to-transparent"></div>
+            <div className="absolute top-4 right-4">
+              <span className="bg-crane-red text-sand-cream text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow">
+                Signature Experience
+              </span>
+            </div>
+            <div className="absolute inset-0 p-6 flex flex-col justify-end">
+              <span className="text-xs uppercase tracking-widest text-sunrise-yellow font-bold mb-1">
+                Masai Mara &amp; Serengeti
+              </span>
+              <p className="text-sand-cream font-headline font-bold text-2xl">
                 The Great Migration
               </p>
             </div>
           </Link>
 
-          {/* Small stat block 1 */}
-          <div className="md:col-span-1 md:row-span-1 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col justify-center text-center group hover:bg-secondary hover:text-white transition-colors h-64 md:h-auto">
-            <div className="text-6xl font-headline font-extrabold text-secondary group-hover:text-white transition-colors">
+          {/* Small Stat Block - Spans 1x1 */}
+          <div className="md:col-span-1 md:row-span-1 bg-sand-cream border border-savannah-gold/30 rounded-[2rem] p-6 flex flex-col justify-center text-center group hover:bg-safari-brown hover:text-sand-cream transition-colors h-52 md:h-full min-h-0 shadow-sm">
+            <div className="text-4xl lg:text-5xl font-headline font-extrabold text-sunset-orange group-hover:text-sunrise-yellow transition-colors">
               4K+
             </div>
-            <div className="text-sm font-bold uppercase tracking-wider mt-2">
+            <div className="text-xs lg:text-sm font-bold uppercase tracking-wider mt-2 text-safari-brown group-hover:text-sand-cream">
               Happy Travelers
             </div>
+            <span className="text-xs text-safari-brown/75 group-hover:text-sand-cream/80 mt-1">
+              99% 5-Star Rated Expeditions
+            </span>
           </div>
 
-          {/* Small CTA Block */}
+          {/* Small CTA Block - Spans 1x1 */}
           <Link
-            to="/safaris"
-            className="md:col-span-1 md:row-span-1 bg-tertiary rounded-[2rem] p-8 flex flex-col justify-between text-white group cursor-pointer hover:bg-[#059669] transition-all h-64 md:h-auto"
+            to="/find-safari"
+            className="md:col-span-1 md:row-span-1 bg-gradient-to-br from-safari-brown via-midnight-black to-sunset-orange rounded-[2rem] p-6 flex flex-col justify-between text-sand-cream group cursor-pointer hover:brightness-110 transition-all h-52 md:h-full min-h-0 shadow-md border border-savannah-gold/30"
           >
-            <ArrowRight
-              size={40}
-              className="group-hover:translate-x-2 transition-transform"
-            />
-            <h3 className="text-2xl font-headline font-bold">
-              Book Your Safari
-            </h3>
+            <div className="flex items-center justify-between">
+              <span className="text-xs uppercase tracking-widest font-bold text-sunrise-yellow">
+                Tailor-Made
+              </span>
+              <ArrowRight
+                size={28}
+                className="text-sunrise-yellow group-hover:translate-x-2 transition-transform"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl lg:text-2xl font-headline font-bold text-sand-cream">
+                Plan Your Adventure
+              </h3>
+              <p className="text-xs text-sand-cream/80 mt-1">
+                Custom dates, lodges &amp; private 4x4 cruisers
+              </p>
+            </div>
           </Link>
+        </div>
+      </section>
 
-          {/* Wide Image Block - Spans 2x1 */}
-          <div className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-64 md:h-auto hidden md:block">
-            <img
-              src={heroImg}
-              alt="Savannah"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-          </div>
+      {/* ========== STATS STRIP ========== */}
+      <section className="py-12 bg-sand-cream border-y border-savannah-gold/20">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <StatCounter target={4200} suffix="+" label="Happy Safari Guests" />
+          <StatCounter target={15} suffix="+" label="Iconic National Parks" />
+          <StatCounter target={12} suffix="+" label="Years of Bush Expertise" />
+          <StatCounter target={99} suffix="%" label="Five-Star Satisfaction" />
         </div>
       </section>
 
       {/* ========== FEATURED SAFARIS ========== */}
-      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center">
+      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center bg-sand-cream">
         <AnimatedSection>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <SeasonBadge />
               </div>
-              <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-[-0.02em]">
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em]">
                 Featured Safaris
               </h2>
-              <p className="text-on-surface-variant mt-4 max-w-lg leading-relaxed">
-                From short getaways to grand multi-country expeditions - every
+              <p className="text-safari-brown/80 mt-4 max-w-lg leading-relaxed font-body">
+                From short getaways to grand multi-country expeditions — every
                 journey is tailored to your sense of adventure.
               </p>
             </div>
             <Link
               to="/safaris"
-              className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider hover:gap-3 transition-all"
+              className="btn-explore inline-flex items-center gap-3 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-bold text-sm px-7 py-3.5 rounded-full shadow-md hover:brightness-105 transition-all"
             >
-              View All Safaris
+              <span>Explore Trips</span>
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -226,15 +298,15 @@ export default function Home() {
               <Link
                 key={item.label}
                 to={item.to}
-                className="group rounded-xl border border-outline-variant/20 bg-surface-container-lowest px-5 py-4 hover:border-primary/30 hover:bg-surface-container-low transition-colors"
+                className="group rounded-2xl border border-savannah-gold/30 bg-sand-cream px-6 py-5 hover:border-savannah-gold hover:bg-safari-brown transition-all duration-300 shadow-sm"
               >
-                <p className="text-xs uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-2">
+                <p className="text-xs uppercase tracking-[0.15em] text-sunset-orange group-hover:text-sunrise-yellow font-bold mb-2">
                   Explore
                 </p>
-                <p className="text-lg font-headline font-bold text-primary group-hover:text-secondary transition-colors">
+                <p className="text-lg font-headline font-bold text-midnight-black group-hover:text-sand-cream transition-colors">
                   {item.label}
                 </p>
-                <p className="text-sm text-on-surface-variant mt-2">
+                <p className="text-sm text-safari-brown/80 group-hover:text-sand-cream/80 mt-2">
                   {item.count} package{item.count !== 1 ? "s" : ""}
                 </p>
               </Link>
@@ -249,7 +321,7 @@ export default function Home() {
               to={`/safari/${safari.slug}`}
               className="group"
             >
-              <div className="bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-lg transition-all duration-500">
+              <div className="bg-sand-cream border border-savannah-gold/25 rounded-2xl overflow-hidden hover:shadow-xl hover:border-savannah-gold transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={safari.image}
@@ -258,36 +330,36 @@ export default function Home() {
                     loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-primary/90 text-on-primary px-3 py-1 rounded-full text-xs font-bold">
+                    <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-3.5 py-1 rounded-full text-xs font-bold shadow">
                       {safari.days} Days
                     </span>
                   </div>
-                  <div className="absolute bottom-0 inset-x-0 img-overlay-bottom h-24"></div>
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-midnight-black/35 to-transparent h-16"></div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={14} className="text-secondary" />
-                    <span className="text-xs uppercase tracking-wider text-on-surface-variant font-bold">
+                    <MapPin size={14} className="text-sunset-orange" />
+                    <span className="text-xs uppercase tracking-wider text-safari-brown/80 font-bold">
                       {safari.destinations.slice(0, 3).join(" · ")}
                     </span>
                   </div>
-                  <h3 className="text-xl font-headline font-bold text-on-surface mb-1 tracking-tight">
+                  <h3 className="text-xl font-headline font-bold text-midnight-black group-hover:text-sunset-orange transition-colors mb-1 tracking-tight">
                     {safari.title}
                   </h3>
-                  <p className="text-sm text-on-surface-variant mb-4 line-clamp-2">
+                  <p className="text-sm text-safari-brown/80 mb-4 line-clamp-2 font-body">
                     {safari.subtitle}
                   </p>
-                  <div className="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+                  <div className="flex justify-between items-center pt-4 border-t border-savannah-gold/20">
                     <div>
-                      <span className="text-2xl font-headline font-bold text-primary">
+                      <span className="text-2xl font-headline font-bold text-safari-brown">
                         ${safari.price[season].toLocaleString()}
                       </span>
-                      <span className="text-xs text-on-surface-variant ml-1">
+                      <span className="text-xs text-safari-brown/70 ml-1">
                         /person
                       </span>
                     </div>
-                    <span className="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all">
-                      View
+                    <span className="inline-flex items-center gap-1.5 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider group-hover:gap-2.5 transition-all">
+                      Explore
                       <ArrowRight size={14} />
                     </span>
                   </div>
@@ -298,16 +370,19 @@ export default function Home() {
         </StaggerContainer>
       </Section>
 
-      {/* ========== WHY AVENTARA ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-surface-container-low flex flex-col justify-center">
+      {/* ========== WHY CHOOSE US ========== */}
+      <section className="min-h-[100svh] py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-savannah-gold/20">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-[-0.02em] mb-6">
-              The Aventara Difference
+            <span className="text-xs uppercase tracking-[0.35em] text-sunset-orange font-bold block mb-3">
+              Wild by Nature · Guided by Heart
+            </span>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em] mb-6">
+              The Cima Brava Difference
             </h2>
-            <p className="text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-              We organize safaris and craft transformative experiences that
-              connect you with the soul of East Africa.
+            <p className="text-safari-brown/80 max-w-2xl mx-auto leading-relaxed font-body">
+              We organize bespoke safaris and craft transformative experiences
+              that connect you with the untamed soul of East Africa.
             </p>
           </AnimatedSection>
 
@@ -346,15 +421,15 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-surface-container-lowest rounded-xl p-8 group hover:bg-primary hover:text-on-primary transition-all duration-500"
+                className="bg-sand-cream border border-savannah-gold/25 rounded-2xl p-8 group hover:bg-safari-brown hover:text-sand-cream hover:border-savannah-gold transition-all duration-500 shadow-sm"
               >
-                <div className="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-all duration-500">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black mb-6 shadow-md group-hover:scale-105 transition-transform duration-500">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-headline font-bold mb-3">
+                <h4 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
                   {item.title}
                 </h4>
-                <p className="text-sm leading-relaxed text-on-surface-variant group-hover:text-on-primary/80 transition-colors duration-500">
+                <p className="text-sm leading-relaxed text-safari-brown/80 group-hover:text-sand-cream/85 transition-colors duration-500 font-body">
                   {item.desc}
                 </p>
               </div>
@@ -364,19 +439,31 @@ export default function Home() {
       </section>
 
       {/* ========== ICONIC DESTINATIONS ========== */}
-      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center">
-        <AnimatedSection className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-[-0.02em] mb-6">
-            Iconic Destinations
-          </h2>
-          <p className="text-on-surface-variant max-w-2xl leading-relaxed">
-            From Kenya's sweeping savannahs to Tanzania's ancient craters -
-            explore the landscapes that make East Africa legendary.
-          </p>
+      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center bg-sand-cream">
+        <AnimatedSection className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <div>
+            <span className="text-xs uppercase tracking-[0.35em] text-sunset-orange font-bold block mb-3">
+              East African Horizons
+            </span>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em] mb-4">
+              Iconic Destinations
+            </h2>
+            <p className="text-safari-brown/80 max-w-2xl leading-relaxed font-body">
+              From Kenya&apos;s sweeping savannahs to Tanzania&apos;s ancient
+              craters — explore the landscapes that make East Africa legendary.
+            </p>
+          </div>
+          <Link
+            to="/destinations"
+            className="btn-destinations inline-flex items-center gap-3 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream px-7 py-3.5 rounded-full font-semibold text-sm shadow-md hover:brightness-110 transition-all"
+          >
+            <span>View Destinations</span>
+            <ArrowRight size={16} />
+          </Link>
         </AnimatedSection>
 
         <AnimatedSection animation="scale">
-          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 h-auto md:h-[44rem]">
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[44rem]">
             {featuredDestinations.map((dest, idx) => {
               const spanClasses = [
                 "md:col-span-2 md:row-span-2",
@@ -389,7 +476,7 @@ export default function Home() {
                 <Link
                   key={dest.id}
                   to={`/destinations/${dest.slug}`}
-                  className={`${spanClasses} relative group overflow-hidden rounded-xl min-h-[220px]`}
+                  className={`${spanClasses} relative group overflow-hidden rounded-2xl min-h-[240px] border border-safari-brown/15`}
                 >
                   <img
                     src={dest.image}
@@ -397,48 +484,42 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-transparent to-transparent group-hover:from-midnight-black/80 transition-colors duration-500"></div>
                   <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-                    <span className="text-white/70 text-xs uppercase tracking-widest font-bold mb-1 block">
+                    <span className="text-sunrise-yellow text-xs uppercase tracking-widest font-bold mb-1 block">
                       {dest.country}
                     </span>
                     <h3
-                      className={`font-headline text-white font-bold ${idx === 0 ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"}`}
+                      className={`font-headline text-sand-cream font-bold ${
+                        idx === 0
+                          ? "text-3xl md:text-4xl"
+                          : "text-xl md:text-2xl"
+                      }`}
                     >
                       {dest.name}
                     </h3>
-                    <p className="text-white/70 text-sm mt-1 max-w-xs hidden md:block">
+                    <p className="text-sand-cream/80 text-sm mt-1 max-w-xs hidden md:block font-body">
                       {dest.tagline}
                     </p>
                   </div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowRight size={18} className="text-white" />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-b from-sunrise-yellow to-savannah-gold rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                    <ArrowRight size={18} className="text-midnight-black" />
                   </div>
                 </Link>
               );
             })}
           </div>
         </AnimatedSection>
-
-        <AnimatedSection className="text-center mt-12">
-          <Link
-            to="/destinations"
-            className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider hover:gap-3 transition-all border-b-2 border-primary/20 pb-1 hover:border-primary"
-          >
-            Explore All Destinations
-            <ArrowRight size={16} />
-          </Link>
-        </AnimatedSection>
       </Section>
 
       {/* ========== PRICING OVERVIEW ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-surface-container-low flex flex-col justify-center">
+      <section className="min-h-[100svh] py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-savannah-gold/20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-[-0.02em] mb-6">
-              Safari Packages & Pricing
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em] mb-6">
+              Safari Packages &amp; Pricing
             </h2>
-            <p className="text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            <p className="text-safari-brown/80 max-w-2xl mx-auto leading-relaxed font-body">
               Transparent pricing with no hidden fees. All packages include
               accommodation, meals, transport, park fees, and expert guides.
             </p>
@@ -446,10 +527,10 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="bg-surface-container-lowest rounded-2xl overflow-hidden editorial-shadow">
+            <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden shadow-xl">
               <div className="flex flex-col">
                 {/* Desktop Header */}
-                <div className="hidden md:grid grid-cols-12 gap-4 bg-primary text-on-primary px-6 py-4 font-headline font-semibold text-sm">
+                <div className="hidden md:grid grid-cols-12 gap-4 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sunrise-yellow px-6 py-4 font-headline font-semibold text-sm">
                   <div className="col-span-3">Safari Package</div>
                   <div className="col-span-2">Days</div>
                   <div className="col-span-3">Destinations</div>
@@ -458,39 +539,37 @@ export default function Home() {
                 </div>
 
                 {/* Rows */}
-                <div className="divide-y divide-outline-variant/10">
+                <div className="divide-y divide-savannah-gold/20">
                   {safariPackages.map((safari, idx) => (
                     <div
                       key={safari.id}
                       className={`group relative flex flex-col md:grid md:grid-cols-12 md:gap-4 md:items-center p-6 md:px-6 md:py-5 transition-colors ${
-                        idx % 2 === 0
-                          ? "bg-surface-container-lowest"
-                          : "bg-surface-container-low/30"
-                      } hover:bg-surface-container-low`}
+                        idx % 2 === 0 ? "bg-sand-cream" : "bg-savannah-gold/5"
+                      } hover:bg-savannah-gold/15`}
                     >
                       {/* Mobile Title & Badge */}
                       <div className="flex justify-between items-start md:col-span-3 mb-4 md:mb-0">
                         <Link
                           to={`/safari/${safari.slug}`}
-                          className="font-bold text-xl md:text-base text-on-surface group-hover:text-primary transition-colors pr-4"
+                          className="font-bold text-xl md:text-base text-midnight-black group-hover:text-sunset-orange transition-colors pr-4"
                         >
                           {safari.title}
                         </Link>
-                        <span className="md:hidden bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        <span className="md:hidden bg-savannah-gold/20 text-safari-brown px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
                           {safari.days} Days
                         </span>
                       </div>
 
                       {/* Desktop Days */}
-                      <div className="hidden md:block md:col-span-2 text-sm font-medium">
+                      <div className="hidden md:block md:col-span-2 text-sm font-medium text-safari-brown">
                         {safari.days} Days
                       </div>
 
                       {/* Destinations */}
-                      <div className="md:col-span-3 mb-6 md:mb-0 text-sm text-on-surface-variant flex items-start gap-2 md:block">
+                      <div className="md:col-span-3 mb-6 md:mb-0 text-sm text-safari-brown/80 flex items-start gap-2 md:block">
                         <MapPin
                           size={16}
-                          className="md:hidden text-primary shrink-0 mt-0.5"
+                          className="md:hidden text-sunset-orange shrink-0 mt-0.5"
                         />
                         <span>
                           {safari.destinations.slice(0, 3).join(", ")}
@@ -499,40 +578,48 @@ export default function Home() {
                       </div>
 
                       {/* Pricing Grid */}
-                      <div className="grid grid-cols-2 md:contents gap-3 mb-6 md:mb-0 border-t border-outline-variant/10 pt-4 md:border-0 md:pt-0">
-                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
-                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">
+                      <div className="grid grid-cols-2 md:contents gap-3 mb-6 md:mb-0 border-t border-savannah-gold/20 pt-4 md:border-0 md:pt-0">
+                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-safari-brown/70 mb-1">
                             Low Season
                           </span>
                           <span
-                            className={`font-bold ${season === "low" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
+                            className={`font-bold ${
+                              season === "low"
+                                ? "text-sunset-orange text-xl md:text-lg"
+                                : "text-safari-brown/80 text-lg md:text-base"
+                            }`}
                           >
                             ${safari.price.low.toLocaleString()}
                           </span>
                         </div>
-                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-surface-container-high/50 md:bg-transparent rounded-lg md:rounded-none">
-                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1">
+                        <div className="md:col-span-2 md:text-center flex flex-col md:block items-center justify-center p-3 md:p-0 bg-savannah-gold/10 md:bg-transparent rounded-lg md:rounded-none">
+                          <span className="md:hidden text-[10px] uppercase tracking-widest font-bold text-safari-brown/70 mb-1">
                             High Season
                           </span>
                           <span
-                            className={`font-bold ${season === "high" ? "text-primary text-xl md:text-lg" : "text-on-surface-variant text-lg md:text-base"}`}
+                            className={`font-bold ${
+                              season === "high"
+                                ? "text-sunset-orange text-xl md:text-lg"
+                                : "text-safari-brown/80 text-lg md:text-base"
+                            }`}
                           >
                             ${safari.price.high.toLocaleString()}
                           </span>
                         </div>
                       </div>
 
-                      {/* Mobile View Button - Appears below on mobile, hidden on desktop if whole row is clickable, but let's just make it visible on both to match design */}
+                      {/* Mobile View Button */}
                       <div className="md:hidden">
                         <Link
                           to={`/safari/${safari.slug}`}
-                          className="flex items-center justify-center gap-2 w-full bg-primary/10 text-primary py-3 rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-colors"
+                          className="flex items-center justify-center gap-2 w-full bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black py-3 rounded-full font-bold text-sm shadow"
                         >
                           View Itinerary <ArrowRight size={16} />
                         </Link>
                       </div>
 
-                      {/* Desktop View Link (Optional overlay or explicit link) */}
+                      {/* Desktop View Link */}
                       <Link
                         to={`/safari/${safari.slug}`}
                         className="hidden md:flex absolute inset-0 z-0"
@@ -548,13 +635,13 @@ export default function Home() {
       </section>
 
       {/* ========== TESTIMONIALS ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-primary text-on-primary overflow-hidden flex flex-col justify-center">
+      <section className="min-h-[100svh] py-24 md:py-32 bg-gradient-to-br from-midnight-black via-safari-brown to-midnight-black text-sand-cream overflow-hidden flex flex-col justify-center">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="text-center mb-16">
-            <span className="text-xs uppercase tracking-[0.4em] text-on-primary/50 font-bold block mb-4">
+            <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold block mb-4">
               Testimonials
             </span>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-[-0.02em]">
+            <h2 className="text-4xl md:text-5xl font-headline font-bold tracking-[-0.02em] text-sand-cream">
               Stories from the Wild
             </h2>
           </AnimatedSection>
@@ -571,7 +658,7 @@ export default function Home() {
               >
                 <div className="flex flex-col md:flex-row items-center gap-12">
                   <div className="flex-shrink-0">
-                    <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-2xl rotate-2">
+                    <div className="w-48 h-60 rounded-2xl overflow-hidden shadow-2xl rotate-2 border-2 border-savannah-gold/40">
                       <img
                         src={t.image}
                         alt={t.name}
@@ -587,15 +674,17 @@ export default function Home() {
                           key={i}
                           size={18}
                           fill="currentColor"
-                          className="text-secondary-container"
+                          className="text-sunrise-yellow"
                         />
                       ))}
                     </div>
-                    <blockquote className="text-2xl md:text-3xl font-headline leading-snug italic mb-8 text-on-primary/90">
-                      "{t.quote}"
+                    <blockquote className="text-2xl md:text-3xl font-headline leading-snug italic mb-8 text-sand-cream">
+                      &ldquo;{t.quote}&rdquo;
                     </blockquote>
-                    <p className="text-lg font-bold">{t.name}</p>
-                    <p className="text-sm text-on-primary/60 mt-1">{t.title}</p>
+                    <p className="text-lg font-bold text-sunrise-yellow">
+                      {t.name}
+                    </p>
+                    <p className="text-sm text-sand-cream/70 mt-1">{t.title}</p>
                   </div>
                 </div>
               </div>
@@ -610,7 +699,7 @@ export default function Home() {
                       (prev - 1 + testimonials.length) % testimonials.length,
                   )
                 }
-                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-full border border-savannah-gold/50 text-sunrise-yellow flex items-center justify-center hover:bg-savannah-gold/20 transition-colors"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={18} />
@@ -622,8 +711,8 @@ export default function Home() {
                     onClick={() => setTestimonialIdx(idx)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       idx === testimonialIdx
-                        ? "w-8 bg-white"
-                        : "w-3 bg-white/30"
+                        ? "w-8 bg-sunrise-yellow"
+                        : "w-3 bg-sand-cream/30"
                     }`}
                     aria-label={`Testimonial ${idx + 1}`}
                   />
@@ -633,7 +722,7 @@ export default function Home() {
                 onClick={() =>
                   setTestimonialIdx((prev) => (prev + 1) % testimonials.length)
                 }
-                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-full border border-savannah-gold/50 text-sunrise-yellow flex items-center justify-center hover:bg-savannah-gold/20 transition-colors"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={18} />
@@ -644,35 +733,47 @@ export default function Home() {
       </section>
 
       {/* ========== FINAL CTA ========== */}
-      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center">
-        <AnimatedSection className="text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-8 tracking-[-0.03em] leading-[0.95]">
+      <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center bg-sand-cream">
+        <AnimatedSection className="text-center max-w-4xl mx-auto">
+          <p className="font-script italic text-3xl md:text-4xl text-sunset-orange mb-3">
+            Wild by Nature. Guided by Heart.
+          </p>
+          <h2 className="text-5xl md:text-7xl font-headline font-bold text-safari-brown mb-8 tracking-[-0.03em] leading-[0.95]">
             Your African
             <br />
-            <span className="italic font-normal">Story Awaits</span>
+            <span className="italic font-normal text-sunset-orange">
+              Story Awaits
+            </span>
           </h2>
-          <p className="text-xl text-on-surface-variant mb-12 leading-relaxed">
+          <p className="text-xl text-safari-brown/80 mb-12 leading-relaxed font-body max-w-2xl mx-auto">
             Whether you seek the thrill of the Great Migration, the serenity of
-            the Ngorongoro Crater, or a family legacy trip - let us craft your
+            the Ngorongoro Crater, or a family legacy trip — let us craft your
             narrative.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/safaris"
-              className="inline-flex items-center gap-3 bg-primary text-on-primary px-12 py-5 rounded-md font-bold text-lg hover:bg-primary-container transition-all duration-300 active:scale-95"
+              className="btn-explore inline-flex items-center gap-3 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:brightness-105 transition-all duration-300 active:scale-95"
             >
-              Browse Safaris
+              <span>Explore Trips</span>
+              <ArrowRight size={20} />
+            </Link>
+            <Link
+              to="/destinations"
+              className="btn-destinations inline-flex items-center gap-3 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream px-10 py-4 rounded-full font-semibold text-lg shadow-md hover:brightness-110 transition-all"
+            >
+              <span>View Destinations</span>
               <ArrowRight size={20} />
             </Link>
             <a
               href="https://wa.me/254112346049"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-outline text-primary px-10 py-4.5 rounded-md font-bold hover:bg-surface-container-low transition-all"
+              className="btn-plan inline-flex items-center gap-2 border-2 border-savannah-gold text-midnight-black bg-sand-cream px-9 py-4 rounded-full font-bold text-lg hover:bg-savannah-gold/15 transition-all"
             >
               <WhatsAppIcon size={20} />
-              Chat with Us
+              <span>Plan Your Adventure</span>
             </a>
           </div>
         </AnimatedSection>

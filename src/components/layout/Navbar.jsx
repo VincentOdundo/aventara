@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "../../assets/logo.svg";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import logo from "../../pages/cima_logo.svg";
 import WhatsAppIcon from "../ui/WhatsAppIcon";
 
 const navLinks = [
@@ -52,21 +52,26 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? "glass editorial-shadow py-3" : "bg-transparent py-5"
+          scrolled
+            ? "bg-midnight-black/95 backdrop-blur-md border-b border-savannah-gold/25 editorial-shadow py-3"
+            : "bg-gradient-to-b from-midnight-black/55 via-midnight-black/20 to-transparent py-4"
         }`}
       >
         <nav className="flex justify-between items-center px-6 lg:px-12 max-w-screen-2xl mx-auto">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 relative z-10">
+          <Link
+            to="/"
+            className="flex items-center gap-3 relative z-10 transition-opacity duration-300 hover:opacity-90"
+          >
             <img
               src={logo}
-              alt="Aventara Safaris"
-              className="h-10 md:h-14 lg:h-16 w-auto"
+              alt="Cima Brava Adventures"
+              className="h-10 md:h-12 lg:h-14 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1.5">
             {navLinks.map((item, idx) =>
               item.children ? (
                 <div
@@ -75,11 +80,11 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown(idx)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 text-on-surface/70 hover:text-primary hover:bg-surface-container-low">
+                  <button className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-sand-cream/90 hover:text-sunrise-yellow hover:bg-sand-cream/10">
                     {item.label}
                     <ChevronDown
                       size={14}
-                      className={`transition-transform duration-200 ${
+                      className={`transition-transform duration-200 text-savannah-gold ${
                         activeDropdown === idx ? "rotate-180" : ""
                       }`}
                     />
@@ -87,7 +92,7 @@ export default function Navbar() {
 
                   {/* Dropdown */}
                   <div
-                    className={`absolute top-full left-0 mt-1 w-56 bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden transition-all duration-300 origin-top ${
+                    className={`absolute top-full left-0 mt-2 w-60 bg-safari-brown/95 backdrop-blur-xl border border-savannah-gold/25 rounded-2xl editorial-shadow overflow-hidden transition-all duration-300 origin-top ${
                       activeDropdown === idx
                         ? "opacity-100 scale-y-100 pointer-events-auto"
                         : "opacity-0 scale-y-95 pointer-events-none"
@@ -98,7 +103,7 @@ export default function Navbar() {
                         <Link
                           key={cidx}
                           to={child.to}
-                          className="block px-5 py-3 text-sm text-on-surface/80 hover:text-primary hover:bg-surface-container-low transition-colors font-medium"
+                          className="block px-5 py-3 text-sm text-sand-cream/85 hover:text-sunrise-yellow hover:bg-savannah-gold/15 transition-colors font-medium"
                         >
                           {child.label}
                         </Link>
@@ -110,10 +115,10 @@ export default function Navbar() {
                 <Link
                   key={idx}
                   to={item.to}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     location.pathname === item.to
-                      ? "text-primary bg-primary/5"
-                      : "text-on-surface/70 hover:text-primary hover:bg-surface-container-low"
+                      ? "text-sunrise-yellow bg-savannah-gold/20 border border-savannah-gold/30"
+                      : "text-sand-cream/90 hover:text-sunrise-yellow hover:bg-sand-cream/10"
                   }`}
                 >
                   {item.label}
@@ -126,17 +131,18 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/safaris"
-              className="hidden md:inline-flex items-center gap-2 px-7 py-2.5 rounded-md text-sm font-bold transition-all duration-300 active:scale-95 bg-primary text-white hover:bg-primary-container"
+              className="hidden md:inline-flex items-center gap-2 px-7 py-2.5 rounded-full text-sm font-bold transition-all duration-300 active:scale-95 btn-explore bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black hover:brightness-105"
             >
-              Book Safari
+              Explore Trips
+              <ArrowRight size={16} />
             </Link>
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-md transition-colors text-on-surface hover:bg-surface-container-low"
+              className="lg:hidden p-2.5 rounded-full transition-colors text-sand-cream bg-safari-brown/80 border border-savannah-gold/30 hover:bg-savannah-gold/20"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </nav>
@@ -144,7 +150,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-midnight-black/70 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -154,23 +160,27 @@ export default function Navbar() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-surface-container-lowest editorial-shadow overflow-y-auto transition-transform duration-500 ease-out lg:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-gradient-to-b from-midnight-black to-safari-brown text-sand-cream border-l border-savannah-gold/25 editorial-shadow overflow-y-auto transition-transform duration-500 ease-out lg:hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-6">
-          <div className="flex justify-between items-center mb-8">
-            <img src={logo} alt="Aventara Safaris" className="h-10" />
+          <div className="flex justify-between items-center mb-8 pb-4 border-b border-savannah-gold/20">
+            <img
+              src={logo}
+              alt="Cima Brava Adventures"
+              className="h-11 w-auto"
+            />
             <button
               onClick={() => setMobileOpen(false)}
-              className="p-2 rounded-md hover:bg-surface-container-low text-on-surface"
+              className="p-2 rounded-full hover:bg-sand-cream/10 text-sand-cream border border-savannah-gold/25"
               aria-label="Close menu"
             >
               <X size={20} />
             </button>
           </div>
 
-          <nav className="space-y-1">
+          <nav className="space-y-1.5">
             {navLinks.map((item, idx) =>
               item.children ? (
                 <div key={idx}>
@@ -178,12 +188,12 @@ export default function Navbar() {
                     onClick={() =>
                       setActiveDropdown(activeDropdown === idx ? null : idx)
                     }
-                    className="w-full flex items-center justify-between px-4 py-3 text-on-surface font-medium rounded-md hover:bg-surface-container-low transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3 text-sand-cream font-medium rounded-xl hover:bg-sand-cream/10 transition-colors"
                   >
                     {item.label}
                     <ChevronDown
                       size={16}
-                      className={`transition-transform duration-200 ${
+                      className={`transition-transform duration-200 text-sunrise-yellow ${
                         activeDropdown === idx ? "rotate-180" : ""
                       }`}
                     />
@@ -193,12 +203,12 @@ export default function Navbar() {
                       activeDropdown === idx ? "max-h-96" : "max-h-0"
                     }`}
                   >
-                    <div className="pl-4 space-y-1 pb-2">
+                    <div className="pl-4 space-y-1 pb-2 border-l border-savannah-gold/25 ml-4 mt-1">
                       {item.children.map((child, cidx) => (
                         <Link
                           key={cidx}
                           to={child.to}
-                          className="block px-4 py-2.5 text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-md transition-colors"
+                          className="block px-4 py-2.5 text-sm text-sand-cream/80 hover:text-sunrise-yellow hover:bg-savannah-gold/15 rounded-lg transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -210,10 +220,10 @@ export default function Navbar() {
                 <Link
                   key={idx}
                   to={item.to}
-                  className={`block px-4 py-3 rounded-md font-medium transition-colors ${
+                  className={`block px-4 py-3 rounded-xl font-medium transition-colors ${
                     location.pathname === item.to
-                      ? "text-primary bg-primary/5"
-                      : "text-on-surface hover:text-primary hover:bg-surface-container-low"
+                      ? "text-sunrise-yellow bg-savannah-gold/20 border border-savannah-gold/30"
+                      : "text-sand-cream hover:text-sunrise-yellow hover:bg-sand-cream/10"
                   }`}
                 >
                   {item.label}
@@ -222,18 +232,25 @@ export default function Navbar() {
             )}
           </nav>
 
-          <div className="mt-8 pt-6 border-t border-outline-variant/20">
+          <div className="mt-8 pt-6 border-t border-savannah-gold/20 space-y-3">
             <Link
               to="/safaris"
-              className="block w-full text-center bg-primary text-on-primary py-3.5 rounded-md font-bold hover:bg-primary-container transition-all active:scale-95"
+              className="flex items-center justify-center gap-2 w-full text-center btn-explore bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black py-3.5 rounded-full font-bold hover:brightness-105 transition-all active:scale-95"
             >
-              Book Safari
+              Explore Trips
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              to="/contact"
+              className="block w-full text-center border-2 border-savannah-gold text-sand-cream py-3 rounded-full font-semibold hover:bg-savannah-gold/15 transition-all"
+            >
+              Plan Your Adventure
             </Link>
             <a
               href="https://wa.me/254112346049"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 mt-3 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+              className="flex items-center justify-center gap-2 pt-2 py-2.5 text-sm font-medium text-sand-cream/80 hover:text-sunrise-yellow transition-colors"
             >
               <WhatsAppIcon size={18} />
               Chat on WhatsApp

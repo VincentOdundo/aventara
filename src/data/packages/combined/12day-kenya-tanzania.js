@@ -1,16 +1,4 @@
-import genImg_0 from "../../../assets/lion.jpeg";
-import genImg_1 from "../../../assets/leapard-car.jpeg";
-import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_3 from "../../../assets/treecheta.jpeg";
-import genImg_4 from "../../../assets/cheater.jpeg";
-import genImg_5 from "../../../assets/treecheta.jpeg";
-import genImg_6 from "../../../assets/cheater.jpeg";
-import genImg_7 from "../../../assets/leapard-car.jpeg";
-import genImg_8 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_9 from "../../../assets/lion pack.jpeg";
-import genImg_10 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_11 from "../../../assets/lion pack.jpeg";
-import genImg_12 from "../../../assets/lion-lonely.jpeg";
+import heroImg from "../../../assets/rhino_plain.jpeg";
 
 export const package12DayKenyaTanzania = {
   id: "12-day-kenya-tanzania",
@@ -29,8 +17,7 @@ export const package12DayKenyaTanzania = {
     "Ngorongoro",
   ],
   price: { low: 2000, high: 2700 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Master the ultimate Big Five challenge across East Africa",
@@ -73,7 +60,7 @@ export const package12DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_3,
+      
       highlights: [
         "Great Rift Valley Viewpoints",
         "Thrilling Introductory Game Drive",
@@ -88,7 +75,7 @@ export const package12DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_4,
+      
       highlights: [
         "Extensive Big Five Tracking",
         "Legendary Mara River Crossings",
@@ -103,7 +90,7 @@ export const package12DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_5,
+      
       highlights: [
         "Patient Wildlife Photography",
         "Exceptional Predator Sightings",
@@ -118,7 +105,7 @@ export const package12DayKenyaTanzania = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_6,
+      
       highlights: [
         "Optional Lake Naivasha Safari",
         "Iconic Great Rift Valley Scenery",
@@ -133,7 +120,7 @@ export const package12DayKenyaTanzania = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_7,
+      
       highlights: [
         "Exclusive Rhino Safaris",
         "Unique Tree-Climbing Lions",
@@ -148,7 +135,7 @@ export const package12DayKenyaTanzania = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_8,
+      
       highlights: [
         "Cross-Country Safari",
         "First Sighting of Mount Kilimanjaro",
@@ -163,7 +150,7 @@ export const package12DayKenyaTanzania = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_9,
+      
       highlights: [
         "Massive Free-Roaming Elephants",
         "Unparalleled Kilimanjaro Views",
@@ -178,7 +165,7 @@ export const package12DayKenyaTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Dinner",
       accommodation: "Charity Hotel",
-      image: null,
+      
       highlights: [
         "Seamless International Border Crossing",
         "Welcome to Tanzania",
@@ -193,7 +180,7 @@ export const package12DayKenyaTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
-      image: genImg_10,
+      
       highlights: [
         "Unreal Tarangire Elephant Herds",
         "Ancient Super-Sized Baobabs",
@@ -208,7 +195,7 @@ export const package12DayKenyaTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
-      image: genImg_11,
+      
       highlights: [
         "Epic Great Migration Focus",
         "High-Intensity Predator Tracking",
@@ -223,7 +210,7 @@ export const package12DayKenyaTanzania = {
       destination: "Ngorongoro Crater",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite",
-      image: genImg_12,
+      
       highlights: [
         "Highland Safari Ascent",
         "Breathtaking 600m Crater Descent",
@@ -239,7 +226,7 @@ export const package12DayKenyaTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Panoramic Crater Rim Views",
         "Scenic Descent to Arusha",

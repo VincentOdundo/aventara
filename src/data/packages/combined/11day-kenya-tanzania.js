@@ -1,15 +1,4 @@
-import genImg_0 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_1 from "../../../assets/lioness_open.jpeg";
-import genImg_2 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_3 from "../../../assets/lion pack.jpeg";
-import genImg_4 from "../../../assets/cheater.jpeg";
-import genImg_5 from "../../../assets/nairobi/girfe-sunset.jpeg";
-import genImg_6 from "../../../assets/lioness_open.jpeg";
-import genImg_7 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_8 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_9 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_10 from "../../../assets/lion pack.jpeg";
-import genImg_11 from "../../../assets/lion-lonely.jpeg";
+import heroImg from "../../../assets/nairobi/lion-safari-van.jpeg";
 
 export const package11DayKenyaTanzania = {
   id: "11-day-kenya-tanzania",
@@ -27,8 +16,7 @@ export const package11DayKenyaTanzania = {
     "Ngorongoro",
   ],
   price: { low: 1800, high: 2400 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Track the majestic Big Five across multiple national parks",
@@ -70,7 +58,7 @@ export const package11DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_3,
+      
       highlights: [
         "Great Rift Valley Drop",
         "First Evening Safari",
@@ -85,7 +73,7 @@ export const package11DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_4,
+      
       highlights: [
         "Big Five Tracking",
         "Legendary Mara River",
@@ -100,7 +88,7 @@ export const package11DayKenyaTanzania = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_5,
+      
       highlights: [
         "Intensive Wildlife Photography",
         "Untamed Predator Action",
@@ -115,7 +103,7 @@ export const package11DayKenyaTanzania = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_6,
+      
       highlights: [
         "Optional Lake Naivasha Safari",
         "Beautiful Rift Valley Landscapes",
@@ -130,7 +118,7 @@ export const package11DayKenyaTanzania = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_7,
+      
       highlights: [
         "Renowned Rhino Sanctuary",
         "Endangered Rothschild Giraffes",
@@ -145,7 +133,7 @@ export const package11DayKenyaTanzania = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_8,
+      
       highlights: [
         "Scenic Cross-Country Journey",
         "The Magic of Mount Kilimanjaro",
@@ -160,7 +148,7 @@ export const package11DayKenyaTanzania = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_9,
+      
       highlights: [
         "Massive Elephant Herds",
         "Picture-Perfect Kilimanjaro Views",
@@ -175,7 +163,7 @@ export const package11DayKenyaTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Dinner",
       accommodation: "Charity Hotel",
-      image: null,
+      
       highlights: [
         "Seamless Border Crossing",
         "Welcome to Tanzania",
@@ -190,7 +178,7 @@ export const package11DayKenyaTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Nyani Camp",
-      image: genImg_10,
+      
       highlights: [
         "Scenic Highlands Drive",
         "Gateway to the Serengeti",
@@ -205,7 +193,7 @@ export const package11DayKenyaTanzania = {
       destination: "Ngorongoro Crater",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite",
-      image: genImg_11,
+      
       highlights: [
         "Unbelievable Crater Descent",
         "Intense Predator-Prey Density",
@@ -221,7 +209,7 @@ export const package11DayKenyaTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Sweeping Sunrise Views",
         "Scenic Journey Back",

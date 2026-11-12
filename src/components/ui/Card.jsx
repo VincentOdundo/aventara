@@ -3,7 +3,7 @@ import React from "react";
 export function Card({ children, className = "" }) {
   return (
     <div
-      className={`bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 ${className}`}
+      className={`bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden editorial-shadow hover:border-savannah-gold/60 transition-all duration-300 ${className}`}
     >
       {children}
     </div>
@@ -19,19 +19,20 @@ export function DestinationCard({ image, title, desc, link, price }) {
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/35 via-transparent to-transparent" />
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="font-headline font-semibold text-2xl text-on-surface mb-2 tracking-tight">
+        <h3 className="font-headline font-bold text-2xl text-midnight-black mb-2 tracking-tight group-hover:text-sunset-orange transition-colors">
           {title}
         </h3>
-        <p className="text-on-surface-variant font-medium text-sm flex-grow mb-4">
+        <p className="text-safari-brown/80 font-medium text-sm flex-grow mb-4">
           {desc}
         </p>
-        <div className="flex justify-between items-center mt-auto">
-          {price && <span className="font-bold text-primary">{price}</span>}
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider flex items-center group-hover:gap-2 transition-all">
+        <div className="flex justify-between items-center mt-auto pt-4 border-t border-savannah-gold/25">
+          {price && <span className="font-bold text-sunset-orange">{price}</span>}
+          <span className="text-safari-brown group-hover:text-sunset-orange font-bold text-xs uppercase tracking-widest flex items-center group-hover:gap-2 transition-all">
             Explore{" "}
-            <span className="material-symbols-outlined text-sm ml-1">
+            <span className="material-symbols-outlined text-sm ml-1 text-savannah-gold">
               arrow_forward
             </span>
           </span>

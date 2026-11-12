@@ -1,55 +1,75 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface-dim: #08090a;
-  --color-surface-container-high: #f3f4f6;
-  --color-on-surface: #0f172a;
-  --color-tertiary-fixed: #d1fae5;
-  --color-on-primary-container: #7c2d12;
-  --color-on-primary-fixed: #062b10;
-  --color-primary: #f97316;
-  --color-on-surface-variant: #475569;
-  --color-on-secondary-fixed-variant: #075985;
-  --color-on-error-container: #ffdad6;
-  --color-inverse-primary: #fdba74;
-  --color-inverse-on-surface: #08090a;
-  --color-on-tertiary: #ffffff;
-  --color-error: #ef4444;
-  --color-secondary-fixed-dim: #7dd3fc;
-  --color-inverse-surface: #f0f2f5;
-  --color-on-primary: #ffffff;
-  --color-surface-container: #ffffff;
-  --color-on-background: #0f172a;
-  --color-error-container: #fee2e2;
-  --color-tertiary: #10b981;
-  --color-surface-tint: #f97316;
-  --color-surface-container-lowest: #ffffff;
-  --color-on-secondary-container: #075985;
-  --color-primary-fixed-dim: #fdba74;
-  --color-on-secondary-fixed: #082f49;
-  --color-outline-variant: #e2e8f0;
-  --color-secondary-fixed: #bae6fd;
-  --color-secondary-container: #e0f2fe;
-  --color-secondary: #0ea5e9;
-  --color-surface-bright: #ffffff;
-  --color-surface-container-low: #fafafa;
-  --color-outline: #cbd5e1;
-  --color-background: #fafafa;
-  --color-on-tertiary-fixed-variant: #064e3b;
-  --color-surface: #ffffff;
-  --color-on-error: #ffffff;
-  --color-on-tertiary-fixed: #022c22;
-  --color-tertiary-container: #d1fae5;
-  --color-surface-variant: #f1f5f9;
-  --color-on-primary-fixed-variant: #7c2d12;
-  --color-on-tertiary-container: #064e3b;
-  --color-primary-fixed: #ffedd5;
-  --color-surface-container-highest: #e2e8f0;
-  --color-primary-container: #ffedd5;
-  --color-on-secondary: #ffffff;
-  --font-headline: "Syne", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Inter", sans-serif;
+  /* === OFFICIAL CIMA BRAVA ADVENTURES PALETTE (theme.png) === */
+  --color-midnight-black: #0A0906;
+  --color-safari-brown: #2A1500;
+  --color-sunset-orange: #C2410C;
+  --color-savannah-gold: #F59E0B;
+  --color-sunrise-yellow: #FFD34D;
+  --color-sand-cream: #FDF6E3;
+  --color-crane-red: #D91E18;
+
+  /* === SEMANTIC DESIGN SYSTEM TOKENS (MAPPED STRICTLY TO THE 7 PALETTE TOKENS) === */
+  --color-primary: var(--color-savannah-gold);
+  --color-primary-container: var(--color-sunrise-yellow);
+  --color-on-primary: var(--color-midnight-black);
+  --color-on-primary-container: var(--color-safari-brown);
+  --color-primary-fixed: var(--color-sunrise-yellow);
+  --color-primary-fixed-dim: var(--color-savannah-gold);
+  --color-on-primary-fixed: var(--color-midnight-black);
+  --color-on-primary-fixed-variant: var(--color-safari-brown);
+
+  --color-secondary: var(--color-sunset-orange);
+  --color-secondary-container: var(--color-sunrise-yellow);
+  --color-on-secondary: var(--color-sand-cream);
+  --color-on-secondary-container: var(--color-safari-brown);
+  --color-secondary-fixed: var(--color-sunrise-yellow);
+  --color-secondary-fixed-dim: var(--color-savannah-gold);
+  --color-on-secondary-fixed: var(--color-midnight-black);
+  --color-on-secondary-fixed-variant: var(--color-safari-brown);
+
+  --color-tertiary: var(--color-safari-brown);
+  --color-tertiary-container: var(--color-sand-cream);
+  --color-on-tertiary: var(--color-sand-cream);
+  --color-on-tertiary-container: var(--color-safari-brown);
+  --color-tertiary-fixed: var(--color-sand-cream);
+  --color-on-tertiary-fixed: var(--color-midnight-black);
+  --color-on-tertiary-fixed-variant: var(--color-safari-brown);
+
+  --color-error: var(--color-crane-red);
+  --color-error-container: var(--color-crane-red);
+  --color-on-error: var(--color-sand-cream);
+  --color-on-error-container: var(--color-sand-cream);
+
+  --color-background: var(--color-sand-cream);
+  --color-surface: var(--color-sand-cream);
+  --color-surface-bright: var(--color-sand-cream);
+  --color-surface-container-lowest: var(--color-sand-cream);
+  --color-surface-container-low: var(--color-sand-cream);
+  --color-surface-container: var(--color-sand-cream);
+  --color-surface-container-high: var(--color-sand-cream);
+  --color-surface-container-highest: var(--color-sand-cream);
+  --color-surface-variant: var(--color-sand-cream);
+  --color-surface-dim: var(--color-midnight-black);
+  --color-surface-tint: var(--color-savannah-gold);
+
+  --color-on-surface: var(--color-midnight-black);
+  --color-on-background: var(--color-midnight-black);
+  --color-on-surface-variant: var(--color-safari-brown);
+  --color-inverse-surface: var(--color-safari-brown);
+  --color-inverse-on-surface: var(--color-sand-cream);
+  --color-inverse-primary: var(--color-sunrise-yellow);
+
+  --color-outline: var(--color-savannah-gold);
+  --color-outline-variant: var(--color-safari-brown);
+
+  /* === OFFICIAL FONTS (theme.png) === */
+  --font-headline: "Trajan Pro", "Cinzel", Georgia, serif;
+  --font-body: "Inter", "Montserrat", sans-serif;
+  --font-label: "Montserrat", "Inter", sans-serif;
+  --font-script: "Caveat", cursive;
+
   --radius: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
@@ -59,20 +79,104 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-sand-cream);
+    color: var(--color-midnight-black);
   }
   body {
     @apply antialiased text-on-surface bg-surface font-body;
+    background-color: var(--color-sand-cream);
+    color: var(--color-midnight-black);
+  }
+  h1, h2, h3, .font-trajan {
+    font-family: var(--font-headline);
+    letter-spacing: 0.02em;
   }
   ::selection {
-    background-color: #f97316;
-    color: #ffffff;
+    background-color: var(--color-savannah-gold);
+    color: var(--color-midnight-black);
   }
+}
+
+/* === OFFICIAL UI COMPONENTS FROM theme.png === */
+
+/* 1. "Explore Trips →" Primary Golden Gradient Pill Button */
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 100%);
+  color: var(--color-midnight-black);
+  font-family: var(--font-body);
+  font-weight: 700;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-savannah-gold) 35%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-sand-cream) 45%, transparent);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-explore:hover {
+  background: linear-gradient(180deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 60%, var(--color-sunset-orange) 100%);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-sunset-orange) 40%, transparent);
+}
+
+/* 2. "View Destinations →" Secondary Safari Brown Pill Button */
+.btn-destinations {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--color-midnight-black) 0%, var(--color-safari-brown) 100%);
+  color: var(--color-sand-cream);
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: 1px solid color-mix(in srgb, var(--color-savannah-gold) 25%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-midnight-black) 35%, transparent);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-destinations:hover {
+  background: linear-gradient(90deg, var(--color-safari-brown) 0%, var(--color-midnight-black) 100%);
+  border-color: var(--color-savannah-gold);
+}
+
+/* 3. "Plan Your Adventure" Savannah Gold Outline Pill Button */
+.btn-plan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--color-midnight-black);
+  font-family: var(--font-body);
+  font-weight: 700;
+  border: 1.5px solid var(--color-savannah-gold);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-plan:hover {
+  background-color: color-mix(in srgb, var(--color-savannah-gold) 14%, transparent);
+  border-color: var(--color-sunset-orange);
+}
+
+/* 4. "Watch Our Story" Circular Play Badge */
+.btn-story-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 55%, var(--color-sunset-orange) 100%);
+  color: var(--color-midnight-black);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-savannah-gold) 40%, transparent), inset 0 2px 4px color-mix(in srgb, var(--color-sand-cream) 40%, transparent);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-story-play:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-sunset-orange) 50%, transparent);
 }
 
 /* === EDITORIAL SHADOW === */
 .editorial-shadow {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-safari-brown) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-savannah-gold) 35%, transparent);
 }
 
 /* === SCROLL ANIMATIONS === */
@@ -149,7 +253,7 @@
 
 /* === GRADIENT TEXT === */
 .gradient-text {
-  background: linear-gradient(135deg, #f97316, #0ea5e9, #10b981);
+  background: linear-gradient(135deg, var(--color-sunrise-yellow) 0%, var(--color-savannah-gold) 50%, var(--color-sunset-orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -157,39 +261,39 @@
 
 /* === GLASS MORPHISM === */
 .glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: color-mix(in srgb, var(--color-sand-cream) 88%, transparent);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-savannah-gold) 35%, transparent);
 }
 
 .glass-dark {
-  background: rgba(15, 23, 42, 0.8);
+  background: color-mix(in srgb, var(--color-midnight-black) 84%, transparent);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-savannah-gold) 20%, transparent);
 }
 
 /* === EXPEDITION TRAIL (dashed timeline) === */
 .expedition-trail {
-  border-left: 1px dashed #cbd5e1;
+  border-left: 1px dashed var(--color-savannah-gold);
 }
 .expedition-trail-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f97316, #0ea5e9);
-  border: 3px solid #ffffff;
-  box-shadow: 0 0 0 2px #cbd5e1;
+  background: linear-gradient(135deg, var(--color-sunrise-yellow), var(--color-savannah-gold), var(--color-sunset-orange));
+  border: 3px solid var(--color-sand-cream);
+  box-shadow: 0 0 0 2px var(--color-savannah-gold);
 }
 
 /* === MATERIAL ICONS (Google Symbols) === */
 .material-fill { font-variation-settings: 'FILL' 1; }
 
-/* === WHATSAPP FLOAT === */
+/* === WHATSAPP / CTA PULSE === */
 @keyframes wa-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-  50% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-savannah-gold) 45%, transparent); }
+  50% { box-shadow: 0 0 0 16px transparent; }
 }
 .whatsapp-float {
   animation: wa-pulse 2s infinite;
@@ -197,33 +301,34 @@
 
 /* === IMAGE OVERLAY GRADIENT === */
 .img-overlay-bottom {
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-midnight-black) 70%, transparent) 0%, color-mix(in srgb, var(--color-midnight-black) 15%, transparent) 45%, transparent 100%);
 }
 .img-overlay-full {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-midnight-black) 70%, transparent) 0%, transparent 50%, color-mix(in srgb, var(--color-midnight-black) 25%, transparent) 100%);
 }
 
 /* === SEASON BADGE === */
 .season-badge-low {
-  background: linear-gradient(135deg, #bae6fd, #e0f2fe);
-  color: #0c4a6e;
+  background: var(--color-sand-cream);
+  color: var(--color-safari-brown);
+  border: 1px solid var(--color-savannah-gold);
 }
 .season-badge-high {
-  background: linear-gradient(135deg, #fdba74, #f97316);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-sunrise-yellow), var(--color-savannah-gold), var(--color-sunset-orange));
+  color: var(--color-midnight-black);
 }
 
 /* === CUSTOM SCROLLBAR === */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--color-sand-cream);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--color-savannah-gold);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-safari-brown);
 }

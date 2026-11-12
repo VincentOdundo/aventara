@@ -22,7 +22,7 @@ export function useWhatsApp() {
   }) => {
     const total = price * guests;
     const message = encodeURIComponent(
-      `🌍 *Aventara Safaris Booking Request*\n\n` +
+      `🌍 *Cima Brava Adventures Booking Request*\n\n` +
         `📦 Package: ${packageName}\n` +
         `📅 Duration: ${days} Days\n` +
         `📆 Preferred Dates: ${startDate}\n` +
@@ -31,17 +31,17 @@ export function useWhatsApp() {
         `💰 Price: $${price} per person\n` +
         `💵 Estimated Total: $${total}\n\n` +
         `I'd like to book this safari. Please confirm availability!\n\n` +
-        `- Sent from aventarasafaris.com`,
+        `- Cima Brava Adventures (cimabravaadventures@gmail.com)`,
     );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };
 
   const generateInquiry = (subject = "General Inquiry") => {
     const message = encodeURIComponent(
-      `🌍 *Aventara Safaris Inquiry*\n\n` +
+      `🌍 *Cima Brava Adventures Inquiry*\n\n` +
         `Subject: ${subject}\n\n` +
         `Hi! I'd like to learn more about your safari packages.\n\n` +
-        `- Sent from aventarasafaris.com`,
+        `- Cima Brava Adventures (cimabravaadventures@gmail.com)`,
     );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };

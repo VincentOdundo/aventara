@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection } from "../components/ui";
 import { useWhatsApp } from "../hooks/useWhatsApp";
@@ -10,11 +11,26 @@ import {
   Send,
   Instagram,
   Facebook,
+  ArrowRight,
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
+import logo from "./cima_logo.svg";
 
+import heroImg from "../assets/leapard-car.jpeg";
 
-import heroImg from "../assets/flamingo.jpeg";
+function TikTokIcon({ size = 18 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.76 1.52V6.82a4.84 4.84 0 0 1-1-.13Z" />
+    </svg>
+  );
+}
 
 export default function Contact() {
   const { generateInquiry } = useWhatsApp();
@@ -28,7 +44,7 @@ export default function Contact() {
     const subject = formData.get("subject");
 
     // Redirect to WhatsApp with form details
-    const waText = `🌍 *Aventara Safaris Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent from aventarasafaris.com`;
+    const waText = `🌍 *Cima Brava Adventures Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent to cimabravaadventures@gmail.com`;
     const waUrl = `https://wa.me/254112346049?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, "_blank");
   };
@@ -36,81 +52,102 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center">
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
         <img
-          src={heroImg} alt="Contact Aventara Safaris"
+          src={heroImg}
+          alt="Contact Cima Brava Adventures"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 img-overlay-full"></div>
-        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center">
-          <span className="text-xs uppercase tracking-[0.4em] text-white/70 font-bold mb-3 block">
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
+          <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold mb-3 block">
             Get in Touch
           </span>
-          <h1 className="text-4xl md:text-6xl font-headline font-bold text-white tracking-[-0.02em]">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold text-sand-cream tracking-[-0.02em]">
             Contact Us
           </h1>
+          <p className="font-script italic text-3xl md:text-4xl text-sunrise-yellow mt-4">
+            Wild by Nature. Guided by Heart.
+          </p>
         </div>
       </section>
 
-      <Section className="py-16 md:py-24">
+      <Section className="py-16 md:py-24 bg-sand-cream text-midnight-black font-body">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-2">
             <AnimatedSection animation="left">
-              <h2 className="text-3xl font-headline font-bold text-primary mb-6">
-                Let's Plan Your Safari
+              <span className="text-xs uppercase tracking-[0.3em] text-sunset-orange font-bold mb-3 block">
+                Bespoke Safari Planning
+              </span>
+              <h2 className="text-3xl font-headline font-bold text-safari-brown mb-6">
+                Let&apos;s Plan Your Safari
               </h2>
-              <p className="text-on-surface-variant leading-relaxed mb-10">
+              <p className="text-safari-brown/80 leading-relaxed mb-10 font-body">
                 Whether you have a question about our packages, need help
-                choosing the right safari, or want a custom itinerary - we're
-                here to help. Reach out through any channel and we'll respond
+                choosing the right safari, or want a custom itinerary — we&apos;re
+                here to help. Reach out through any channel and we&apos;ll respond
                 within 24 hours.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black flex-shrink-0 shadow-sm">
                     <Phone size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-sm">Phone</p>
-                    <p className="text-on-surface-variant text-sm">
-                      +254 112 346 049
+                    <p className="font-bold text-sm text-midnight-black">
+                      Phone
                     </p>
+                    <a
+                      href="tel:+254112346049"
+                      className="text-safari-brown/85 text-sm hover:text-sunset-orange transition-colors"
+                    >
+                      +254 112 346 049
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black flex-shrink-0 shadow-sm">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-sm">Email</p>
-                    <p className="text-on-surface-variant text-sm">
-                      aventarasafaris@gmail.com
+                    <p className="font-bold text-sm text-midnight-black">
+                      Email
                     </p>
+                    <a
+                      href="mailto:cimabravaadventures@gmail.com"
+                      className="text-safari-brown/85 text-sm hover:text-sunset-orange transition-colors"
+                    >
+                      cimabravaadventures@gmail.com
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black flex-shrink-0 shadow-sm">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-sm">Location</p>
-                    <p className="text-on-surface-variant text-sm">
+                    <p className="font-bold text-sm text-midnight-black">
+                      Location
+                    </p>
+                    <p className="text-safari-brown/85 text-sm">
                       Nairobi, Kenya
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black flex-shrink-0 shadow-sm">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-sm">Response Time</p>
-                    <p className="text-on-surface-variant text-sm">
+                    <p className="font-bold text-sm text-midnight-black">
+                      Response Time
+                    </p>
+                    <p className="text-safari-brown/85 text-sm">
                       Within 24 hours
                     </p>
                   </div>
@@ -118,40 +155,60 @@ export default function Contact() {
               </div>
 
               {/* Social */}
-              <div className="mt-10 pt-8 border-t border-outline-variant/10">
-                <p className="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">
+              <div className="mt-10 pt-8 border-t border-savannah-gold/25">
+                <p className="text-xs uppercase tracking-widest text-safari-brown font-bold mb-4">
                   Follow Us
                 </p>
                 <div className="flex gap-3">
                   <a
-                    href="https://www.instagram.com/aventara_safaris_kenya"
+                    href="https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+                    aria-label="Instagram"
+                    className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
                   >
                     <Instagram size={18} />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@cima_brava_adventures"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
+                  >
+                    <TikTokIcon size={18} />
                   </a>
                   <a
                     href="https://www.facebook.com/share/187nSmsCH8/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+                    aria-label="Facebook"
+                    className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
                   >
                     <Facebook size={18} />
                   </a>
                 </div>
               </div>
 
-              {/* WhatsApp CTA */}
-              <a
-                href={generateInquiry("Custom Safari Request")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 w-full inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-md font-bold hover:bg-[#20BD5C] transition-all active:scale-95"
-              >
-                <WhatsAppIcon size={22} className="text-white" />
-                Chat on WhatsApp
-              </a>
+              {/* Action Buttons */}
+              <div className="mt-8 space-y-3">
+                <a
+                  href={generateInquiry("Custom Safari Request")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-destinations w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/40 px-8 py-4 rounded-full font-semibold hover:brightness-110 transition-all active:scale-95 shadow-md"
+                >
+                  <WhatsAppIcon size={20} className="text-sunrise-yellow" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+                <Link
+                  to="/safaris"
+                  className="btn-plan w-full inline-flex items-center justify-center gap-2 border-2 border-savannah-gold text-midnight-black bg-sand-cream px-8 py-3.5 rounded-full font-bold hover:bg-savannah-gold/15 transition-all"
+                >
+                  <span>Explore Trips</span>
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
             </AnimatedSection>
           </div>
 
@@ -160,46 +217,46 @@ export default function Contact() {
             <AnimatedSection animation="right">
               <form
                 onSubmit={handleSubmit}
-                className="bg-surface-container-lowest rounded-2xl editorial-shadow p-8 md:p-10"
+                className="bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-xl p-8 md:p-10"
               >
-                <h3 className="text-2xl font-headline font-bold text-primary mb-8">
+                <h3 className="text-2xl font-headline font-bold text-safari-brown mb-8">
                   Send Us a Message
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">
-                      Full Name *
+                    <label className="block text-xs uppercase tracking-wider text-safari-brown font-bold mb-2">
+                      Full Name <span className="text-crane-red">*</span>
                     </label>
                     <input
                       type="text"
                       name="name"
                       required
-                      className="w-full bg-surface-container-high rounded-md px-4 py-3 text-on-surface focus:ring-2 focus:ring-surface-tint border-none placeholder:text-on-surface-variant/40"
+                      className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">
-                      Email *
+                    <label className="block text-xs uppercase tracking-wider text-safari-brown font-bold mb-2">
+                      Email <span className="text-crane-red">*</span>
                     </label>
                     <input
                       type="email"
                       name="email"
                       required
-                      className="w-full bg-surface-container-high rounded-md px-4 py-3 text-on-surface focus:ring-2 focus:ring-surface-tint border-none placeholder:text-on-surface-variant/40"
+                      className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">
+                  <label className="block text-xs uppercase tracking-wider text-safari-brown font-bold mb-2">
                     Subject
                   </label>
                   <select
                     name="subject"
-                    className="w-full bg-surface-container-high rounded-md px-4 py-3 text-on-surface focus:ring-2 focus:ring-surface-tint border-none"
+                    className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold"
                   >
                     <option>General Inquiry</option>
                     <option>Safari Booking</option>
@@ -210,28 +267,34 @@ export default function Contact() {
                 </div>
 
                 <div className="mb-8">
-                  <label className="block text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">
-                    Message *
+                  <label className="block text-xs uppercase tracking-wider text-safari-brown font-bold mb-2">
+                    Message <span className="text-crane-red">*</span>
                   </label>
                   <textarea
                     name="message"
                     required
                     rows="5"
-                    className="w-full bg-surface-container-high rounded-md px-4 py-3 text-on-surface focus:ring-2 focus:ring-surface-tint border-none resize-none placeholder:text-on-surface-variant/40"
+                    className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold resize-none placeholder:text-safari-brown/40"
                     placeholder="Tell us about your dream safari..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:bg-primary-container transition-all active:scale-95 w-full md:w-auto"
+                  className="btn-explore inline-flex items-center justify-center gap-3 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:brightness-105 transition-all active:scale-95 w-full md:w-auto"
                 >
                   <Send size={18} />
-                  Send via WhatsApp
+                  <span>Send via WhatsApp</span>
                 </button>
-                <p className="text-xs text-on-surface-variant mt-3">
-                  Your message will be sent via WhatsApp for the fastest
-                  response.
+                <p className="text-xs text-safari-brown/75 mt-3">
+                  Your message will be sent via WhatsApp or email us directly at{" "}
+                  <a
+                    href="mailto:cimabravaadventures@gmail.com"
+                    className="text-sunset-orange font-semibold underline"
+                  >
+                    cimabravaadventures@gmail.com
+                  </a>
+                  .
                 </p>
               </form>
             </AnimatedSection>

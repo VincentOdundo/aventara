@@ -12,7 +12,14 @@ import {
   getUniqueDays,
 } from "./packages/index";
 
-export const WHATSAPP_NUMBER = "254112346049"; // Replace with actual number
+export const WHATSAPP_NUMBER = "254112346049";
+export const CONTACT_EMAIL = "cimabravaadventures@gmail.com";
+export const SOCIAL_LINKS = {
+  tiktok: "https://www.tiktok.com/@cima_brava_adventures",
+  instagram:
+    "https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr",
+  email: "cimabravaadventures@gmail.com",
+};
 
 export const SEASONS = {
   low: {

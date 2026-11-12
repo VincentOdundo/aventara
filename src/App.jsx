@@ -9,16 +9,20 @@ const SafarisHub = lazy(() => import('./pages/SafarisHub'));
 const SafariDetail = lazy(() => import('./pages/SafariDetail'));
 const DestinationsHub = lazy(() => import('./pages/DestinationsHub'));
 const DestinationDetail = lazy(() => import('./pages/DestinationDetail'));
+const Kenya = lazy(() => import('./pages/Kenya'));
+const Tanzania = lazy(() => import('./pages/Tanzania'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 
 function PageLoader() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-surface">
+    <div className="min-h-screen flex items-center justify-center bg-sand-cream text-midnight-black font-body">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-3 border-primary/20 border-t-primary rounded-full animate-spin"></div>
-        <p className="text-sm text-on-surface-variant font-medium">Loading...</p>
+        <div className="w-11 h-11 border-3 border-savannah-gold/25 border-t-savannah-gold border-r-sunset-orange rounded-full animate-spin"></div>
+        <p className="text-xs uppercase tracking-[0.25em] text-safari-brown font-headline font-bold">
+          Loading Adventure...
+        </p>
       </div>
     </div>
   );
@@ -48,6 +52,8 @@ export default function App() {
           {/* Destinations */}
           <Route path="/destinations" element={<DestinationsHub />} />
           <Route path="/destinations/:slug" element={<DestinationDetail />} />
+          <Route path="/kenya" element={<Kenya />} />
+          <Route path="/tanzania" element={<Tanzania />} />
           
           {/* Pages */}
           <Route path="/about" element={<About />} />

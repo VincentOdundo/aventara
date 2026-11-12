@@ -1,15 +1,8 @@
-import genImg_0 from "../../../assets/nairobi/girfe-sunset.jpeg";
-import genImg_1 from "../../../assets/treecheta.jpeg";
-import genImg_2 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_3 from "../../../assets/lioness_open.jpeg";
-import genImg_4 from "../../../assets/lion-lonely.jpeg";
-import genImg_5 from "../../../assets/lioness_open.jpeg";
-import genImg_6 from "../../../assets/nairobi/girfe-sunset.jpeg";
-import genImg_7 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import heroImg from "../../../assets/lion.jpeg";
 
-;;
-;;
-;;
+
+
+
 
 export const package6DayTanzania = {
   id: "6-day-tanzania",
@@ -21,8 +14,7 @@ export const package6DayTanzania = {
   country: "tanzania",
   destinations: ["Serengeti", "Ngorongoro", "Lake Manyara"],
   price: { low: 1250, high: 1650 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Unrivaled 2-day in-depth exploration of the Serengeti",
@@ -60,7 +52,7 @@ export const package6DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Lunch & Dinner",
       accommodation: "Nyani Camp (Deep Wilderness)",
-      image: genImg_3,
+      
       highlights: [
         "Traverse the edge of the majestic Great Rift Valley",
         "Scenic drive through the lush Ngorongoro Highlands",
@@ -76,7 +68,7 @@ export const package6DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Nyani Camp (Deep Wilderness)",
-      image: genImg_4,
+      
       highlights: [
         "Intensive tracking of massive lion prides and elusive cheetahs",
         "Close encounters with roaming elephant herds",
@@ -92,7 +84,7 @@ export const package6DayTanzania = {
       destination: "Ngorongoro Conservation Area",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite (Panoramic Crater Rim)",
-      image: genImg_5,
+      
       highlights: [
         "Final thrilling morning game drive on the expansive plains",
         "Dramatic, scenic transition into the verdant highlands",
@@ -108,7 +100,7 @@ export const package6DayTanzania = {
       destination: "Ngorongoro Crater",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Simba Campsite (Panoramic Crater Rim)",
-      image: genImg_6,
+      
       highlights: [
         "Dramatic 600m descent into a dormant volcanic caldera",
         "Explore a legendary, UNESCO-protected natural wonder",
@@ -124,7 +116,7 @@ export const package6DayTanzania = {
       destination: "Lake Manyara National Park",
       meals: "Breakfast, Picnic Lunch & Dinner",
       accommodation: "Migombani Campsite (Rift Valley Escarpment)",
-      image: genImg_7,
+      
       highlights: [
         "Explore lush, ancient groundwater forests",
         "Marvel at vibrant flocks of pink flamingos along the lake",
@@ -140,7 +132,7 @@ export const package6DayTanzania = {
       destination: "Arusha",
       meals: "Breakfast only",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Relaxing, culturally enriching drive through the highlands",
         "Observe lush local farms and welcoming rural communities",

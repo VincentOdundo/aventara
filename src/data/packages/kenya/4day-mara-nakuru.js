@@ -1,9 +1,4 @@
-import genImg_0 from "../../../assets/lioness_open.jpeg";
-import genImg_1 from "../../../assets/lion-lonely.jpeg";
-import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_3 from "../../../assets/lioness_open.jpeg";
-import genImg_4 from "../../../assets/lion.jpeg";
-import genImg_5 from "../../../assets/treecheta.jpeg";
+import heroImg from "../../../assets/flamingo.jpeg";
 
 export const package4DayMaraNakuru = {
   id: "4-day-mara-nakuru",
@@ -15,8 +10,7 @@ export const package4DayMaraNakuru = {
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru"],
   price: { low: 770, high: 1110 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Unforgettable Big Five game drives in the Masai Mara",
@@ -54,7 +48,7 @@ export const package4DayMaraNakuru = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_3,
+      
       highlights: [
         "Panoramic Great Rift Valley photography",
         "Thrilling evening Big Five game drive",
@@ -70,7 +64,7 @@ export const package4DayMaraNakuru = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_4,
+      
       highlights: [
         "Extensive tracking of the legendary Big Five",
         "Iconic Mara River exploration",
@@ -87,7 +81,7 @@ export const package4DayMaraNakuru = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_5,
+      
       highlights: [
         "Scenic Great Rift Valley ecosystem drive",
         "Exclusive endangered Rhino sanctuary visit",
@@ -103,7 +97,7 @@ export const package4DayMaraNakuru = {
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Action-packed morning game drive",
         "Golden-hour wildlife photography",

@@ -21,6 +21,63 @@ import { package12DayKenyaTanzaniaSerengeti } from "./combined/12day-kenya-tanza
 // Import Nairobi packages
 import { packageHalfDayNairobi } from "./nairobi/half-day-nairobi";
 
+// Local gallery and itinerary images from src/assets
+import imgMara from "../../assets/treecheta.jpeg";
+import imgNakuru from "../../assets/flamingo-lonely.jpeg";
+import imgAmboseli from "../../assets/plain_elefabt.jpeg";
+import imgSerengeti from "../../assets/lioness_open.jpeg";
+import imgNgorongoro from "../../assets/lion-lonely.jpeg";
+import imgTarangire from "../../assets/nairobi/girfe-sunset.jpeg";
+import imgManyara from "../../assets/flamingo-water.jpeg";
+import imgNairobi from "../../assets/nairobi/girafe-nairobi-city.jpeg";
+import imgSunrise from "../../assets/safari-van-sunrise.jpeg";
+import imgMigration from "../../assets/wildbeasts.jpg";
+
+const ITINERARY_IMAGES = [
+  imgSunrise,
+  imgMara,
+  imgMigration,
+  imgNakuru,
+  imgAmboseli,
+  imgSerengeti,
+  imgNgorongoro,
+  imgTarangire,
+  imgManyara,
+  imgNairobi,
+];
+
+function enrichPackageImages(pkg) {
+  if (!pkg) return pkg;
+  if (!pkg.gallery || pkg.gallery.length === 0) {
+    pkg.gallery = [pkg.image, imgSunrise, imgMigration, imgMara];
+  }
+  if (Array.isArray(pkg.itinerary)) {
+    pkg.itinerary = pkg.itinerary.map((day, idx) => ({
+      ...day,
+      image: day.image || ITINERARY_IMAGES[idx % ITINERARY_IMAGES.length],
+    }));
+  }
+  return pkg;
+}
+
+[
+  package3DayMara,
+  package3DayAmboseli,
+  package4DayMaraNakuru,
+  package5DayMaraNakuruNaivasha,
+  package6DayMaraNakuruAmboseli,
+  package7DayMaraNakuruNaivashaAmboseli,
+  package8DayMaraNakuruAmboseli,
+  package3DayTanzania,
+  package4DayTanzania,
+  package5DayTanzania,
+  package6DayTanzania,
+  package11DayKenyaTanzania,
+  package12DayKenyaTanzania,
+  package12DayKenyaTanzaniaSerengeti,
+  packageHalfDayNairobi,
+].forEach(enrichPackageImages);
+
 // Export individual packages
 export {
   // Kenya

@@ -1,12 +1,4 @@
-import genImg_0 from "../../../assets/cheater.jpeg";
-import genImg_1 from "../../../assets/treecheta.jpeg";
-import genImg_2 from "../../../assets/nairobi/giraffe-sunsut.jpeg";
-import genImg_3 from "../../../assets/cheater.jpeg";
-import genImg_4 from "../../../assets/lion.jpeg";
-import genImg_5 from "../../../assets/lioness_open.jpeg";
-import genImg_6 from "../../../assets/lion.jpeg";
-import genImg_7 from "../../../assets/cheater.jpeg";
-import genImg_8 from "../../../assets/leapard-car.jpeg";
+import heroImg from "../../../assets/flamingo.jpeg";
 
 export const package7DayMaraNakuruNaivashaAmboseli = {
   id: "7-day-mara-nakuru-naivasha-amboseli",
@@ -24,8 +16,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
     "Amboseli",
   ],
   price: { low: 1350, high: 1750 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Witness the legendary Big Five in Masai Mara",
@@ -65,7 +56,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_3,
+      
       highlights: [
         "Panoramic Great Rift Valley Views",
         "Thrilling Sunset Game Drive",
@@ -80,7 +71,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Masai Mara National Reserve",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      image: genImg_4,
+      
       highlights: [
         "Unrestricted Big Five Tracking",
         "Legendary Mara River",
@@ -95,7 +86,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Lake Nakuru National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Buraha Zenoni Hotel",
-      image: genImg_5,
+      
       highlights: [
         "Optional Lake Naivasha Excursion",
         "Great Rift Valley Drive",
@@ -110,7 +101,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Lake Naivasha",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Leisure Apex Resort",
-      image: genImg_6,
+      
       highlights: [
         "Exclusive Rhino Sanctuary Visit",
         "Rare Black and White Rhinos",
@@ -125,7 +116,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_7,
+      
       highlights: [
         "Hell's Gate Cycling/Walking",
         "Breathtaking Scenic Landscapes",
@@ -140,7 +131,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Amboseli National Park",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Ositua Rafiki Camp",
-      image: genImg_8,
+      
       highlights: [
         "Massive Free-Roaming Elephant Herds",
         "Iconic Mount Kilimanjaro Backdrops",
@@ -156,7 +147,7 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Optional Sunrise Game Drive",
         "Final Kilimanjaro Views",

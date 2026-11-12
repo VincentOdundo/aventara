@@ -1,11 +1,7 @@
-import genImg_0 from "../../../assets/lioness_open.jpeg";
-import genImg_1 from "../../../assets/treecheta.jpeg";
-import genImg_2 from "../../../assets/nairobi/sunset-exotic.jpeg";
-import genImg_3 from "../../../assets/nairobi/girfe-sunset.jpeg";
-import genImg_4 from "../../../assets/nairobi/sunset-exotic.jpeg";
+import heroImg from "../../../assets/cheater.jpeg";
 
-;;
-;;
+
+
 
 export const package3DayTanzania = {
   id: "3-day-tanzania",
@@ -17,8 +13,7 @@ export const package3DayTanzania = {
   country: "tanzania",
   destinations: ["Serengeti", "Ngorongoro Crater"],
   price: { low: 650, high: 950 },
-  image: genImg_0,
-  gallery: [genImg_1, genImg_2],
+  image: heroImg,
   difficulty: "Budget",
   highlights: [
     "Endless Serengeti plains teeming with magnificent wildlife",
@@ -56,7 +51,7 @@ export const package3DayTanzania = {
       destination: "Serengeti National Park",
       meals: "Lunch & Dinner",
       accommodation: "Nyani Camp (Wilderness Experience)",
-      image: genImg_3,
+      
       highlights: [
         "Traverse the Ngorongoro Conservation Area",
         "Breathtaking scenery of the highlands",
@@ -71,7 +66,7 @@ export const package3DayTanzania = {
       destination: "Ngorongoro Conservation Area",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite (Crater Rim Views)",
-      image: genImg_4,
+      
       highlights: [
         "Extensive morning game drive",
         "Iconic wildlife on the open plains",
@@ -86,7 +81,7 @@ export const package3DayTanzania = {
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      image: null,
+      
       highlights: [
         "Dramatic 600m crater descent",
         "Intensive half-day game drive in the caldera",

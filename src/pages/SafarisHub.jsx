@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
+import { Section, StaggerContainer } from "../components/ui";
 import { SeasonBadge } from "../components/ui/SeasonPrice";
 import {
   safariPackages,
@@ -10,7 +10,7 @@ import {
 } from "../data/safaris";
 import { ArrowRight, MapPin, Calendar, Filter, X, Search } from "lucide-react";
 
-import heroImg from "../assets/mountain.jpeg";
+import heroImg from "../assets/lioness.jpeg";
 
 export default function SafarisHub() {
   const { country } = useParams();
@@ -70,31 +70,31 @@ export default function SafarisHub() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden text-center">
+      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden text-center bg-midnight-black">
         <img
           src={heroImg}
           alt={pageTitle}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 img-overlay-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/70 via-transparent to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center">
-          <span className="text-xs uppercase tracking-[0.4em] text-white/70 font-bold mb-3 block">
+          <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-body font-bold mb-3 block drop-shadow-sm">
             {country
               ? country === "combined"
                 ? "Cross-Border"
                 : country.charAt(0).toUpperCase() + country.slice(1)
               : "East Africa"}
           </span>
-          <h1 className="text-4xl md:text-6xl font-headline font-bold text-white tracking-[-0.02em]">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold text-sand-cream tracking-[-0.02em] drop-shadow-md">
             {pageTitle}
           </h1>
-          <p className="text-white/80 mt-3 max-w-xl">{pageDesc}</p>
+          <p className="text-sand-cream/95 font-body mt-3 max-w-xl drop-shadow-sm">{pageDesc}</p>
         </div>
       </section>
 
       {/* Country Tabs */}
-      <section className="bg-surface-container-lowest border-b border-outline-variant/10 sticky top-[64px] lg:top-[72px] z-30 editorial-shadow">
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-1 overflow-x-auto py-2">
+      <section className="bg-sand-cream border-b border-savannah-gold/25 sticky top-[64px] lg:top-[72px] z-30 editorial-shadow">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-2 overflow-x-auto py-3">
           {[
             { label: "All Safaris", to: "/safaris" },
             { label: "Kenya", to: "/safaris/kenya" },
@@ -105,11 +105,11 @@ export default function SafarisHub() {
             <Link
               key={tab.to}
               to={tab.to}
-              className={`px-5 py-2.5 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
+              className={`px-5 py-2.5 rounded-full text-sm font-body whitespace-nowrap transition-all ${
                 (tab.to === "/safaris" && !country) ||
                 tab.to === `/safaris/${country}`
-                  ? "bg-primary text-on-primary"
-                  : "text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  ? "bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-bold shadow-md"
+                  : "text-safari-brown font-medium hover:bg-savannah-gold/15 hover:text-sunset-orange border border-transparent hover:border-savannah-gold/40"
               }`}
             >
               {tab.label}
@@ -119,9 +119,9 @@ export default function SafarisHub() {
       </section>
 
       {/* Package Navigator */}
-      <section className="bg-surface-container-low border-b border-outline-variant/10">
+      <section className="bg-sand-cream border-b border-savannah-gold/20">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-sunset-orange font-body font-bold mb-3">
             Jump to package
           </p>
           <div className="flex flex-wrap gap-2">
@@ -129,7 +129,7 @@ export default function SafarisHub() {
               <a
                 key={pkg.id}
                 href={`#pkg-${pkg.slug}`}
-                className="px-3 py-2 rounded-md text-xs font-bold bg-surface-container-high text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors"
+                className="px-4 py-2 rounded-full text-xs font-body font-bold bg-sand-cream border border-savannah-gold/40 text-safari-brown hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
               >
                 {pkg.days}D · {pkg.title}
               </a>
@@ -139,11 +139,11 @@ export default function SafarisHub() {
       </section>
 
       {/* Filters + Grid */}
-      <Section className="py-16 md:py-20">
+      <Section className="py-16 md:py-20 bg-sand-cream">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10">
           <div className="flex items-center gap-3">
             <SeasonBadge />
-            <span className="text-sm text-on-surface-variant">
+            <span className="text-sm font-body text-safari-brown/80">
               {filteredSafaris.length} package
               {filteredSafaris.length !== 1 ? "s" : ""} available
             </span>
@@ -153,21 +153,21 @@ export default function SafarisHub() {
             <div className="relative">
               <Search
                 size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-safari-brown/70"
               />
               <input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search package or destination"
-                className="bg-surface-container-high rounded-md pl-9 pr-4 py-2 text-sm font-medium border-none focus:ring-2 focus:ring-surface-tint w-64 max-w-[80vw]"
+                className="bg-sand-cream text-midnight-black placeholder:text-safari-brown/50 rounded-full pl-9 pr-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold w-64 max-w-[80vw]"
               />
             </div>
             <div className="flex items-center gap-2">
-              <Filter size={16} className="text-on-surface-variant" />
+              <Filter size={16} className="text-sunset-orange" />
               <select
                 value={daysFilter}
                 onChange={(e) => setDaysFilter(e.target.value)}
-                className="bg-surface-container-high rounded-md px-4 py-2 text-sm font-medium border-none focus:ring-2 focus:ring-surface-tint"
+                className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
               >
                 <option value="all">All Durations</option>
                 <option value="0-2">0-2 Days</option>
@@ -179,7 +179,7 @@ export default function SafarisHub() {
             <select
               value={budgetFilter}
               onChange={(e) => setBudgetFilter(e.target.value)}
-              className="bg-surface-container-high rounded-md px-4 py-2 text-sm font-medium border-none focus:ring-2 focus:ring-surface-tint"
+              className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
             >
               <option value="all">All Budgets</option>
               <option value="0-800">Under $800</option>
@@ -194,7 +194,7 @@ export default function SafarisHub() {
                   setBudgetFilter("all");
                   setSearchQuery("");
                 }}
-                className="text-xs text-primary font-bold flex items-center gap-1 hover:text-secondary transition-colors"
+                className="text-xs font-body text-crane-red font-bold flex items-center gap-1 hover:text-sunset-orange transition-colors px-3 py-1.5 rounded-full border border-crane-red/30 bg-crane-red/10"
               >
                 <X size={14} /> Clear
               </button>
@@ -203,8 +203,8 @@ export default function SafarisHub() {
         </div>
 
         {filteredSafaris.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-on-surface-variant text-lg">
+          <div className="text-center py-20 bg-sand-cream rounded-2xl border border-savannah-gold/30">
+            <p className="text-safari-brown font-body text-lg">
               No safaris match your filters.
             </p>
             <button
@@ -213,7 +213,7 @@ export default function SafarisHub() {
                 setBudgetFilter("all");
                 setSearchQuery("");
               }}
-              className="mt-4 text-primary font-bold underline"
+              className="mt-4 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-body font-bold px-6 py-2.5 rounded-full shadow-md hover:brightness-105 transition-all"
             >
               Clear all filters
             </button>
@@ -227,7 +227,7 @@ export default function SafarisHub() {
                 className="group"
                 id={`pkg-${safari.slug}`}
               >
-                <div className="bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-lg transition-all duration-500 h-full flex flex-col">
+                <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={safari.image}
@@ -235,11 +235,12 @@ export default function SafarisHub() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/35 via-transparent to-transparent"></div>
                     <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="bg-primary/90 text-on-primary px-3 py-1 rounded-full text-xs font-bold">
+                      <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-3 py-1 rounded-full text-xs font-body font-bold shadow-md">
                         {safari.days} Days
                       </span>
-                      <span className="bg-surface/90 text-on-surface px-3 py-1 rounded-full text-xs font-bold capitalize">
+                      <span className="bg-safari-brown/90 text-sand-cream border border-savannah-gold/30 px-3 py-1 rounded-full text-xs font-body font-bold capitalize">
                         {safari.country === "combined"
                           ? "KE & TZ"
                           : safari.country}
@@ -248,36 +249,38 @@ export default function SafarisHub() {
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={14} className="text-secondary" />
-                      <span className="text-xs uppercase tracking-wider text-on-surface-variant font-bold">
+                      <MapPin size={14} className="text-sunset-orange" />
+                      <span className="text-xs uppercase tracking-wider text-sunset-orange font-body font-bold">
                         {safari.destinations.slice(0, 3).join(" · ")}
                       </span>
                     </div>
-                    <h3 className="text-xl font-headline font-bold text-on-surface mb-1">
+                    <h3 className="text-xl font-headline font-bold text-safari-brown group-hover:text-sunset-orange transition-colors mb-1">
                       {safari.title}
                     </h3>
-                    <p className="text-sm text-on-surface-variant mb-4 flex-grow">
+                    <p className="text-sm font-body text-safari-brown/80 mb-4 flex-grow">
                       {safari.subtitle}
                     </p>
-                    <div className="flex items-center gap-4 mb-4 text-xs text-on-surface-variant">
+                    <div className="flex items-center gap-4 mb-4 text-xs font-body text-safari-brown/75">
                       <span className="flex items-center gap-1">
-                        <Calendar size={12} /> {safari.days} Days
+                        <Calendar size={12} className="text-savannah-gold" />{" "}
+                        {safari.days} Days
                       </span>
                       <span className="flex items-center gap-1">
-                        <MapPin size={12} /> {safari.destinations.length} Parks
+                        <MapPin size={12} className="text-savannah-gold" />{" "}
+                        {safari.destinations.length} Parks
                       </span>
                     </div>
-                    <div className="flex justify-between items-center pt-4 border-t border-outline-variant/10">
+                    <div className="flex justify-between items-center pt-4 border-t border-savannah-gold/25">
                       <div>
-                        <span className="text-2xl font-headline font-bold text-primary">
+                        <span className="text-2xl font-headline font-bold text-safari-brown">
                           ${safari.price[season].toLocaleString()}
                         </span>
-                        <span className="text-xs text-on-surface-variant ml-1">
+                        <span className="text-xs font-body text-safari-brown/70 ml-1">
                           /pp
                         </span>
                       </div>
-                      <span className="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Details <ArrowRight size={14} />
+                      <span className="bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-4 py-2 rounded-full text-xs font-body font-bold uppercase tracking-wider shadow-md group-hover:brightness-105 flex items-center gap-1.5 transition-all">
+                        Explore Trip <ArrowRight size={14} />
                       </span>
                     </div>
                   </div>
