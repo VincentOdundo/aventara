@@ -227,6 +227,20 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Cima Brava Adventures. All rights
             reserved.
           </p>
+          {/* Site credit. Acid green (#CCFF00) is the BYND/LABS brand colour. */}
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-7 flex justify-center print:hidden">
+          <a
+            href="https://bynd.co.ke/labs"
+            target="_blank"
+            rel="noopener"
+            className="group inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.24em] text-sand-cream/60 hover:text-sand-cream/85 transition-colors"
+          >
+            <span>Built by</span>
+            <span className="font-bold text-[#CCFF00] px-1.5 py-0.5 -mx-0.5 ">
+              BYND/LABS
+            </span>
+          </a>
+        </div>
           <div className="flex gap-6 text-xs text-sand-cream/60">
             <Link to="/contact" className="hover:text-sunrise-yellow transition-colors">
               Privacy Policy
@@ -237,29 +251,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Site credit. Acid green (#CCFF00) is the BYND/LABS brand colour. */}
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-7 flex justify-center print:hidden">
-          <a
-            href="https://bynd.co.ke/labs"
-            target="_blank"
-            rel="noopener"
-            className="group inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.24em] text-sand-cream/60 hover:text-sand-cream/85 transition-colors"
-          >
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#CCFF00] shadow-[0_0_8px_#CCFF00] motion-safe:animate-pulse"
-            />
-            <span>Built by</span>
-            <span className="font-bold text-[#CCFF00] px-1.5 py-0.5 -mx-0.5 rounded-[3px] transition-colors duration-200 group-hover:bg-[#CCFF00] group-hover:text-midnight-black group-focus-visible:bg-[#CCFF00] group-focus-visible:text-midnight-black">
-              BYND/LABS
-            </span>
-            <ArrowUpRight
-              size={13}
-              aria-hidden="true"
-              className="text-[#CCFF00] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </a>
-        </div>
+        
       </div>
     </footer>
   );
