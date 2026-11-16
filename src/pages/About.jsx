@@ -1,9 +1,22 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  ORG_ID,
+  breadcrumbLd,
+  faqLd,
+  generalFaqs,
+  graph,
+  pageCrumbs,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
+import {
+  Section,
+  AnimatedSection,
+  StaggerContainer,
+  Breadcrumbs,
+} from "../components/ui";
 import {
   Shield,
   Heart,
@@ -19,12 +32,30 @@ import heroImg from "../assets/nairobi/bird-exotic.jpeg";
 import elefantVegetation from "../assets/lion pack.jpeg";
 
 export default function About() {
+  const title = "About Cima Brava Adventures — Nairobi Safari Operator";
+  const description =
+    "Nairobi-based operator running shared and private 4x4 safaris across Kenya and Tanzania with park fees, lodging, meals and transfers included.";
+  const crumbs = pageCrumbs("About Us", "/about");
+  const breadcrumb = breadcrumbLd(crumbs, "/about");
   useSeo({
-    title: "About Us",
-    description:
-      "Cima Brava Adventures is a Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania.",
+    title,
+    description,
     path: "/about",
-    jsonLd: breadcrumbLd(pageCrumbs("About Us", "/about")),
+    image: heroImg,
+    imageAlt: "About Cima Brava Adventures Nairobi safari operator",
+    jsonLd: graph(
+      webPageLd({
+        path: "/about",
+        title,
+        description,
+        image: heroImg,
+        type: "AboutPage",
+        mainEntityId: ORG_ID,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      faqLd(generalFaqs()),
+    ),
   });
   return (
     <Layout>
@@ -86,6 +117,7 @@ export default function About() {
               </span>
             </Link>
           </div>
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
 
@@ -102,7 +134,7 @@ export default function About() {
               for East Africa
             </h2>
             <div className="space-y-4 text-safari-brown/85 leading-relaxed font-body">
-              <p>
+              <p data-speakable="true">
                 Cima Brava Adventures is a Kenya-based safari
                 and travel company dedicated to creating authentic,
                 and well-curated African safari experiences. We
@@ -213,9 +245,9 @@ export default function About() {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black mb-6 shadow-md">
                   {value.icon}
                 </div>
-                <h4 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
+                <h3 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
                   {value.title}
-                </h4>
+                </h3>
                 <p className="text-sm text-safari-brown/80 group-hover:text-sand-cream/85 leading-relaxed font-body">
                   {value.desc}
                 </p>

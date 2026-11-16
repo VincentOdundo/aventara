@@ -33,7 +33,7 @@ export function FaqSection({ faqs, title = "Questions and answers", id = "faq", 
                 className="shrink-0 text-safari-brown transition-transform duration-300 group-open:rotate-180"
               />
             </summary>
-            <p className="px-5 pb-5 text-safari-brown/85 font-body text-sm leading-relaxed">
+            <p className="px-5 pb-5 text-safari-brown/85 font-body text-sm leading-relaxed" data-speakable="true">
               {faq.a}
             </p>
           </details>

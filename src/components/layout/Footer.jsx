@@ -111,14 +111,15 @@ export default function Footer() {
 
           {/* Safari Links */}
           <div className="lg:col-span-2">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
+            <p className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
               Safaris
-            </h4>
+            </p>
             <ul className="space-y-3">
               {[
                 { label: "Kenya Safaris", to: "/safaris/kenya" },
                 { label: "Tanzania Safaris", to: "/safaris/tanzania" },
                 { label: "Kenya & Tanzania", to: "/safaris/combined" },
+                { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
                 { label: "All Packages", to: "/safaris" },
               ].map((link) => (
                 <li key={link.to}>
@@ -139,16 +140,17 @@ export default function Footer() {
 
           {/* Destinations */}
           <div className="lg:col-span-2">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
+            <p className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
               Destinations
-            </h4>
+            </p>
             <ul className="space-y-3">
               {[
+                { label: "Kenya Guide", to: "/kenya" },
+                { label: "Tanzania Guide", to: "/tanzania" },
                 { label: "Masai Mara", to: "/destinations/masai-mara" },
                 { label: "Serengeti", to: "/destinations/serengeti" },
                 { label: "Ngorongoro", to: "/destinations/ngorongoro" },
                 { label: "Amboseli", to: "/destinations/amboseli" },
-                { label: "Tarangire", to: "/destinations/tarangire" },
                 { label: "Lake Nakuru", to: "/destinations/lake-nakuru" },
               ].map((link) => (
                 <li key={link.to}>
@@ -165,9 +167,9 @@ export default function Footer() {
 
           {/* Company */}
           <div className="lg:col-span-2">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
+            <p className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
               Company
-            </h4>
+            </p>
             <ul className="space-y-3">
               {[
                 { label: "About Us", to: "/about" },
@@ -189,9 +191,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="lg:col-span-2">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
+            <p className="font-headline font-bold text-sm uppercase tracking-widest mb-6 text-sunrise-yellow">
               Get in Touch
-            </h4>
+            </p>
             <ul className="space-y-4 text-sm text-sand-cream/80">
               <li className="flex items-start gap-3">
                 <Phone size={16} className="mt-0.5 flex-shrink-0 text-savannah-gold" />
@@ -242,6 +244,9 @@ export default function Footer() {
           </a>
         </div>
           <div className="flex gap-6 text-xs text-sand-cream/60">
+            <Link to="/sitemap" className="hover:text-sunrise-yellow transition-colors">
+              Sitemap
+            </Link>
             <Link to="/contact" className="hover:text-sunrise-yellow transition-colors">
               Privacy Policy
             </Link>

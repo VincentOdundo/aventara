@@ -1,9 +1,22 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  ORG_ID,
+  breadcrumbLd,
+  contactFaqs,
+  faqLd,
+  graph,
+  pageCrumbs,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection } from "../components/ui";
+import {
+  Section,
+  AnimatedSection,
+  Breadcrumbs,
+  FaqSection,
+} from "../components/ui";
 import { useWhatsApp } from "../hooks/useWhatsApp";
 import {
   Phone,
@@ -35,12 +48,31 @@ function TikTokIcon({ size = 18 }) {
 }
 
 export default function Contact() {
+  const title = "Contact & Safari Quotes — Nairobi";
+  const description =
+    "Send your travel dates and group size by WhatsApp or email. We reply within 24 hours with availability, the final USD price and a day-by-day plan.";
+  const crumbs = pageCrumbs("Contact", "/contact");
+  const breadcrumb = breadcrumbLd(crumbs, "/contact");
+  const faqs = contactFaqs();
   useSeo({
-    title: "Contact & Safari Quotes",
-    description:
-      "Send your travel dates and group size by WhatsApp or email. We reply within 24 hours with availability, the final price and a day-by-day plan.",
+    title,
+    description,
     path: "/contact",
-    jsonLd: breadcrumbLd(pageCrumbs("Contact", "/contact")),
+    image: heroImg,
+    imageAlt: "Contact Cima Brava Adventures in Nairobi for safari quotes",
+    jsonLd: graph(
+      webPageLd({
+        path: "/contact",
+        title,
+        description,
+        image: heroImg,
+        type: "ContactPage",
+        mainEntityId: ORG_ID,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      faqLd(faqs),
+    ),
   });
   const { generateInquiry } = useWhatsApp();
 
@@ -77,6 +109,7 @@ export default function Contact() {
           <p className="font-script italic text-3xl md:text-4xl text-sunrise-yellow mt-4">
             Wild by Nature. Guided by Heart.
           </p>
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
 
@@ -227,9 +260,9 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className="bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-xl p-8 md:p-10"
               >
-                <h3 className="text-2xl font-headline font-bold text-safari-brown mb-8">
+                <h2 className="text-2xl font-headline font-bold text-safari-brown mb-8">
                   Send Us a Message
-                </h3>
+                </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -308,6 +341,12 @@ export default function Contact() {
             </AnimatedSection>
           </div>
         </div>
+
+        <FaqSection
+          faqs={faqs}
+          title="Booking & quote questions"
+          className="mt-16 max-w-4xl"
+        />
       </Section>
     </Layout>
   );

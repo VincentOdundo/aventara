@@ -9,6 +9,7 @@ import { JSDOM } from "jsdom";
 import { SITE_URL, markdownPath } from "./routes.mjs";
 
 const abs = (path) => `${SITE_URL}${path}`;
+const cleanTitle = (t) => String(t || "").replace(/ \| Cima Brava(?: Adventures)?$/, "");
 const cell = (text) => String(text).replace(/\|/g, "\\|").replace(/\s*\n+\s*/g, " ");
 const table = (head, rows) =>
   [
@@ -200,6 +201,7 @@ function hubDoc(country, ctx) {
 
 function destinationDoc(dest, ctx) {
   const safaris = ctx.seo.safarisForDestination(dest);
+  const faqs = ctx.seo.destinationFaqs(dest, safaris);
   return [
     header({
       title: `${dest.name}, ${dest.country}`,
@@ -223,6 +225,10 @@ function destinationDoc(dest, ctx) {
     safaris.length
       ? table(SAFARI_HEAD, safariRows(safaris, ctx))
       : `No published itinerary visits ${dest.name} yet. A private safari can be built on request.`,
+    "",
+    "## Questions and answers",
+    "",
+    faqBlock(faqs),
     footer(ctx),
   ].join("\n");
 }
@@ -281,9 +287,12 @@ function homeDoc(ctx) {
     "",
     bullets([
       `[Destinations](${abs("/destinations.md")})`,
+      `[Kenya safari guide](${abs("/kenya.md")})`,
+      `[Tanzania safari guide](${abs("/tanzania.md")})`,
       `[Company profile and rate card](${abs("/company-profile.md")})`,
       `[About us](${abs("/about.md")})`,
       `[Contact](${abs("/contact.md")})`,
+      `[Full LLM corpus](${abs("/llms-full.txt")})`,
     ]),
     footer(ctx),
   ].join("\n");
@@ -410,7 +419,7 @@ function proseDoc(page, rendered, ctx) {
   const body = htmlToMarkdown(rendered.html).replace(/^# .*\n?/m, "").trim();
   return [
     header({
-      title: rendered.seo.title.replace(` | ${ctx.seo.SITE_NAME}`, ""),
+      title: cleanTitle(rendered.seo.title),
       purpose: rendered.seo.description,
       path: page.path,
       date: ctx.date,
@@ -449,7 +458,7 @@ export function buildDocuments(pages, rendered, ctx) {
       path,
       page,
       body: body.replace(/\n{3,}/g, "\n\n").trimEnd() + "\n",
-      title: head.title.replace(` | ${ctx.seo.SITE_NAME}`, ""),
+      title: cleanTitle(head.title),
       purpose: head.description,
     });
   }
@@ -468,6 +477,7 @@ export function sitemapMarkdown(pages, docs, ctx) {
     "- Language: English",
     `- Last generated: ${ctx.date}`,
     `- Guide for LLM readers: ${abs("/llms.txt")}`,
+    `- Full single-file LLM corpus: ${abs("/llms-full.txt")}`,
     "",
   ];
   for (const topic of topics) {
@@ -481,9 +491,9 @@ export function sitemapMarkdown(pages, docs, ctx) {
             const doc = byPage.get(p.path);
             const head = ctx.rendered.get(p.path).seo;
             return [
-              head.title.replace(` | ${ctx.seo.SITE_NAME}`, ""),
+              cleanTitle(head.title),
               abs(p.path),
-              doc ? abs(doc.path) : "none (photo gallery)",
+              doc ? abs(doc.path) : p.path === "/gallery" ? "none (photo gallery)" : "none (HTML directory)",
               head.description,
             ];
           }),
@@ -509,12 +519,13 @@ export function llmsTxt(pages, docs, ctx) {
     "",
     "> Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices are in US dollars and cover park fees, accommodation, meals and transfers on multi-day safaris.",
     "",
-    "If you are an LLM looking for site information, use the content map to locate the relevant topic and its linked Markdown answer. Use that document's cited sources and canonical page; if the requested information is absent, report that gap.",
+    "If you are an LLM looking for site information, use the content map to locate the relevant topic and its linked Markdown answer, or fetch /llms-full.txt for the entire rate card, itineraries and park guides in a single file. Use that document's cited sources and canonical page; if the requested information is absent, report that gap.",
     "",
     `Prices change by season: low season is ${ctx.SEASONS.low.dates} and high season is ${ctx.SEASONS.high.dates}. These files are regenerated from the live rate card on every site build (last: ${ctx.date}).`,
     "",
     "## Start here",
     "",
+    `- [Full LLM corpus](${abs("/llms-full.txt")}): complete rate card, every day-by-day itinerary, park guides, FAQs and terms in one file`,
     `- [Content map](${abs("/sitemap.md")}): every public page with its Markdown version and what it answers`,
     link(doc("/safaris"), "all packages in one table with low and high season prices, plus general booking questions"),
     link(doc("/"), "who we are and what every safari price includes"),
@@ -532,8 +543,8 @@ export function llmsTxt(pages, docs, ctx) {
     ...ctx.destinations.map((d) =>
       link(doc(`/destinations/${d.slug}`), `${d.country}. What to expect, best time to visit and the safaris that go there.`),
     ),
-    link(doc("/kenya"), "country guide"),
-    link(doc("/tanzania"), "country guide"),
+    link(doc("/kenya"), "Kenya country guide, seasons, parks and packages"),
+    link(doc("/tanzania"), "Tanzania country guide, seasons, parks and packages"),
     "",
     "## Company",
     "",
@@ -543,8 +554,28 @@ export function llmsTxt(pages, docs, ctx) {
     "",
     "## Optional",
     "",
+    `- [HTML sitemap](${abs("/sitemap")}): human-readable directory of all pages`,
     `- [Photo gallery](${abs("/gallery")}): photographs only, no Markdown version`,
     `- [Company profile PDF](${abs("/Cima_Brava_Adventures_Company_Profile.pdf")}): the printable rate card and itineraries`,
     "",
   ].join("\n");
+}
+
+/** Single-file Markdown corpus containing every safari, park guide, rate table and FAQ. */
+export function llmsFullTxt(docs, ctx) {
+  const sections = [
+    "# Cima Brava Adventures — Full Knowledge Base",
+    "",
+    `> Complete 2026–2027 rate card, all ${ctx.safariPackages.length} safari itineraries, all ${ctx.destinations.length} Kenya & Tanzania destination guides, inclusions, terms and FAQs.`,
+    "",
+    `- Site: ${SITE_URL}/`,
+    `- Index: ${abs("/llms.txt")}`,
+    `- Content map: ${abs("/sitemap.md")}`,
+    `- Last generated: ${ctx.date}`,
+    "",
+  ];
+  for (const doc of docs) {
+    sections.push("---", "", doc.body.trimEnd(), "");
+  }
+  return sections.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd() + "\n";
 }

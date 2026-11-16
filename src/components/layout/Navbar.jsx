@@ -19,6 +19,8 @@ const navLinks = [
     label: "Destinations",
     children: [
       { label: "All Destinations", to: "/destinations" },
+      { label: "Kenya Safari Guide", to: "/kenya" },
+      { label: "Tanzania Safari Guide", to: "/tanzania" },
       { label: "Masai Mara", to: "/destinations/masai-mara" },
       { label: "Serengeti", to: "/destinations/serengeti" },
       { label: "Ngorongoro Crater", to: "/destinations/ngorongoro" },

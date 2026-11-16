@@ -1,24 +1,31 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
 import {
+  SITE_URL,
   breadcrumbLd,
   destinationCrumbs,
+  destinationFaqs,
   destinationLd,
+  faqLd,
   graph,
   safariListLd,
   safarisForDestination,
+  truncateText,
   usd,
+  webPageLd,
 } from "../lib/seo";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import NotFound from "./NotFound";
 import Layout from "../components/layout/Layout";
 import {
   Section,
   AnimatedSection,
   StaggerContainer,
   Breadcrumbs,
+  FaqSection,
 } from "../components/ui";
 import { getDestinationBySlug } from "../data/destinations";
-import { safariPackages, getCurrentSeason } from "../data/safaris";
+import { getCurrentSeason } from "../data/safaris";
 import { MapPin, ArrowRight, Sparkles, Calendar } from "lucide-react";
 
 export default function DestinationDetail() {
@@ -27,33 +34,58 @@ export default function DestinationDetail() {
   // Safaris that actually visit this destination
   const relatedSafaris = dest ? safarisForDestination(dest) : [];
   const crumbs = dest ? destinationCrumbs(dest) : [];
+  const faqs = dest ? destinationFaqs(dest, relatedSafaris) : [];
   const fromPrice = relatedSafaris.length
     ? Math.min(...relatedSafaris.map((s) => s.price.low))
     : null;
+  const destPath = dest ? `/destinations/${dest.slug}` : "/destinations";
+  const pageTitle = dest
+    ? relatedSafaris.length
+      ? `${dest.name} Safari Packages & Guide, ${dest.country}`
+      : `${dest.name} Safari Guide, ${dest.country}`
+    : "";
+  const pageDesc = dest
+    ? relatedSafaris.length
+      ? truncateText(
+          `What to expect in ${dest.name}, ${dest.country}, when to visit, and ${relatedSafaris.length === 1 ? "our safari" : `the ${relatedSafaris.length} safaris`} visiting there from ${usd(fromPrice)} per person.`,
+          158,
+        )
+      : truncateText(
+          `What to expect in ${dest.name}, ${dest.country}, best time to visit (${dest.bestTime}), wildlife highlights and custom private safaris from Nairobi.`,
+          158,
+        )
+    : "";
+  const breadcrumb = dest ? breadcrumbLd(crumbs, destPath) : null;
   useSeo(
     dest
       ? {
-          title: relatedSafaris.length
-            ? `${dest.name} Safari Packages & Guide, ${dest.country}`
-            : `${dest.name} Guide, ${dest.country}`,
-          description: relatedSafaris.length
-            ? `What to expect in ${dest.name}, ${dest.country}, when to go, and the ${relatedSafaris.length === 1 ? "safari" : `${relatedSafaris.length} safaris`} we run there from ${usd(fromPrice)} per person.`
-            : `What to expect in ${dest.name}, ${dest.country}, and the best time to visit.`,
-          path: `/destinations/${dest.slug}`,
+          title: pageTitle,
+          description: pageDesc,
+          path: destPath,
           image: dest.image,
+          imageAlt: `${dest.name}, ${dest.country} wildlife safari`,
           jsonLd: graph(
+            webPageLd({
+              path: destPath,
+              title: pageTitle,
+              description: pageDesc,
+              image: dest.image,
+              mainEntityId: `${SITE_URL}${destPath}#destination`,
+              breadcrumbId: breadcrumb["@id"],
+            }),
             destinationLd(dest),
-            breadcrumbLd(crumbs),
+            breadcrumb,
             relatedSafaris.length
               ? safariListLd(relatedSafaris, `Safaris visiting ${dest.name}`)
               : null,
+            faqLd(faqs),
           ),
         }
       : {},
   );
   const season = getCurrentSeason();
 
-  if (!dest) return <Navigate to="/destinations" replace />;
+  if (!dest) return <NotFound />;
 
   return (
     <Layout>
@@ -112,7 +144,7 @@ export default function DestinationDetail() {
               <h2 className="text-3xl md:text-4xl font-headline font-bold text-safari-brown mb-6">
                 About {dest.name}
               </h2>
-              <p className="text-safari-brown/85 font-body leading-relaxed text-lg mb-12">
+              <p className="text-safari-brown/85 font-body leading-relaxed text-lg mb-12" data-speakable="true">
                 {dest.description}
               </p>
             </AnimatedSection>
@@ -154,7 +186,7 @@ export default function DestinationDetail() {
                     >
                       <img
                         src={img}
-                        alt={`${dest.name} ${idx + 1}`}
+                        alt={`${dest.name}, ${dest.country} wildlife and scenery (${idx + 1})`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
@@ -163,6 +195,12 @@ export default function DestinationDetail() {
                 </div>
               </AnimatedSection>
             )}
+
+            <FaqSection
+              faqs={faqs}
+              title={`${dest.name}: questions and answers`}
+              className="mt-14"
+            />
           </div>
 
           {/* Sidebar */}
@@ -170,15 +208,20 @@ export default function DestinationDetail() {
             <div className="sticky top-[80px] space-y-6">
               {/* Quick Info */}
               <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
-                <h4 className="font-headline font-bold text-lg text-safari-brown mb-4">
+                <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
                   Quick Info
-                </h4>
+                </h2>
                 <div className="space-y-4 text-sm font-body">
                   <div className="flex items-start gap-3">
                     <MapPin size={16} className="text-sunset-orange mt-0.5" />
                     <div>
                       <p className="font-bold text-midnight-black">Country</p>
-                      <p className="text-safari-brown/80">{dest.country}</p>
+                      <Link
+                        to={dest.country === "Kenya" ? "/kenya" : "/tanzania"}
+                        className="text-sunset-orange font-semibold hover:underline underline-offset-2"
+                      >
+                        {dest.country} Safari Guide
+                      </Link>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -210,9 +253,9 @@ export default function DestinationDetail() {
               {/* Related Safaris */}
               {relatedSafaris.length > 0 && (
                 <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
-                  <h4 className="font-headline font-bold text-lg text-safari-brown mb-4">
+                  <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
                     Safaris featuring {dest.name}
-                  </h4>
+                  </h2>
                   <div className="space-y-3 font-body">
                     {relatedSafaris.map((safari) => (
                       <Link

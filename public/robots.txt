@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Markdown guide to this site for LLM readers: https://cimabravasafaris.co.ke/llms.txt
+# Full single-file LLM knowledge base: https://cimabravasafaris.co.ke/llms-full.txt
 # Map with a Markdown version of every page: https://cimabravasafaris.co.ke/sitemap.md
 
 Sitemap: https://cimabravasafaris.co.ke/sitemap.xml

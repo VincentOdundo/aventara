@@ -1,8 +1,19 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  breadcrumbLd,
+  countryFaqs,
+  faqLd,
+  graph,
+  pageCrumbs,
+  safariListLd,
+  usd,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
+import { Breadcrumbs, FaqSection } from "../components/ui";
+import { allPackages } from "../data/safaris";
 import { ArrowRight } from "lucide-react";
 
 import heroImg from "../assets/mountain.jpeg";
@@ -16,13 +27,31 @@ import cultureImg3 from "../assets/elefant-tusk.jpeg";
 import bannerImg from "../assets/safari-van-sunrise.jpeg";
 
 export default function Kenya() {
+  const title = "Kenya Safari Guide: Parks, Seasons & Budget Trips";
+  const description =
+    "Budget 4x4 safaris in Kenya from 2 to 8 days: Masai Mara, Amboseli, Lake Nakuru and Lake Naivasha, with daily departures from Nairobi.";
+  const crumbs = pageCrumbs("Kenya Safari Guide", "/kenya");
+  const breadcrumb = breadcrumbLd(crumbs, "/kenya");
+  const faqs = countryFaqs("kenya");
+  const kenyaPackages = allPackages.kenya;
   useSeo({
-    title: "Kenya Safari Guide: Parks, Seasons & Budget Trips",
-    description:
-      "Budget 4x4 safaris in Kenya from 2 to 8 days: Masai Mara, Amboseli, Lake Nakuru and Lake Naivasha, with daily departures from Nairobi.",
+    title,
+    description,
     path: "/kenya",
     image: heroImg,
-    jsonLd: breadcrumbLd(pageCrumbs("Kenya Safari Guide", "/kenya")),
+    imageAlt: "Kenya safari landscape beneath Mount Kilimanjaro",
+    jsonLd: graph(
+      webPageLd({
+        path: "/kenya",
+        title,
+        description,
+        image: heroImg,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      safariListLd(kenyaPackages, "Kenya Budget Safari Packages"),
+      faqLd(faqs),
+    ),
   });
   return (
     <Layout>
@@ -68,6 +97,9 @@ export default function Kenya() {
               >
                 Plan Your Adventure
               </Link>
+            </div>
+            <div className="mt-6 flex justify-center">
+              <Breadcrumbs crumbs={crumbs} tone="light" />
             </div>
           </div>
         </section>
@@ -134,15 +166,15 @@ export default function Kenya() {
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      alt="Wildlife in the arid Samburu and Laikipia landscape"
+                      alt="Wildlife in Ol Pejeta Conservancy and Laikipia plateau"
                       src={samburuImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
-                    Samburu & Laikipia
+                    Ol Pejeta &amp; Laikipia
                   </h3>
                   <p className="text-safari-brown/80 font-body text-sm leading-relaxed">
-                    An arid paradise hosting the 'Special Five' and pioneering
-                    rhino conservation sanctuaries in northern Kenya.
+                    A Laikipia conservancy hosting the last two Northern White
+                    Rhinos, a chimpanzee sanctuary and Big Five game drives.
                   </p>
                 </Link>
               </div>
@@ -279,6 +311,68 @@ export default function Kenya() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-8 md:px-16 lg:px-24 bg-sand-cream">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+              <div>
+                <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-2 block">
+                  Kenya Safari Packages &amp; Parks
+                </span>
+                <h2 className="font-headline font-bold text-3xl md:text-4xl text-safari-brown">
+                  Published Kenya Safaris from Nairobi
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-3 text-xs font-body">
+                {[
+                  { label: "Lake Nakuru", to: "/destinations/lake-nakuru" },
+                  { label: "Lake Naivasha", to: "/destinations/lake-naivasha" },
+                  { label: "Hell's Gate", to: "/destinations/hells-gate" },
+                  { label: "Nairobi National Park", to: "/destinations/nairobi-national-park" },
+                ].map((park) => (
+                  <Link
+                    key={park.to}
+                    to={park.to}
+                    className="px-3.5 py-1.5 rounded-full border border-savannah-gold/50 font-bold text-safari-brown hover:text-sunset-orange hover:border-sunset-orange transition-colors"
+                  >
+                    {park.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+              {kenyaPackages.map((pkg) => (
+                <Link
+                  key={pkg.slug}
+                  to={`/safari/${pkg.slug}`}
+                  className="bg-sand-cream border border-savannah-gold/35 rounded-2xl p-5 hover:border-sunset-orange transition-all shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-1">
+                      {pkg.days} Days
+                    </p>
+                    <h3 className="font-headline font-bold text-base text-safari-brown mb-2">
+                      {pkg.title}
+                    </h3>
+                    <p className="text-xs text-safari-brown/75 mb-3">
+                      {pkg.destinations.join(" · ")}
+                    </p>
+                  </div>
+                  <p className="text-sm font-bold text-safari-brown pt-3 border-t border-savannah-gold/20">
+                    From {usd(pkg.price.low)} low / {usd(pkg.price.high)} high
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            <FaqSection
+              faqs={faqs}
+              title="Kenya safaris: questions and answers"
+              className="max-w-4xl"
+            />
           </div>
         </section>
 

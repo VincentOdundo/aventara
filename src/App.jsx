@@ -15,6 +15,7 @@ const About = lazy(() => import('./pages/About'));
 const CompanyProfile = lazy(() => import('./pages/CompanyProfile'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const Sitemap = lazy(() => import('./pages/Sitemap'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader() {
@@ -67,6 +68,7 @@ export function AppRoutes() {
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/sitemap" element={<Sitemap />} />
 
           {/* Anything else is a real 404, not a copy of the home page */}
           <Route path="*" element={<NotFound />} />

@@ -4,23 +4,27 @@
 //   - the page content itself (rendered by src/entry-server.jsx), so search
 //     engines, link previews and LLM clients that do not run JavaScript read
 //     the real page instead of an empty <div id="root">;
-//   - that page's own <title>, description, canonical URL, share tags and
-//     structured data, taken from the page's useSeo() call;
-//   - a real 404 page, and the Markdown versions, /sitemap.md and /llms.txt.
-//
-// The build fails if a page is missing its title, description or <h1>, if two
-// pages share a title, or if a page refers to an asset that was not built.
+//   - that page's own <title>, description, canonical URL, share tags, Markdown
+//     alternate link and JSON-LD structured data, taken from useSeo();
+//   - a real 404 page, the Markdown corpus (/sitemap.md, /llms.txt,
+//     /llms-full.txt), and the image-enriched XML sitemap (dist/sitemap.xml).
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { SITE_URL, allPages, htmlFile, markdownPath } from "./routes.mjs";
-import { buildDocuments, llmsTxt, refreshCompanyProfile, sitemapMarkdown } from "./markdown.mjs";
+import {
+  buildDocuments,
+  llmsFullTxt,
+  llmsTxt,
+  refreshCompanyProfile,
+  sitemapMarkdown,
+} from "./markdown.mjs";
 
 const server = await import(pathToFileURL(path.resolve("dist-ssr/entry-server.js")).href);
 const { render, safariPackages, allPackages, destinations, SEASONS, CONTACT_EMAIL, WHATSAPP_NUMBER, company, seo } = server;
 
 const esc = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
-const escText = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const escText = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const json = (value) => JSON.stringify(value).replace(/</g, "\\u003c");
 
 // Replacement functions throughout: values contain prices such as "$1,212",
@@ -56,18 +60,28 @@ function page(head, bodyHtml) {
   html = setMeta(html, "property", "og:description", head.description);
   html = setMeta(html, "property", "og:url", head.url);
   html = setMeta(html, "property", "og:image", head.image);
+  html = setMeta(html, "property", "og:image:alt", head.imageAlt);
   html = setMeta(html, "name", "twitter:title", head.title);
   html = setMeta(html, "name", "twitter:description", head.description);
   html = setMeta(html, "name", "twitter:url", head.url);
   html = setMeta(html, "name", "twitter:image", head.image);
+  html = setMeta(html, "name", "twitter:image:alt", head.imageAlt);
   html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, (_, open, close) => open + esc(head.url) + close);
+
+  const mdLinkRe = /<link rel="alternate" type="text\/markdown" href="[^"]*" title="Markdown version" \/>\s*/;
+  if (head.markdownUrl) {
+    html = html.replace(
+      mdLinkRe,
+      () => `<link rel="alternate" type="text/markdown" href="${esc(head.markdownUrl)}" title="Markdown version" />\n    `,
+    );
+  } else {
+    html = html.replace(mdLinkRe, "");
+  }
+
   if (head.jsonLd) {
     html = html.replace("</head>", () => `  <script type="application/ld+json" id="page-jsonld">${head.jsonLd.replace(/</g, "\\u003c")}</script>\n  </head>`);
   }
 
-  // React opens the markup with a <link rel="preload"> for each image that is
-  // not lazy-loaded. Preloads belong in <head>, and only the hero image (the
-  // one marked fetchPriority="high") is worth fetching ahead of everything.
   let heroPreload = "";
   const body = bodyHtml.replace(/^(?:<link rel="preload"[^>]*>)+/, (links) => {
     const hero = (links.match(/<link rel="preload"[^>]*>/g) || []).find((l) => /fetchPriority="high"/i.test(l));
@@ -88,6 +102,16 @@ function check(route, head, bodyHtml) {
   const fail = (message) => problems.push(`${route}: ${message}`);
   if (!head) return fail("the page never called useSeo()");
   if (!head.description) fail("no description");
+  if (head.description && head.description.length > 165) {
+    fail(`description is ${head.description.length} chars (>165)`);
+  }
+  if (head.jsonLd) {
+    try {
+      JSON.parse(head.jsonLd);
+    } catch (e) {
+      fail(`invalid JSON-LD: ${e.message}`);
+    }
+  }
   const h1 = (bodyHtml.match(/<h1[\s>]/g) || []).length;
   if (h1 !== 1) fail(`expected one <h1>, found ${h1}`);
   if ((bodyHtml.match(/<main[\s>]/g) || []).length !== 1) fail("expected one <main>");
@@ -130,10 +154,11 @@ if (problems.length) {
   process.exit(1);
 }
 
-/* ---------- Markdown versions, sitemap.md, llms.txt ---------- */
+/* ---------- Markdown versions, sitemap.md, llms.txt, llms-full.txt ---------- */
 
+const today = new Date().toISOString().slice(0, 10);
 const ctx = {
-  date: new Date().toISOString().slice(0, 10),
+  date: today,
   safariPackages, allPackages, destinations, SEASONS, CONTACT_EMAIL, WHATSAPP_NUMBER, company, seo, rendered,
 };
 
@@ -153,8 +178,33 @@ for (const doc of docs) {
 }
 fs.writeFileSync("dist/sitemap.md", sitemapMarkdown(pages, docs, ctx));
 fs.writeFileSync("dist/llms.txt", llmsTxt(pages, docs, ctx));
+fs.writeFileSync("dist/llms-full.txt", llmsFullTxt(docs, ctx));
 
 const expected = pages.filter(markdownPath).length;
 if (docs.length !== expected) throw new Error(`expected ${expected} Markdown documents, wrote ${docs.length}`);
 
-console.log(`prerendered ${rendered.size} pages + 404; wrote ${docs.length} Markdown documents, sitemap.md and llms.txt`);
+/* ---------- Image-enriched XML sitemap ---------- */
+
+const xmlEntries = pages
+  .map((p) => {
+    const head = rendered.get(p.path).seo;
+    const imgTag = head.image
+      ? `<image:image><image:loc>${escText(head.image)}</image:loc><image:title>${escText(head.imageAlt || head.title)}</image:title></image:image>`
+      : "";
+    return `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${today}</lastmod><priority>${p.priority}</priority>${imgTag}</url>`;
+  })
+  .join("\n");
+
+const imageSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- LLM readers: a Markdown guide to this site is at ${SITE_URL}/llms.txt, full single-file corpus at ${SITE_URL}/llms-full.txt, and a map with a Markdown version of every page at ${SITE_URL}/sitemap.md -->
+${xmlEntries}
+</urlset>
+`;
+fs.writeFileSync("dist/sitemap.xml", imageSitemapXml);
+
+console.log(
+  `prerendered ${rendered.size} pages + 404; wrote ${docs.length} Markdown documents, sitemap.md, llms.txt, llms-full.txt and image-enriched sitemap.xml`,
+);

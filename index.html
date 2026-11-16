@@ -35,6 +35,10 @@
       property="og:image"
       content="https://cimabravasafaris.co.ke/og-image.jpeg"
     />
+    <meta
+      property="og:image:alt"
+      content="Wildlife on safari in East Africa with Cima Brava Adventures"
+    />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -51,9 +55,15 @@
       name="twitter:image"
       content="https://cimabravasafaris.co.ke/og-image.jpeg"
     />
+    <meta
+      name="twitter:image:alt"
+      content="Wildlife on safari in East Africa with Cima Brava Adventures"
+    />
 
-    <!-- Canonical URL -->
+    <!-- Canonical & AI/Markdown Discovery -->
     <link rel="canonical" href="https://cimabravasafaris.co.ke/" />
+    <link rel="alternate" type="text/markdown" href="https://cimabravasafaris.co.ke/index.md" title="Markdown version" />
+    <link rel="alternate" type="text/plain" href="https://cimabravasafaris.co.ke/llms.txt" title="LLM guide" />
 
     <!-- Google Fonts: Cinzel (Trajan Pro fallback), Inter, Montserrat, Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,8 +80,9 @@
     />
 
     <!--
-      Who runs the site. The same on every page; safari pages point at it by
-      @id. The prerender adds priceRange from the package data.
+      Global entity graph shared across every route; page schemas point at
+      #organization and #website by @id. scripts/prerender.mjs injects
+      priceRange dynamically from src/data/packages.
     -->
     <script type="application/ld+json" id="org-jsonld">
       {
@@ -81,22 +92,69 @@
             "@type": "TravelAgency",
             "@id": "https://cimabravasafaris.co.ke/#organization",
             "name": "Cima Brava Adventures",
+            "alternateName": ["Cima Brava", "Cima Brava Safaris"],
             "slogan": "Wild by Nature. Guided by Heart.",
             "url": "https://cimabravasafaris.co.ke/",
-            "logo": "https://cimabravasafaris.co.ke/favicon.png",
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://cimabravasafaris.co.ke/#logo",
+              "url": "https://cimabravasafaris.co.ke/favicon.png"
+            },
             "image": "https://cimabravasafaris.co.ke/og-image.jpeg",
             "email": "cimabravaadventures@gmail.com",
             "telephone": "+254112346049",
+            "currenciesAccepted": "USD",
             "description": "Nairobi-based operator running shared and private 4x4 safaris across Kenya and Tanzania.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Nairobi",
               "addressCountry": "KE"
             },
-            "areaServed": ["Kenya", "Tanzania"],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -1.2921,
+              "longitude": 36.8219
+            },
+            "areaServed": [
+              { "@type": "Country", "name": "Kenya" },
+              { "@type": "Country", "name": "Tanzania" }
+            ],
+            "knowsAbout": [
+              "Kenya Budget Safaris",
+              "Tanzania Northern Circuit Safaris",
+              "Masai Mara National Reserve",
+              "Serengeti National Park",
+              "Ngorongoro Crater",
+              "Amboseli National Park",
+              "Great Wildebeest Migration",
+              "4x4 Safari Departures from Nairobi"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+254112346049",
+              "email": "cimabravaadventures@gmail.com",
+              "contactType": "reservations",
+              "availableLanguage": ["English", "Swahili"],
+              "areaServed": ["KE", "TZ"],
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              }
+            },
             "sameAs": [
               "https://www.tiktok.com/@cima_brava_adventures",
-              "https://www.instagram.com/cima_brava_adventures"
+              "https://www.instagram.com/cima_brava_adventures",
+              "https://www.facebook.com/share/187nSmsCH8/"
             ]
           },
           {
@@ -110,6 +168,14 @@
               "@type": "Organization",
               "name": "BYND/LABS",
               "url": "https://bynd.co.ke/labs"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://cimabravasafaris.co.ke/safaris?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
             }
           }
         ]
@@ -120,7 +186,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- Scroll-reveal content is hidden until JavaScript runs; show it without. -->
+    <!-- Scroll-reveal content stays visible by default for crawlers and slow loads. -->
     <noscript>
       <style>
         .animate-on-scroll,

@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  SITE_URL,
+  breadcrumbLd,
+  graph,
+  imageGalleryLd,
+  pageCrumbs,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection } from "../components/ui";
+import { Section, AnimatedSection, Breadcrumbs } from "../components/ui";
 import {
   X,
   ArrowRight,
@@ -83,12 +90,31 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  const title = "East Africa Safari Photo Gallery";
+  const description =
+    "Wildlife and landscape photos from Cima Brava safaris in the Masai Mara, Amboseli, Lake Nakuru, Nairobi National Park, Serengeti and Ngorongoro Crater.";
+  const crumbs = pageCrumbs("Gallery", "/gallery");
+  const breadcrumb = breadcrumbLd(crumbs, "/gallery");
   useSeo({
-    title: "Safari Photo Gallery",
-    description:
-      "Photos from our safaris in the Masai Mara, Amboseli, Lake Nakuru, Nairobi National Park and northern Tanzania.",
+    title,
+    description,
     path: "/gallery",
-    jsonLd: breadcrumbLd(pageCrumbs("Gallery", "/gallery")),
+    image: heroImg,
+    imageAlt: "East Africa safari photography gallery by Cima Brava Adventures",
+    markdown: false,
+    jsonLd: graph(
+      webPageLd({
+        path: "/gallery",
+        title,
+        description,
+        image: heroImg,
+        type: "WebPage",
+        mainEntityId: `${SITE_URL}/gallery#gallery`,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      imageGalleryLd(galleryImages),
+    ),
   });
   const [lightbox, setLightbox] = useState(null);
 
@@ -111,6 +137,7 @@ export default function Gallery() {
           <p className="font-script italic text-3xl md:text-4xl text-sunrise-yellow mt-4">
             Wild by Nature. Guided by Heart.
           </p>
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
 

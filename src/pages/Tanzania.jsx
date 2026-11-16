@@ -1,8 +1,19 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  breadcrumbLd,
+  countryFaqs,
+  faqLd,
+  graph,
+  pageCrumbs,
+  safariListLd,
+  usd,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
+import { Breadcrumbs, FaqSection } from "../components/ui";
+import { allPackages } from "../data/safaris";
 import { ArrowRight } from "lucide-react";
 
 import heroImg from "../assets/lioness_open.jpeg";
@@ -18,13 +29,31 @@ import cultureImg1 from "../assets/nairobi/lion-safari.jpeg";
 import cultureImg2 from "../assets/flamingo-water.jpeg";
 
 export default function Tanzania() {
+  const title = "Tanzania Safari Guide: Serengeti, Ngorongoro & Budget Trips";
+  const description =
+    "Northern Tanzania safaris from 3 to 6 days: Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara, starting in Arusha.";
+  const crumbs = pageCrumbs("Tanzania Safari Guide", "/tanzania");
+  const breadcrumb = breadcrumbLd(crumbs, "/tanzania");
+  const faqs = countryFaqs("tanzania");
+  const tanzaniaPackages = allPackages.tanzania;
   useSeo({
-    title: "Tanzania Safari Guide: Serengeti, Ngorongoro & Budget Trips",
-    description:
-      "Northern Tanzania safaris from 3 to 6 days: Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara, starting in Arusha.",
+    title,
+    description,
     path: "/tanzania",
     image: heroImg,
-    jsonLd: breadcrumbLd(pageCrumbs("Tanzania Safari Guide", "/tanzania")),
+    imageAlt: "Tanzania northern circuit safari plains in the Serengeti",
+    jsonLd: graph(
+      webPageLd({
+        path: "/tanzania",
+        title,
+        description,
+        image: heroImg,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      safariListLd(tanzaniaPackages, "Tanzania Budget Safari Packages"),
+      faqLd(faqs),
+    ),
   });
   return (
     <Layout>
@@ -68,6 +97,7 @@ export default function Tanzania() {
                 Plan Your Adventure
               </Link>
             </div>
+            <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
           </div>
         </section>
 
@@ -87,11 +117,12 @@ export default function Tanzania() {
                   Serengeti and the snow-capped peaks of Kilimanjaro,
                   it stands as Africa's wildlife sanctuary.
                 </p>
-                <p>
-                  With over a third of its land dedicated to conservation, the
-                  biodiversity here is. From the high-altitude
-                  forests to the spice-scented shores of Zanzibar, every mile
-                  offers a new chapter in the Modern Explorer's journal.
+                <p data-speakable="true">
+                  More than a third of Tanzania&apos;s land is protected in
+                  national parks and reserves, holding one of Africa&apos;s
+                  highest concentrations of large mammals. From the highlands
+                  around Ngorongoro to the northern Serengeti plains, every
+                  route covers distinct ecosystems.
                 </p>
               </div>
             </div>
@@ -298,9 +329,9 @@ export default function Tanzania() {
               </h2>
               <div className="space-y-8">
                 <div>
-                  <h4 className="font-headline font-bold text-2xl mb-2 text-sunrise-yellow">
+                  <h3 className="font-headline font-bold text-2xl mb-2 text-sunrise-yellow">
                     The Maasai
-                  </h4>
+                  </h3>
                   <p className="font-body text-sand-cream/85 leading-relaxed">
                     Meet the guardians of the savanna. Their vibrant
                     red Shúkà and deep spiritual connection to the land offer a
@@ -309,9 +340,9 @@ export default function Tanzania() {
                 </div>
                 <div className="h-px bg-savannah-gold/20 w-full"></div>
                 <div>
-                  <h4 className="font-headline font-bold text-2xl mb-2 text-sunrise-yellow">
+                  <h3 className="font-headline font-bold text-2xl mb-2 text-sunrise-yellow">
                     Swahili Heritage
-                  </h4>
+                  </h3>
                   <p className="font-body text-sand-cream/85 leading-relaxed">
                     From the stone-cobbled alleys of Zanzibar to the coastal
                     spice markets, experience a fusion of African, Arab, and
@@ -322,6 +353,66 @@ export default function Tanzania() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="py-20 px-8 max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+            <div>
+              <span className="text-sunset-orange font-body font-bold uppercase tracking-widest text-xs mb-2 block">
+                Tanzania Safari Packages &amp; Parks
+              </span>
+              <h2 className="font-headline font-bold text-3xl md:text-4xl text-safari-brown">
+                Published Northern Circuit Safaris
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-3 text-xs font-body">
+              {[
+                { label: "Serengeti", to: "/destinations/serengeti" },
+                { label: "Ngorongoro Crater", to: "/destinations/ngorongoro" },
+                { label: "Tarangire", to: "/destinations/tarangire" },
+                { label: "Lake Manyara", to: "/destinations/lake-manyara" },
+              ].map((park) => (
+                <Link
+                  key={park.to}
+                  to={park.to}
+                  className="px-3.5 py-1.5 rounded-full border border-savannah-gold/50 font-bold text-safari-brown hover:text-sunset-orange hover:border-sunset-orange transition-colors"
+                >
+                  {park.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+            {tanzaniaPackages.map((pkg) => (
+              <Link
+                key={pkg.slug}
+                to={`/safari/${pkg.slug}`}
+                className="bg-sand-cream border border-savannah-gold/35 rounded-2xl p-5 hover:border-sunset-orange transition-all shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-1">
+                    {pkg.days} Days
+                  </p>
+                  <h3 className="font-headline font-bold text-base text-safari-brown mb-2">
+                    {pkg.title}
+                  </h3>
+                  <p className="text-xs text-safari-brown/75 mb-3">
+                    {pkg.destinations.join(" · ")}
+                  </p>
+                </div>
+                <p className="text-sm font-bold text-safari-brown pt-3 border-t border-savannah-gold/20">
+                  From {usd(pkg.price.low)} low / {usd(pkg.price.high)} high
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <FaqSection
+            faqs={faqs}
+            title="Tanzania safaris: questions and answers"
+            className="max-w-4xl"
+          />
         </section>
 
         <section className="py-40 px-8 text-center bg-sand-cream relative overflow-hidden">

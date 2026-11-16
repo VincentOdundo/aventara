@@ -1,9 +1,23 @@
 import React from "react";
 import { useSeo } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  breadcrumbLd,
+  destinationListLd,
+  destinationsHubFaqs,
+  faqLd,
+  graph,
+  pageCrumbs,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
+import {
+  Section,
+  AnimatedSection,
+  StaggerContainer,
+  Breadcrumbs,
+  FaqSection,
+} from "../components/ui";
 import { destinations } from "../data/destinations";
 import { ArrowRight, MapPin, Compass } from "lucide-react";
 
@@ -11,12 +25,31 @@ import heroImg from "../assets/lioness.jpeg";
 import bannerImg from "../assets/safari-van-sunrise.jpeg";
 
 export default function DestinationsHub() {
+  const title = "Safari Destinations in Kenya & Tanzania";
+  const description =
+    "The parks and reserves on our routes: Masai Mara, Amboseli, Lake Nakuru, Lake Naivasha, Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara.";
+  const crumbs = pageCrumbs("Destinations", "/destinations");
+  const breadcrumb = breadcrumbLd(crumbs, "/destinations");
+  const faqs = destinationsHubFaqs();
   useSeo({
-    title: "Safari Destinations in Kenya & Tanzania",
-    description:
-      "The parks and reserves on our routes: Masai Mara, Amboseli, Lake Nakuru, Lake Naivasha, Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara.",
+    title,
+    description,
     path: "/destinations",
-    jsonLd: breadcrumbLd(pageCrumbs("Destinations", "/destinations")),
+    image: heroImg,
+    imageAlt: "Safari destinations across Kenya and Tanzania national parks",
+    jsonLd: graph(
+      webPageLd({
+        path: "/destinations",
+        title,
+        description,
+        image: heroImg,
+        type: "CollectionPage",
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      destinationListLd(destinations),
+      faqLd(faqs),
+    ),
   });
   const kenyaDestinations = destinations.filter((d) => d.country === "Kenya");
   const tzDestinations = destinations.filter((d) => d.country === "Tanzania");
@@ -57,6 +90,7 @@ export default function DestinationsHub() {
               Plan Your Adventure
             </Link>
           </div>
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
 
@@ -71,12 +105,20 @@ export default function DestinationsHub() {
               Kenyan Destinations
             </h2>
           </div>
-          <Link
-            to="/safaris/kenya"
-            className="btn-destinations bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream font-body font-semibold rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 self-start md:self-auto hover:brightness-110 transition-all shadow-md"
-          >
-            View Kenya Safaris <ArrowRight size={15} />
-          </Link>
+          <div className="flex flex-wrap gap-3 self-start md:self-auto">
+            <Link
+              to="/kenya"
+              className="btn-plan border-2 border-savannah-gold text-safari-brown font-body font-bold rounded-full px-5 py-3 text-sm inline-flex items-center gap-2 hover:bg-savannah-gold/15 transition-all"
+            >
+              Kenya Safari Guide <ArrowRight size={15} />
+            </Link>
+            <Link
+              to="/safaris/kenya"
+              className="btn-destinations bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream font-body font-semibold rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 hover:brightness-110 transition-all shadow-md"
+            >
+              View Kenya Safaris <ArrowRight size={15} />
+            </Link>
+          </div>
         </AnimatedSection>
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {kenyaDestinations.map((dest) => (
@@ -97,12 +139,20 @@ export default function DestinationsHub() {
                 Tanzanian Destinations
               </h2>
             </div>
-            <Link
-              to="/safaris/tanzania"
-              className="btn-destinations bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream font-body font-semibold rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 self-start md:self-auto hover:brightness-110 transition-all shadow-md"
-            >
-              View Tanzania Safaris <ArrowRight size={15} />
-            </Link>
+            <div className="flex flex-wrap gap-3 self-start md:self-auto">
+              <Link
+                to="/tanzania"
+                className="btn-plan border-2 border-savannah-gold text-safari-brown font-body font-bold rounded-full px-5 py-3 text-sm inline-flex items-center gap-2 hover:bg-savannah-gold/15 transition-all"
+              >
+                Tanzania Safari Guide <ArrowRight size={15} />
+              </Link>
+              <Link
+                to="/safaris/tanzania"
+                className="btn-destinations bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream font-body font-semibold rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 hover:brightness-110 transition-all shadow-md"
+              >
+                View Tanzania Safaris <ArrowRight size={15} />
+              </Link>
+            </div>
           </AnimatedSection>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
             {tzDestinations.map((dest) => (
@@ -111,6 +161,15 @@ export default function DestinationsHub() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* Destination FAQs */}
+      <Section className="py-16 md:py-20 bg-sand-cream border-t border-savannah-gold/20">
+        <FaqSection
+          faqs={faqs}
+          title="Kenya & Tanzania safari destinations: questions and answers"
+          className="max-w-4xl mx-auto"
+        />
+      </Section>
 
       {/* Signature Theme Banner */}
       <section className="py-16 md:py-24 bg-sand-cream px-6 lg:px-12">
@@ -189,7 +248,7 @@ function DestinationCard({ dest }) {
             {dest.tagline}
           </p>
           <p className="text-sm text-safari-brown/80 font-body leading-relaxed mb-5 flex-grow line-clamp-3">
-            {dest.description.substring(0, 150)}...
+            {dest.description}
           </p>
           <div className="pt-4 border-t border-savannah-gold/20 flex items-center justify-between mt-auto">
             <span className="text-safari-brown group-hover:text-sunset-orange text-xs font-body font-bold uppercase tracking-wider transition-colors">

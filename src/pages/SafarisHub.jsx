@@ -6,9 +6,12 @@ import {
   generalFaqs,
   graph,
   hubCrumbs,
+  offerCatalogLd,
   safariListLd,
+  webPageLd,
 } from "../lib/seo";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
+import NotFound from "./NotFound";
 import Layout from "../components/layout/Layout";
 import {
   Section,
@@ -26,31 +29,54 @@ import { ArrowRight, MapPin, Calendar, Filter, X, Search } from "lucide-react";
 
 import heroImg from "../assets/lioness.jpeg";
 
+const VALID_COUNTRIES = new Set(["kenya", "tanzania", "combined", "nairobi"]);
+
 export default function SafarisHub() {
   const { country } = useParams();
+  const [searchParams] = useSearchParams();
+  const isInvalidCountry = Boolean(country && !VALID_COUNTRIES.has(country));
   const hubSeo = {
     kenya: ["Kenya Budget Safari Packages & Prices (2–8 Days)", "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included."],
     tanzania: ["Tanzania Budget Safari Packages & Prices (3–6 Days)", "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season."],
     combined: ["Kenya & Tanzania Combined Safaris (10–12 Days)", "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking."],
-    nairobi: ["Nairobi Day Trips & Half-Day Tours", "Short wildlife and city outings in Nairobi for stopovers and free days."],
+    nairobi: ["Nairobi Day Trips & Half-Day Tours", "Short wildlife and city outings in Nairobi for stopovers and free days. Half-day tours from $180 per person with guide, transport and bottled water."],
   }[country] || ["Kenya & Tanzania Safari Packages & Prices", "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season."];
-  const crumbs = hubCrumbs(country);
+  const crumbs = isInvalidCountry ? [] : hubCrumbs(country);
   const faqs = generalFaqs();
-  const listedSafaris = country ? getSafarisByCountry(country) : safariPackages;
-  useSeo({
-    title: hubSeo[0],
-    description: hubSeo[1],
-    path: country ? `/safaris/${country}` : "/safaris",
-    jsonLd: graph(
-      safariListLd(listedSafaris, hubSeo[0]),
-      breadcrumbLd(crumbs),
-      faqLd(faqs),
-    ),
-  });
+  const listedSafaris = isInvalidCountry ? [] : country ? getSafarisByCountry(country) : safariPackages;
+  const pagePath = country ? `/safaris/${country}` : "/safaris";
+  const breadcrumb = !isInvalidCountry ? breadcrumbLd(crumbs, pagePath) : null;
+  useSeo(
+    !isInvalidCountry
+      ? {
+          title: hubSeo[0],
+          description: hubSeo[1],
+          path: pagePath,
+          image: heroImg,
+          imageAlt: `${hubSeo[0]} — Cima Brava Adventures`,
+          jsonLd: graph(
+            webPageLd({
+              path: pagePath,
+              title: hubSeo[0],
+              description: hubSeo[1],
+              image: heroImg,
+              type: "CollectionPage",
+              breadcrumbId: breadcrumb["@id"],
+            }),
+            breadcrumb,
+            safariListLd(listedSafaris, hubSeo[0]),
+            offerCatalogLd(listedSafaris, hubSeo[0]),
+            faqLd(faqs),
+          ),
+        }
+      : {},
+  );
   const season = getCurrentSeason();
   const [daysFilter, setDaysFilter] = useState("all");
   const [budgetFilter, setBudgetFilter] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(() => searchParams.get("q") || "");
+
+  if (isInvalidCountry) return <NotFound />;
 
   const pageTitle =
     country === "kenya"
@@ -68,7 +94,7 @@ export default function SafarisHub() {
       : country === "nairobi"
         ? "Quick Nairobi experiences perfect for stopovers and city explorers."
         : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
-    : "From half-day Nairobi escapes & 2-day Mara getaways to 12-day cross-border expeditions — find the safari that matches your dream.";
+    : "From half-day Nairobi outings & 2-day Mara trips to 12-day cross-border safaris — compare rates, parks and day-by-day itineraries.";
 
   const baseSafaris = country ? getSafarisByCountry(country) : safariPackages;
 
@@ -166,9 +192,24 @@ export default function SafarisHub() {
                 href={`#pkg-${pkg.slug}`}
                 className="px-4 py-2 rounded-full text-xs font-body font-bold bg-sand-cream border border-savannah-gold/40 text-safari-brown hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
               >
-                {pkg.days}D · {pkg.title}
+                {pkg.days === 0.5 ? "Half Day" : `${pkg.days}D`} · {pkg.title}
               </a>
             ))}
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-body text-safari-brown/80">
+            {country === "kenya" && (
+              <Link to="/kenya" className="font-bold text-sunset-orange hover:underline underline-offset-2">
+                Read the Kenya Safari Guide &rarr;
+              </Link>
+            )}
+            {country === "tanzania" && (
+              <Link to="/tanzania" className="font-bold text-sunset-orange hover:underline underline-offset-2">
+                Read the Tanzania Safari Guide &rarr;
+              </Link>
+            )}
+            <Link to="/company-profile" className="font-bold text-safari-brown hover:text-sunset-orange hover:underline underline-offset-2">
+              Compare all 17 packages on the 2026–2027 Rate Card &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -289,9 +330,9 @@ export default function SafarisHub() {
                         {safari.destinations.slice(0, 3).join(" · ")}
                       </span>
                     </div>
-                    <h3 className="text-xl font-headline font-bold text-safari-brown group-hover:text-sunset-orange transition-colors mb-1">
+                    <h2 className="text-xl font-headline font-bold text-safari-brown group-hover:text-sunset-orange transition-colors mb-1">
                       {safari.title}
-                    </h3>
+                    </h2>
                     <p className="text-sm font-body text-safari-brown/80 mb-4 flex-grow">
                       {safari.subtitle}
                     </p>

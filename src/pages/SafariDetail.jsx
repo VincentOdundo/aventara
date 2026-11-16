@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useSeo } from "../hooks/useSeo";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import NotFound from "./NotFound";
 import Layout from "../components/layout/Layout";
 import { AnimatedSection, Breadcrumbs, FaqSection } from "../components/ui";
 import {
+  SITE_URL,
   breadcrumbLd,
   destinationsForSafari,
   durationLabel as lengthOf,
@@ -13,9 +15,11 @@ import {
   safariDescription,
   safariFaqs,
   safariLd,
+  safariQuickAnswer,
   safariTitle,
   similarSafaris,
   usd,
+  webPageLd,
 } from "../lib/seo";
 import { SeasonBadge, PriceDisplay } from "../components/ui/SeasonPrice";
 import { WhatsAppBookButton } from "../components/ui/WhatsAppCTA";
@@ -37,14 +41,31 @@ export default function SafariDetail() {
   const safari = getSafariBySlug(slug);
   const crumbs = safari ? safariCrumbs(safari) : [];
   const faqs = safari ? safariFaqs(safari) : [];
+  const safariPath = safari ? `/safari/${safari.slug}` : "/safaris";
+  const breadcrumb = safari ? breadcrumbLd(crumbs, safariPath) : null;
+  const title = safari ? safariTitle(safari) : "";
+  const desc = safari ? safariDescription(safari) : "";
   useSeo(
     safari
       ? {
-          title: safariTitle(safari),
-          description: safariDescription(safari),
-          path: `/safari/${safari.slug}`,
+          title,
+          description: desc,
+          path: safariPath,
           image: safari.image,
-          jsonLd: graph(safariLd(safari), breadcrumbLd(crumbs), faqLd(faqs)),
+          imageAlt: `${safari.title} — ${safari.destinations.join(", ")}`,
+          jsonLd: graph(
+            webPageLd({
+              path: safariPath,
+              title,
+              description: desc,
+              image: safari.image,
+              mainEntityId: `${SITE_URL}${safariPath}#trip`,
+              breadcrumbId: breadcrumb["@id"],
+            }),
+            safariLd(safari),
+            breadcrumb,
+            faqLd(faqs),
+          ),
         }
       : {},
   );
@@ -54,7 +75,7 @@ export default function SafariDetail() {
   const [guests, setGuests] = useState(2);
   const [openDay, setOpenDay] = useState(0);
 
-  if (!safari) return <Navigate to="/safaris" replace />;
+  if (!safari) return <NotFound />;
 
   const isSingle = guests === 1 && Boolean(safari.singlePrice);
   const price = isSingle
@@ -205,6 +226,14 @@ export default function SafariDetail() {
                   </div>
                 </div>
 
+                {/* Quick AEO Summary */}
+                <p
+                  data-speakable="true"
+                  className="mb-6 rounded-2xl border border-savannah-gold/35 bg-savannah-gold/10 px-5 py-4 text-sm leading-relaxed text-safari-brown font-body"
+                >
+                  {safariQuickAnswer(safari)}
+                </p>
+
                 {/* Highlights */}
                 <div className="flex flex-wrap gap-3">
                   {safari.highlights.map((h, idx) => (
@@ -242,9 +271,9 @@ export default function SafariDetail() {
                             {String(day.day).padStart(2, "0")}
                           </span>
                           <div>
-                            <h4 className="text-lg font-headline font-bold text-safari-brown">
+                            <h3 className="text-lg font-headline font-bold text-safari-brown">
                               {day.title}
-                            </h4>
+                            </h3>
                             <p className="text-xs font-body text-sunset-orange font-semibold mt-0.5 flex items-center gap-1.5">
                               <MapPin size={12} /> {day.destination}
                             </p>
@@ -305,9 +334,9 @@ export default function SafariDetail() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
-                    <h4 className="font-headline font-bold text-lg mb-4 text-safari-brown">
+                    <h3 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                       ✓ Included
-                    </h4>
+                    </h3>
                     <ul className="space-y-3">
                       {safari.included.map((item, idx) => (
                         <li
@@ -324,9 +353,9 @@ export default function SafariDetail() {
                     </ul>
                   </div>
                   <div className="bg-sand-cream border border-crane-red/30 rounded-2xl p-6 shadow-sm">
-                    <h4 className="font-headline font-bold text-lg mb-4 text-crane-red">
+                    <h3 className="font-headline font-bold text-lg mb-4 text-crane-red">
                       ✗ Excluded
-                    </h4>
+                    </h3>
                     <ul className="space-y-3">
                       {safari.excluded.map((item, idx) => (
                         <li
@@ -347,9 +376,9 @@ export default function SafariDetail() {
                 {safari.optionalActivities &&
                   safari.optionalActivities.length > 0 && (
                     <div className="mt-8 bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
-                      <h4 className="font-headline font-bold text-lg mb-4 text-safari-brown">
+                      <h3 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                         Optional Add-On Experiences
-                      </h4>
+                      </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {safari.optionalActivities.map((act, idx) => (
                           <div

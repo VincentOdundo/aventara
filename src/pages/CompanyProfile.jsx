@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { useSeo, SITE_URL } from "../hooks/useSeo";
-import { breadcrumbLd, pageCrumbs } from "../lib/seo";
+import {
+  breadcrumbLd,
+  companyProfileDocLd,
+  faqLd,
+  generalFaqs,
+  graph,
+  howToBookLd,
+  offerCatalogLd,
+  pageCrumbs,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
+import { Breadcrumbs } from "../components/ui";
 import {
   safariPackages,
   allPackages,
@@ -502,12 +513,32 @@ function ItineraryCard({ pkg, open, onToggle }) {
 
 export default function CompanyProfile() {
   const { generateInquiry } = useWhatsApp();
+  const title = "Company Profile & 2026–2027 Safari Rates";
+  const description =
+    "Who we are, what every safari price includes, the full 2026–2027 rate card and every itinerary day by day. Download the PDF.";
+  const crumbs = pageCrumbs("Company Profile", "/company-profile");
+  const breadcrumb = breadcrumbLd(crumbs, "/company-profile");
   useSeo({
-    title: "Company Profile & 2026–2027 Safari Rates",
-    description:
-      "Who we are, what every safari price includes, the full 2026–2027 rate card and every itinerary day by day. Download the PDF.",
+    title,
+    description,
     path: "/company-profile",
-    jsonLd: breadcrumbLd(pageCrumbs("Company Profile", "/company-profile")),
+    image: coverImg,
+    imageAlt: "Cima Brava Adventures company profile and 2026–2027 safari rate card",
+    jsonLd: graph(
+      webPageLd({
+        path: "/company-profile",
+        title,
+        description,
+        image: coverImg,
+        mainEntityId: `${SITE_URL}/company-profile#catalog`,
+        breadcrumbId: breadcrumb["@id"],
+      }),
+      breadcrumb,
+      offerCatalogLd(safariPackages),
+      howToBookLd(),
+      faqLd(generalFaqs()),
+      companyProfileDocLd(),
+    ),
   });
   const season = getCurrentSeason();
   const quoteLink = generateInquiry("Safari quote request");
@@ -535,6 +566,7 @@ export default function CompanyProfile() {
 
         <div className="flex-1 flex items-center w-full max-w-screen-xl mx-auto px-5 sm:px-8 lg:px-12 print:px-[14mm] pt-28 md:pt-32 print:pt-[9mm] pb-10 print:pb-[6mm]">
           <div className="max-w-3xl">
+            <Breadcrumbs crumbs={crumbs} tone="light" className="mb-5 print:hidden" />
             <div className="mb-8 inline-block overflow-hidden">
               <img
                 src={logo}
@@ -564,7 +596,7 @@ export default function CompanyProfile() {
                 />
               </svg>
             </div>
-            <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-sand-cream/90">
+            <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-sand-cream/90" data-speakable="true">
               Cima Brava Adventures is a Nairobi-based safari operator. We run
               shared and private 4x4 safaris across Kenya and Tanzania, and the
               price we publish already covers park fees, accommodation, meals

@@ -12,16 +12,21 @@ export function useScrollAnimation(options = {}) {
     const element = ref.current;
     if (!element) return;
 
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(element); // Only animate once
+          observer.unobserve(element);
         }
       },
       {
-        threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || "0px 0px -50px 0px",
+        threshold: options.threshold || 0.05,
+        rootMargin: options.rootMargin || "80px 0px 80px 0px",
       },
     );
 
@@ -33,24 +38,24 @@ export function useScrollAnimation(options = {}) {
 }
 
 /**
- * Animated counter hook - counts from 0 to target value.
+ * Stat counter hook: starts at `target` so SSR HTML and crawlers always read
+ * real values instead of 0, and smoothly animates up from 0 once scrolled into view.
  */
-export function useCounter(target, duration = 2000) {
-  const [count, setCount] = useState(0);
+export function useCounter(target, duration = 1200) {
+  const [count, setCount] = useState(target);
   const { ref, isVisible } = useScrollAnimation();
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || hasAnimated.current) return;
+    hasAnimated.current = true;
 
-    let start = 0;
     const startTime = performance.now();
-
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
+      setCount(Math.round(eased * target));
 
       if (progress < 1) {
         requestAnimationFrame(animate);

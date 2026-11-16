@@ -23,11 +23,12 @@ const destinationSlugs = slugsIn("src/data/destinations.js");
 const pages = allPages(safariSlugs, destinationSlugs);
 
 /* ---------- sitemap.xml ---------- */
-// The comment is a navigation hint for LLM readers; the URL entries are the
-// canonical HTML pages only. Markdown versions are not listed here.
+// scripts/prerender.mjs later enriches dist/sitemap.xml with <image:image> tags
+// pointing to the built asset filenames.
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- LLM readers: a Markdown guide to this site is at ${SITE_URL}/llms.txt and a map with a Markdown version of every page is at ${SITE_URL}/sitemap.md -->
+  <!-- LLM readers: a Markdown guide to this site is at ${SITE_URL}/llms.txt, full single-file corpus at ${SITE_URL}/llms-full.txt, and a map with a Markdown version of every page at ${SITE_URL}/sitemap.md -->
 ${pages
   .map(
     (p) =>
@@ -45,6 +46,7 @@ fs.writeFileSync(
 Allow: /
 
 # Markdown guide to this site for LLM readers: ${SITE_URL}/llms.txt
+# Full single-file LLM knowledge base: ${SITE_URL}/llms-full.txt
 # Map with a Markdown version of every page: ${SITE_URL}/sitemap.md
 
 Sitemap: ${SITE_URL}/sitemap.xml
@@ -52,18 +54,33 @@ Sitemap: ${SITE_URL}/sitemap.xml
 );
 
 /* ---------- vercel.json ---------- */
-// - One URL per page: /about/ redirects to /about.
-// - Hashed build assets never change, so browsers may keep them for a year.
-// - Each Markdown version names its HTML page as canonical, so search engines
-//   treat it as an alternate copy and not as a competing page.
 const header = (key, value) => ({ key, value });
 const vercel = {
   $schema: "https://openapi.vercel.sh/vercel.json",
   trailingSlash: false,
   headers: [
     {
+      source: "/(.*)",
+      headers: [
+        header("X-Content-Type-Options", "nosniff"),
+        header("Referrer-Policy", "strict-origin-when-cross-origin"),
+      ],
+    },
+    {
       source: "/assets/(.*)",
       headers: [header("Cache-Control", "public, max-age=31536000, immutable")],
+    },
+    {
+      source: "/sitemap.xml",
+      headers: [header("Content-Type", "application/xml; charset=utf-8")],
+    },
+    {
+      source: "/sitemap.xsl",
+      headers: [header("Content-Type", "application/xslt+xml; charset=utf-8")],
+    },
+    {
+      source: "/404.html",
+      headers: [header("X-Robots-Tag", "noindex, follow")],
     },
     {
       source: "/(.*)\\.md",
@@ -71,6 +88,10 @@ const vercel = {
     },
     {
       source: "/llms.txt",
+      headers: [header("Content-Type", "text/plain; charset=utf-8")],
+    },
+    {
+      source: "/llms-full.txt",
       headers: [header("Content-Type", "text/plain; charset=utf-8")],
     },
     ...pages

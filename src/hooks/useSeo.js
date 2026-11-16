@@ -6,7 +6,9 @@ export { SITE_URL, SITE_NAME };
 export const safariJsonLd = safariLd;
 
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpeg`;
+const DEFAULT_IMAGE_ALT = "Wildlife on safari in East Africa with Cima Brava Adventures";
 const INDEXABLE = "index, follow, max-image-preview:large, max-snippet:-1";
+const NO_MARKDOWN_PATHS = new Set(["/gallery", "/sitemap", "/404"]);
 
 function setMeta(selector, attr, key, content) {
   let el = document.head.querySelector(selector);
@@ -18,6 +20,18 @@ function setMeta(selector, attr, key, content) {
   el.setAttribute("content", content);
 }
 
+function setLink(selector, rel, attrs) {
+  let el = document.head.querySelector(selector);
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  for (const [k, v] of Object.entries(attrs)) {
+    el.setAttribute(k, v);
+  }
+}
+
 /** The full set of head values for a page, shared by browser and prerender. */
 export function resolveSeo({
   title,
@@ -25,29 +39,43 @@ export function resolveSeo({
   path = "/",
   jsonLd = null,
   image = null,
+  imageAlt = null,
   noindex = false,
+  markdown = true,
 }) {
-  // Search results show the site name separately, so a long title keeps its
-  // own words (and its price) instead of spending 24 characters on the brand.
   const branded = `${title} | ${SITE_NAME}`;
+  const shortBranded = `${title} | Cima Brava`;
+  const resolvedTitle = title.includes(SITE_NAME)
+    ? title
+    : branded.length <= 70
+      ? branded
+      : shortBranded.length <= 68
+        ? shortBranded
+        : title;
+
+  const normalizedPath = path === "/" ? "/" : path;
+  const markdownUrl =
+    !noindex && markdown && !NO_MARKDOWN_PATHS.has(normalizedPath)
+      ? normalizedPath === "/"
+        ? `${SITE_URL}/index.md`
+        : `${SITE_URL}${normalizedPath}.md`
+      : null;
+
   return {
-    title: title.includes(SITE_NAME) || branded.length > 70 ? title : branded,
+    title: resolvedTitle,
     description,
-    url: `${SITE_URL}${path === "/" ? "/" : path}`,
+    url: `${SITE_URL}${normalizedPath}`,
     image: image ? absoluteUrl(image) : DEFAULT_IMAGE,
+    imageAlt: imageAlt || `${title} — ${SITE_NAME}`,
     robots: noindex ? "noindex, follow" : INDEXABLE,
+    markdownUrl,
     jsonLd: jsonLd ? JSON.stringify(jsonLd) : "",
   };
 }
 
 /**
- * Gives each page its own title, description, canonical URL, share tags and
- * (optionally) structured data, so search results and link previews describe
- * the page that was actually opened.
- *
- * During the static prerender there is no document: the values are handed to
- * scripts/prerender.mjs through globalThis.__SEO__, which writes them into the
- * HTML file for the route. One call, one source for both.
+ * Gives each page its own title, description, canonical URL, share tags,
+ * Markdown alternate discovery link and JSON-LD structured data.
  */
 export function useSeo(options = {}) {
   const { title, description, path = "/" } = options;
@@ -57,7 +85,7 @@ export function useSeo(options = {}) {
     globalThis.__SEO__ = seo;
   }
 
-  const { url, image, robots, jsonLd: ld } = seo || {};
+  const { url, image, imageAlt, robots, markdownUrl, jsonLd: ld } = seo || {};
   const fullTitle = seo ? seo.title : "";
 
   useEffect(() => {
@@ -75,15 +103,22 @@ export function useSeo(options = {}) {
     setMeta('meta[property="og:url"]', "property", "og:url", url);
     setMeta('meta[name="twitter:url"]', "name", "twitter:url", url);
     setMeta('meta[property="og:image"]', "property", "og:image", image);
+    setMeta('meta[property="og:image:alt"]', "property", "og:image:alt", imageAlt || DEFAULT_IMAGE_ALT);
     setMeta('meta[name="twitter:image"]', "name", "twitter:image", image);
+    setMeta('meta[name="twitter:image:alt"]', "name", "twitter:image:alt", imageAlt || DEFAULT_IMAGE_ALT);
 
-    let canonical = document.head.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
+    setLink('link[rel="canonical"]', "canonical", { href: url });
+
+    const mdSelector = 'link[rel="alternate"][type="text/markdown"]';
+    if (markdownUrl) {
+      setLink(mdSelector, "alternate", {
+        type: "text/markdown",
+        href: markdownUrl,
+        title: "Markdown version",
+      });
+    } else {
+      document.head.querySelector(mdSelector)?.remove();
     }
-    canonical.setAttribute("href", url);
 
     let script = document.getElementById("page-jsonld");
     if (ld) {
@@ -97,5 +132,5 @@ export function useSeo(options = {}) {
     } else if (script) {
       script.remove();
     }
-  }, [fullTitle, description, path, url, image, robots, ld]);
+  }, [fullTitle, description, path, url, image, imageAlt, robots, markdownUrl, ld]);
 }

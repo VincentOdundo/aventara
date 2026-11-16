@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useSeo } from "../hooks/useSeo";
-import { faqLd, generalFaqs, graph, safariListLd, usd } from "../lib/seo";
+import {
+  ORG_ID,
+  faqLd,
+  generalFaqs,
+  graph,
+  offerCatalogLd,
+  safariListLd,
+  truncateText,
+  usd,
+  webPageLd,
+} from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import {
@@ -72,12 +82,24 @@ export default function Home() {
     ...safariPackages.filter((s) => s.days >= 1).map((s) => s.price.low),
   );
   const dayTripPrice = Math.min(...allPackages.nairobi.map((s) => s.price.low));
+  const homeTitle = "Kenya & Tanzania Budget Safaris from Nairobi";
+  const homeDesc = truncateText(
+    `Shared and private 4x4 safaris across Kenya & Tanzania from ${usd(fromPrice)}/pp (Nairobi tours from ${usd(dayTripPrice)}). Park fees, lodging, meals & transfers included.`,
+    158,
+  );
   useSeo({
-    title: "Kenya & Tanzania Budget Safaris from Nairobi",
-    description: `Shared and private 4x4 safaris across Kenya and Tanzania from ${usd(fromPrice)} per person (Nairobi half-day tours from ${usd(dayTripPrice)}). Park fees, accommodation, meals and transfers included.`,
+    title: homeTitle,
+    description: homeDesc,
     path: "/",
     jsonLd: graph(
+      webPageLd({
+        path: "/",
+        title: homeTitle,
+        description: homeDesc,
+        mainEntityId: ORG_ID,
+      }),
       safariListLd(safariPackages, "Kenya and Tanzania safari packages"),
+      offerCatalogLd(safariPackages),
       faqLd(faqs),
     ),
   });
@@ -159,7 +181,7 @@ export default function Home() {
                 </svg>
               </div>
 
-              <p className="text-sm lg:text-base text-sand-cream/85 max-w-md mt-2 font-body line-clamp-3">
+              <p className="text-sm lg:text-base text-sand-cream/85 max-w-md mt-2 font-body line-clamp-3" data-speakable="true">
                 Shared and private 4x4 safaris across Kenya and Tanzania, with
                 park fees, meals and transfers already in the price.
               </p>
@@ -242,9 +264,9 @@ export default function Home() {
               />
             </div>
             <div>
-              <h3 className="text-xl lg:text-2xl font-headline font-bold text-sand-cream">
+              <p className="text-xl lg:text-2xl font-headline font-bold text-sand-cream">
                 Plan Your Adventure
-              </h3>
+              </p>
               <p className="text-xs text-sand-cream/80 mt-1">
                 Custom dates, lodges &amp; private 4x4 cruisers
               </p>
@@ -444,9 +466,9 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black mb-6 shadow-md group-hover:scale-105 transition-transform duration-500">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
+                <h3 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
                   {item.title}
-                </h4>
+                </h3>
                 <p className="text-sm leading-relaxed text-safari-brown/80 group-hover:text-sand-cream/85 transition-colors duration-500 font-body">
                   {item.desc}
                 </p>
