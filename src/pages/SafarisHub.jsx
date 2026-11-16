@@ -1,8 +1,21 @@
 import React, { useState, useMemo } from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import {
+  breadcrumbLd,
+  faqLd,
+  generalFaqs,
+  graph,
+  hubCrumbs,
+  safariListLd,
+} from "../lib/seo";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, StaggerContainer } from "../components/ui";
+import {
+  Section,
+  StaggerContainer,
+  Breadcrumbs,
+  FaqSection,
+} from "../components/ui";
 import { SeasonBadge } from "../components/ui/SeasonPrice";
 import {
   safariPackages,
@@ -16,15 +29,23 @@ import heroImg from "../assets/lioness.jpeg";
 export default function SafarisHub() {
   const { country } = useParams();
   const hubSeo = {
-    kenya: ["Kenya Safari Packages & Prices", "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included."],
-    tanzania: ["Tanzania Safari Packages & Prices", "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season."],
-    combined: ["Kenya & Tanzania Combined Safaris", "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking."],
-    nairobi: ["Nairobi Day Trips", "Short wildlife and city outings in Nairobi for stopovers and free days."],
-  }[country] || ["All Safari Packages & Prices", "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season."];
+    kenya: ["Kenya Budget Safari Packages & Prices (2–8 Days)", "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included."],
+    tanzania: ["Tanzania Budget Safari Packages & Prices (3–6 Days)", "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season."],
+    combined: ["Kenya & Tanzania Combined Safaris (10–12 Days)", "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking."],
+    nairobi: ["Nairobi Day Trips & Half-Day Tours", "Short wildlife and city outings in Nairobi for stopovers and free days."],
+  }[country] || ["Kenya & Tanzania Safari Packages & Prices", "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season."];
+  const crumbs = hubCrumbs(country);
+  const faqs = generalFaqs();
+  const listedSafaris = country ? getSafarisByCountry(country) : safariPackages;
   useSeo({
     title: hubSeo[0],
     description: hubSeo[1],
     path: country ? `/safaris/${country}` : "/safaris",
+    jsonLd: graph(
+      safariListLd(listedSafaris, hubSeo[0]),
+      breadcrumbLd(crumbs),
+      faqLd(faqs),
+    ),
   });
   const season = getCurrentSeason();
   const [daysFilter, setDaysFilter] = useState("all");
@@ -33,14 +54,14 @@ export default function SafarisHub() {
 
   const pageTitle =
     country === "kenya"
-      ? "Kenya Safaris"
+      ? "Kenya Budget Safari Packages"
       : country === "tanzania"
-        ? "Tanzania Safaris"
+        ? "Tanzania Budget Safari Packages"
         : country === "combined"
-          ? "Kenya & Tanzania Safaris"
+          ? "Kenya & Tanzania Combined Safaris"
           : country === "nairobi"
             ? "Nairobi Day Trips"
-            : "All Safari Packages";
+            : "Kenya & Tanzania Safari Packages";
   const pageDesc = country
     ? country === "combined"
       ? "Cross-border adventures spanning both Kenya and Tanzania."
@@ -85,7 +106,8 @@ export default function SafarisHub() {
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden text-center bg-midnight-black">
         <img
           src={heroImg}
-          alt={pageTitle}
+          alt="A lioness in the grass on a Kenya safari"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/70 via-transparent to-midnight-black/25"></div>
@@ -101,6 +123,7 @@ export default function SafarisHub() {
             {pageTitle}
           </h1>
           <p className="text-sand-cream/95 font-body mt-3 max-w-xl drop-shadow-sm">{pageDesc}</p>
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
 
@@ -307,6 +330,12 @@ export default function SafarisHub() {
             ))}
           </StaggerContainer>
         )}
+
+        <FaqSection
+          faqs={faqs}
+          title="Safari prices and booking: questions and answers"
+          className="mt-20 max-w-4xl"
+        />
       </Section>
     </Layout>
   );

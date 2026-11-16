@@ -9,8 +9,8 @@ export const package4DayMaraNakuru = {
   days: 4,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru"],
-  price: { low: 632, high: 731 },
-  singlePrice: { low: 643, high: 742 },
+  price: { low: 732, high: 931 },
+  singlePrice: { low: 743, high: 942 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -43,7 +43,7 @@ export const package4DayMaraNakuru = {
     {
       day: 1,
       title:
-        "Nairobi to the Masai Mara",
+        "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your safari begins with an early morning pick-up right from your Nairobi hotel or airport. Journey deep into the African landscape as we drive along the Great Rift Valley, stopping at the viewpoints to capture photographs of the escarpment. Descend into the Maasai Mara territory, arriving just in time for a freshly prepared, authentic lunch at your scenic camp. After checking in and relaxing amidst nature, head out for your very first exhilarating evening game drive. Watch the savannah come alive as top predators-powerful lions, elusive leopards, and swift cheetahs-awaken to hunt under the golden African sunset. This is the Big Five territory you've been dreaming of. Secure your spot on this tour today!",
       destination: "Masai Mara National Reserve",

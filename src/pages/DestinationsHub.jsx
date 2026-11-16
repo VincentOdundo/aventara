@@ -1,5 +1,6 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
@@ -15,6 +16,7 @@ export default function DestinationsHub() {
     description:
       "The parks and reserves on our routes: Masai Mara, Amboseli, Lake Nakuru, Lake Naivasha, Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara.",
     path: "/destinations",
+    jsonLd: breadcrumbLd(pageCrumbs("Destinations", "/destinations")),
   });
   const kenyaDestinations = destinations.filter((d) => d.country === "Kenya");
   const tzDestinations = destinations.filter((d) => d.country === "Tanzania");
@@ -25,7 +27,8 @@ export default function DestinationsHub() {
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
         <img
           src={heroImg}
-          alt="Safari destinations"
+          alt="Wildlife on the plains of an East African national park"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
@@ -34,7 +37,7 @@ export default function DestinationsHub() {
             <Compass size={14} className="text-savannah-gold" /> East Africa
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold text-sand-cream tracking-[-0.02em]">
-            Our Destinations
+            Safari Destinations in Kenya &amp; Tanzania
           </h1>
           <p className="text-sand-cream/85 font-body text-base md:text-lg mt-4 max-w-2xl leading-relaxed">
             From Kenya's sweeping golden savannahs to Tanzania's ancient volcanic craters —

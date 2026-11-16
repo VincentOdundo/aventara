@@ -9,8 +9,8 @@ export const package8DayMaraNakuruAmboseli = {
   days: 8,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
-  price: { low: 1112, high: 1380 },
-  singlePrice: { low: 1123, high: 1391 },
+  price: { low: 1212, high: 1580 },
+  singlePrice: { low: 1223, high: 1591 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -44,7 +44,7 @@ export const package8DayMaraNakuruAmboseli = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to Masai Mara's Golden Plains",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your transformational journey begins with an early pick up from your Nairobi hotel or airport. We embark on a descent through the dramatic escarpments of the Great Rift Valley, with stops for panoramic photos. Arrive at your camp for a delightful lunch before heading out for an introductory evening game drive. The air is electric-predators begin to stir as the sun casts a golden glow over the savannah.",
       destination: "Masai Mara National Reserve",

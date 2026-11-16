@@ -9,8 +9,8 @@ export const package6DayMaraNakuruAmboseli = {
   days: 6,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Amboseli"],
-  price: { low: 834, high: 988 },
-  singlePrice: { low: 845, high: 1000 },
+  price: { low: 934, high: 1188 },
+  singlePrice: { low: 945, high: 1200 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -43,7 +43,7 @@ export const package6DayMaraNakuruAmboseli = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to the Masai Mara",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your transformational 6-day East African safari officially begins with a VIP early morning pickup from your Nairobi hotel or Jomo Kenyatta International Airport. Leave the city behind as you embark on a highly scenic drive through the Great Rift Valley. We'll make a special stop at a sweeping viewpoint-the perfect spot for your first panoramic holiday photographs. Arrive at the Maasai Mara just in time to enjoy a welcoming lunch at your authentic eco camp. After a short rest, head out for an introductory evening game drive. The golden hour is prime time for spotting active predators: prowling lions, elusive leopards, and massive buffaloes dominating the savannah. Take the first step into your dream African adventure-reserve your spot today!",
       destination: "Masai Mara National Reserve",

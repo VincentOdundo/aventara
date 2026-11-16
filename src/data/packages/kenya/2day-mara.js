@@ -9,8 +9,8 @@ export const package2DayMara = {
   days: 2,
   country: "kenya",
   destinations: ["Masai Mara"],
-  price: { low: 307, high: 403 },
-  singlePrice: { low: 321, high: 411 },
+  price: { low: 407, high: 603 },
+  singlePrice: { low: 421, high: 611 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -37,7 +37,7 @@ export const package2DayMara = {
   ],
   optionalActivities: [
     { name: "Maasai Village Visit", price: 20 },
-    { name: "Balloon Safaris", price: 500 },
+    { name: "Balloon Safaris", price: 480 },
   ],
   accommodation: {
     budget: "Miti Mingi Eco Camp",

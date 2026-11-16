@@ -9,7 +9,7 @@ export const packageHalfDayNairobi = {
   days: 0.5,
   country: "kenya",
   destinations: ["Nairobi"],
-  price: { low: 150, high: 150 },
+  price: { low: 180, high: 180 },
   image: heroImg,
   
   difficulty: "Budget",

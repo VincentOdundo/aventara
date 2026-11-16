@@ -1,8 +1,22 @@
 import React, { useState } from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
-import { useParams, Navigate } from "react-router-dom";
+import { useSeo } from "../hooks/useSeo";
+import { useParams, Navigate, Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { AnimatedSection } from "../components/ui";
+import { AnimatedSection, Breadcrumbs, FaqSection } from "../components/ui";
+import {
+  breadcrumbLd,
+  destinationsForSafari,
+  durationLabel as lengthOf,
+  faqLd,
+  graph,
+  safariCrumbs,
+  safariDescription,
+  safariFaqs,
+  safariLd,
+  safariTitle,
+  similarSafaris,
+  usd,
+} from "../lib/seo";
 import { SeasonBadge, PriceDisplay } from "../components/ui/SeasonPrice";
 import { WhatsAppBookButton } from "../components/ui/WhatsAppCTA";
 import { getSafariBySlug, getCurrentSeason, SEASONS } from "../data/safaris";
@@ -21,13 +35,16 @@ import {
 export default function SafariDetail() {
   const { slug } = useParams();
   const safari = getSafariBySlug(slug);
+  const crumbs = safari ? safariCrumbs(safari) : [];
+  const faqs = safari ? safariFaqs(safari) : [];
   useSeo(
     safari
       ? {
-          title: `${safari.title} from ${safari.price.low.toLocaleString("en-US")}`,
-          description: `${safari.subtitle} From ${safari.price.low.toLocaleString("en-US")} per person with park fees, accommodation, meals and transfers included.`,
+          title: safariTitle(safari),
+          description: safariDescription(safari),
           path: `/safari/${safari.slug}`,
-          jsonLd: safariJsonLd(safari),
+          image: safari.image,
+          jsonLd: graph(safariLd(safari), breadcrumbLd(crumbs), faqLd(faqs)),
         }
       : {},
   );
@@ -51,6 +68,13 @@ export default function SafariDetail() {
     (safari.difficulty === "Budget" && safari.country !== "nairobi"
       ? "Max 7"
       : "Max 6");
+  const mealsLabel = safari.itinerary.every((day) => /^none/i.test(day.meals))
+    ? "Not included"
+    : safari.days < 1
+      ? "As listed"
+      : "Full Board";
+  const parks = destinationsForSafari(safari);
+  const related = similarSafaris(safari);
 
   return (
     <Layout>
@@ -59,10 +83,12 @@ export default function SafariDetail() {
         <img
           src={safari.image}
           alt={safari.title}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/70 via-transparent to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full">
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mb-5" />
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-safari-brown/90 text-sand-cream border border-savannah-gold/40 px-4 py-1.5 rounded-full text-xs font-body font-bold capitalize">
               {safari.country === "combined"
@@ -108,6 +134,12 @@ export default function SafariDetail() {
             className="font-medium text-safari-brown hover:text-sunset-orange transition-colors whitespace-nowrap"
           >
             Book Now
+          </a>
+          <a
+            href="#faq"
+            className="font-medium text-safari-brown hover:text-sunset-orange transition-colors whitespace-nowrap"
+          >
+            Questions
           </a>
         </div>
       </section>
@@ -156,7 +188,7 @@ export default function SafariDetail() {
                       Meals
                     </p>
                     <p className="font-headline font-bold text-lg text-safari-brown">
-                      Full Board
+                      {mealsLabel}
                     </p>
                   </div>
                   <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
@@ -335,6 +367,63 @@ export default function SafariDetail() {
                       </div>
                     </div>
                   )}
+              </div>
+
+              {/* Questions and answers, built from this safari's own data */}
+              <FaqSection
+                faqs={faqs}
+                title={`${safari.title}: questions and answers`}
+                className="mt-16"
+              />
+
+              {/* Park guides and similar trips */}
+              <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                {parks.length > 0 && (
+                  <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                    <h2 className="font-headline font-bold text-lg mb-4 text-safari-brown">
+                      Parks on this safari
+                    </h2>
+                    <ul className="space-y-2 text-sm font-body">
+                      {parks.map((park) => (
+                        <li key={park.slug}>
+                          <Link
+                            to={`/destinations/${park.slug}`}
+                            className="font-bold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline"
+                          >
+                            {park.name} guide
+                          </Link>
+                          <span className="text-safari-brown/75">
+                            {" "}
+                            · {park.country}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {related.length > 0 && (
+                  <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                    <h2 className="font-headline font-bold text-lg mb-4 text-safari-brown">
+                      Similar safaris
+                    </h2>
+                    <ul className="space-y-2 text-sm font-body">
+                      {related.map((other) => (
+                        <li key={other.slug}>
+                          <Link
+                            to={`/safari/${other.slug}`}
+                            className="font-bold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline"
+                          >
+                            {other.title}
+                          </Link>
+                          <span className="text-safari-brown/75">
+                            {" "}
+                            · {lengthOf(other.days)} · from {usd(other.price.low)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
 

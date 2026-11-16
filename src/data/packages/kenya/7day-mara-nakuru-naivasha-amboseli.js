@@ -15,8 +15,8 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
     "Hell's Gate",
     "Amboseli",
   ],
-  price: { low: 947, high: 1101 },
-  singlePrice: { low: 958, high: 1113 },
+  price: { low: 1047, high: 1301 },
+  singlePrice: { low: 1058, high: 1313 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -51,16 +51,16 @@ export const package7DayMaraNakuruNaivashaAmboseli = {
   itinerary: [
     {
       day: 1,
-      title: "Into the Heart of the Wild",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
-        "Your adventure begins with a prompt morning pick-up in Nairobi. We set off on a journey down into the Great Rift Valley, stopping at scenic viewpoints that will leave you breathless. Arriving in the Masai Mara in time for a hearty lunch, you'll settle into your camp before embarking on your very first late-afternoon game drive. The Mara's golden savannahs are waiting for you!",
+        "Your adventure begins with a prompt morning pick-up in Nairobi. We set off on a journey down into the Great Rift Valley, stopping at scenic viewpoints that will leave you breathless. Arriving in the Masai Mara in time for a hearty lunch, you'll settle into your camp before heading out on your first evening game drive. The Mara's golden savannahs are waiting for you!",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       
       highlights: [
         "Panoramic Great Rift Valley Views",
-        "Sunset Game Drive",
+        "Evening Game Drive",
         "Welcome to the Savannah",
       ],
     },

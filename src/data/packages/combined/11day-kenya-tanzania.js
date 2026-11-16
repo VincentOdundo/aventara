@@ -15,7 +15,7 @@ export const package11DayKenyaTanzania = {
     "Serengeti",
     "Ngorongoro",
   ],
-  price: { low: 1800, high: 2400 },
+  price: { low: 1900, high: 2600 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -52,7 +52,7 @@ export const package11DayKenyaTanzania = {
   itinerary: [
     {
       day: 1,
-      title: "Discovering the Maasai Mara",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your adventure commences right from your Nairobi hotel or the airport! Meet your driver-guide and set off down the walls of the Great Rift Valley, enjoying postcard-worthy viewpoints. We arrive at the Masai Mara just in time to savor a wonderful lunch. Once refreshed, we launch into an evening game drive-your first real taste of wild Africa.",
       destination: "Masai Mara National Reserve",
@@ -61,7 +61,7 @@ export const package11DayKenyaTanzania = {
       
       highlights: [
         "Great Rift Valley Drop",
-        "First Evening Safari",
+        "First Evening Game Drive",
         "Welcome to Masai Mara",
       ],
     },

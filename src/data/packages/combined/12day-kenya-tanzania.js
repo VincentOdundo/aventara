@@ -16,7 +16,7 @@ export const package12DayKenyaTanzania = {
     "Serengeti",
     "Ngorongoro",
   ],
-  price: { low: 2000, high: 2700 },
+  price: { low: 2100, high: 2900 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -54,16 +54,16 @@ export const package12DayKenyaTanzania = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to Masai Mara",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
-        "Begin your transformational 12-day journey with an early morning pickup in Nairobi. Our drive plunges down the Great Rift Valley escarpment. By lunch, you'll be seated at your eco-camp on the edge of the Masai Mara. Later, as the afternoon cools, we venture out for your inaugural sunset game drive, where predators first start to actively prowl the savannah.",
+        "Begin your transformational 12-day journey with an early morning pickup in Nairobi. Our drive plunges down the Great Rift Valley escarpment. By lunch, you'll be seated at your eco-camp on the edge of the Masai Mara. Later, as the afternoon cools, we venture out for your first evening game drive, where predators first start to actively prowl the savannah.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       
       highlights: [
         "Great Rift Valley Viewpoints",
-        "Introductory Game Drive",
+        "Evening Game Drive",
         "Sunset under Acacia Trees",
       ],
     },

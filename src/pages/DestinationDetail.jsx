@@ -1,8 +1,22 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import {
+  breadcrumbLd,
+  destinationCrumbs,
+  destinationLd,
+  graph,
+  safariListLd,
+  safarisForDestination,
+  usd,
+} from "../lib/seo";
 import { useParams, Link, Navigate } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
+import {
+  Section,
+  AnimatedSection,
+  StaggerContainer,
+  Breadcrumbs,
+} from "../components/ui";
 import { getDestinationBySlug } from "../data/destinations";
 import { safariPackages, getCurrentSeason } from "../data/safaris";
 import { MapPin, ArrowRight, Sparkles, Calendar } from "lucide-react";
@@ -10,12 +24,30 @@ import { MapPin, ArrowRight, Sparkles, Calendar } from "lucide-react";
 export default function DestinationDetail() {
   const { slug } = useParams();
   const dest = getDestinationBySlug(slug);
+  // Safaris that actually visit this destination
+  const relatedSafaris = dest ? safarisForDestination(dest) : [];
+  const crumbs = dest ? destinationCrumbs(dest) : [];
+  const fromPrice = relatedSafaris.length
+    ? Math.min(...relatedSafaris.map((s) => s.price.low))
+    : null;
   useSeo(
     dest
       ? {
-          title: `${dest.name} Safaris, ${dest.country}`,
-          description: `What to expect in ${dest.name}, ${dest.country}, and the safaris we run there with prices for low and high season.`,
+          title: relatedSafaris.length
+            ? `${dest.name} Safari Packages & Guide, ${dest.country}`
+            : `${dest.name} Guide, ${dest.country}`,
+          description: relatedSafaris.length
+            ? `What to expect in ${dest.name}, ${dest.country}, when to go, and the ${relatedSafaris.length === 1 ? "safari" : `${relatedSafaris.length} safaris`} we run there from ${usd(fromPrice)} per person.`
+            : `What to expect in ${dest.name}, ${dest.country}, and the best time to visit.`,
           path: `/destinations/${dest.slug}`,
+          image: dest.image,
+          jsonLd: graph(
+            destinationLd(dest),
+            breadcrumbLd(crumbs),
+            relatedSafaris.length
+              ? safariListLd(relatedSafaris, `Safaris visiting ${dest.name}`)
+              : null,
+          ),
         }
       : {},
   );
@@ -23,29 +55,25 @@ export default function DestinationDetail() {
 
   if (!dest) return <Navigate to="/destinations" replace />;
 
-  // Find safaris featuring this destination
-  const relatedSafaris = safariPackages.filter((s) =>
-    s.destinations.some((d) =>
-      d.toLowerCase().includes(dest.name.toLowerCase().split(" ")[0]),
-    ),
-  );
-
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-midnight-black">
         <img
           src={dest.image}
-          alt={dest.name}
+          alt={`${dest.name}, ${dest.country}`}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full">
+          <Breadcrumbs crumbs={crumbs} tone="light" className="mb-5" />
           <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-sunrise-yellow font-body font-bold mb-4 px-4 py-1.5 rounded-full bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-sm">
             <MapPin size={14} className="text-savannah-gold" /> {dest.country}
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold text-sand-cream tracking-[-0.02em] mb-3">
             {dest.name}
+            {relatedSafaris.length > 0 ? " Safaris" : ""}
           </h1>
           <p className="text-sunrise-yellow/90 text-lg md:text-xl italic font-headline max-w-3xl">
             {dest.tagline}
@@ -186,7 +214,7 @@ export default function DestinationDetail() {
                     Safaris featuring {dest.name}
                   </h4>
                   <div className="space-y-3 font-body">
-                    {relatedSafaris.slice(0, 4).map((safari) => (
+                    {relatedSafaris.map((safari) => (
                       <Link
                         key={safari.id}
                         to={`/safari/${safari.slug}`}
@@ -197,7 +225,7 @@ export default function DestinationDetail() {
                             {safari.title}
                           </p>
                           <p className="text-xs text-safari-brown/75">
-                            {safari.days} Days
+                            {safari.days === 0.5 ? "Half day" : `${safari.days} days`}
                           </p>
                         </div>
                         <div className="text-right flex-shrink-0">

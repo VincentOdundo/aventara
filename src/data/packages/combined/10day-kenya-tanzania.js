@@ -15,8 +15,8 @@ export const package10DayKenyaTanzania = {
     "Serengeti",
     "Ngorongoro",
   ],
-  price: { low: 1619, high: 1747 },
-  singlePrice: { low: 1630, high: 1759 },
+  price: { low: 1719, high: 1947 },
+  singlePrice: { low: 1730, high: 1959 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -59,13 +59,13 @@ export const package10DayKenyaTanzania = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to Masai Mara National Reserve",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
-        "Depart Nairobi westwards toward the Masai Mara. Stop at a Great Rift Valley viewpoint for panoramic views of the escarpment, then continue to Narok town – a vibrant Maasai hub – for a hot lunch. On arrival, check in and refresh before an afternoon game drive as the sun sets over the reserve. Buffet dinner and overnight at our fully furnished camp with hot showers.",
+        "Depart Nairobi westwards toward the Masai Mara. Stop at a Great Rift Valley viewpoint for panoramic views of the escarpment, then continue to Narok town – a vibrant Maasai hub – for a hot lunch. On arrival, check in and refresh before an evening game drive as the sun sets over the reserve. Buffet dinner and overnight at our fully furnished camp with hot showers.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
-      highlights: ["Great Rift Valley viewpoint", "Afternoon game drive"],
+      highlights: ["Great Rift Valley viewpoint", "Evening game drive"],
     },
     {
       day: 2,

@@ -5,3 +5,5 @@ export * from "./Itinerary";
 export * from "./WhatsAppCTA";
 export * from "./SeasonPrice";
 export * from "./AnimatedSection";
+export * from "./Breadcrumbs";
+export * from "./FaqSection";

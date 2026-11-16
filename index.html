@@ -4,31 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
-    <title>
-      Cima Brava Adventures - Kenya & Tanzania Safari Tours
-    </title>
+    <!--
+      The title, description, canonical URL, share tags and page structured
+      data below are defaults. scripts/prerender.mjs replaces them for every
+      route at build time with the values each page passes to useSeo().
+      Prices never belong in this file: they come from src/data/packages.
+    -->
+    <title>Kenya &amp; Tanzania Budget Safaris from Nairobi | Cima Brava Adventures</title>
     <meta
       name="description"
-      content="Shared and private 4x4 safaris across Kenya and Tanzania from $307 per person (Nairobi half-day tours from $150). Park fees, accommodation, meals and transfers included."
-    />
-    <meta
-      name="keywords"
-      content="Cima Brava Adventures, Kenya safari, Tanzania safari, Masai Mara, Serengeti, Ngorongoro, African safari, East Africa tours, safari packages, wildlife safari, Big Five, Great Migration, Amboseli, Lake Nakuru, safari booking"
+      content="Shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices include park fees, accommodation, meals and transfers."
     />
     <meta name="author" content="Cima Brava Adventures" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cima Brava Adventures" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://cimabravasafaris.co.ke/" />
     <meta
       property="og:title"
-      content="Cima Brava Adventures - Kenya & Tanzania Safari Tours"
+      content="Kenya &amp; Tanzania Budget Safaris from Nairobi | Cima Brava Adventures"
     />
     <meta
       property="og:description"
-      content="Kenya and Tanzania 4x4 safaris from $307 per person, with park fees, meals and transfers included."
+      content="Shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices include park fees, accommodation, meals and transfers."
     />
     <meta
       property="og:image"
@@ -40,14 +41,14 @@
     <meta name="twitter:url" content="https://cimabravasafaris.co.ke/" />
     <meta
       name="twitter:title"
-      content="Cima Brava Adventures - Kenya & Tanzania Safari Tours"
+      content="Kenya &amp; Tanzania Budget Safaris from Nairobi | Cima Brava Adventures"
     />
     <meta
       name="twitter:description"
-      content="Kenya and Tanzania 4x4 safaris from $307 per person, with park fees, meals and transfers included."
+      content="Shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices include park fees, accommodation, meals and transfers."
     />
     <meta
-      property="twitter:image"
+      name="twitter:image"
       content="https://cimabravasafaris.co.ke/og-image.jpeg"
     />
 
@@ -68,70 +69,70 @@
       rel="stylesheet"
     />
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
+    <!--
+      Who runs the site. The same on every page; safari pages point at it by
+      @id. The prerender adds priceRange from the package data.
+    -->
+    <script type="application/ld+json" id="org-jsonld">
       {
         "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "name": "Cima Brava Adventures",
-        "slogan": "Wild by Nature. Guided by Heart.",
-        "url": "https://cimabravasafaris.co.ke",
-        "email": "cimabravaadventures@gmail.com",
-        "description": "Nairobi-based operator running shared and private 4x4 safaris across Kenya and Tanzania.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Nairobi",
-          "addressCountry": "KE"
-        },
-        "telephone": "+254112346049",
-        "sameAs": [
-          "https://www.tiktok.com/@cima_brava_adventures",
-          "https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr"
-        ],
-        "priceRange": "$150 - $2750",
-        "areaServed": ["Kenya", "Tanzania"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Safari Packages",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "TouristTrip",
-                "name": "2-Day Masai Mara Budget Safari",
-                "touristType": "Safari"
-              },
-              "price": "307",
-              "priceCurrency": "USD"
+        "@graph": [
+          {
+            "@type": "TravelAgency",
+            "@id": "https://cimabravasafaris.co.ke/#organization",
+            "name": "Cima Brava Adventures",
+            "slogan": "Wild by Nature. Guided by Heart.",
+            "url": "https://cimabravasafaris.co.ke/",
+            "logo": "https://cimabravasafaris.co.ke/favicon.png",
+            "image": "https://cimabravasafaris.co.ke/og-image.jpeg",
+            "email": "cimabravaadventures@gmail.com",
+            "telephone": "+254112346049",
+            "description": "Nairobi-based operator running shared and private 4x4 safaris across Kenya and Tanzania.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Nairobi",
+              "addressCountry": "KE"
             },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "TouristTrip",
-                "name": "3-Day Masai Mara Budget Safari",
-                "touristType": "Safari"
-              },
-              "price": "477",
-              "priceCurrency": "USD"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "TouristTrip",
-                "name": "10-Day Kenya & Tanzania Budget Safari",
-                "touristType": "Safari"
-              },
-              "price": "1619",
-              "priceCurrency": "USD"
+            "areaServed": ["Kenya", "Tanzania"],
+            "sameAs": [
+              "https://www.tiktok.com/@cima_brava_adventures",
+              "https://www.instagram.com/cima_brava_adventures"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cimabravasafaris.co.ke/#website",
+            "name": "Cima Brava Adventures",
+            "url": "https://cimabravasafaris.co.ke/",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://cimabravasafaris.co.ke/#organization" },
+            "creator": {
+              "@type": "Organization",
+              "name": "BYND/LABS",
+              "url": "https://bynd.co.ke/labs"
             }
-          ]
-        }
+          }
+        ]
       }
     </script>
 
     <meta name="theme-color" content="#2A1500" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Scroll-reveal content is hidden until JavaScript runs; show it without. -->
+    <noscript>
+      <style>
+        .animate-on-scroll,
+        .animate-on-scroll-left,
+        .animate-on-scroll-right,
+        .animate-on-scroll-scale,
+        .stagger-children > * {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

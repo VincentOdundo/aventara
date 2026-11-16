@@ -1,5 +1,6 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { ArrowRight } from "lucide-react";
@@ -16,29 +17,32 @@ import bannerImg from "../assets/safari-van-sunrise.jpeg";
 
 export default function Kenya() {
   useSeo({
-    title: "Kenya Safaris",
+    title: "Kenya Safari Guide: Parks, Seasons & Budget Trips",
     description:
       "Budget 4x4 safaris in Kenya from 2 to 8 days: Masai Mara, Amboseli, Lake Nakuru and Lake Naivasha, with daily departures from Nairobi.",
     path: "/kenya",
+    image: heroImg,
+    jsonLd: breadcrumbLd(pageCrumbs("Kenya Safari Guide", "/kenya")),
   });
   return (
     <Layout>
-      <main className="pt-24 lg:pt-0 bg-sand-cream text-midnight-black font-body">
+      <div className="pt-24 lg:pt-0 bg-sand-cream text-midnight-black font-body">
         <section className="relative min-h-[100svh] flex flex-col justify-center items-center overflow-hidden bg-midnight-black">
           <div className="absolute inset-0 z-0">
             <img
               className="w-full h-full object-cover scale-105"
               alt="Mount Kilimanjaro peak rising above Amboseli plains at sunset"
+              fetchPriority="high"
               src={heroImg}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           </div>
           <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-            <span className="font-body font-bold uppercase tracking-[0.4em] text-xs mb-6 inline-block text-sunrise-yellow bg-safari-brown/80 border border-savannah-gold/40 rounded-full px-5 py-1.5">
-              Destination Spotlight · Kenya
-            </span>
             <h1 className="font-headline font-bold text-5xl md:text-7xl lg:text-8xl text-sand-cream leading-none tracking-tight mb-8">
-              Discover the Wild
+              <span className="font-body font-bold uppercase tracking-[0.4em] text-xs leading-normal mb-6 inline-block text-sunrise-yellow bg-safari-brown/80 border border-savannah-gold/40 rounded-full px-5 py-1.5">
+                Kenya Safari Guide
+              </span>
+              <span className="block">Discover the Wild</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-sand-cream/85 max-w-2xl mx-auto leading-relaxed mb-10">
               Kenya remains the soul of safari. From the snow-capped peak of
@@ -83,8 +87,7 @@ export default function Kenya() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       alt="Vast golden savannah of Maasai Mara under dramatic sky"
-                      src={maraImg}
-                    />
+                      src={maraImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Maasai Mara
@@ -100,8 +103,7 @@ export default function Kenya() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       alt="Elephant herd in front of Mount Kilimanjaro in Amboseli"
-                      src={amboseliImg}
-                    />
+                      src={amboseliImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Amboseli
@@ -117,8 +119,7 @@ export default function Kenya() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       alt="Red volcanic earth and baobab trees in Tsavo East"
-                      src={tsavoImg}
-                    />
+                      src={tsavoImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Tsavo
@@ -134,8 +135,7 @@ export default function Kenya() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       alt="Wildlife in the arid Samburu and Laikipia landscape"
-                      src={samburuImg}
-                    />
+                      src={samburuImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Samburu & Laikipia
@@ -219,18 +219,15 @@ export default function Kenya() {
                   <img
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
                     alt="Kenyan wildlife and heritage"
-                    src={cultureImg1}
-                  />
+                    src={cultureImg1} loading="lazy" decoding="async" />
                   <img
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
                     alt="Savannah wildlife encounters"
-                    src={cultureImg2}
-                  />
+                    src={cultureImg2} loading="lazy" decoding="async" />
                   <img
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
                     alt="Elephant tusks"
-                    src={cultureImg3}
-                  />
+                    src={cultureImg3} loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -290,8 +287,7 @@ export default function Kenya() {
             <img
               className="w-full h-full object-cover"
               alt="Wide panoramic view of an expedition vehicle in the Kenyan savanna"
-              src={bannerImg}
-            />
+              src={bannerImg} loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           </div>
           <div className="relative z-10 text-center text-sand-cream max-w-3xl mx-auto">
@@ -317,7 +313,7 @@ export default function Kenya() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }

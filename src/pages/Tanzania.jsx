@@ -1,5 +1,6 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { ArrowRight } from "lucide-react";
@@ -18,27 +19,30 @@ import cultureImg2 from "../assets/flamingo-water.jpeg";
 
 export default function Tanzania() {
   useSeo({
-    title: "Tanzania Safaris",
+    title: "Tanzania Safari Guide: Serengeti, Ngorongoro & Budget Trips",
     description:
       "Northern Tanzania safaris from 3 to 6 days: Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara, starting in Arusha.",
     path: "/tanzania",
+    image: heroImg,
+    jsonLd: breadcrumbLd(pageCrumbs("Tanzania Safari Guide", "/tanzania")),
   });
   return (
     <Layout>
-      <main className="bg-sand-cream text-midnight-black font-body">
+      <div className="bg-sand-cream text-midnight-black font-body">
         <section className="relative min-h-[100svh] w-full overflow-hidden flex flex-col justify-center bg-midnight-black">
           <img
             className="absolute inset-0 w-full h-full object-cover z-0"
             alt="Golden sunlight over the vast Serengeti plains at dusk"
+            fetchPriority="high"
             src={heroImg}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25 z-10"></div>
           <div className="relative z-20 max-w-screen-2xl mx-auto w-full px-8">
-            <span className="inline-block py-2 px-5 bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md text-sunrise-yellow font-body font-bold text-xs uppercase tracking-[0.25em] rounded-full mb-6">
-              Featured Destination · Tanzania
-            </span>
             <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl text-sand-cream font-bold -tracking-[0.03em] leading-tight max-w-4xl">
-              Wild Tanzania.
+              <span className="inline-block py-2 px-5 bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md text-sunrise-yellow font-body font-bold text-xs uppercase tracking-[0.25em] leading-normal rounded-full mb-6">
+                Tanzania Safari Guide
+              </span>
+              <span className="block">Wild Tanzania.</span>
             </h1>
             <p className="text-sand-cream/85 font-body text-xl md:text-2xl mt-6 max-w-2xl leading-relaxed">
               A canvas of endless horizons, where the pulse of the earth meets
@@ -96,8 +100,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover scale-110"
                   alt="Mount Kilimanjaro with acacia trees in foreground"
-                  src={kiliImg}
-                />
+                  src={kiliImg} loading="lazy" decoding="async" />
               </div>
 
               <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-safari-brown flex items-center justify-center p-8 rounded-full border-4 border-sand-cream shadow-xl hidden lg:flex">
@@ -132,8 +135,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   alt="Thousands of wildebeest crossing a river during migration"
-                  src={migrationImg}
-                />
+                  src={migrationImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/15 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-10">
                   <h3 className="font-headline text-3xl text-sand-cream font-bold mb-2">
@@ -150,8 +152,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Close up of a male lion's face in the tall grass"
-                  src={lionImg}
-                />
+                  src={lionImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="text-sunrise-yellow font-body font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md">
@@ -164,8 +165,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Cheetah and leopard predator habitat in the Serengeti"
-                  src={leopardImg}
-                />
+                  src={leopardImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="text-sunrise-yellow font-body font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md">
@@ -178,8 +178,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="An African elephant walking through the savanna"
-                  src={elephantImg}
-                />
+                  src={elephantImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="text-sunrise-yellow font-body font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md">
@@ -192,8 +191,7 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Black rhino in the Ngorongoro Crater"
-                  src={rhinoImg}
-                />
+                  src={rhinoImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="text-sunrise-yellow font-body font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-safari-brown/80 border border-savannah-gold/40 backdrop-blur-md">
@@ -237,8 +235,7 @@ export default function Tanzania() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Dry golden savanna grass at sunset"
-                      src={drySeasonImg}
-                    />
+                      src={drySeasonImg} loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
@@ -268,8 +265,7 @@ export default function Tanzania() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Lush green savanna vegetation with elephants"
-                      src={greenSeasonImg}
-                    />
+                      src={greenSeasonImg} loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
@@ -284,15 +280,13 @@ export default function Tanzania() {
                 <img
                   className="w-full h-full object-cover"
                   alt="East African safari culture and wildlife"
-                  src={cultureImg1}
-                />
+                  src={cultureImg1} loading="lazy" decoding="async" />
               </div>
               <div className="absolute -top-10 -right-10 w-2/3 aspect-square rounded-2xl overflow-hidden border-[10px] border-savannah-gold/30 -rotate-6 z-0">
                 <img
                   className="w-full h-full object-cover"
                   alt="Scenic East African waters and birdlife"
-                  src={cultureImg2}
-                />
+                  src={cultureImg2} loading="lazy" decoding="async" />
               </div>
             </div>
             <div>
@@ -367,7 +361,7 @@ export default function Tanzania() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }

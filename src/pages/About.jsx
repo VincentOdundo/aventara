@@ -1,5 +1,6 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection, StaggerContainer } from "../components/ui";
@@ -23,6 +24,7 @@ export default function About() {
     description:
       "Cima Brava Adventures is a Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania.",
     path: "/about",
+    jsonLd: breadcrumbLd(pageCrumbs("About Us", "/about")),
   });
   return (
     <Layout>
@@ -31,8 +33,7 @@ export default function About() {
         <img
           src={heroImg}
           alt="About Cima Brava Adventures"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+          className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
          
@@ -147,8 +148,7 @@ export default function About() {
                 <img
                   src={elefantVegetation}
                   alt="Safari experience"
-                  className="w-full h-96 object-cover"
-                />
+                  className="w-full h-96 object-cover" loading="lazy" decoding="async" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-xl">
                 <p className="text-3xl font-headline font-bold text-sunrise-yellow">

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-seo-files.mjs && vite build && node scripts/prerender-meta.mjs",
+    "build": "node scripts/generate-seo-files.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {

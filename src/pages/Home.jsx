@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { faqLd, generalFaqs, graph, safariListLd, usd } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import {
   Section,
   AnimatedSection,
   StaggerContainer,
+  FaqSection,
 } from "../components/ui";
 import { SeasonBadge } from "../components/ui/SeasonPrice";
-import { safariPackages, getCurrentSeason } from "../data/safaris";
+import { safariPackages, allPackages, getCurrentSeason } from "../data/safaris";
 import { destinations } from "../data/destinations";
 import { useCounter } from "../hooks/useScrollAnimation";
 import {
@@ -64,11 +66,20 @@ const heroImages = [
 ];
 
 export default function Home() {
+  const faqs = generalFaqs();
+  // Lowest published prices, so the search snippet follows the rate card.
+  const fromPrice = Math.min(
+    ...safariPackages.filter((s) => s.days >= 1).map((s) => s.price.low),
+  );
+  const dayTripPrice = Math.min(...allPackages.nairobi.map((s) => s.price.low));
   useSeo({
     title: "Kenya & Tanzania Budget Safaris from Nairobi",
-    description:
-      "Shared and private 4x4 safaris to the Masai Mara, Amboseli, Serengeti and Ngorongoro. Published per-person prices include park fees, accommodation, meals and transfers.",
+    description: `Shared and private 4x4 safaris across Kenya and Tanzania from ${usd(fromPrice)} per person (Nairobi half-day tours from ${usd(dayTripPrice)}). Park fees, accommodation, meals and transfers included.`,
     path: "/",
+    jsonLd: graph(
+      safariListLd(safariPackages, "Kenya and Tanzania safari packages"),
+      faqLd(faqs),
+    ),
   });
   const [heroIdx, setHeroIdx] = useState(0);
   const season = getCurrentSeason();
@@ -106,7 +117,8 @@ export default function Home() {
           <div className="md:col-span-2 md:row-span-2 bg-midnight-black rounded-[2rem] p-6 md:p-8 lg:p-10 flex flex-col justify-between text-sand-cream shadow-xl overflow-hidden relative border border-savannah-gold/20 min-h-0">
             <img
               src={heroImages[heroIdx]}
-              alt="East African Savannah Sunset"
+              alt="Wildlife on the East African savannah at sunset"
+              fetchPriority="high"
               className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/80 via-midnight-black/25 to-transparent"></div>
@@ -119,6 +131,9 @@ export default function Home() {
 
             <div className="relative z-10 my-auto py-2">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-headline leading-[1.05] font-bold tracking-tight text-sand-cream">
+                <span className="block mb-3 font-body text-xs lg:text-sm font-bold uppercase tracking-[0.2em] leading-snug text-sand-cream/90">
+                  Kenya &amp; Tanzania budget safaris from Nairobi
+                </span>
                 UNTAMED
                 <span className="block text-sunrise-yellow">EAST AFRICA</span>
               </h1>
@@ -182,8 +197,7 @@ export default function Home() {
             <img
               src={wildImg}
               alt="The Great Migration"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            />
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-transparent to-transparent"></div>
             <div className="absolute top-4 right-4">
               <span className="bg-crane-red text-sand-cream text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow">
@@ -649,6 +663,15 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ========== QUESTIONS ========== */}
+      <Section className="py-20 md:py-24 bg-sand-cream">
+        <FaqSection
+          faqs={faqs}
+          title="Safari prices and booking: questions and answers"
+          className="max-w-4xl mx-auto"
+        />
+      </Section>
 
       {/* ========== FINAL CTA ========== */}
       <Section className="min-h-[100svh] py-24 md:py-32 flex flex-col justify-center bg-sand-cream">

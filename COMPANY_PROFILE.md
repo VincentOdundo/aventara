@@ -12,7 +12,7 @@ Cima Brava Adventures is a Nairobi-based safari operator. We run shared and priv
 | :--- | :--- |
 | **17** | Published itineraries |
 | **½–12** | Days on safari |
-| **$150** | Lowest price per person |
+| **$180** | Lowest price per person |
 | **7** | Guests per vehicle, at most |
 
 **Get a quote:** WhatsApp [+254 112 346 049](https://wa.me/254112346049) · [cimabravaadventures@gmail.com](mailto:cimabravaadventures@gmail.com)
@@ -72,7 +72,7 @@ Our safaris are built for travellers watching their budget who still want the re
 | Maasai village visit | $20 |
 | Lake Naivasha boat ride | $20 |
 | Crescent Island walking safari | $33 |
-| Hot-air balloon flight, Masai Mara or Serengeti | $500 |
+| Hot-air balloon flight, Masai Mara or Serengeti | $480 |
 
 ---
 
@@ -86,23 +86,23 @@ Prices are per person in US dollars. The main figure applies when two or more tr
 
 | Safari | Length | Low season | Low, single | High season | High, single |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| 2-Day Masai Mara Budget Safari | 2 days | **$307** | $321 | **$403** | $411 |
-| 3-Day Masai Mara Budget Safari | 3 days | **$477** | $484 | **$670** | $687 |
+| 2-Day Masai Mara Budget Safari | 2 days | **$407** | $421 | **$603** | $611 |
+| 3-Day Masai Mara Budget Safari | 3 days | **$577** | $584 | **$870** | $887 |
 | 3-Day Amboseli Budget Safari | 3 days | **$382** | $382 | **$382** | $382 |
-| 4-Day Masai Mara & Lake Nakuru Budget Safari | 4 days | **$632** | $643 | **$731** | $742 |
-| 5-Day Masai Mara, Lake Nakuru & Naivasha Budget Safari | 5 days | **$761** | $773 | **$916** | $927 |
-| 6-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari | 6 days | **$834** | $845 | **$988** | $1,000 |
-| 7-Day Masai Mara, Nakuru, Naivasha & Amboseli Budget Safari | 7 days | **$947** | $958 | **$1,101** | $1,113 |
-| 8-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari | 8 days | **$1,112** | $1,123 | **$1,380** | $1,391 |
+| 4-Day Masai Mara & Lake Nakuru Budget Safari | 4 days | **$732** | $743 | **$931** | $942 |
+| 5-Day Masai Mara, Lake Nakuru & Naivasha Budget Safari | 5 days | **$861** | $873 | **$1,116** | $1,127 |
+| 6-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari | 6 days | **$934** | $945 | **$1,188** | $1,200 |
+| 7-Day Masai Mara, Nakuru, Naivasha & Amboseli Budget Safari | 7 days | **$1,047** | $1,058 | **$1,301** | $1,313 |
+| 8-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari | 8 days | **$1,212** | $1,223 | **$1,580** | $1,591 |
 
 ### Kenya & Tanzania — both countries in one trip
 
 | Safari | Length | Low season | Low, single | High season | High, single |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| 10-Day Kenya & Tanzania Budget Safari | 10 days | **$1,619** | $1,630 | **$1,747** | $1,759 |
-| 11-Day Kenya & Tanzania Budget Safari | 11 days | **$1,800** | on request | **$2,400** | on request |
-| 12-Day Kenya & Tanzania Budget Safari | 12 days | **$2,000** | on request | **$2,700** | on request |
-| 12-Day Kenya & Tanzania Budget Safari: Serengeti & Ngorongoro | 12 days | **$2,050** | on request | **$2,750** | on request |
+| 10-Day Kenya & Tanzania Budget Safari | 10 days | **$1,719** | $1,730 | **$1,947** | $1,959 |
+| 11-Day Kenya & Tanzania Budget Safari | 11 days | **$1,900** | on request | **$2,600** | on request |
+| 12-Day Kenya & Tanzania Budget Safari | 12 days | **$2,100** | on request | **$2,900** | on request |
+| 12-Day Kenya & Tanzania Budget Safari: Serengeti & Ngorongoro | 12 days | **$2,150** | on request | **$2,950** | on request |
 
 ### Tanzania — northern circuit
 
@@ -117,7 +117,7 @@ Prices are per person in US dollars. The main figure applies when two or more tr
 
 | Safari | Length | Low season | Low, single | High season | High, single |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| Nairobi Half-Day Tour | Half day | **$150** | on request | **$150** | on request |
+| Nairobi Half-Day Tour | Half day | **$180** | on request | **$180** | on request |
 
 **Different dates, parks or group size?** Tell us what you need and we will price it within 24 hours.
 
@@ -129,18 +129,18 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 ### Kenya
 
-**2-Day Masai Mara Budget Safari** · 2 days · from $307
+**2-Day Masai Mara Budget Safari** · 2 days · from $407
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Masai Mara National Reserve | Rift Valley Views & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Nairobi | Maasai Culture & Return to Nairobi | Breakfast & Lunch | Trip ends |
 
-**3-Day Masai Mara Budget Safari** · 3 days · from $477
+**3-Day Masai Mara Budget Safari** · 3 days · from $577
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Journey to the Wild | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Heart of the Action | Breakfast, Picnic Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Nairobi | Cultural Immersion & Return to Nairobi | Breakfast & Lunch | Trip ends |
 
@@ -148,45 +148,45 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Amboseli National Park | Into the Elephant Kingdom | Dinner Only | Ositua Rafiki Camp |
+| 1 | Amboseli National Park | Nairobi to Amboseli & Evening Game Drive (if time allows) | Dinner Only | Ositua Rafiki Camp |
 | 2 | Amboseli National Park | Mount Kilimanjaro & Wetlands | Breakfast, Lunch & Dinner | Ositua Rafiki Camp |
 | 3 | Nairobi | Morning Safari & Scenic Return to Nairobi | Breakfast & Lunch | Trip ends |
 
-**4-Day Masai Mara & Lake Nakuru Budget Safari** · 4 days · from $632
+**4-Day Masai Mara & Lake Nakuru Budget Safari** · 4 days · from $732
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Full-Day Masai Mara Game Drive | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Lake Nakuru National Park | Masai Mara to Lake Nakuru National Park | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
 | 4 | Nairobi | Lake Nakuru back to bustling Nairobi | Breakfast & Lunch | Trip ends |
 
-**5-Day Masai Mara, Lake Nakuru & Naivasha Budget Safari** · 5 days · from $761
+**5-Day Masai Mara, Lake Nakuru & Naivasha Budget Safari** · 5 days · from $861
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Full-Day Game Drive in Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Lake Nakuru National Park | Masai Mara to Lake Nakuru (Optional Naivasha Stop) | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
 | 4 | Lake Naivasha | Lake Nakuru to Lake Naivasha | Breakfast, Lunch & Dinner | Leisure Apex Resort |
 | 5 | Nairobi | Hell's Gate National Park & Return to Nairobi | Breakfast & Lunch | Trip ends |
 
-**6-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari** · 6 days · from $834
+**6-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari** · 6 days · from $934
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Full-Day Game Drive in Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Lake Nakuru National Park | Masai Mara to Lake Nakuru | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
 | 4 | Amboseli National Park | Lake Nakuru to the Base of Mount Kilimanjaro | Breakfast, Lunch & Dinner | Ositua Rafiki Camp |
 | 5 | Amboseli National Park | Full-Day Game Drive in Amboseli | Breakfast, Lunch & Dinner | Ositua Rafiki Camp |
 | 6 | Nairobi | Amboseli back to Nairobi | Breakfast & Lunch | Trip ends |
 
-**7-Day Masai Mara, Nakuru, Naivasha & Amboseli Budget Safari** · 7 days · from $947
+**7-Day Masai Mara, Nakuru, Naivasha & Amboseli Budget Safari** · 7 days · from $1,047
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Into the Heart of the Wild | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | In Search of the Big Five | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Lake Nakuru National Park | A Shift in Scenery | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
 | 4 | Lake Naivasha | Rhinos & Pink Flamingos | Breakfast, Lunch & Dinner | Leisure Apex Resort |
@@ -194,11 +194,11 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 | 6 | Amboseli National Park | The Land of Giants | Breakfast, Lunch & Dinner | Ositua Rafiki Camp |
 | 7 | Nairobi | Farewell to the Wild | Breakfast & Lunch | Trip ends |
 
-**8-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari** · 8 days · from $1,112
+**8-Day Masai Mara, Lake Nakuru & Amboseli Budget Safari** · 8 days · from $1,212
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to Masai Mara's Golden Plains | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | First Full-Day in the Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Masai Mara National Reserve | Second Full-Day in the Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 4 | Lake Nakuru National Park | Farewell Mara, Onward to Lake Nakuru Splendor | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
@@ -209,11 +209,11 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 ### Kenya & Tanzania
 
-**10-Day Kenya & Tanzania Budget Safari** · 10 days · from $1,619
+**10-Day Kenya & Tanzania Budget Safari** · 10 days · from $1,719
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to Masai Mara National Reserve | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Full-Day Game Drive in Masai Mara | Breakfast, Picnic Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Lake Nakuru National Park | Masai Mara to Lake Nakuru National Park | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
 | 4 | Amboseli National Park | Nakuru to Amboseli via Lake Naivasha | Breakfast, Lunch & Dinner | Ositua Rafiki Camp |
@@ -224,11 +224,11 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 | 9 | Arusha | Ngorongoro Crater & Return to Arusha | Breakfast & Lunch | The Charity Hotel |
 | 10 | Nairobi | Arusha to Nairobi | Breakfast | Trip ends |
 
-**11-Day Kenya & Tanzania Budget Safari** · 11 days · from $1,800
+**11-Day Kenya & Tanzania Budget Safari** · 11 days · from $1,900
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Discovering the Maasai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | In Search of Giants | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Masai Mara National Reserve | Second Day in the Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 4 | Lake Nakuru National Park | Journey to Lake Nakuru | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
@@ -240,11 +240,11 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 | 10 | Ngorongoro Crater | Serengeti to Ngorongoro Crater | Breakfast, Lunch & Dinner | Simba Campsite |
 | 11 | Arusha | Morning Crater Views & Satisfying Return to Arusha | Breakfast & Lunch | Trip ends |
 
-**12-Day Kenya & Tanzania Budget Safari** · 12 days · from $2,000
+**12-Day Kenya & Tanzania Budget Safari** · 12 days · from $2,100
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to Masai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | Full-Day Masai Mara Explorer | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Masai Mara National Reserve | A Second Day in the Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 4 | Lake Nakuru National Park | Masai Mara to Lake Nakuru | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
@@ -257,11 +257,11 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 | 11 | Ngorongoro Crater | Serengeti to Ngorongoro Crater | Breakfast, Lunch & Dinner | Simba Campsite |
 | 12 | Arusha | Ngorongoro to Arusha | Breakfast & Lunch | Trip ends |
 
-**12-Day Kenya & Tanzania Budget Safari: Serengeti & Ngorongoro** · 12 days · from $2,050
+**12-Day Kenya & Tanzania Budget Safari: Serengeti & Ngorongoro** · 12 days · from $2,150
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara | Lunch & Dinner | Miti Mingi Eco Camp |
+| 1 | Masai Mara National Reserve | Nairobi to the Masai Mara & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
 | 2 | Masai Mara National Reserve | A Full Day in the Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 3 | Masai Mara National Reserve | Second Full Day in the Masai Mara | Breakfast, Lunch & Dinner | Miti Mingi Eco Camp |
 | 4 | Lake Nakuru National Park | Masai Mara to Lake Nakuru Splendor | Breakfast, Lunch & Dinner | Buraha Zenoni Hotel & Resort |
@@ -316,7 +316,7 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 ### Nairobi
 
-**Nairobi Half-Day Tour** · Half day · from $150
+**Nairobi Half-Day Tour** · Half day · from $180
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |

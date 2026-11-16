@@ -37,3 +37,6 @@ vite.config.js.timestamp-*
 coverage
 .nyc_output
 *.pem
+
+# Private SEO working notes
+seo-work/

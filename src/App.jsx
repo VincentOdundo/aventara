@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, ScrollRestoration, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 
 // Eager load Home for fastest FCP
@@ -15,6 +15,7 @@ const About = lazy(() => import('./pages/About'));
 const CompanyProfile = lazy(() => import('./pages/CompanyProfile'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader() {
   return (
@@ -37,9 +38,14 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+/**
+ * The routes without a router around them, so the browser can wrap them in a
+ * BrowserRouter and the static prerender (src/entry-server.jsx) in a
+ * StaticRouter. Both must render the same tree for hydration to match.
+ */
+export function AppRoutes() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>
@@ -62,10 +68,18 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
 
-          {/* Fallback → Home */}
-          <Route path="*" element={<Home />} />
+          {/* Anything else is a real 404, not a copy of the home page */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppRoutes />
     </Router>
   );
 }

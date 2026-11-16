@@ -9,8 +9,8 @@ export const package3DayMara = {
   days: 3,
   country: "kenya",
   destinations: ["Masai Mara"],
-  price: { low: 477, high: 670 },
-  singlePrice: { low: 484, high: 687 },
+  price: { low: 577, high: 870 },
+  singlePrice: { low: 584, high: 887 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -36,11 +36,11 @@ export const package3DayMara = {
     "Optional activities and excursions",
     "Comprehensive travel insurance",
     "Maasai Village Cultural Visit ($20)",
-    "Hot Air Balloon Safari over the Serengeti-Mara ecosystem ($500)",
+    "Hot Air Balloon Safari over the Serengeti-Mara ecosystem ($480)",
   ],
   optionalActivities: [
     { name: "Maasai Village Visit", price: 20 },
-    { name: "Balloon Safaris", price: 500 },
+    { name: "Balloon Safaris", price: 480 },
   ],
   accommodation: {
     budget: "Miti Mingi Eco Camp",
@@ -48,7 +48,7 @@ export const package3DayMara = {
   itinerary: [
     {
       day: 1,
-      title: "Journey to the Wild",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your African adventure kicks off with an early morning departure from the bustling hub of Nairobi. As we leave the city behind, the road opens onto wide views of the Great Rift Valley viewpoint, where we'll pause to capture photos of the escarpment plunging into the valley floor. Continuing our drive through quintessential Kenyan landscapes, we arrive at the Maasai Mara National Reserve just in time to savor a hearty, welcoming lunch at your lodge or camp.\n\nAfter a seamless check-in and a moment to breathe in the pure savannah air, the real magic begins. We head out for an exhilarating golden-hour evening game drive in the reserve. This is the optimal window for wildlife viewing as apex predators stir from their daytime slumber and herbivores emerge into the cooling twilight. Keep your cameras ready-expect sightings of lions on the prowl, gentle giant elephants roaming the acacia-dotted plains, graceful giraffes, massive herds of zebras and buffaloes, and if luck is on our side, an elusive leopard draped elegantly across a tree branch. As the African sun dips vividly below the horizon, we return to the camp for a delicious dinner under the stars, serenaded by the sounds of the African night. Don't wait-secure your spot on this life-changing safari today.",
       destination: "Masai Mara National Reserve",

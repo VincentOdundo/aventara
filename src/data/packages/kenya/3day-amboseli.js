@@ -40,7 +40,7 @@ export const package3DayAmboseli = {
   itinerary: [
     {
       day: 1,
-      title: "Into the Elephant Kingdom",
+      title: "Nairobi to Amboseli & Evening Game Drive (if time allows)",
       description:
         "Kick off your dream Kenyan vacation with a convenient, personalized pick-up from your Nairobi hotel or the airport at our mutually agreed time. Sit back and enjoy the scenic, dramatic journey as we drive south through authentic rural Kenyan landscapes towards the Amboseli National Park. Arriving in the late afternoon, you'll feel the immediate shift from city bustle to pure, untamed wilderness.\n\nAfter a warm welcome and check-in at the charming Ositua Rafiki Camp, we waste no time diving into the action. If time allows, we'll embark on an introductory evening game drive right up until sunset. Amboseli is globally renowned for its massive, herds of Jumbo Elephants sporting tusks, and this golden hour presents the perfect, most atmospheric opportunity to witness them strolling peacefully across the plains. As dusk settles, we retreat to our comfortable camp for a hearty, authentic dinner under the vast African sky. Enquire today to secure your escape!",
       destination: "Amboseli National Park",

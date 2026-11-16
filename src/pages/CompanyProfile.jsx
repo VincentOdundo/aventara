@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSeo, SITE_URL } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import {
@@ -12,6 +13,13 @@ import {
   getCurrentSeason,
 } from "../data/safaris";
 import { useWhatsApp } from "../hooks/useWhatsApp";
+import {
+  INCLUDED,
+  NOT_INCLUDED,
+  PHONE_DISPLAY,
+  STEPS,
+  TERMS,
+} from "../data/company";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -31,7 +39,6 @@ import closingImg from "../assets/wildbeasts.jpg";
 import lionsImg from "../assets/lion pack.jpeg";
 
 const PDF_PATH = "/Cima_Brava_Adventures_Company_Profile.pdf";
-const PHONE_DISPLAY = "+254 112 346 049";
 
 const usd = (n) => `$${n.toLocaleString("en-US")}`;
 const duration = (days) => (days === 0.5 ? "Half day" : `${days} days`);
@@ -89,29 +96,11 @@ const VEHICLE_SPECS = [
   "Maximum 7 guests per vehicle",
 ];
 
-const INCLUDED = [
-  "4x4 safari vehicle with pop-up roof",
-  "English-speaking professional driver-guide",
-  "All park and reserve entry fees (non-resident rates)",
-  "Government taxes and VAT",
-  "Accommodation and meals as set out in the itinerary",
-  "Bottled drinking water on safari days",
-  "Return transfers from Nairobi airport or your city hotel",
-];
-
-const NOT_INCLUDED = [
-  "International flights and visas",
-  "Hotel nights before or after the safari (we can book these)",
-  "Tips for guides and camp staff (guideline US$10 per person per day)",
-  "Travel insurance, drinks and personal purchases",
-  "Any government increase in park fees or taxes after booking",
-];
-
 const EXTRAS = [
   { name: "Maasai village visit", price: 20 },
   { name: "Lake Naivasha boat ride", price: 20 },
   { name: "Crescent Island walking safari", price: 33 },
-  { name: "Hot-air balloon flight, Masai Mara or Serengeti", price: 500 },
+  { name: "Hot-air balloon flight, Masai Mara or Serengeti", price: 480 },
 ];
 
 const COLLECTIONS = [
@@ -159,52 +148,6 @@ const STAYS = [
     park: "Serengeti & Ngorongoro",
     name: "Public and tented campsites inside the parks",
     type: "Camping",
-  },
-];
-
-const STEPS = [
-  {
-    title: "Choose a safari",
-    body: "Pick an itinerary from the rate card, or tell us which parks and how many days you have in mind.",
-  },
-  {
-    title: "Send your dates",
-    body: "Message us on WhatsApp or by email with your travel dates and the number of travellers.",
-  },
-  {
-    title: "Get a confirmed quote",
-    body: "We reply within 24 hours with availability, the final price and the day-by-day plan.",
-  },
-  {
-    title: "Reserve your seats",
-    body: "Confirm the booking. You can cancel free of charge up to 30 days before departure.",
-  },
-];
-
-const TERMS = [
-  {
-    title: "Cancellation",
-    body: "Free cancellation up to 30 days before departure.",
-  },
-  {
-    title: "Children",
-    body: "Children under 4 travel free. Under-18s get reduced rates on multi-day Kenya safaris.",
-  },
-  {
-    title: "Solo travellers",
-    body: "Single-room rates are published next to the sharing rate. Where none is listed, ask and we will quote.",
-  },
-  {
-    title: "Tipping",
-    body: "Tips are not included. Our guideline is US$10 per person per day for guides and camp staff.",
-  },
-  {
-    title: "Park fees",
-    body: "Current park fees and taxes are in the price. If a government raises them after you book, the difference is charged at cost.",
-  },
-  {
-    title: "Support",
-    body: "Our WhatsApp desk is staffed around the clock before and during your trip.",
   },
 ];
 
@@ -564,6 +507,7 @@ export default function CompanyProfile() {
     description:
       "Who we are, what every safari price includes, the full 2026–2027 rate card and every itinerary day by day. Download the PDF.",
     path: "/company-profile",
+    jsonLd: breadcrumbLd(pageCrumbs("Company Profile", "/company-profile")),
   });
   const season = getCurrentSeason();
   const quoteLink = generateInquiry("Safari quote request");
@@ -584,8 +528,7 @@ export default function CompanyProfile() {
           <img
             src={coverImg}
             alt="An elephant crossing the Amboseli plains beneath Mount Kilimanjaro"
-            className="absolute inset-0 h-full w-full object-cover object-[70%_center] print:object-center"
-          />
+            className="absolute inset-0 h-full w-full object-cover object-[70%_center] print:object-center" fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-black via-midnight-black/35 to-midnight-black/15 print:hidden" />
           <div className="absolute inset-0 bg-gradient-to-r from-midnight-black/80 via-midnight-black/30 to-transparent print:hidden" />
         </div>

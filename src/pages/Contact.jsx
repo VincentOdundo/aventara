@@ -1,5 +1,6 @@
 import React from "react";
-import { useSeo, safariJsonLd } from "../hooks/useSeo";
+import { useSeo } from "../hooks/useSeo";
+import { breadcrumbLd, pageCrumbs } from "../lib/seo";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { Section, AnimatedSection } from "../components/ui";
@@ -39,6 +40,7 @@ export default function Contact() {
     description:
       "Send your travel dates and group size by WhatsApp or email. We reply within 24 hours with availability, the final price and a day-by-day plan.",
     path: "/contact",
+    jsonLd: breadcrumbLd(pageCrumbs("Contact", "/contact")),
   });
   const { generateInquiry } = useWhatsApp();
 
@@ -63,8 +65,7 @@ export default function Contact() {
         <img
           src={heroImg}
           alt="Contact Cima Brava Adventures"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+          className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
           <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold mb-3 block">

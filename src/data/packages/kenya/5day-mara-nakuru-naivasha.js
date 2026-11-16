@@ -9,8 +9,8 @@ export const package5DayMaraNakuruNaivasha = {
   days: 5,
   country: "kenya",
   destinations: ["Masai Mara", "Lake Nakuru", "Lake Naivasha", "Hell's Gate"],
-  price: { low: 761, high: 916 },
-  singlePrice: { low: 773, high: 927 },
+  price: { low: 861, high: 1116 },
+  singlePrice: { low: 873, high: 1127 },
   image: heroImg,
   difficulty: "Budget",
   highlights: [
@@ -47,7 +47,7 @@ export const package5DayMaraNakuruNaivasha = {
   itinerary: [
     {
       day: 1,
-      title: "Nairobi to the Masai Mara",
+      title: "Nairobi to the Masai Mara & Evening Game Drive",
       description:
         "Your 5-day Kenyan journey kicks off with a prompt pick-up from your Nairobi hotel or airport. Journey deep into the African wilderness as we descend into the Great Rift Valley. We'll stop at the famous viewpoint, allowing you to capture panoramic photographs of the dramatic escarpment before we continue to the Maasai Mara. You'll arrive in perfect time for a hearty lunch at your authentic safari camp, followed by a brief period of relaxation. As the fierce African sun begins to soften, head out for an evening game drive. This is prime time to spot apex predators-fierce lions, agile leopards, and towering giraffes-roaming the savannah. Watch the wilderness come alive under a golden sunset. Ready to step into a documentary? Secure your booking now!",
       destination: "Masai Mara National Reserve",

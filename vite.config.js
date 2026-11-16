@@ -9,5 +9,10 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
     }
-  }
+  },
+  // The prerender bundle (src/entry-server.jsx) carries its own copy of React
+  // and the router, so scripts/prerender.mjs runs it without module resolution.
+  ssr: {
+    noExternal: true,
+  },
 });

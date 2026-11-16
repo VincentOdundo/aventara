@@ -38,8 +38,7 @@ export function ItineraryDay({
             <img
               className="w-full h-full object-cover"
               alt={title}
-              src={image}
-            />
+              src={image} loading="lazy" decoding="async" />
           </div>
         )}
         <div className="flex-1 space-y-4">
