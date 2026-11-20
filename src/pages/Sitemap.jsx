@@ -28,6 +28,7 @@ export default function Sitemap() {
     description,
     path: "/sitemap",
     markdown: false,
+    noindex: true,
     jsonLd: graph(
       webPageLd({
         path: "/sitemap",

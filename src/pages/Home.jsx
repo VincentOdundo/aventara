@@ -40,15 +40,8 @@ import {
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
 import logo from "./cima_logo.png";
 
-import elephantGrass from "../assets/nairobi/antelppes.jpeg";
-import elephantTusks from "../assets/rhino.jpeg";
-import flamingoWater from "../assets/flamingo.jpeg";
-import sunsetExotic from "../assets/cheater_plain.jpeg";
-import rhinoClose from "../assets/nairobi/bird-exotic.jpeg";
-import kilimanjaro from "../assets/lion pack.jpeg";
-import elephtain from "../assets/leapard-car.jpeg";
-import wildImg from "../assets/cheater-safari.jpeg";
-import heroImg from "../assets/cheater-safari.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
 
 function StatCounter({ target, suffix = "", label }) {
   const { count, ref } = useCounter(target);
@@ -65,14 +58,22 @@ function StatCounter({ target, suffix = "", label }) {
   );
 }
 
-const heroImages = [
-  elephantGrass,
-  elephantTusks,
-  flamingoWater,
-  sunsetExotic,
-  rhinoClose,
-  kilimanjaro,
-  elephtain,
+// The headline and buttons sit over the left and middle of this block, so the
+// rotation only uses photos whose subject is low or to the right, clear of the text.
+const heroPhotos = [
+  P.elephantKiliRight,
+  P.giraffeSunset,
+  P.vanSunrise,
+  P.sunsetAcacia,
+];
+
+// One entry per bento cell below: a 2x2 (square), two 1x1 and a 2x1 (wide).
+// Each photo is picked for its cell's shape and for the place it stands for.
+const bentoSlots = [
+  { slug: "masai-mara", photo: P.leopardRockTall },
+  { slug: "serengeti", photo: P.cheetahMound },
+  { slug: "ngorongoro", photo: P.lionessLying },
+  { slug: "amboseli", photo: P.tuskerKili },
 ];
 
 export default function Home() {
@@ -91,6 +92,8 @@ export default function Home() {
     title: homeTitle,
     description: homeDesc,
     path: "/",
+    image: P.elephantKiliRight.src,
+    imageAlt: P.elephantKiliRight.alt,
     jsonLd: graph(
       webPageLd({
         path: "/",
@@ -119,13 +122,14 @@ export default function Home() {
     tanzania: safariPackages.filter((s) => s.country === "tanzania").length,
     combined: safariPackages.filter((s) => s.country === "combined").length,
   };
-  const featuredDestinations = destinations.filter((d) =>
-    ["masai-mara", "serengeti", "ngorongoro", "tarangire"].includes(d.slug),
-  );
+  const featuredDestinations = bentoSlots.map(({ slug, photo }) => ({
+    ...destinations.find((d) => d.slug === slug),
+    bentoPhoto: photo,
+  }));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setHeroIdx((prev) => (prev + 1) % heroImages.length);
+      setHeroIdx((prev) => (prev + 1) % heroPhotos.length);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -137,11 +141,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 w-full flex-1 min-h-0">
           {/* Main Hero Block - Spans 2x2 */}
           <div className="md:col-span-2 md:row-span-2 bg-midnight-black rounded-[2rem] p-6 md:p-8 lg:p-10 flex flex-col justify-between text-sand-cream shadow-xl overflow-hidden relative border border-savannah-gold/20 min-h-0">
-            <img
-              src={heroImages[heroIdx]}
-              alt="Wildlife on the East African savannah at sunset"
+            <Photo
+              src={heroPhotos[heroIdx].src}
               fetchPriority="high"
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
+              className="absolute inset-0 w-full h-full transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/80 via-midnight-black/25 to-transparent"></div>
 
@@ -216,10 +219,9 @@ export default function Home() {
             to="/safari/3-day-masai-mara-budget"
             className="md:col-span-2 md:row-span-1 rounded-[2rem] overflow-hidden relative group h-56 md:h-full min-h-0 border border-safari-brown/15 shadow-md"
           >
-            <img
-              src={wildImg}
-              alt="The Great Migration"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" decoding="async" />
+            <Photo
+              src={P.wildebeest.src}
+              className="w-full h-full group-hover:scale-110 transition-transform duration-700" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-transparent to-transparent"></div>
             <div className="absolute top-4 right-4">
               <span className="bg-crane-red text-sand-cream text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow">
@@ -363,10 +365,9 @@ export default function Home() {
             >
               <div className="bg-sand-cream border border-savannah-gold/25 rounded-2xl overflow-hidden hover:shadow-xl hover:border-savannah-gold transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Photo
                     src={safari.image}
-                    alt={safari.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
@@ -518,10 +519,9 @@ export default function Home() {
                   to={`/destinations/${dest.slug}`}
                   className={`${spanClasses} relative group overflow-hidden rounded-2xl min-h-[240px] border border-safari-brown/15`}
                 >
-                  <img
-                    src={dest.image}
-                    alt={dest.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  <Photo
+                    src={dest.bentoPhoto.src}
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-transparent to-transparent group-hover:from-midnight-black/80 transition-colors duration-500"></div>

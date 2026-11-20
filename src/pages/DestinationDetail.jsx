@@ -1,4 +1,5 @@
 import React from "react";
+import { Photo } from "../components/ui/Photo";
 import { useSeo } from "../hooks/useSeo";
 import {
   SITE_URL,
@@ -91,11 +92,10 @@ export default function DestinationDetail() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-midnight-black">
-        <img
+        <Photo
           src={dest.image}
-          alt={`${dest.name}, ${dest.country}`}
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full">
@@ -184,10 +184,9 @@ export default function DestinationDetail() {
                       key={idx}
                       className="rounded-xl overflow-hidden h-48 border border-savannah-gold/20"
                     >
-                      <img
+                      <Photo
                         src={img}
-                        alt={`${dest.name}, ${dest.country} wildlife and scenery (${idx + 1})`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>

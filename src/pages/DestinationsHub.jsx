@@ -21,8 +21,12 @@ import {
 import { destinations } from "../data/destinations";
 import { ArrowRight, MapPin, Compass } from "lucide-react";
 
-import heroImg from "../assets/lioness.jpeg";
-import bannerImg from "../assets/safari-van-sunrise.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
+
+const heroImg = P.lionVehicle.src;
+// A wide, short banner: bias the crop low so both the sun and the vehicle stay in view.
+const bannerImg = P.vanSunrise.src;
 
 export default function DestinationsHub() {
   const title = "Safari Destinations in Kenya & Tanzania";
@@ -58,11 +62,10 @@ export default function DestinationsHub() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
-        <img
+        <Photo
           src={heroImg}
-          alt="Wildlife on the plains of an East African national park"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center">
@@ -174,12 +177,10 @@ export default function DestinationsHub() {
       {/* Signature Theme Banner */}
       <section className="py-16 md:py-24 bg-sand-cream px-6 lg:px-12">
         <div className="max-w-screen-2xl mx-auto rounded-3xl overflow-hidden relative bg-midnight-black border border-savannah-gold/30 p-10 md:p-16 shadow-2xl">
-          <img
+          <Photo
             src={bannerImg}
-            alt="East African sunrise safari"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
+            className="absolute inset-0 w-full h-full"
+            loading="lazy" focus="70% 90%" />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="max-w-2xl text-center lg:text-left">
@@ -227,10 +228,9 @@ function DestinationCard({ dest }) {
     <Link to={`/destinations/${dest.slug}`} className="group">
       <div className="bg-surface border border-savannah-gold/25 hover:border-savannah-gold/60 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
         <div className="relative h-60 overflow-hidden">
-          <img
+          <Photo
             src={dest.image}
-            alt={dest.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/15 to-transparent"></div>

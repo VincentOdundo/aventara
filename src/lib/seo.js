@@ -31,6 +31,11 @@ export const isoDuration = (days) =>
 export const absoluteUrl = (path) =>
   /^https?:/.test(path) ? path : `${SITE_URL}${path}`;
 
+/** Share card (og:image) for a page. Generated at build time by scripts/og.mjs. */
+export const OG_IMAGE_SIZE = { width: 1200, height: 630 };
+export const ogImageUrl = (path = "/") =>
+  `${SITE_URL}/og${path === "/" ? "/home" : path.replace(/\/$/, "")}.jpg`;
+
 const seasonDates = (key) => SEASONS[key].dates.replace(" - ", " – ");
 const list = (items) =>
   items.length <= 1
@@ -429,7 +434,7 @@ export function webPageLd({
   path = "/",
   title,
   description,
-  image = `${SITE_URL}/og-image.jpeg`,
+  image = ogImageUrl("/"),
   type = "WebPage",
   mainEntityId = null,
   breadcrumbId = null,

@@ -23,42 +23,51 @@ import { package12DayKenyaTanzaniaSerengeti } from "./combined/12day-kenya-tanza
 // Import Nairobi packages
 import { packageHalfDayNairobi } from "./nairobi/half-day-nairobi";
 
-// Local gallery and itinerary images from src/assets
-import imgMara from "../../assets/treecheta.jpeg";
-import imgNakuru from "../../assets/flamingo-lonely.jpeg";
-import imgAmboseli from "../../assets/plain_elefabt.jpeg";
-import imgSerengeti from "../../assets/lioness_open.jpeg";
-import imgNgorongoro from "../../assets/lion-lonely.jpeg";
-import imgTarangire from "../../assets/nairobi/girfe-sunset.jpeg";
-import imgManyara from "../../assets/flamingo-water.jpeg";
-import imgNairobi from "../../assets/nairobi/girafe-nairobi-city.jpeg";
-import imgSunrise from "../../assets/safari-van-sunrise.jpeg";
-import imgMigration from "../../assets/wildbeasts.jpg";
+// Itinerary photos are chosen by where each day is spent, never by position.
+// See PLACE_POOLS in ../photos.js for which photos may stand for which place.
+import { PLACE_POOLS } from "../photos";
 
-const ITINERARY_IMAGES = [
-  imgSunrise,
-  imgMara,
-  imgMigration,
-  imgNakuru,
-  imgAmboseli,
-  imgSerengeti,
-  imgNgorongoro,
-  imgTarangire,
-  imgManyara,
-  imgNairobi,
+const PARKS = [
+  ["hellsgate", /hell'?s gate|geothermal/],
+  ["amboseli", /amboseli|kilimanjaro/],
+  ["mara", /masai mara|maasai mara|\bmara\b/],
+  ["nakuru", /nakuru/],
+  ["naivasha", /naivasha/],
+  ["ngorongoro", /ngorongoro|crater/],
+  ["serengeti", /serengeti/],
+  ["tarangire", /tarangire/],
+  ["manyara", /manyara/],
 ];
 
+// Which place's photos a day should use. The overnight place wins, except on
+// transit days (to or from Nairobi/Arusha) that are really spent in a park.
+function placeForDay(day) {
+  const dest = String(day.destination || "").toLowerCase();
+  const title = String(day.title || "").toLowerCase();
+  // What the day is about beats where it ends: "Rhinos & Pink Flamingos" is a
+  // Nakuru day even when the night is spent at Naivasha.
+  if (/rhino|flamingo/.test(title) && /nakuru|naivasha/.test(dest)) return "nakuru";
+  if (/hell\'?s gate|geothermal/.test(title)) return "hellsgate";
+  const direct = PARKS.find(([, re]) => re.test(dest));
+  if (direct) return direct[0];
+  const hub = /arusha/.test(dest) ? "arusha" : "nairobi";
+  const journeyTitle = title.replace(/return to (arusha|nairobi)/g, "");
+  if (/(arusha|nairobi)/.test(journeyTitle)) return hub;
+  const inTitle = PARKS.find(([, re]) => re.test(title));
+  return inTitle ? inTitle[0] : hub;
+}
+
 function enrichPackageImages(pkg) {
-  if (!pkg) return pkg;
-  if (!pkg.gallery || pkg.gallery.length === 0) {
-    pkg.gallery = [pkg.image, imgSunrise, imgMigration, imgMara];
-  }
-  if (Array.isArray(pkg.itinerary)) {
-    pkg.itinerary = pkg.itinerary.map((day, idx) => ({
-      ...day,
-      image: day.image || ITINERARY_IMAGES[idx % ITINERARY_IMAGES.length],
-    }));
-  }
+  if (!pkg || !Array.isArray(pkg.itinerary)) return pkg;
+  const used = {};
+  pkg.itinerary = pkg.itinerary.map((day) => {
+    if (day.image) return day;
+    const place = placeForDay(day);
+    const pool = PLACE_POOLS[place];
+    const n = used[place] || 0;
+    used[place] = n + 1;
+    return { ...day, image: pool[n % pool.length].src };
+  });
   return pkg;
 }
 

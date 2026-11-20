@@ -30,6 +30,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- LLM readers: a Markdown guide to this site is at ${SITE_URL}/llms.txt, full single-file corpus at ${SITE_URL}/llms-full.txt, and a map with a Markdown version of every page at ${SITE_URL}/sitemap.md -->
 ${pages
+  .filter((p) => p.index !== false)
   .map(
     (p) =>
       `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${today}</lastmod><priority>${p.priority}</priority></url>`,

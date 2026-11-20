@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/egret-water.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.elephantKiliLeft.src;
 
 export const package3DayAmboseli = {
   id: "3-day-amboseli",

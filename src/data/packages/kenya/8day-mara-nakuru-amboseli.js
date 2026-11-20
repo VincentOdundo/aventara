@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/flamingo-lonely.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.sunsetAcacia.src;
 
 export const package8DayMaraNakuruAmboseli = {
   id: "8-day-mara-nakuru-amboseli",

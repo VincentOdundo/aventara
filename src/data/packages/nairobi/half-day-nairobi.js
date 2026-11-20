@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/elefabt-happy.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.nairobiGiraffes.src;
 
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",

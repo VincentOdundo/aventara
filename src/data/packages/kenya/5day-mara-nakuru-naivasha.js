@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/flamingo-lonely.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.giraffeSunset.src;
 
 export const package5DayMaraNakuruNaivasha = {
   id: "5-day-mara-nakuru-naivasha",

@@ -27,12 +27,22 @@ import {
 } from "../data/safaris";
 import { ArrowRight, MapPin, Calendar, Filter, X, Search } from "lucide-react";
 
-import heroImg from "../assets/lioness.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
+
+// Each category page opens on a photo that matches what it lists.
+const HERO_BY_COUNTRY = {
+  kenya: P.elephantKiliLeft,
+  tanzania: P.leopardTree,
+  combined: P.kilimanjaro,
+  nairobi: P.nairobiGiraffes,
+};
 
 const VALID_COUNTRIES = new Set(["kenya", "tanzania", "combined", "nairobi"]);
 
 export default function SafarisHub() {
   const { country } = useParams();
+  const heroImg = (HERO_BY_COUNTRY[country] || P.lionPack).src;
   const [searchParams] = useSearchParams();
   const isInvalidCountry = Boolean(country && !VALID_COUNTRIES.has(country));
   const hubSeo = {
@@ -130,11 +140,10 @@ export default function SafarisHub() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden text-center bg-midnight-black">
-        <img
+        <Photo
           src={heroImg}
-          alt="A lioness in the grass on a Kenya safari"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/70 via-transparent to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center">
@@ -305,10 +314,9 @@ export default function SafarisHub() {
               >
                 <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <Photo
                       src={safari.image}
-                      alt={safari.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/35 via-transparent to-transparent"></div>

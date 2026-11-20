@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/cheater.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.leopardTree.src;
 
 
 

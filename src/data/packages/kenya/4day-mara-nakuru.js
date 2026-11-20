@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/flamingo.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.leopardRock.src;
 
 export const package4DayMaraNakuru = {
   id: "4-day-mara-nakuru",

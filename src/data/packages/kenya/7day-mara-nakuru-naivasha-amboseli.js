@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/flamingo.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.tuskerKili.src;
 
 export const package7DayMaraNakuruNaivashaAmboseli = {
   id: "7-day-mara-nakuru-naivasha-amboseli",

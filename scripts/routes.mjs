@@ -18,7 +18,9 @@ export const STATIC_PAGES = [
   { path: "/company-profile", priority: "0.7", topic: "Company" },
   { path: "/about", priority: "0.5", topic: "Company" },
   { path: "/contact", priority: "0.6", topic: "Company" },
-  { path: "/sitemap", priority: "0.3", topic: "Company", markdown: false },
+  // The HTML sitemap only repeats links found elsewhere. It stays crawlable
+  // (noindex, follow) but is not listed in sitemap.xml.
+  { path: "/sitemap", priority: "0.3", topic: "Company", markdown: false, index: false },
   // The gallery is photographs only, so it has no Markdown version.
   { path: "/gallery", priority: "0.4", topic: "Company", markdown: false },
 ];

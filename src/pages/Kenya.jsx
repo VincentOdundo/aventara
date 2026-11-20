@@ -16,15 +16,17 @@ import { Breadcrumbs, FaqSection } from "../components/ui";
 import { allPackages } from "../data/safaris";
 import { ArrowRight } from "lucide-react";
 
-import heroImg from "../assets/mountain.jpeg";
-import maraImg from "../assets/treecheta.jpeg";
-import amboseliImg from "../assets/plain_elefabt.jpeg";
-import tsavoImg from "../assets/wildbeasts.jpg";
-import samburuImg from "../assets/elefpalin.jpeg";
-import cultureImg1 from "../assets/nairobi/girafe-nairobi-city.jpeg";
-import cultureImg2 from "../assets/nairobi/antelppes.jpeg";
-import cultureImg3 from "../assets/elefant-tusk.jpeg";
-import bannerImg from "../assets/safari-van-sunrise.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
+
+// Centred headline, so the hero is a calm sunset with no animal to hide behind it.
+const heroImg = P.sunsetAcacia.src;
+// The four park cards are portrait (4:5), so each gets a portrait photo of what the card says.
+const maraImg = P.leopardRockTall.src;
+const amboseliImg = P.elephantDust.src;
+const tsavoImg = P.elephantMud.src; // red-mud elephant: Tsavo's red-dusted elephants
+const olPejetaImg = P.rhinosTall.src;
+const bannerImg = P.vanSunrise.src;
 
 export default function Kenya() {
   const title = "Kenya Safari Guide: Parks, Seasons & Budget Trips";
@@ -58,9 +60,8 @@ export default function Kenya() {
       <div className="pt-24 lg:pt-0 bg-sand-cream text-midnight-black font-body">
         <section className="relative min-h-[100svh] flex flex-col justify-center items-center overflow-hidden bg-midnight-black">
           <div className="absolute inset-0 z-0">
-            <img
-              className="w-full h-full object-cover scale-105"
-              alt="Mount Kilimanjaro peak rising above Amboseli plains at sunset"
+            <Photo
+              className="w-full h-full scale-105"
               fetchPriority="high"
               src={heroImg}
             />
@@ -116,9 +117,8 @@ export default function Kenya() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Link to="/destinations/masai-mara" className="group cursor-pointer block">
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
-                    <img
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      alt="Vast golden savannah of Maasai Mara under dramatic sky"
+                    <Photo
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                       src={maraImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -132,9 +132,8 @@ export default function Kenya() {
 
                 <Link to="/destinations/amboseli" className="group cursor-pointer pt-12 block">
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
-                    <img
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      alt="Elephant herd in front of Mount Kilimanjaro in Amboseli"
+                    <Photo
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                       src={amboseliImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -148,9 +147,8 @@ export default function Kenya() {
 
                 <Link to="/destinations/tsavo" className="group cursor-pointer block">
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
-                    <img
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      alt="Red volcanic earth and baobab trees in Tsavo East"
+                    <Photo
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                       src={tsavoImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -164,10 +162,9 @@ export default function Kenya() {
 
                 <Link to="/destinations/ol-pejeta" className="group cursor-pointer pt-12 block">
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
-                    <img
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      alt="Wildlife in Ol Pejeta Conservancy and Laikipia plateau"
-                      src={samburuImg} loading="lazy" decoding="async" />
+                    <Photo
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      src={olPejetaImg} loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Ol Pejeta &amp; Laikipia
@@ -248,18 +245,15 @@ export default function Kenya() {
                   wild.
                 </p>
                 <div className="flex -space-x-4 overflow-hidden">
-                  <img
-                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
-                    alt="Kenyan wildlife and heritage"
-                    src={cultureImg1} loading="lazy" decoding="async" />
-                  <img
-                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
-                    alt="Savannah wildlife encounters"
-                    src={cultureImg2} loading="lazy" decoding="async" />
-                  <img
-                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream object-cover"
-                    alt="Elephant tusks"
-                    src={cultureImg3} loading="lazy" decoding="async" />
+                  <Photo alt=""
+                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
+                    src={P.lionessFace.src} loading="lazy" decoding="async" focus="50% 38%" />
+                  <Photo alt=""
+                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
+                    src={P.leopardRockTall.src} loading="lazy" decoding="async" focus="40% 25%" />
+                  <Photo alt=""
+                    className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
+                    src={P.elephantDust.src} loading="lazy" decoding="async" focus="35% 55%" />
                 </div>
               </div>
             </div>
@@ -378,10 +372,9 @@ export default function Kenya() {
 
         <section className="relative py-32 px-8 overflow-hidden bg-midnight-black">
           <div className="absolute inset-0 z-0">
-            <img
-              className="w-full h-full object-cover"
-              alt="Wide panoramic view of an expedition vehicle in the Kenyan savanna"
-              src={bannerImg} loading="lazy" decoding="async" />
+            <Photo
+              className="w-full h-full"
+              src={bannerImg} loading="lazy" decoding="async" focus="70% 90%" />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           </div>
           <div className="relative z-10 text-center text-sand-cream max-w-3xl mx-auto">

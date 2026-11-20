@@ -16,17 +16,22 @@ import { Breadcrumbs, FaqSection } from "../components/ui";
 import { allPackages } from "../data/safaris";
 import { ArrowRight } from "lucide-react";
 
-import heroImg from "../assets/lioness_open.jpeg";
-import kiliImg from "../assets/mountain.jpeg";
-import migrationImg from "../assets/wildbeasts.jpg";
-import lionImg from "../assets/lion-lonely.jpeg";
-import leopardImg from "../assets/cheater.jpeg";
-import elephantImg from "../assets/elefant.jpeg";
-import rhinoImg from "../assets/rhino.jpeg";
-import drySeasonImg from "../assets/nairobi/girfe-sunset.jpeg";
-import greenSeasonImg from "../assets/elefant-vegetation.jpeg";
-import cultureImg1 from "../assets/nairobi/lion-safari.jpeg";
-import cultureImg2 from "../assets/flamingo-water.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
+
+// Left-aligned headline, so the subject (the elephant) sits on the right.
+const heroImg = P.elephantKiliRight.src;
+const kiliImg = P.kilimanjaro.src;
+// Cells of the Big Five grid are close to portrait, so they take tall photos.
+const migrationImg = P.wildebeest.src;
+const lionImg = P.lionessYawn.src;
+const leopardImg = P.leopardRockTall.src;
+const elephantImg = P.elephantDust.src;
+const rhinoImg = P.rhinosTall.src;
+const drySeasonImg = P.giraffeSunset.src;
+const greenSeasonImg = P.lionPack.src;
+const cultureImg1 = P.leopardVan.src;
+const cultureImg2 = P.egretShore.src;
 
 export default function Tanzania() {
   const title = "Tanzania Safari Guide: Serengeti, Ngorongoro & Budget Trips";
@@ -59,9 +64,8 @@ export default function Tanzania() {
     <Layout>
       <div className="bg-sand-cream text-midnight-black font-body">
         <section className="relative min-h-[100svh] w-full overflow-hidden flex flex-col justify-center bg-midnight-black">
-          <img
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            alt="Golden sunlight over the vast Serengeti plains at dusk"
+          <Photo
+            className="absolute inset-0 w-full h-full z-0"
             fetchPriority="high"
             src={heroImg}
           />
@@ -128,9 +132,8 @@ export default function Tanzania() {
             </div>
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] bg-surface-container-low border border-savannah-gold/25 relative overflow-hidden rounded-2xl editorial-shadow">
-                <img
-                  className="w-full h-full object-cover scale-110"
-                  alt="Mount Kilimanjaro with acacia trees in foreground"
+                <Photo
+                  className="w-full h-full scale-110"
                   src={kiliImg} loading="lazy" decoding="async" />
               </div>
 
@@ -163,10 +166,9 @@ export default function Tanzania() {
                 to="/destinations/serengeti"
                 className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25"
               >
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Thousands of wildebeest crossing a river during migration"
-                  src={migrationImg} loading="lazy" decoding="async" />
+                <Photo
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-105"
+                  src={migrationImg} loading="lazy" decoding="async" focus="52% 55%" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/15 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-10">
                   <h3 className="font-headline text-3xl text-sand-cream font-bold mb-2">
@@ -180,9 +182,8 @@ export default function Tanzania() {
               </Link>
 
               <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Close up of a male lion's face in the tall grass"
+                <Photo
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   src={lionImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
@@ -193,9 +194,8 @@ export default function Tanzania() {
               </div>
 
               <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Cheetah and leopard predator habitat in the Serengeti"
+                <Photo
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   src={leopardImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
@@ -206,9 +206,8 @@ export default function Tanzania() {
               </div>
 
               <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="An African elephant walking through the savanna"
+                <Photo
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   src={elephantImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
@@ -219,9 +218,8 @@ export default function Tanzania() {
               </div>
 
               <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Black rhino in the Ngorongoro Crater"
+                <Photo
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   src={rhinoImg} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/55 via-transparent to-transparent group-hover:opacity-0 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
@@ -263,9 +261,8 @@ export default function Tanzania() {
                 </div>
                 <div className="md:w-1/2">
                   <div className="aspect-video bg-surface-container-low border border-savannah-gold/25 rounded-2xl overflow-hidden editorial-shadow">
-                    <img
-                      className="w-full h-full object-cover"
-                      alt="Dry golden savanna grass at sunset"
+                    <Photo
+                      className="w-full h-full"
                       src={drySeasonImg} loading="lazy" decoding="async" />
                   </div>
                 </div>
@@ -293,9 +290,8 @@ export default function Tanzania() {
                 </div>
                 <div className="md:w-1/2">
                   <div className="aspect-video bg-surface-container-low border border-savannah-gold/25 rounded-2xl overflow-hidden editorial-shadow">
-                    <img
-                      className="w-full h-full object-cover"
-                      alt="Lush green savanna vegetation with elephants"
+                    <Photo
+                      className="w-full h-full"
                       src={greenSeasonImg} loading="lazy" decoding="async" />
                   </div>
                 </div>
@@ -308,15 +304,13 @@ export default function Tanzania() {
           <div className="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="relative z-10 w-full aspect-[3/4] rounded-2xl overflow-hidden editorial-shadow rotate-3 scale-95 origin-bottom-right border border-savannah-gold/30">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="East African safari culture and wildlife"
-                  src={cultureImg1} loading="lazy" decoding="async" />
+                <Photo
+                  className="w-full h-full"
+                  src={cultureImg1} loading="lazy" decoding="async" focus="50% 40%" />
               </div>
               <div className="absolute -top-10 -right-10 w-2/3 aspect-square rounded-2xl overflow-hidden border-[10px] border-savannah-gold/30 -rotate-6 z-0">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Scenic East African waters and birdlife"
+                <Photo
+                  className="w-full h-full"
                   src={cultureImg2} loading="lazy" decoding="async" />
               </div>
             </div>

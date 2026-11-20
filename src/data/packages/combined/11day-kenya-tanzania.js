@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/nairobi/lion-safari-van.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.lionessResting.src;
 
 export const package11DayKenyaTanzania = {
   id: "11-day-kenya-tanzania",

@@ -1,21 +1,4 @@
-import destImg0 from "../assets/treecheta.jpeg";
-import destImg1 from "../assets/flamingo-lonely.jpeg";
-import destImg2 from "../assets/mountain.jpeg";
-import destImg3 from "../assets/nairobi/girafe-nairobi-city.jpeg";
-import destImg4 from "../assets/plain_elefabt.jpeg";
-import destImg5 from "../assets/wildbeasts.jpg";
-import destImg6 from "../assets/elefpalin.jpeg";
-import destImg7 from "../assets/lioness_open.jpeg";
-import destImg8 from "../assets/lion-lonely.jpeg";
-import destImg9 from "../assets/nairobi/girfe-sunset.jpeg";
-import destImg10 from "../assets/flamingo-water.jpeg";
-import destImg11 from "../assets/elefant-vegetation.jpeg";
-import extraImg1 from "../assets/lioness.jpeg";
-import extraImg2 from "../assets/safari-van-sunrise.jpeg";
-import extraImg3 from "../assets/elefant-tusk.jpeg";
-import extraImg4 from "../assets/rhino.jpeg";
-import extraImg5 from "../assets/cheater_plain.jpeg";
-import extraImg6 from "../assets/flamingo.jpeg";
+import { PHOTOS as P } from "./photos";
 
 // Destinations data
 export const destinations = [
@@ -36,8 +19,8 @@ export const destinations = [
       "Explore the African bush on action-packed nocturnal game drives",
     ],
     bestTime: "July – October (Peak Migration season for river crossings)",
-    image: destImg0,
-    gallery: [destImg5, extraImg1, extraImg2],
+    image: P.lionPack.src,
+    gallery: [P.leopardRock.src, P.vanSunrise.src, P.wildebeest.src],
   },
   {
     id: "lake-nakuru",
@@ -56,8 +39,8 @@ export const destinations = [
       "Take in sweeping panoramic vistas from the Baboon Cliff viewpoint",
     ],
     bestTime: "Year-round (Excellent birding and rhino spotting continuously)",
-    image: destImg1,
-    gallery: [extraImg6, destImg10, extraImg4],
+    image: P.flamingoPair.src,
+    gallery: [P.rhinosFlamingos.src, P.flamingoFlock.src, P.giraffeSunset.src],
   },
   {
     id: "hells-gate",
@@ -76,8 +59,8 @@ export const destinations = [
       "Enjoy rock climbing on cliff faces",
     ],
     bestTime: "Year-round (Perfect for active, outdoor exploration)",
-    image: destImg2,
-    gallery: [destImg9, extraImg2, destImg5],
+    image: P.sunsetAcacia.src,
+    gallery: [P.impala.src, P.giraffeSunset.src, P.vanSunrise.src],
   },
   {
     id: "lake-naivasha",
@@ -96,8 +79,8 @@ export const destinations = [
       "Soak up dramatically scenic, sunset-drenched Rift Valley views",
     ],
     bestTime: "Year-round (Exceptional birding and boating consistently)",
-    image: destImg3,
-    gallery: [destImg10, destImg9, extraImg6],
+    image: P.giraffeSunset.src,
+    gallery: [P.egretShore.src, P.francolin.src, P.vanSunrise.src],
   },
   {
     id: "amboseli",
@@ -117,8 +100,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season ensures the clearest views of Kilimanjaro)",
-    image: destImg4,
-    gallery: [destImg2, extraImg3, destImg11],
+    image: P.elephantKiliRight.src,
+    gallery: [P.kilimanjaro.src, P.tuskerKili.src, P.elephantKiliLeft.src],
   },
   {
     id: "tsavo",
@@ -138,8 +121,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Best conditions for wildlife congregation at water sources)",
-    image: destImg5,
-    gallery: [destImg6, extraImg3, destImg8],
+    image: P.tuskerKili.src,
+    gallery: [P.lionessResting.src, P.leopardRock.src, P.sunsetAcacia.src],
   },
   {
     id: "ol-pejeta",
@@ -158,8 +141,8 @@ export const destinations = [
       "Participate in hands-on, educational behind-the-scenes conservation tours",
     ],
     bestTime: "Year-round (Excellent road conditions and consistent wildlife)",
-    image: destImg6,
-    gallery: [extraImg4, destImg7, extraImg5],
+    image: P.rhinosSanctuary.src,
+    gallery: [P.lionessResting.src, P.vanSunrise.src, P.leopardRock.src],
   },
   {
     id: "serengeti",
@@ -179,8 +162,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season), December – March (Wildebeest calving season)",
-    image: destImg7,
-    gallery: [destImg5, extraImg1, extraImg5],
+    image: P.leopardTree.src,
+    gallery: [P.wildebeest.src, P.cheetahMound.src, P.vanSunrise.src],
   },
   {
     id: "ngorongoro",
@@ -199,8 +182,8 @@ export const destinations = [
       "Sip morning coffee while taking in panoramas from the crater rim",
     ],
     bestTime: "Year-round (Wildlife is permanently enclosed within the crater)",
-    image: destImg8,
-    gallery: [extraImg4, destImg10, destImg4],
+    image: P.lionVehicle.src,
+    gallery: [P.lionessResting.src, P.lionPack.src, P.wildebeest.src],
   },
   {
     id: "tarangire",
@@ -220,8 +203,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season triggers massive wildlife migration to the river)",
-    image: destImg9,
-    gallery: [destImg11, extraImg3, destImg6],
+    image: P.elephantTrunkUp.src,
+    gallery: [P.sunsetAcacia.src, P.giraffeSunset.src, P.lionessResting.src],
   },
   {
     id: "lake-manyara",
@@ -241,8 +224,8 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season ensures easier driving and active wildlife)",
-    image: destImg10,
-    gallery: [extraImg6, destImg1, destImg0],
+    image: P.lionessResting.src,
+    gallery: [P.flamingoFlock.src, P.giraffeSunset.src, P.elephantTrunkUp.src],
   },
   {
     id: "nairobi-np",
@@ -262,8 +245,8 @@ export const destinations = [
     ],
     bestTime:
       "Year-round (Exceptional convenience and year-round urban wildlife viewing)",
-    image: destImg11,
-    gallery: [destImg3, extraImg4, extraImg1],
+    image: P.nairobiGiraffes.src,
+    gallery: [P.rhinosSanctuary.src, P.impala.src, P.giraffeSunset.src],
   },
 ];
 

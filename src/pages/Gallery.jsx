@@ -20,74 +20,28 @@ import {
 } from "lucide-react";
 import logo from "./cima_logo.png";
 
-import elephantGrass from "../assets/nairobi/lion-safari-van.jpeg";
-import elephantTusks from "../assets/elefant.jpeg";
-import flamingoWater from "../assets/flamingo-lonely.jpeg";
-import lionMale from "../assets/rhino_plain.jpeg";
-import lionessRoar from "../assets/egret-water.jpeg";
-import egretWater from "../assets/safari-van-sunrise.jpeg";
-import flamingoSolo from "../assets/flamingo-water.jpeg";
-import kilimanjaro from "../assets/elefabt-happy.jpeg";
-import leopardTree from "../assets/cheater.jpeg";
-import rhinoClose from "../assets/nairobi/giraffe-sunsut.jpeg";
-import cheetahSafari from "../assets/nairobi/lion-safari.jpeg";
-import cheetahPlain from "../assets/lion.jpeg";
-import heroImg from "../assets/elefant-tusk.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
 
+const heroImg = P.elephantKiliLeft.src;
+
+// Every caption describes what the photo shows. "tall" photos fill the taller
+// grid tiles (close to square), the rest fill the shorter, wider tiles.
 const galleryImages = [
-  {
-    src: elephantGrass,
-    caption: "Wildebeest Migration, Masai Mara",
-    tall: true,
-  },
-  {
-    src: elephantTusks,
-    caption: "African Elephant, Amboseli",
-  },
-  {
-    src: flamingoWater,
-    caption: "Golden Sunrise, Serengeti",
-  },
-  {
-    src: lionMale,
-    caption: "Lion Pride, Masai Mara",
-    tall: true,
-  },
-  {
-    src: lionessRoar,
-    caption: "Sunset Safari Drive",
-  },
-  {
-    src: egretWater,
-    caption: "Lake Naivasha Boat Ride",
-  },
-  {
-    src: flamingoSolo,
-    caption: "Flamingos, Lake Nakuru",
-    tall: true,
-  },
-  {
-    src: kilimanjaro,
-    caption: "Mt. Kilimanjaro from Amboseli",
-  },
-  {
-    src: leopardTree,
-    caption: "Giraffe, Tarangire",
-  },
-  {
-    src: rhinoClose,
-    caption: "Ngorongoro Crater",
-  },
-  {
-    src: cheetahSafari,
-    caption: "Maasai Culture",
-  },
-  {
-    src: cheetahPlain,
-    caption: "Safari Explorer",
-    tall: true,
-  },
+  { src: P.elephantMud.src, caption: "African elephant raising its trunk", tall: true },
+  { src: P.elephantKiliRight.src, caption: "Bull elephant below Mount Kilimanjaro" },
+  { src: P.flamingoPair.src, caption: "Lesser flamingos feeding on a Rift Valley lake" },
+  { src: P.lionMale.src, caption: "Male lion in the long grass", tall: true },
+  { src: P.lionPack.src, caption: "Lion and lioness resting in the Mara grass" },
+  { src: P.leopardTree.src, caption: "Leopard asleep on a tree branch" },
+  { src: P.lionessYawn.src, caption: "Lioness mid-yawn", tall: true },
+  { src: P.kilimanjaro.src, caption: "Mount Kilimanjaro under a blue sky" },
+  { src: P.nairobiGiraffes.src, caption: "Giraffes with the Nairobi skyline" },
+  { src: P.rhinosFlamingos.src, caption: "White rhinos beside a lake of flamingos" },
+  { src: P.lionVehicle.src, caption: "Collared lion beside a safari vehicle" },
+  { src: P.lionessFace.src, caption: "Lioness looking into the camera", tall: true },
 ];
+
 
 export default function Gallery() {
   const title = "East Africa Safari Photo Gallery";
@@ -122,10 +76,9 @@ export default function Gallery() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
-        <img
+        <Photo alt="Elephant walking across the plains below Mount Kilimanjaro"
           src={heroImg}
-          alt="Cima Brava Safari Gallery"
-          className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" />
+          className="absolute inset-0 w-full h-full" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
           <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold mb-3 block">
@@ -151,10 +104,9 @@ export default function Gallery() {
                 className="break-inside-avoid group cursor-pointer relative rounded-2xl overflow-hidden border border-savannah-gold/30 shadow-md"
                 onClick={() => setLightbox(idx)}
               >
-                <img
+                <Photo alt={img.caption}
                   src={img.src}
-                  alt={img.caption}
-                  className={`w-full object-cover group-hover:scale-105 transition-transform duration-700 ${
+                  className={`w-full group-hover:scale-105 transition-transform duration-700 ${
                     img.tall ? "h-96" : "h-64"
                   }`}
                   loading="lazy"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Photo } from "../components/ui/Photo";
 import { useSeo } from "../hooks/useSeo";
 import { useParams, Link } from "react-router-dom";
 import NotFound from "./NotFound";
@@ -101,11 +102,10 @@ export default function SafariDetail() {
     <Layout>
       {/* Hero Banner */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-midnight-black">
-        <img
+        <Photo
           src={safari.image}
-          alt={safari.title}
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/70 via-transparent to-midnight-black/25"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full">
@@ -287,10 +287,9 @@ export default function SafariDetail() {
                       <div className="px-6 pb-6 flex flex-col md:flex-row gap-6">
                         {day.image && (
                           <div className="md:w-1/3 shrink-0 rounded-xl overflow-hidden h-48 border border-savannah-gold/25">
-                            <img
+                            <Photo
                               src={day.image}
-                              alt={day.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full"
                               loading="lazy"
                             />
                           </div>

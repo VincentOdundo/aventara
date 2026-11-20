@@ -28,8 +28,11 @@ import {
 } from "lucide-react";
 import logo from "./cima_logo.png";
 
-import heroImg from "../assets/nairobi/bird-exotic.jpeg";
-import elefantVegetation from "../assets/lion pack.jpeg";
+import { Photo } from "../components/ui/Photo";
+import { PHOTOS as P } from "../data/photos";
+
+const heroImg = P.tuskerKili.src;
+const sideImg = P.leopardRock.src;
 
 export default function About() {
   const title = "About Cima Brava Adventures — Nairobi Safari Operator";
@@ -61,10 +64,9 @@ export default function About() {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
-        <img
+        <Photo
           src={heroImg}
-          alt="About Cima Brava Adventures"
-          className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" />
+          className="absolute inset-0 w-full h-full" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
          
@@ -177,10 +179,9 @@ export default function About() {
           <AnimatedSection animation="right">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-savannah-gold/30">
-                <img
-                  src={elefantVegetation}
-                  alt="Safari experience"
-                  className="w-full h-96 object-cover" loading="lazy" decoding="async" />
+                <Photo
+                  src={sideImg}
+                  className="w-full h-96" loading="lazy" decoding="async" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-xl">
                 <p className="text-3xl font-headline font-bold text-sunrise-yellow">

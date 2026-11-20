@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { SITE_URL, SITE_NAME, absoluteUrl, safariLd } from "../lib/seo";
+import { SITE_URL, SITE_NAME, absoluteUrl, ogImageUrl, safariLd } from "../lib/seo";
 
 export { SITE_URL, SITE_NAME };
 /** Kept for existing imports; the builder now lives in src/lib/seo.js. */
 export const safariJsonLd = safariLd;
 
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpeg`;
+const DEFAULT_IMAGE = ogImageUrl("/");
 const DEFAULT_IMAGE_ALT = "Wildlife on safari in East Africa with Cima Brava Adventures";
 const INDEXABLE = "index, follow, max-image-preview:large, max-snippet:-1";
 const NO_MARKDOWN_PATHS = new Set(["/gallery", "/sitemap", "/404"]);
@@ -65,7 +65,11 @@ export function resolveSeo({
     title: resolvedTitle,
     description,
     url: `${SITE_URL}${normalizedPath}`,
-    image: image ? absoluteUrl(image) : DEFAULT_IMAGE,
+    // Share tags always point at this page's own generated card (scripts/og.mjs).
+    // `photo` is the page's source photograph, which the card is cut from.
+    image: noindex ? DEFAULT_IMAGE : ogImageUrl(normalizedPath),
+    photo: image ? absoluteUrl(image) : null,
+    ogTitle: title,
     imageAlt: imageAlt || `${title} — ${SITE_NAME}`,
     robots: noindex ? "noindex, follow" : INDEXABLE,
     markdownUrl,

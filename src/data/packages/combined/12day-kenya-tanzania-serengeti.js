@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/elefant.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.leopardTree.src;
 
 export const package12DayKenyaTanzaniaSerengeti = {
   id: "12-day-kenya-tanzania-serengeti",

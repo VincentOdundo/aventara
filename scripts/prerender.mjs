@@ -12,6 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { SITE_URL, allPages, htmlFile, markdownPath } from "./routes.mjs";
+import { buildOgCard } from "./og.mjs";
 import {
   buildDocuments,
   llmsFullTxt,
@@ -21,7 +22,7 @@ import {
 } from "./markdown.mjs";
 
 const server = await import(pathToFileURL(path.resolve("dist-ssr/entry-server.js")).href);
-const { render, safariPackages, allPackages, destinations, SEASONS, CONTACT_EMAIL, WHATSAPP_NUMBER, company, seo } = server;
+const { render, safariPackages, allPackages, destinations, SEASONS, CONTACT_EMAIL, WHATSAPP_NUMBER, company, seo, PHOTO_META } = server;
 
 const esc = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const escText = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -121,6 +122,54 @@ function check(route, head, bodyHtml) {
   if (bodyHtml.length < 2000) fail("rendered almost no content");
 }
 
+/* ---------- share cards ---------- */
+// One 1200x630 card per page, cut from that page's own photograph around the
+// photo's focal point (see src/data/photos.js and scripts/og.mjs).
+
+const safariBySlug = new Map(safariPackages.map((s) => [s.slug, s]));
+const destinationBySlug = new Map(destinations.map((d) => [d.slug, d]));
+const defaultPhoto = [...PHOTO_META.values()][0];
+const capitalise = (v) => v.charAt(0).toUpperCase() + v.slice(1);
+
+function cardKicker(route) {
+  if (route.startsWith("/safari/")) {
+    const s = safariBySlug.get(route.slice("/safari/".length));
+    if (s) {
+      const where = s.country === "combined" ? "Kenya & Tanzania" : capitalise(s.country);
+      return `${where} · ${seo.durationLabel(s.days)}`;
+    }
+  }
+  if (route.startsWith("/destinations/")) {
+    const d = destinationBySlug.get(route.slice("/destinations/".length));
+    if (d) return `${d.country} destination`;
+  }
+  if (route.startsWith("/safaris")) return "Safari packages";
+  return "Safaris from Nairobi";
+}
+
+// Cards never show a price: it would go stale at the next rate update.
+const withoutPrice = (title) =>
+  title.replace(/\s*(?:from\s+)?\$\d[\d,]*(?:\s*(?:pp|per person))?/gi, "").trim();
+
+const cardPaths = new Set();
+async function writeShareCard(route, head) {
+  // noindex pages (the HTML sitemap, the 404) share the home card instead of getting their own.
+  if (head.robots.startsWith("noindex")) return;
+  const photoUrl = head.photo ? head.photo.replace(SITE_URL, "") : defaultPhoto.src;
+  const meta = PHOTO_META.get(photoUrl) || defaultPhoto;
+  const source = path.join("dist", decodeURIComponent(photoUrl));
+  if (!fs.existsSync(source)) throw new Error(`share card for ${route}: source photo ${photoUrl} was not built`);
+  const out = path.join("dist", head.image.replace(SITE_URL, ""));
+  await buildOgCard(source, {
+    focus: meta.focus,
+    title: withoutPrice(head.ogTitle || head.title),
+    kicker: cardKicker(route),
+    domain: SITE_URL.replace("https://", ""),
+    out,
+  });
+  cardPaths.add(out);
+}
+
 /* ---------- render every page ---------- */
 
 const pages = allPages(
@@ -139,10 +188,15 @@ for (const p of pages) {
   titles.set(result.seo.title, p.path);
   rendered.set(p.path, result);
 
+  await writeShareCard(p.path, result.seo);
+
   const out = path.join("dist", htmlFile(p.path));
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, page(result.seo, result.html));
 }
+
+// The old root-level share image URL keeps working: it now serves the home card.
+fs.copyFileSync("dist/og/home.jpg", "dist/og-image.jpeg");
 
 // 404: served by the host for any unknown URL. Never indexed.
 const notFound = await render("/this-page-does-not-exist");
@@ -186,10 +240,13 @@ if (docs.length !== expected) throw new Error(`expected ${expected} Markdown doc
 /* ---------- Image-enriched XML sitemap ---------- */
 
 const xmlEntries = pages
+  .filter((p) => p.index !== false)
   .map((p) => {
     const head = rendered.get(p.path).seo;
-    const imgTag = head.image
-      ? `<image:image><image:loc>${escText(head.image)}</image:loc><image:title>${escText(head.imageAlt || head.title)}</image:title></image:image>`
+    // The page's own photograph, not the share card with text laid over it.
+    const imageUrl = head.photo || head.image;
+    const imgTag = imageUrl
+      ? `<image:image><image:loc>${escText(imageUrl)}</image:loc><image:title>${escText(head.imageAlt || head.title)}</image:title></image:image>`
       : "";
     return `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${today}</lastmod><priority>${p.priority}</priority>${imgTag}</url>`;
   })
@@ -206,5 +263,5 @@ ${xmlEntries}
 fs.writeFileSync("dist/sitemap.xml", imageSitemapXml);
 
 console.log(
-  `prerendered ${rendered.size} pages + 404; wrote ${docs.length} Markdown documents, sitemap.md, llms.txt, llms-full.txt and image-enriched sitemap.xml`,
+  `prerendered ${rendered.size} pages + 404, ${cardPaths.size} share cards; wrote ${docs.length} Markdown documents, sitemap.md, llms.txt, llms-full.txt and image-enriched sitemap.xml`,
 );

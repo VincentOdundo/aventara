@@ -9,6 +9,16 @@ import {
   ArrowRight,
 } from "lucide-react";
 import logo from "../../pages/cima_logo.png";
+import magicalKenya from "../../assets/partners/magical-kenya.png";
+import tanzaniaUnforgettable from "../../assets/partners/tanzania-unforgettable.png";
+
+// Destination and partner marks. To add another (e.g. Amref), put its logo in
+// src/assets, add it to PARTNERS in scripts/build-assets.mjs, run `npm run assets`,
+// then add one entry here.
+const PARTNER_LOGOS = [
+  { name: "Magical Kenya", href: "https://magicalkenya.com", src: magicalKenya, width: 410, height: 240 },
+  { name: "Tanzania, Unforgettable", href: "https://www.tanzaniatourism.go.tz", src: tanzaniaUnforgettable, width: 706, height: 240 },
+];
 
 export default function Footer() {
   return (
@@ -219,6 +229,38 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Destination marks */}
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-12 print:hidden">
+        <div className="border-t border-savannah-gold/15 pt-10 flex flex-col items-center gap-6">
+          <p className="text-xs font-label uppercase tracking-[0.3em] text-sunrise-yellow/90">
+            Destinations we proudly showcase
+          </p>
+          <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {PARTNER_LOGOS.map((p) => (
+              <li key={p.name}>
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={p.name}
+                  className="flex h-20 md:h-24 items-center justify-center rounded-2xl bg-white px-6 border border-savannah-gold/40 shadow-md hover:-translate-y-0.5 hover:border-savannah-gold transition-all duration-300"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.name}
+                    width={p.width}
+                    height={p.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-11 md:h-14 w-auto object-contain"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/lion.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.lionVehicle.src;
 
 
 

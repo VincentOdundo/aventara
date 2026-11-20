@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/safari-van-sunrise.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.vanSunrise.src;
 
 export const package3DayMara = {
   id: "3-day-mara",

@@ -16,6 +16,7 @@ export {
   SOCIAL_LINKS,
 } from "./data/safaris";
 export { destinations } from "./data/destinations";
+export { PHOTO_META } from "./data/photos";
 export * as company from "./data/company";
 export * as seo from "./lib/seo";
 

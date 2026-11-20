@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/nairobi/lion-safari.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.elephantTrunkUp.src;
 
 
 

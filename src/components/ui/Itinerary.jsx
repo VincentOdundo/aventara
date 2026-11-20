@@ -1,4 +1,5 @@
 import React from "react";
+import { Photo } from "./Photo";
 
 export function ItineraryDay({
   dayNum,
@@ -35,9 +36,8 @@ export function ItineraryDay({
       <div className="px-6 md:px-8 pb-8 pt-2 flex flex-col md:flex-row gap-8 items-start border-t border-savannah-gold/20">
         {image && (
           <div className="md:w-1/3 shrink-0 rounded-xl overflow-hidden h-48 border border-savannah-gold/30">
-            <img
-              className="w-full h-full object-cover"
-              alt={title}
+            <Photo
+              className="w-full h-full"
               src={image} loading="lazy" decoding="async" />
           </div>
         )}

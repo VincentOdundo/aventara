@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/lioness.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.kilimanjaro.src;
 
 export const package10DayKenyaTanzania = {
   id: "10-day-kenya-tanzania",

@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/rhino_plain.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.elephantKiliRight.src;
 
 export const package12DayKenyaTanzania = {
   id: "12-day-kenya-tanzania",

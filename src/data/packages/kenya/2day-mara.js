@@ -1,4 +1,6 @@
-import heroImg from "../../../assets/lion pack.jpeg";
+import { PHOTOS } from "../../photos";
+
+const heroImg = PHOTOS.lionPack.src;
 
 export const package2DayMara = {
   id: "2-day-mara",

@@ -33,8 +33,11 @@
     />
     <meta
       property="og:image"
-      content="https://cimabravasafaris.co.ke/og-image.jpeg"
+      content="https://cimabravasafaris.co.ke/og/home.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta
       property="og:image:alt"
       content="Wildlife on safari in East Africa with Cima Brava Adventures"
@@ -53,7 +56,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://cimabravasafaris.co.ke/og-image.jpeg"
+      content="https://cimabravasafaris.co.ke/og/home.jpg"
     />
     <meta
       name="twitter:image:alt"
@@ -100,7 +103,7 @@
               "@id": "https://cimabravasafaris.co.ke/#logo",
               "url": "https://cimabravasafaris.co.ke/favicon.png"
             },
-            "image": "https://cimabravasafaris.co.ke/og-image.jpeg",
+            "image": "https://cimabravasafaris.co.ke/og/home.jpg",
             "email": "cimabravaadventures@gmail.com",
             "telephone": "+254112346049",
             "currenciesAccepted": "USD",
@@ -183,8 +186,18 @@
     </script>
 
     <meta name="theme-color" content="#2A1500" />
+    <!--
+      Icons: favicon.ico at the site root is the file Google and every browser
+      look for first; the PNGs are multiples of 48px as Google's favicon
+      guidance asks. scripts/build-assets.mjs regenerates all of them from
+      public/favicon.png.
+    -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Scroll-reveal content stays visible by default for crawlers and slow loads. -->
     <noscript>
