@@ -1,6 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.lionPack.src;
+const heroImg = PHOTOS.serengetiLeopardTrack.src;
 
 export const package4DayTanzania = {
   id: "4-day-tanzania",

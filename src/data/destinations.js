@@ -59,7 +59,7 @@ export const destinations = [
       "Enjoy rock climbing on cliff faces",
     ],
     bestTime: "Year-round (Perfect for active, outdoor exploration)",
-    image: P.sunsetAcacia.src,
+    image: P.impala.src,
     gallery: [P.impala.src, P.giraffeSunset.src, P.vanSunrise.src],
   },
   {
@@ -79,7 +79,7 @@ export const destinations = [
       "Soak up dramatically scenic, sunset-drenched Rift Valley views",
     ],
     bestTime: "Year-round (Exceptional birding and boating consistently)",
-    image: P.giraffeSunset.src,
+    image: P.francolin.src,
     gallery: [P.egretShore.src, P.francolin.src, P.vanSunrise.src],
   },
   {
@@ -121,7 +121,7 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Best conditions for wildlife congregation at water sources)",
-    image: P.tuskerKili.src,
+    image: P.tsavoRedElephant.src,
     gallery: [P.lionessResting.src, P.leopardRock.src, P.sunsetAcacia.src],
   },
   {
@@ -224,7 +224,7 @@ export const destinations = [
     ],
     bestTime:
       "June – October (Dry season ensures easier driving and active wildlife)",
-    image: P.lionessResting.src,
+    image: P.riftValleyFlamingo.src,
     gallery: [P.flamingoFlock.src, P.giraffeSunset.src, P.elephantTrunkUp.src],
   },
   {

@@ -9,6 +9,9 @@ import {
   allPackages,
 } from "../data/safaris";
 import { destinations } from "../data/destinations";
+import { SAFARI_CONTENT } from "../data/safariContent";
+import { DESTINATION_CONTENT } from "../data/destinationContent";
+import { HUB_CONTENT } from "../data/hubContent";
 import {
   INCLUDED,
   MAX_GUESTS_PER_VEHICLE,
@@ -78,7 +81,7 @@ export const CATEGORIES = {
   kenya: { label: "Kenya Safaris", path: "/safaris/kenya" },
   tanzania: { label: "Tanzania Safaris", path: "/safaris/tanzania" },
   combined: { label: "Kenya & Tanzania Safaris", path: "/safaris/combined" },
-  nairobi: { label: "Nairobi Day Trips", path: "/safaris/nairobi" },
+  nairobi: { label: "Nairobi Half-Day Tour", path: "/safari/half-day-nairobi-tour" },
 };
 
 /** Which collection a safari is sold under: kenya, tanzania, combined or nairobi. */
@@ -108,8 +111,15 @@ export const destinationsForSafari = (safari) =>
 export const safarisForDestination = (dest) =>
   safariPackages.filter((safari) => visits(safari, dest));
 
-/** Up to `count` other safaris from the same collection, closest in length. */
+/** Up to `count` other safaris, preferring curated editorial pairings first. */
 export function similarSafaris(safari, count = 3) {
+  const curated = SAFARI_CONTENT[safari.slug]?.relatedSlugs;
+  if (curated && curated.length) {
+    const picked = curated
+      .map((slug) => safariPackages.find((p) => p.slug === slug))
+      .filter((p) => p && p.slug !== safari.slug);
+    if (picked.length) return picked.slice(0, count);
+  }
   const category = categoryOf(safari);
   const pool =
     allPackages[category].length > 1 ? allPackages[category] : safariPackages;
@@ -208,8 +218,11 @@ export function safariQuickAnswer(safari) {
 
 const BOOKING_ANSWER = `Send your travel dates and the number of travellers on WhatsApp (${PHONE_DISPLAY}) or by email (${CONTACT_EMAIL}). We reply within 24 hours with availability, the final price and the day-by-day plan. You can cancel free of charge up to 30 days before departure.`;
 
-/** Questions a traveller asks about one safari, answered from its own data. */
+/** Questions a traveller asks about one safari, preferring bespoke route FAQs. */
 export function safariFaqs(safari) {
+  const custom = SAFARI_CONTENT[safari.slug]?.faqs;
+  if (custom && custom.length) return custom;
+
   const faqs = [
     {
       q: `How much does the ${safari.title} cost?`,
@@ -261,6 +274,12 @@ export function safariFaqs(safari) {
   return faqs;
 }
 
+/** Collection-specific FAQs for /safaris, /safaris/kenya, /safaris/tanzania, /safaris/combined. */
+export function hubFaqs(country) {
+  const entry = HUB_CONTENT[country || "all"];
+  return entry?.faqs?.length ? entry.faqs : generalFaqs();
+}
+
 /** Questions that apply to every safari, answered from the company terms. */
 export function generalFaqs() {
   const term = (title) => TERMS.find((t) => t.title === title).body;
@@ -295,8 +314,11 @@ export function generalFaqs() {
   ];
 }
 
-/** Destination-specific AEO questions derived from destination & package data. */
+/** Destination-specific AEO questions, preferring bespoke park FAQs. */
 export function destinationFaqs(dest, relatedSafaris = safarisForDestination(dest)) {
+  const custom = DESTINATION_CONTENT[dest.slug]?.faqs;
+  if (custom && custom.length) return custom;
+
   const faqs = [
     {
       q: `When is the best time to visit ${dest.name}?`,
@@ -756,7 +778,11 @@ const SAFARIS = { name: "Safaris", path: "/safaris" };
 const DESTINATIONS = { name: "Destinations", path: "/destinations" };
 
 export function safariCrumbs(safari) {
-  const category = CATEGORIES[categoryOf(safari)];
+  const catKey = categoryOf(safari);
+  const category = CATEGORIES[catKey];
+  if (catKey === "nairobi") {
+    return [HOME, SAFARIS, { name: safari.title, path: `/safari/${safari.slug}` }];
+  }
   return [
     HOME,
     SAFARIS,

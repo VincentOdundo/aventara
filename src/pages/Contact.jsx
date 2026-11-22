@@ -27,9 +27,9 @@ import {
   Instagram,
   Facebook,
   ArrowRight,
+  CheckCircle,
 } from "lucide-react";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
-import logo from "./cima_logo.png";
 
 import { Photo } from "../components/ui/Photo";
 import { PHOTOS as P } from "../data/photos";
@@ -51,9 +51,9 @@ function TikTokIcon({ size = 18 }) {
 }
 
 export default function Contact() {
-  const title = "Contact & Safari Quotes — Nairobi";
+  const title = "Contact Cima Brava Adventures — City Market, Nairobi";
   const description =
-    "Send your travel dates and group size by WhatsApp or email. We reply within 24 hours with availability, the final USD price and a day-by-day plan.";
+    "Book a Kenya or Tanzania safari directly with our City Market, Nairobi desk. WhatsApp +254 112 346 049 or email for a confirmed USD quote within 24 hours.";
   const crumbs = pageCrumbs("Contact", "/contact");
   const breadcrumb = breadcrumbLd(crumbs, "/contact");
   const faqs = contactFaqs();
@@ -62,7 +62,7 @@ export default function Contact() {
     description,
     path: "/contact",
     image: heroImg,
-    imageAlt: "Contact Cima Brava Adventures in Nairobi for safari quotes",
+    imageAlt: "Contact Cima Brava Adventures at City Market, Nairobi for safari quotes",
     jsonLd: graph(
       webPageLd({
         path: "/contact",
@@ -87,7 +87,6 @@ export default function Contact() {
     const message = formData.get("message");
     const subject = formData.get("subject");
 
-    // Redirect to WhatsApp with form details
     const waText = `🌍 *Cima Brava Adventures Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent to cimabravaadventures@gmail.com`;
     const waUrl = `https://wa.me/254112346049?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, "_blank");
@@ -99,17 +98,21 @@ export default function Contact() {
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden text-center bg-midnight-black">
         <Photo
           src={heroImg}
-          className="absolute inset-0 w-full h-full" fetchPriority="high" />
+          className="absolute inset-0 w-full h-full"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/30"></div>
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center justify-center pt-20">
           <span className="text-xs uppercase tracking-[0.4em] text-sunrise-yellow font-bold mb-3 block">
-            Get in Touch
+            City Market · Nairobi, Kenya
           </span>
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-sand-cream tracking-[-0.02em]">
-            Contact Us
+            Contact Cima Brava Adventures
           </h1>
-          <p className="font-script italic text-3xl md:text-4xl text-sunrise-yellow mt-4">
-            Wild by Nature. Guided by Heart.
+          <p className="text-sand-cream/90 font-body max-w-2xl mt-4 text-base md:text-lg">
+            Speak directly with our local safari dispatch team in Nairobi for
+            shared 4x4 group seats, private departures, and custom Kenya or
+            Tanzania quotes.
           </p>
           <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
@@ -121,16 +124,21 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <AnimatedSection animation="left">
               <span className="text-xs uppercase tracking-[0.3em] text-sunset-orange font-bold mb-3 block">
-                Bespoke Safari Planning
+                Direct Nairobi Safari Desk
               </span>
               <h2 className="text-3xl font-headline font-bold text-safari-brown mb-6">
-                Let&apos;s Plan Your Safari
+                Request a Confirmed USD Quote
               </h2>
-              <p className="text-safari-brown/80 leading-relaxed mb-10 font-body">
-                Whether you have a question about our packages, need help
-                choosing the right safari, or want a custom itinerary — we&apos;re
-                here to help. Reach out through any channel and we&apos;ll respond
-                within 24 hours.
+              <p
+                className="text-safari-brown/85 leading-relaxed mb-8 font-body"
+                data-speakable="true"
+              >
+                Cima Brava Adventures operates directly from City Market in
+                central Nairobi without overseas booking brokers. Send your
+                target dates, traveller count, and preferred parks on WhatsApp
+                or email — we check live vehicle seats and camp availability and
+                reply within 24 hours with a final per-person US dollar quote
+                and day-by-day schedule.
               </p>
 
               <div className="space-y-6">
@@ -140,7 +148,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-sm text-midnight-black">
-                      Phone
+                      Phone &amp; WhatsApp Reservations
                     </p>
                     <a
                       href="tel:+254112346049"
@@ -174,10 +182,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-sm text-midnight-black">
-                      Location
+                      Operations Base
                     </p>
                     <p className="text-safari-brown/85 text-sm">
-                      Nairobi, Kenya
+                      City Market, Muindi Mbingu Street, Nairobi, Kenya
                     </p>
                   </div>
                 </div>
@@ -188,10 +196,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-sm text-midnight-black">
-                      Response Time
+                      Response Time &amp; Departures
                     </p>
                     <p className="text-safari-brown/85 text-sm">
-                      Within 24 hours
+                      Replies within 24 hours · Daily Kenya &amp; Tanzania
+                      departures year-round
                     </p>
                   </div>
                 </div>
@@ -200,7 +209,7 @@ export default function Contact() {
               {/* Social */}
               <div className="mt-10 pt-8 border-t border-savannah-gold/25">
                 <p className="text-xs uppercase tracking-widest text-safari-brown font-bold mb-4">
-                  Follow Us
+                  Follow Our Field Updates
                 </p>
                 <div className="flex gap-3">
                   <a
@@ -245,10 +254,10 @@ export default function Contact() {
                   <span>Chat on WhatsApp</span>
                 </a>
                 <Link
-                  to="/safaris"
+                  to="/company-profile"
                   className="btn-plan w-full inline-flex items-center justify-center gap-2 border-2 border-savannah-gold text-midnight-black bg-sand-cream px-8 py-3.5 rounded-full font-bold hover:bg-savannah-gold/15 transition-all"
                 >
-                  <span>Explore Trips</span>
+                  <span>View 2026–2027 Rate Card</span>
                   <ArrowRight size={18} />
                 </Link>
               </div>
@@ -263,7 +272,7 @@ export default function Contact() {
                 className="bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-xl p-8 md:p-10"
               >
                 <h2 className="text-2xl font-headline font-bold text-safari-brown mb-8">
-                  Send Us a Message
+                  Send Us a Safari Inquiry
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -301,11 +310,11 @@ export default function Contact() {
                     name="subject"
                     className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold"
                   >
-                    <option>General Inquiry</option>
                     <option>Safari Booking</option>
-                    <option>Custom Itinerary</option>
-                    <option>Group Booking</option>
-                    <option>Partnership Inquiry</option>
+                    <option>Custom Itinerary (Tsavo / Ol Pejeta / Private)</option>
+                    <option>Kenya &amp; Tanzania Cross-Border Quote</option>
+                    <option>Nairobi Half-Day Layover Tour</option>
+                    <option>Group or Family Booking</option>
                   </select>
                 </div>
 
@@ -318,7 +327,7 @@ export default function Contact() {
                     required
                     rows="5"
                     className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold resize-none placeholder:text-safari-brown/40"
-                    placeholder="Tell us about your dream safari..."
+                    placeholder="Share your travel dates, number of travellers, shared or private 4x4 preference, and parks you want to visit..."
                   ></textarea>
                 </div>
 
@@ -330,7 +339,7 @@ export default function Contact() {
                   <span>Send via WhatsApp</span>
                 </button>
                 <p className="text-xs text-safari-brown/75 mt-3">
-                  Your message will be sent via WhatsApp or email us directly at{" "}
+                  Prefer email? Write directly to{" "}
                   <a
                     href="mailto:cimabravaadventures@gmail.com"
                     className="text-sunset-orange font-semibold underline"
@@ -341,6 +350,83 @@ export default function Contact() {
                 </p>
               </form>
             </AnimatedSection>
+          </div>
+        </div>
+
+        {/* Service Areas, Pickup Zones & Why Book Direct */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
+              Pickup &amp; Service Areas
+            </h2>
+            <p className="text-sm text-safari-brown/85 leading-relaxed mb-3">
+              All Kenya road safaris include complimentary pickup and drop-off
+              across Nairobi CBD, City Market, Westlands, Kilimani, Karen,
+              Lang&apos;ata, Wilson Airport, and Jomo Kenyatta International
+              Airport (JKIA).
+            </p>
+            <p className="text-sm text-safari-brown/85 leading-relaxed">
+              Northern Tanzania routes start from Arusha hotels, with Kilimanjaro
+              International Airport (JRO) transfers and Namanga border handovers
+              arranged on combined bookings.
+            </p>
+          </div>
+
+          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
+              What to Include for a Fast Quote
+            </h2>
+            <ul className="space-y-2 text-sm text-safari-brown/85">
+              <li className="flex items-start gap-2">
+                <CheckCircle size={15} className="text-sunset-orange mt-0.5 shrink-0" />
+                <span>Preferred start date (or travel month for low vs high season rates)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle size={15} className="text-sunset-orange mt-0.5 shrink-0" />
+                <span>Number of adults and any children (ages 0–11 qualify for child rates)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle size={15} className="text-sunset-orange mt-0.5 shrink-0" />
+                <span>Shared 4x4 group seat (max 7) or private 4x4 vehicle preference</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle size={15} className="text-sunset-orange mt-0.5 shrink-0" />
+                <span>Room setup (twin/double sharing vs private single room)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
+              Why Book Directly With Our Nairobi Desk
+            </h2>
+            <p className="text-sm text-safari-brown/85 leading-relaxed mb-3">
+              Booking directly in Nairobi cuts out overseas agency markups while
+              keeping every statutory cost transparent upfront — non-resident
+              park fees, 4x4 Land Cruiser transport, camps, and meals are stated
+              clearly in US dollars with free cancellation up to 30 days prior.
+            </p>
+            <p className="text-xs font-bold text-safari-brown space-x-2">
+              <Link to="/safaris/kenya" className="text-sunset-orange hover:underline">
+                Kenya Safaris
+              </Link>
+              <span>·</span>
+              <Link to="/safaris/tanzania" className="text-sunset-orange hover:underline">
+                Tanzania Safaris
+              </Link>
+              <span>·</span>
+              <Link to="/safaris/combined" className="text-sunset-orange hover:underline">
+                Combined Trips
+              </Link>
+              <span>·</span>
+              <Link to="/destinations/ol-pejeta" className="text-sunset-orange hover:underline">
+                Ol Pejeta
+              </Link>
+              <span>·</span>
+              <Link to="/destinations/tsavo" className="text-sunset-orange hover:underline">
+                Tsavo
+              </Link>
+            </p>
           </div>
         </div>
 

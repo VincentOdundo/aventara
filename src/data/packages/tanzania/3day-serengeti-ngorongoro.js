@@ -1,9 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.leopardTree.src;
-
-
-
+const heroImg = PHOTOS.serengetiLioness.src;
 
 export const package3DayTanzania = {
   id: "3-day-tanzania",
@@ -18,27 +15,27 @@ export const package3DayTanzania = {
   image: heroImg,
   difficulty: "Budget",
   highlights: [
-    "Endless Serengeti plains teeming with wildlife",
-    "Descent into the Ngorongoro Crater",
-    "Unmatched Big Five wildlife concentration and viewing",
-    "Landscapes of the scenic volcanic highlands",
-    "African sunsets and starlit nights",
+    "Central Serengeti Seronera plains and granite kopjes",
+    "600-meter descent onto the Ngorongoro Crater floor",
+    "High Big Five concentration including endangered black rhino",
+    "Overnight camping inside Serengeti and on the Ngorongoro rim",
+    "Picnic lunch beside Ngoitoktok Hippo Pool",
   ],
   included: [
     "Transportation in a custom pop-up roof 4x4 safari vehicle",
     "Expert, English-speaking professional driver-guide",
-    "Comfortable wilderness accommodation at selected camps",
+    "Wilderness camping at Nyani Camp (Serengeti) & Simba Campsite (Ngorongoro rim)",
     "All freshly prepared meals as per the detailed itinerary",
-    "All necessary national park entry fees and concessions",
-    "Daily comprehensive and game drives",
-    "Scenic picnic lunch in the heart of the African bush",
+    "All necessary national park entry fees, crater service fees and concessions",
+    "Daily comprehensive game drives",
+    "Scenic picnic lunch on the Ngorongoro Crater floor",
   ],
   excluded: [
     "International and domestic flights",
     "Tanzania tourist visa fees",
     "Comprehensive travel and medical insurance",
     "Personal expenses (beverages, laundry, souvenirs)",
-    "Tips and gratuities for your dedicated safari crew",
+    "Tips and gratuities for your safari guide and camp cook",
   ],
   accommodation: {
     serengeti: "Nyani Camp (Wilderness Experience)",
@@ -47,48 +44,44 @@ export const package3DayTanzania = {
   itinerary: [
     {
       day: 1,
-      title: "Arusha to Serengeti National Park - The Journey Begins",
+      title: "Arusha via Ngorongoro Highlands to Central Serengeti (Seronera)",
       description:
-        "Your adventure kicks off with an early morning departure from Arusha, charting a course toward the seemingly endless plains of the Serengeti National Park. The journey itself is a visual feast, winding through the lush, scenic highlands of the Ngorongoro Conservation Area, where you might catch your first glimpse of grazing wildlife. Following a delicious lunch, we venture deep into the Serengeti for an electrifying afternoon game drive. Get your cameras ready as we track predators, massive elephant herds, and the diverse plains game that make this UNESCO World Heritage site a true marvel of nature.",
+        "Depart Arusha around 07:00 in your custom pop-up roof 4x4 safari Land Cruiser, heading west past Mto wa Mbu's banana plantations and climbing the Great Rift Valley wall into the cool montane forest of the Ngorongoro Conservation Area. After pausing at the crater rim viewpoint for a sweeping look down into the 600-meter volcanic caldera, you descend across the Malanja Depression past Maasai bomas toward Naabi Hill Gate — the official entry point to Serengeti National Park (roughly 6 to 7 hours driving from Arusha with stops).\n\nOver a hot picnic lunch at Naabi Hill, your driver-guide completes park registration before entering the Seronera Valley for an afternoon game drive. Permanent rivers and granite kopjes make central Serengeti reliable year-round for lion prides, leopards draped across sausage tree branches, cheetahs on short-grass plains, and herds of buffalo, giraffe, and elephants. Arrive at Nyani Public Campsite before dusk for a freshly cooked dinner under Serengeti skies.",
       destination: "Serengeti National Park",
       meals: "Lunch & Dinner",
       accommodation: "Nyani Camp",
-      
       highlights: [
-        "Traverse the Ngorongoro Conservation Area",
-        "Scenery of the highlands",
-        "Inaugural afternoon game drive in the Serengeti",
+        "Traverse the Ngorongoro Conservation Area highlands",
+        "Crater rim viewpoint overlooking the caldera",
+        "Afternoon Seronera Valley game drive in Serengeti",
       ],
     },
     {
       day: 2,
-      title: "Serengeti Plains to Ngorongoro Conservation Area",
+      title: "Dawn Serengeti Game Drive & Transit to Ngorongoro Crater Rim",
       description:
-        "Wake up to the melodic sounds of the African bush! Following a hearty breakfast, embark on a comprehensive morning game drive across the Serengeti. We'll navigate the vast landscapes and open plains, seeking out the Big Five and capturing the raw, untamed beauty of the wilderness. As the day progresses, we'll slowly game-drive our way toward the Ngorongoro Conservation Area, soaking in panoramic views. By late afternoon, we'll arrive at the Ngorongoro Crater rim, where you'll settle into camp and marvel at a sunset overlooking the largest intact volcanic caldera in the world.",
+        "Wake early for tea or coffee and head out at sunrise onto the Seronera game tracks while nocturnal predators are still on the move and the plains glow gold. Spend the morning tracking lions, spotted hyena, serval, or leopards along the Seronera and Banagi riverlines before returning to camp late morning for a full cooked brunch and packing up.\n\nIn the early afternoon, game-drive slowly south-east across the short-grass plains toward Naabi Hill Gate, exiting the Serengeti and re-entering the Ngorongoro Conservation Area. By late afternoon you climb to Simba Campsite perched at roughly 2,300 meters on the crater rim — pack a warm fleece and beanie, as highland nights turn crisp quickly after sunset.",
       destination: "Ngorongoro Conservation Area",
       meals: "Breakfast, Lunch & Dinner",
       accommodation: "Simba Campsite",
-      
       highlights: [
-        "Extensive morning game drive",
-        "Wildlife on the open plains",
-        "Views from the crater rim",
+        "Sunrise game drive across Seronera river corridors",
+        "Game-viewing exit across the southern plains",
+        "Sunset camp perched on the Ngorongoro Crater rim",
       ],
     },
     {
       day: 3,
-      title: "Descent into Ngorongoro Crater & Return to Arusha",
+      title: "Ngorongoro Crater Floor Game Drive & Return to Arusha",
       description:
-        "After an early breakfast, brace yourself for the highlight of the trip as we descend 600 meters into the Ngorongoro Crater for a half-day game drive. Known as the 'Eighth Wonder of the World,' the crater boasts a unique and enclosed ecosystem harboring a dense population of wildlife, including the rare black rhino. Enjoy a picnic lunch right by the hippo pool situated within the crater floor. After savoring this experience, we'll ascend back to the rim and begin our scenic return journey to Arusha, concluding a safari adventure that will live in your memories forever.",
+        "After an early 06:00 breakfast on the misty rim, you are among the first vehicles descending the steep 600-meter Seneto track onto the 260-square-kilometer floor of the Ngorongoro Crater. Because permanent springs and grazing stay available inside the caldera walls all year, resident wildlife rarely leaves: you spend five to six focused hours scanning Lerai Fever Tree Forest for old bull elephants, open grasslands for endangered black rhinos, lion prides, crowned cranes, and Lake Magadi's alkaline shallows for flamingos.\n\nPause at Ngoitoktok Hippo Pool for a picnic lunch watching hippos wallow meters from the water's edge, then climb the ascent road early afternoon. Drive back through Karatu and Mto wa Mbu to reach Arusha around 17:00–18:00 for drop-off at your hotel or onward transfer to Kilimanjaro Airport.",
       destination: "Arusha",
       meals: "Breakfast & Lunch",
       accommodation: null,
-      
       highlights: [
-        "Dramatic 600m crater descent",
-        "Intensive half-day game drive in the caldera",
-        "Explore a globally unique ecosystem",
-        "Picnic lunch inside the crater",
+        "Early 600m descent onto the Ngorongoro Crater floor",
+        "Focused black rhino, lion and bull elephant viewing",
+        "Picnic lunch beside Ngoitoktok Hippo Pool",
       ],
     },
   ],

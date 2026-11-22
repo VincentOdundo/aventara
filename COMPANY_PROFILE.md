@@ -133,8 +133,8 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Masai Mara National Reserve | Rift Valley Views & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
-| 2 | Nairobi | Maasai Culture & Return to Nairobi | Breakfast & Lunch | Trip ends |
+| 1 | Masai Mara National Reserve | Nairobi to Masai Mara via Rift Valley & Evening Game Drive | Lunch & Dinner | Miti Mingi Eco Camp |
+| 2 | Nairobi | Early Morning Mara Game Drive, Optional Maasai Village & Return to Nairobi | Breakfast & Lunch | Trip ends |
 
 **3-Day Masai Mara Budget Safari** · 3 days · from $577
 
@@ -280,9 +280,9 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Serengeti National Park | Arusha to Serengeti National Park - The Journey Begins | Lunch & Dinner | Nyani Camp |
-| 2 | Ngorongoro Conservation Area | Serengeti Plains to Ngorongoro Conservation Area | Breakfast, Lunch & Dinner | Simba Campsite |
-| 3 | Arusha | Descent into Ngorongoro Crater & Return to Arusha | Breakfast & Lunch | Trip ends |
+| 1 | Serengeti National Park | Arusha via Ngorongoro Highlands to Central Serengeti (Seronera) | Lunch & Dinner | Nyani Camp |
+| 2 | Ngorongoro Conservation Area | Dawn Serengeti Game Drive & Transit to Ngorongoro Crater Rim | Breakfast, Lunch & Dinner | Simba Campsite |
+| 3 | Arusha | Ngorongoro Crater Floor Game Drive & Return to Arusha | Breakfast & Lunch | Trip ends |
 
 **4-Day Serengeti & Ngorongoro Safari** · 4 days · from $850
 
@@ -320,7 +320,7 @@ Every itinerary, one day at a time: where you are each day, what the day is for,
 
 | Day | Where | What | Meals | Overnight |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Nairobi | The Half-Day Nairobi City Explorer Tour | Not included | Trip ends |
+| 1 | Nairobi | Half-Day Nairobi Wildlife & City Explorer (4–5 Hours) | Not included | Trip ends |
 
 ---
 

@@ -75,13 +75,20 @@ export default function Sitemap() {
                     All Safari Packages ({safariPackages.length})
                   </Link>
                 </li>
-                {Object.entries(CATEGORIES).map(([key, cat]) => (
-                  <li key={key}>
-                    <Link to={cat.path} className="font-semibold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline">
-                      {cat.label} ({allPackages[key].length})
-                    </Link>
-                  </li>
-                ))}
+                {Object.entries(CATEGORIES)
+                  .filter(([key]) => key !== "nairobi")
+                  .map(([key, cat]) => (
+                    <li key={key}>
+                      <Link to={cat.path} className="font-semibold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline">
+                        {cat.label} ({allPackages[key].length})
+                      </Link>
+                    </li>
+                  ))}
+                <li>
+                  <Link to="/safari/half-day-nairobi-tour" className="font-semibold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline">
+                    Nairobi Half-Day Tour (1)
+                  </Link>
+                </li>
                 <li>
                   <Link to="/kenya" className="font-semibold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline">
                     Kenya Safari Guide

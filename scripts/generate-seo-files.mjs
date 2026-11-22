@@ -3,8 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { SITE_URL, allPages, markdownPath } from "./routes.mjs";
-
-const today = new Date().toISOString().slice(0, 10);
+import { lastmodForRoute } from "./lastmod.mjs";
 
 const slugsIn = (file) =>
   [...fs.readFileSync(file, "utf8").matchAll(/^\s*slug:\s*"([^"]+)"/gm)].map((m) => m[1]);
@@ -33,7 +32,7 @@ ${pages
   .filter((p) => p.index !== false)
   .map(
     (p) =>
-      `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${today}</lastmod><priority>${p.priority}</priority></url>`,
+      `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${lastmodForRoute(p.path)}</lastmod><priority>${p.priority}</priority></url>`,
   )
   .join("\n")}
 </urlset>
@@ -59,6 +58,18 @@ const header = (key, value) => ({ key, value });
 const vercel = {
   $schema: "https://openapi.vercel.sh/vercel.json",
   trailingSlash: false,
+  redirects: [
+    {
+      source: "/safaris/nairobi",
+      destination: "/safari/half-day-nairobi-tour",
+      statusCode: 301,
+    },
+    {
+      source: "/safaris/nairobi.md",
+      destination: "/safari/half-day-nairobi-tour.md",
+      statusCode: 301,
+    },
+  ],
   headers: [
     {
       source: "/(.*)",

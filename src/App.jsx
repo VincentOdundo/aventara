@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 
 // Eager load Home for fastest FCP
@@ -54,6 +54,7 @@ export function AppRoutes() {
           
           {/* Safaris */}
           <Route path="/safaris" element={<SafarisHub />} />
+          <Route path="/safaris/nairobi" element={<Navigate to="/safari/half-day-nairobi-tour" replace />} />
           <Route path="/safaris/:country" element={<SafarisHub />} />
           <Route path="/safari/:slug" element={<SafariDetail />} />
           

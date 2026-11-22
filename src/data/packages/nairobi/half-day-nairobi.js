@@ -1,6 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.nairobiGiraffes.src;
+const heroImg = PHOTOS.nairobiGiraffeSunset.src;
 
 export const packageHalfDayNairobi = {
   id: "half-day-nairobi",
@@ -13,45 +13,43 @@ export const packageHalfDayNairobi = {
   destinations: ["Nairobi"],
   price: { low: 180, high: 180 },
   image: heroImg,
-  
   difficulty: "Budget",
   highlights: [
-    "Comprehensive Nairobi City Tour",
-    "Explore cultural and historical sites",
-    "Perfect quick getaway for transit travelers",
-    "Immersive local Kenyan experience and markets",
-    "Capture photography of urban wildlife",
+    "Flexible 4-to-5-hour morning or afternoon Nairobi circuit",
+    "Pickup from Nairobi hotels, JKIA, Wilson Airport or City Market",
+    "Combine city landmarks with optional Nairobi National Park or Giraffe Centre",
+    "Visit City Market or the Maasai Market with a local Kenyan guide",
+    "Designed around international transit layovers and pre-safari free days",
   ],
   included: [
     "Professional, English-speaking local tour guide",
-    "Comfortable, air-conditioned transportation",
-    "Curated city highlights and cultural tour",
-    "Unlimited photo opportunities and guided stops",
-    "Bottled drinking water during the tour",
+    "Private air-conditioned transportation with hotel or airport pickup",
+    "Curated city highlights and cultural route tailored to your schedule",
+    "Unlimited guided photo stops across central Nairobi and Karen/Lang'ata",
+    "Chilled bottled drinking water during the tour",
   ],
   excluded: [
     "Meals and dining expenses",
-    "Entry fees to museums and wildlife parks (optional)",
+    "Optional entry tickets to wildlife parks, sanctuaries, or museums (paid directly at gate)",
     "Personal shopping and souvenirs",
-    "Tips and gratuities for your expert guide",
+    "Tips and gratuities for your guide",
   ],
   accommodation: null,
   itinerary: [
     {
       day: 1,
-      title: "The Half-Day Nairobi City Explorer Tour",
+      title: "Half-Day Nairobi Wildlife & City Explorer (4–5 Hours)",
       description:
-        "Maximize your time in Kenya with our half-day tour of Nairobi city! Dive deep into the vibrant culture, rich history, and bustling energy of East Africa's most dynamic metropolis. We'll whisk you through the beating heart of the city center, revealing hidden gems, cultural sites, lively local markets, and monumental landmarks you simply can't miss. Specially designed for discerning travelers with limited time or those on a quick transit layover, this excursion guarantees a profound connection with Nairobi's unique spirit without demanding a full day's commitment. Don't just pass through — experience the magic of Nairobi!",
+        "Choose a morning departure (07:30–12:30) or an afternoon window (13:30–18:00) with door-to-door pickup from your Nairobi hotel, Jomo Kenyatta International Airport (JKIA), Wilson Airport, or our City Market base in an air-conditioned private vehicle with your English-speaking Kenyan driver-guide and chilled bottled water.\n\nDepending on your interests and flight timing, your guide builds a smooth four-to-five-hour loop pairing central Nairobi's historic landmarks with optional wildlife sanctuaries in Lang'ata and Karen. Classic city stops include the Kenyatta International Convention Centre (KICC) rooftop terrace for 360-degree views of Nairobi's skyline and the open plains of Nairobi National Park, the Nairobi National Museum or Kenya National Archives, and City Market or the open-air Maasai Market for Kisii soapstone carvings, beaded jewelry, and Kenyan AA coffee.\n\nIf you prefer wildlife over museums, the route pivots directly into Lang'ata and Karen — where you can add a short game drive inside Nairobi National Park, hand-feed endangered Rothschild giraffes at the Giraffe Centre, or time the 11:00 public viewing hour at the Sheldrick Wildlife Trust elephant orphanage (gate tickets paid directly or pre-arranged at cost). Your guide drops you back at your hotel or JKIA with comfortable margin before your onward flight.",
       destination: "Nairobi",
       meals:
-        "None (Optional stops for authentic local cuisine or coffee can be arranged)",
+        "None (Optional stops for authentic Kenyan coffee or nyama choma lunch can be arranged)",
       accommodation: null,
-      
       highlights: [
-        "Nairobi City landmarks and skyline",
-        "Deep dive into Kenyan cultural sites",
-        "Vibrant Maasai markets and local bazaars",
-        "Photo opportunities",
+        "KICC rooftop skyline panorama & CBD heritage walk",
+        "City Market & open-air Maasai craft market stop",
+        "Optional Lang'ata wildlife loop (Nairobi National Park, Giraffe Centre, Sheldrick Trust)",
+        "Seamless hotel, JKIA or Wilson Airport drop-off",
       ],
     },
   ],

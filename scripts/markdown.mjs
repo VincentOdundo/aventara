@@ -65,7 +65,7 @@ function safariDoc(safari, ctx) {
     route && safari.days >= 1 ? `Starts in ${route.start}, ends in ${route.end}` : null,
     `Places visited: ${safari.destinations.join(", ")}`,
     stays.length ? `Overnight stays: ${stays.join(", ")}` : null,
-    `Collection: ${category.label} (${abs(category.path + ".md")})`,
+    `Collection: ${category.label} (${abs((category.path === "/safari/half-day-nairobi-tour" ? "/safaris" : category.path) + ".md")})`,
   ].filter(Boolean);
 
   const days = safari.itinerary
@@ -171,7 +171,9 @@ function hubDoc(country, ctx) {
     : Object.keys(seo.CATEGORIES).flatMap((key) => [
         `### ${seo.CATEGORIES[key].label}`,
         "",
-        `More detail: ${abs(`/safaris/${key}.md`)}`,
+        key === "nairobi"
+          ? `Direct itinerary: ${abs("/safari/half-day-nairobi-tour.md")}`
+          : `More detail: ${abs(`/safaris/${key}.md`)}`,
         "",
         table(SAFARI_HEAD, safariRows(allPackages[key], ctx)),
         "",
@@ -192,7 +194,7 @@ function hubDoc(country, ctx) {
     "",
     "## Questions and answers",
     "",
-    faqBlock(seo.generalFaqs()),
+    faqBlock(seo.hubFaqs(country)),
     footer(ctx),
   ].join("\n");
 }
@@ -532,7 +534,7 @@ export function llmsTxt(pages, docs, ctx) {
     "",
     "## Safari packages",
     "",
-    ...["/safaris/kenya", "/safaris/tanzania", "/safaris/combined", "/safaris/nairobi"].map((p) =>
+    ...["/safaris/kenya", "/safaris/tanzania", "/safaris/combined"].map((p) =>
       link(doc(p), "packages and prices in this collection"),
     ),
     ...safariPackages.map(safariLine),

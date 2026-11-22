@@ -1,6 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.lionPack.src;
+const heroImg = PHOTOS.masaiMaraMaleLion.src;
 
 export const package2DayMara = {
   id: "2-day-mara",
@@ -16,11 +16,11 @@ export const package2DayMara = {
   image: heroImg,
   difficulty: "Budget",
   highlights: [
-    "Panoramic Great Rift Valley viewpoint stop",
+    "Panoramic Great Rift Valley escarpment viewpoint stop",
     "Golden-hour evening game drive in the Masai Mara",
-    "Chance to spot lions, cheetahs, elephants & huge wildebeest herds",
-    "Authentic Maasai village cultural visit",
-    "Perfect short safari for travellers with limited time",
+    "Dawn morning game drive when lions and cheetahs are most active",
+    "Optional authentic Maasai village cultural visit",
+    "Ideal short overland safari from Nairobi for tight schedules",
   ],
   included: [
     "Shared 4x4 safari Land Cruiser with pop-up roof (max 7 people per vehicle)",
@@ -47,29 +47,30 @@ export const package2DayMara = {
   itinerary: [
     {
       day: 1,
-      title: "Rift Valley Views & Evening Game Drive",
+      title: "Nairobi to Masai Mara via Rift Valley & Evening Game Drive",
       description:
-        "Starting from Nairobi, we travel west towards the Masai Mara, enjoying beautiful views of the Great Rift Valley escarpments. Our first stop is a viewpoint overlooking the expansive valley floor below, and our second is in Narok town for a hot lunch before continuing to the camp.\n\nAfter checking in and freshening up, we head out on an evening game drive across the Mara's golden savannah – prime time for lions, cheetahs, elephants, giraffes and vast herds of zebra and wildebeest. Dinner and overnight at our fully furnished camp with hot showers and buffet meals.",
+        "Your driver-guide picks you up from your Nairobi hotel, City Market meeting point, or Jomo Kenyatta International Airport between 07:30 and 08:00 in a shared pop-up roof 4x4 safari Land Cruiser (maximum 7 guests, guaranteed window seat). Climbing out of the highlands past Limuru's tea estates, you pause at the Great Rift Valley escarpment viewpoint overlooking Mount Longonot and the volcanic valley floor before descending through Mai Mahiu.\n\nA hot Kenyan buffet lunch is served in Narok town, the main Maasai trading hub on the edge of the Loita Plains, before you continue along the Sekenani approach road to Miti Mingi Eco Camp near Ololaimutiek Gate. After checking into your en-suite canvas tent with hot shower and flushing toilet, you enter the Masai Mara National Reserve around 15:30 for a golden-hour evening game drive until 18:30 — prime hours when lions stir from shade and cheetahs scan the open plains for Thomson's gazelle and zebra.",
       destination: "Masai Mara National Reserve",
       meals: "Lunch & Dinner",
       accommodation: "Miti Mingi Eco Camp",
       highlights: [
-        "Great Rift Valley viewpoint",
-        "Lunch stop in Narok",
-        "Evening game drive in the Mara",
+        "Great Rift Valley escarpment viewpoint",
+        "Hot lunch stop in Narok town",
+        "Golden-hour evening game drive in the Mara",
       ],
     },
     {
       day: 2,
-      title: "Maasai Culture & Return to Nairobi",
+      title: "Early Morning Mara Game Drive, Optional Maasai Village & Return to Nairobi",
       description:
-        "After an early breakfast, explore Maasai culture with a visit to a traditional Maasai village and take in the rolling hills of the savannah one last time. We then depart the Masai Mara, with lunch provided en route, arriving in Nairobi in the late afternoon for drop-off at your hotel or the airport.",
+        "Rise at dawn for tea or coffee and head back into the Masai Mara National Reserve by 06:30 when temperatures are cool and big cats are still active along the Talek and Sekenani river corridors. This focused morning game drive maximizes your chances of watching lion prides, spotted hyena returning to dens, black-backed jackals, and family herds of elephants browsing acacia woodland before returning to Miti Mingi Eco Camp for a full hot breakfast.\n\nBefore leaving the Mara ecosystem, guests who add the optional US$20 Maasai village cultural visit meet elders and women at a nearby manyatta to learn about traditional beadwork, fire-making, and pastoral life. You then depart east via Narok with a hot lunch stop en route, reaching Nairobi in the late afternoon (typically 17:00–18:00) for drop-off at your hotel, residence, or JKIA.",
       destination: "Nairobi",
       meals: "Breakfast & Lunch",
       accommodation: null,
       highlights: [
-        "Traditional Maasai village visit",
-        "Scenic drive back to Nairobi",
+        "Sunrise morning game drive for active predators",
+        "Optional Maasai village visit ($20/pp)",
+        "Scenic afternoon return to Nairobi",
       ],
     },
   ],

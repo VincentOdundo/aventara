@@ -11,7 +11,6 @@ export const STATIC_PAGES = [
   { path: "/safaris/kenya", priority: "0.8", topic: "Safari packages" },
   { path: "/safaris/tanzania", priority: "0.8", topic: "Safari packages" },
   { path: "/safaris/combined", priority: "0.8", topic: "Safari packages" },
-  { path: "/safaris/nairobi", priority: "0.7", topic: "Safari packages" },
   { path: "/destinations", priority: "0.7", topic: "Destinations" },
   { path: "/kenya", priority: "0.6", topic: "Destinations" },
   { path: "/tanzania", priority: "0.6", topic: "Destinations" },

@@ -3,9 +3,9 @@ import { useSeo } from "../hooks/useSeo";
 import {
   breadcrumbLd,
   faqLd,
-  generalFaqs,
   graph,
   hubCrumbs,
+  hubFaqs,
   offerCatalogLd,
   safariListLd,
   webPageLd,
@@ -25,35 +25,52 @@ import {
   getCurrentSeason,
   getSafarisByCountry,
 } from "../data/safaris";
+import { HUB_CONTENT } from "../data/hubContent";
 import { ArrowRight, MapPin, Calendar, Filter, X, Search } from "lucide-react";
 
 import { Photo } from "../components/ui/Photo";
 import { PHOTOS as P } from "../data/photos";
 
-// Each category page opens on a photo that matches what it lists.
+// Each category hub opens on a photo matching what it lists.
 const HERO_BY_COUNTRY = {
   kenya: P.elephantKiliLeft,
   tanzania: P.leopardTree,
   combined: P.kilimanjaro,
-  nairobi: P.nairobiGiraffes,
 };
 
-const VALID_COUNTRIES = new Set(["kenya", "tanzania", "combined", "nairobi"]);
+const VALID_COUNTRIES = new Set(["kenya", "tanzania", "combined"]);
 
 export default function SafarisHub() {
   const { country } = useParams();
   const heroImg = (HERO_BY_COUNTRY[country] || P.lionPack).src;
   const [searchParams] = useSearchParams();
   const isInvalidCountry = Boolean(country && !VALID_COUNTRIES.has(country));
+  const hubKey = country || "all";
+  const hubGuide = HUB_CONTENT[hubKey] || HUB_CONTENT.all;
   const hubSeo = {
-    kenya: ["Kenya Budget Safari Packages & Prices (2–8 Days)", "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included."],
-    tanzania: ["Tanzania Budget Safari Packages & Prices (3–6 Days)", "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season."],
-    combined: ["Kenya & Tanzania Combined Safaris (10–12 Days)", "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking."],
-    nairobi: ["Nairobi Day Trips & Half-Day Tours", "Short wildlife and city outings in Nairobi for stopovers and free days. Half-day tours from $180 per person with guide, transport and bottled water."],
-  }[country] || ["Kenya & Tanzania Safari Packages & Prices", "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season."];
+    kenya: [
+      "Kenya Budget Safari Packages & Prices (2–8 Days)",
+      "Kenya budget safaris from 2 to 8 days with per-person prices for low and high season. Park fees, meals and transfers included.",
+    ],
+    tanzania: [
+      "Tanzania Budget Safari Packages & Prices (3–6 Days)",
+      "Serengeti, Ngorongoro, Tarangire and Lake Manyara safaris from 3 to 6 days, with per-person prices for low and high season.",
+    ],
+    combined: [
+      "Kenya & Tanzania Combined Safaris (10–12 Days)",
+      "Cross-border safaris from 10 to 12 days covering the Masai Mara, Amboseli, the Serengeti and Ngorongoro Crater in one booking.",
+    ],
+  }[country] || [
+    "Kenya & Tanzania Safari Packages & Prices",
+    "Every safari we run in Kenya and Tanzania, from a Nairobi half-day to 12 days across both countries, with prices for low and high season.",
+  ];
   const crumbs = isInvalidCountry ? [] : hubCrumbs(country);
-  const faqs = generalFaqs();
-  const listedSafaris = isInvalidCountry ? [] : country ? getSafarisByCountry(country) : safariPackages;
+  const faqs = isInvalidCountry ? [] : hubFaqs(country);
+  const listedSafaris = isInvalidCountry
+    ? []
+    : country
+      ? getSafarisByCountry(country)
+      : safariPackages;
   const pagePath = country ? `/safaris/${country}` : "/safaris";
   const breadcrumb = !isInvalidCountry ? breadcrumbLd(crumbs, pagePath) : null;
   useSeo(
@@ -84,7 +101,9 @@ export default function SafarisHub() {
   const season = getCurrentSeason();
   const [daysFilter, setDaysFilter] = useState("all");
   const [budgetFilter, setBudgetFilter] = useState("all");
-  const [searchQuery, setSearchQuery] = useState(() => searchParams.get("q") || "");
+  const [searchQuery, setSearchQuery] = useState(
+    () => searchParams.get("q") || "",
+  );
 
   if (isInvalidCountry) return <NotFound />;
 
@@ -95,16 +114,14 @@ export default function SafarisHub() {
         ? "Tanzania Budget Safari Packages"
         : country === "combined"
           ? "Kenya & Tanzania Combined Safaris"
-          : country === "nairobi"
-            ? "Nairobi Day Trips"
-            : "Kenya & Tanzania Safari Packages";
+          : "Kenya & Tanzania Safari Packages";
   const pageDesc = country
     ? country === "combined"
-      ? "Cross-border adventures spanning both Kenya and Tanzania."
-      : country === "nairobi"
-        ? "Quick Nairobi experiences perfect for stopovers and city explorers."
-        : `Discover the best safari experiences ${country === "kenya" ? "Kenya" : "Tanzania"} has to offer.`
-    : "From half-day Nairobi outings & 2-day Mara trips to 12-day cross-border safaris — compare rates, parks and day-by-day itineraries.";
+      ? "Cross-border overland expeditions spanning Kenya and Tanzania via Namanga in one booking."
+      : country === "kenya"
+        ? "Daily shared and private 4x4 safaris from Nairobi covering Masai Mara, Amboseli, Lake Nakuru and Lake Naivasha."
+        : "Northern Circuit 4x4 safaris from Arusha covering Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara."
+    : "From Nairobi half-day tours and 2-day Mara escapes to 12-day cross-border safaris — compare seasonal USD rates, parks and itineraries.";
 
   const baseSafaris = country ? getSafarisByCountry(country) : safariPackages;
 
@@ -157,7 +174,9 @@ export default function SafarisHub() {
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-sand-cream tracking-[-0.02em] drop-shadow-md">
             {pageTitle}
           </h1>
-          <p className="text-sand-cream/95 font-body mt-3 max-w-xl drop-shadow-sm">{pageDesc}</p>
+          <p className="text-sand-cream/95 font-body mt-3 max-w-xl drop-shadow-sm">
+            {pageDesc}
+          </p>
           <Breadcrumbs crumbs={crumbs} tone="light" className="mt-6" />
         </div>
       </section>
@@ -170,7 +189,7 @@ export default function SafarisHub() {
             { label: "Kenya", to: "/safaris/kenya" },
             { label: "Tanzania", to: "/safaris/tanzania" },
             { label: "Kenya & Tanzania", to: "/safaris/combined" },
-            { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
+            { label: "Nairobi Half-Day Tour", to: "/safari/half-day-nairobi-tour" },
           ].map((tab) => (
             <Link
               key={tab.to}
@@ -188,37 +207,31 @@ export default function SafarisHub() {
         </div>
       </section>
 
-      {/* Package Navigator */}
+      {/* Unique Collection Editorial Guide */}
       <section className="bg-sand-cream border-b border-savannah-gold/20">
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-sunset-orange font-body font-bold mb-3">
-            Jump to package
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {baseSafaris.map((pkg) => (
-              <a
-                key={pkg.id}
-                href={`#pkg-${pkg.slug}`}
-                className="px-4 py-2 rounded-full text-xs font-body font-bold bg-sand-cream border border-savannah-gold/40 text-safari-brown hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
-              >
-                {pkg.days === 0.5 ? "Half Day" : `${pkg.days}D`} · {pkg.title}
-              </a>
-            ))}
-          </div>
-          <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-body text-safari-brown/80">
-            {country === "kenya" && (
-              <Link to="/kenya" className="font-bold text-sunset-orange hover:underline underline-offset-2">
-                Read the Kenya Safari Guide &rarr;
-              </Link>
-            )}
-            {country === "tanzania" && (
-              <Link to="/tanzania" className="font-bold text-sunset-orange hover:underline underline-offset-2">
-                Read the Tanzania Safari Guide &rarr;
-              </Link>
-            )}
-            <Link to="/company-profile" className="font-bold text-safari-brown hover:text-sunset-orange hover:underline underline-offset-2">
-              Compare all 17 packages on the 2026–2027 Rate Card &rarr;
-            </Link>
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-10">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-headline font-bold text-safari-brown mb-4">
+              {hubGuide.heading}
+            </h2>
+            <div className="space-y-3 text-sm md:text-[15px] font-body text-safari-brown/85 leading-relaxed">
+              {hubGuide.paragraphs.map((p, idx) => (
+                <p key={idx} data-speakable={idx === 0 ? "true" : undefined}>
+                  {p}
+                </p>
+              ))}
+            </div>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-body">
+              {hubGuide.quickLinks.map((ql) => (
+                <Link
+                  key={ql.to}
+                  to={ql.to}
+                  className="font-bold text-sunset-orange hover:underline underline-offset-2"
+                >
+                  {ql.label} &rarr;
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -382,7 +395,7 @@ export default function SafarisHub() {
 
         <FaqSection
           faqs={faqs}
-          title="Safari prices and booking: questions and answers"
+          title={`${pageTitle}: questions and answers`}
           className="mt-20 max-w-4xl"
         />
       </Section>

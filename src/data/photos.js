@@ -35,6 +35,18 @@ import lionessRestingSrc from "../assets/crops/lioness-resting.jpg";
 import egretShoreSrc from "../assets/crops/egret-shore.jpg";
 import francolinSrc from "../assets/crops/francolin.jpg";
 import rhinosSanctuarySrc from "../assets/crops/rhinos-sanctuary.jpg";
+import masaiMaraMaleLionSrc from "../assets/crops/masai-mara-male-lion.jpg";
+import serengetiLionessSrc from "../assets/crops/serengeti-lioness-portrait.jpg";
+import ngorongoroLionessSrc from "../assets/crops/ngorongoro-lioness-yawning.jpg";
+import amboseliBullElephantSrc from "../assets/crops/amboseli-bull-elephant.jpg";
+import tsavoRedElephantSrc from "../assets/crops/tsavo-red-elephant-tusks.jpg";
+import amboseliElephantMarshSrc from "../assets/crops/amboseli-elephant-marsh.jpg";
+import tarangireElephantSrc from "../assets/crops/tarangire-elephant-tusks.jpg";
+import riftValleyFlamingoSrc from "../assets/crops/rift-valley-pink-flamingo.jpg";
+import serengetiLeopardTrackSrc from "../assets/crops/serengeti-leopard-track.jpg";
+import masaiMaraLeopardWalkSrc from "../assets/crops/masai-mara-leopard-walk.jpg";
+import nairobiGiraffeSunsetSrc from "../assets/crops/nairobi-giraffe-sunset.jpg";
+import masaiMaraLionCruiserSrc from "../assets/crops/masai-mara-lion-cruiser.jpg";
 // Tall originals, for portrait and square slots only.
 import leopardRockTallSrc from "../assets/treecheta.jpeg";
 import elephantDustSrc from "../assets/elephant.jpeg";
@@ -147,6 +159,66 @@ export const PHOTOS = {
     rhinosSanctuarySrc,
     "Two white rhinos graze on open grassland with a cattle egret on one's back",
     "35% 55%",
+  ),
+  masaiMaraMaleLion: wide(
+    masaiMaraMaleLionSrc,
+    "A male lion with a thick mane looks across tall savannah grass in the Masai Mara",
+    "50% 45%",
+  ),
+  serengetiLioness: wide(
+    serengetiLionessSrc,
+    "A lioness watches steadily from open plains during a Serengeti game drive",
+    "50% 42%",
+  ),
+  ngorongoroLioness: wide(
+    ngorongoroLionessSrc,
+    "A lioness yawns on sunlit East African plains near Ngorongoro Crater",
+    "52% 45%",
+  ),
+  amboseliBullElephant: wide(
+    amboseliBullElephantSrc,
+    "A dust-coated bull elephant with long ivory tusks stands under a clear blue sky",
+    "45% 45%",
+  ),
+  tsavoRedElephant: wide(
+    tsavoRedElephantSrc,
+    "A red-earth dusted elephant with sweeping ivory tusks browses in Tsavo bushland",
+    "50% 48%",
+  ),
+  amboseliElephantMarsh: wide(
+    amboseliElephantMarshSrc,
+    "An elephant grazes through fresh green marsh grass in East Africa",
+    "50% 48%",
+  ),
+  tarangireElephant: wide(
+    tarangireElephantSrc,
+    "A close view of a red-dusted elephant with curved tusks feeding beside green acacia shrubs",
+    "48% 45%",
+  ),
+  riftValleyFlamingo: wide(
+    riftValleyFlamingoSrc,
+    "A pink lesser flamingo wades through shallow alkaline Rift Valley lake water",
+    "48% 58%",
+  ),
+  serengetiLeopardTrack: wide(
+    serengetiLeopardTrackSrc,
+    "A leopard pads along a dry safari track past green grass beside a 4x4 vehicle",
+    "45% 48%",
+  ),
+  masaiMaraLeopardWalk: wide(
+    masaiMaraLeopardWalkSrc,
+    "A spotted leopard walks calmly across a dirt track in front of game-viewing vehicles",
+    "50% 45%",
+  ),
+  nairobiGiraffeSunset: wide(
+    nairobiGiraffeSunsetSrc,
+    "A giraffe browses acacia treetops silhouetted against a glowing orange Nairobi sunset",
+    "65% 55%",
+  ),
+  masaiMaraLionCruiser: wide(
+    masaiMaraLionCruiserSrc,
+    "A male lion strolls right alongside a green 4x4 safari Land Cruiser on open savanna plains",
+    "55% 55%",
   ),
 
   /* ---- wide, lower resolution: card and thumbnail sizes only ---- */

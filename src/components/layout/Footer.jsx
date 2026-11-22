@@ -129,7 +129,7 @@ export default function Footer() {
                 { label: "Kenya Safaris", to: "/safaris/kenya" },
                 { label: "Tanzania Safaris", to: "/safaris/tanzania" },
                 { label: "Kenya & Tanzania", to: "/safaris/combined" },
-                { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
+                { label: "Nairobi Half-Day Tour", to: "/safari/half-day-nairobi-tour" },
                 { label: "All Packages", to: "/safaris" },
               ].map((link) => (
                 <li key={link.to}>
@@ -225,7 +225,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0 text-savannah-gold" />
-                <span>Nairobi, Kenya</span>
+                <span>City Market, Nairobi, Kenya</span>
               </li>
             </ul>
           </div>

@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/safaris/nairobi",
+      "destination": "/safari/half-day-nairobi-tour",
+      "statusCode": 301
+    },
+    {
+      "source": "/safaris/nairobi.md",
+      "destination": "/safari/half-day-nairobi-tour.md",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -120,15 +132,6 @@
         {
           "key": "Link",
           "value": "<https://cimabravasafaris.co.ke/safaris/combined>; rel=\"canonical\""
-        }
-      ]
-    },
-    {
-      "source": "/safaris/nairobi.md",
-      "headers": [
-        {
-          "key": "Link",
-          "value": "<https://cimabravasafaris.co.ke/safaris/nairobi>; rel=\"canonical\""
         }
       ]
     },

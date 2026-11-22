@@ -12,7 +12,7 @@ const navLinks = [
       { label: "Kenya Safaris", to: "/safaris/kenya" },
       { label: "Tanzania Safaris", to: "/safaris/tanzania" },
       { label: "Kenya & Tanzania", to: "/safaris/combined" },
-      { label: "Nairobi Day Trips", to: "/safaris/nairobi" },
+      { label: "Nairobi Half-Day Tour", to: "/safari/half-day-nairobi-tour" },
     ],
   },
   {

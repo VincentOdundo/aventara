@@ -16,7 +16,6 @@ import {
   safariDescription,
   safariFaqs,
   safariLd,
-  safariQuickAnswer,
   safariTitle,
   similarSafaris,
   usd,
@@ -25,6 +24,7 @@ import {
 import { SeasonBadge, PriceDisplay } from "../components/ui/SeasonPrice";
 import { WhatsAppBookButton } from "../components/ui/WhatsAppCTA";
 import { getSafariBySlug, getCurrentSeason, SEASONS } from "../data/safaris";
+import { SAFARI_CONTENT } from "../data/safariContent";
 import {
   MapPin,
   Calendar,
@@ -35,6 +35,10 @@ import {
   ChevronDown,
   Users,
   Mail,
+  Compass,
+  Truck,
+  Clock,
+  Briefcase,
 } from "lucide-react";
 
 export default function SafariDetail() {
@@ -42,6 +46,7 @@ export default function SafariDetail() {
   const safari = getSafariBySlug(slug);
   const crumbs = safari ? safariCrumbs(safari) : [];
   const faqs = safari ? safariFaqs(safari) : [];
+  const editorial = safari ? SAFARI_CONTENT[safari.slug] : null;
   const safariPath = safari ? `/safari/${safari.slug}` : "/safaris";
   const breadcrumb = safari ? breadcrumbLd(crumbs, safariPath) : null;
   const title = safari ? safariTitle(safari) : "";
@@ -87,9 +92,11 @@ export default function SafariDetail() {
     safari.days === 0.5 ? "Half Day" : `${safari.days} Days`;
   const maxGroupLabel =
     safari.maxGroupSize ||
-    (safari.difficulty === "Budget" && safari.country !== "nairobi"
-      ? "Max 7"
-      : "Max 6");
+    (safari.days < 1
+      ? "Private"
+      : safari.difficulty === "Budget" && safari.country !== "nairobi"
+        ? "Max 7"
+        : "Max 6");
   const mealsLabel = safari.itinerary.every((day) => /^none/i.test(day.meals))
     ? "Not included"
     : safari.days < 1
@@ -133,22 +140,28 @@ export default function SafariDetail() {
       <section className="bg-sand-cream editorial-shadow sticky top-[64px] lg:top-[72px] z-30 border-b border-savannah-gold/25">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-8 overflow-x-auto py-3 text-sm font-body">
           <a
-            href="#itinerary"
+            href="#overview"
             className="font-bold text-sunset-orange whitespace-nowrap"
+          >
+            Overview
+          </a>
+          <a
+            href="#itinerary"
+            className="font-medium text-safari-brown hover:text-sunset-orange transition-colors whitespace-nowrap"
           >
             Itinerary
           </a>
           <a
-            href="#pricing"
+            href="#seasonal-rates"
             className="font-medium text-safari-brown hover:text-sunset-orange transition-colors whitespace-nowrap"
           >
-            Pricing
+            Seasonal Pricing
           </a>
           <a
             href="#included"
             className="font-medium text-safari-brown hover:text-sunset-orange transition-colors whitespace-nowrap"
           >
-            What's Included
+            What&apos;s Included
           </a>
           <a
             href="#booking"
@@ -171,9 +184,9 @@ export default function SafariDetail() {
             {/* Main Content */}
             <div className="lg:col-span-2">
               {/* Overview */}
-              <AnimatedSection className="mb-16">
+              <AnimatedSection id="overview" className="mb-14 scroll-mt-[120px]">
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-6">
-                  Overview
+                  Why Choose This Route
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
@@ -226,13 +239,63 @@ export default function SafariDetail() {
                   </div>
                 </div>
 
-                {/* Quick AEO Summary */}
-                <p
-                  data-speakable="true"
-                  className="mb-6 rounded-2xl border border-savannah-gold/35 bg-savannah-gold/10 px-5 py-4 text-sm leading-relaxed text-safari-brown font-body"
-                >
-                  {safariQuickAnswer(safari)}
-                </p>
+                {/* Unique Itinerary Editorial Overview */}
+                {editorial?.overviewParagraphs && (
+                  <div className="space-y-4 mb-8 text-safari-brown/90 font-body text-[15px] leading-relaxed">
+                    {editorial.overviewParagraphs.map((para, i) => (
+                      <p key={i} data-speakable={i === 0 ? "true" : undefined}>
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Contextual Inline Links to Destinations & Related Safaris */}
+                {(parks.length > 0 || related.length > 0) && (
+                  <div className="mb-8 rounded-2xl border border-savannah-gold/35 bg-savannah-gold/10 px-5 py-4 text-sm leading-relaxed text-safari-brown font-body">
+                    {editorial?.relatedCopy && (
+                      <p className="mb-2.5">{editorial.relatedCopy}</p>
+                    )}
+                    <p className="text-xs text-safari-brown/85 flex flex-wrap items-center gap-x-2 gap-y-1">
+                      {parks.length > 0 && (
+                        <>
+                          <span className="font-bold uppercase tracking-wider text-sunset-orange">
+                            Park guides:
+                          </span>
+                          {parks.map((park, idx) => (
+                            <React.Fragment key={park.slug}>
+                              <Link
+                                to={`/destinations/${park.slug}`}
+                                className="font-bold text-safari-brown underline decoration-savannah-gold underline-offset-2 hover:text-sunset-orange"
+                              >
+                                {park.name}
+                              </Link>
+                              {idx < parks.length - 1 && <span>·</span>}
+                            </React.Fragment>
+                          ))}
+                        </>
+                      )}
+                      {related.length > 0 && (
+                        <>
+                          <span className="font-bold uppercase tracking-wider text-sunset-orange ml-1">
+                            Compare routes:
+                          </span>
+                          {related.map((other, idx) => (
+                            <React.Fragment key={other.slug}>
+                              <Link
+                                to={`/safari/${other.slug}`}
+                                className="font-bold text-safari-brown underline decoration-savannah-gold underline-offset-2 hover:text-sunset-orange"
+                              >
+                                {other.title}
+                              </Link>
+                              {idx < related.length - 1 && <span>·</span>}
+                            </React.Fragment>
+                          ))}
+                        </>
+                      )}
+                    </p>
+                  </div>
+                )}
 
                 {/* Highlights */}
                 <div className="flex flex-wrap gap-3">
@@ -247,10 +310,63 @@ export default function SafariDetail() {
                 </div>
               </AnimatedSection>
 
+              {/* Always-Visible Seasonal Pricing Table (USD Per Person) */}
+              <div
+                id="seasonal-rates"
+                className="mb-14 scroll-mt-[120px] bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm"
+              >
+                <h2 className="text-2xl font-headline font-bold text-safari-brown mb-2">
+                  Per-Person Rates by Season (USD)
+                </h2>
+                <p className="text-sm font-body text-safari-brown/80 mb-5">
+                  All rates below are per person in US dollars for{" "}
+                  {safari.title}. Multi-day sharing rates apply when two or more
+                  travellers share a room or tent.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-sm font-body">
+                    <thead>
+                      <tr className="border-b border-savannah-gold/40 text-xs uppercase tracking-wider text-safari-brown/80">
+                        <th className="py-3 pr-4 font-bold">Season</th>
+                        <th className="py-3 pr-4 font-bold">Travel Dates</th>
+                        <th className="py-3 pr-4 font-bold">2+ Sharing (per person)</th>
+                        <th className="py-3 font-bold">Single Room (1 traveller)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-savannah-gold/20 text-safari-brown">
+                      <tr>
+                        <td className="py-3 pr-4 font-bold">Low Season</td>
+                        <td className="py-3 pr-4">{SEASONS.low.dates}</td>
+                        <td className="py-3 pr-4 font-bold text-sunset-orange">
+                          {usd(safari.price.low)}
+                        </td>
+                        <td className="py-3 font-semibold">
+                          {safari.singlePrice
+                            ? usd(safari.singlePrice.low)
+                            : usd(safari.price.low)}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 pr-4 font-bold">High Season</td>
+                        <td className="py-3 pr-4">{SEASONS.high.dates}</td>
+                        <td className="py-3 pr-4 font-bold text-sunset-orange">
+                          {usd(safari.price.high)}
+                        </td>
+                        <td className="py-3 font-semibold">
+                          {safari.singlePrice
+                            ? usd(safari.singlePrice.high)
+                            : usd(safari.price.high)}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               {/* Itinerary */}
               <div
                 id="itinerary"
-                className="mb-16 scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]"
+                className="mb-14 scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]"
               >
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-8">
                   Day-by-Day Itinerary
@@ -295,7 +411,7 @@ export default function SafariDetail() {
                           </div>
                         )}
                         <div className="flex-1 space-y-4">
-                          <p className="text-safari-brown/85 font-body text-sm leading-relaxed">
+                          <p className="text-safari-brown/85 font-body text-sm leading-relaxed whitespace-pre-line">
                             {day.description}
                           </p>
                           <div className="flex flex-wrap gap-3 text-xs font-body">
@@ -323,13 +439,60 @@ export default function SafariDetail() {
                 </div>
               </div>
 
+              {/* Route & Practical Logistics */}
+              {editorial?.logistics && (
+                <div className="mb-14 bg-sand-cream border border-savannah-gold/35 rounded-2xl p-6 shadow-sm">
+                  <h2 className="text-2xl font-headline font-bold text-safari-brown mb-5">
+                    Route Logistics, Vehicle &amp; Packing Notes
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm font-body text-safari-brown/85">
+                    <div className="flex items-start gap-3">
+                      <Clock size={18} className="text-sunset-orange mt-0.5 shrink-0" />
+                      <div>
+                        <h3 className="font-bold text-safari-brown mb-1">
+                          Departure &amp; Return
+                        </h3>
+                        <p>{editorial.logistics.departure}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Compass size={18} className="text-sunset-orange mt-0.5 shrink-0" />
+                      <div>
+                        <h3 className="font-bold text-safari-brown mb-1">
+                          Road Legs &amp; Distances
+                        </h3>
+                        <p>{editorial.logistics.driving}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Truck size={18} className="text-sunset-orange mt-0.5 shrink-0" />
+                      <div>
+                        <h3 className="font-bold text-safari-brown mb-1">
+                          Safari Vehicle &amp; Group Size
+                        </h3>
+                        <p>{editorial.logistics.vehicle}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Briefcase size={18} className="text-sunset-orange mt-0.5 shrink-0" />
+                      <div>
+                        <h3 className="font-bold text-safari-brown mb-1">
+                          Stays &amp; Luggage Guidance
+                        </h3>
+                        <p>{editorial.logistics.stayAndLuggage}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Included / Excluded */}
               <div
                 id="included"
                 className="scroll-mt-[120px] md:scroll-mt-[136px] lg:scroll-mt-[150px]"
               >
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-8">
-                  What's Included
+                  What&apos;s Included
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
@@ -397,7 +560,7 @@ export default function SafariDetail() {
                   )}
               </div>
 
-              {/* Questions and answers, built from this safari's own data */}
+              {/* Itinerary-Specific Questions and Answers */}
               <FaqSection
                 faqs={faqs}
                 title={`${safari.title}: questions and answers`}
@@ -432,7 +595,7 @@ export default function SafariDetail() {
                 {related.length > 0 && (
                   <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
                     <h2 className="font-headline font-bold text-lg mb-4 text-safari-brown">
-                      Similar safaris
+                      Related itineraries
                     </h2>
                     <ul className="space-y-2 text-sm font-body">
                       {related.map((other) => (

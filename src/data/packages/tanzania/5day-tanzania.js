@@ -1,6 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.elephantTrunkUp.src;
+const heroImg = PHOTOS.tarangireElephant.src;
 
 
 

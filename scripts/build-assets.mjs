@@ -32,6 +32,19 @@ const CROPS = [
   { out: "francolin", src: "nairobi/bird-exotic.jpeg", rect: [0, 290, 720, 480], width: 1200 },
   // The rhino photo has a grey screenshot bar across the top 36px.
   { out: "rhinos-sanctuary", src: "rhino_plain.jpeg", rect: [0, 440, 1104, 736], width: 1200 },
+  // Unique descriptive 3:2 landscape hero crops for individual safari & destination pages.
+  { out: "masai-mara-male-lion", src: "lion.jpeg", rect: [0, 150, 1200, 800], width: 1200 },
+  { out: "serengeti-lioness-portrait", src: "lioness.jpeg", rect: [0, 350, 979, 652], width: 1200 },
+  { out: "ngorongoro-lioness-yawning", src: "lioness_open.jpeg", rect: [0, 320, 975, 650], width: 1200 },
+  { out: "amboseli-bull-elephant", src: "elephant.jpeg", rect: [0, 260, 1258, 838], width: 1200 },
+  { out: "tsavo-red-elephant-tusks", src: "elefant-tusk.jpeg", rect: [0, 60, 720, 480], width: 1200 },
+  { out: "amboseli-elephant-marsh", src: "elefant-vegetation.jpeg", rect: [0, 320, 720, 480], width: 1200 },
+  { out: "tarangire-elephant-tusks", src: "elefant.jpeg", rect: [0, 140, 720, 480], width: 1200 },
+  { out: "rift-valley-pink-flamingo", src: "flamingo-water.jpeg", rect: [0, 560, 720, 480], width: 1200 },
+  { out: "serengeti-leopard-track", src: "leapard-car.jpeg", rect: [0, 360, 720, 480], width: 1200 },
+  { out: "masai-mara-leopard-walk", src: "cheater-safari.jpeg", rect: [0, 540, 720, 480], width: 1200 },
+  { out: "nairobi-giraffe-sunset", src: "nairobi/giraffe-sunsut.jpeg", rect: [0, 450, 720, 480], width: 1200 },
+  { out: "masai-mara-lion-cruiser", src: "nairobi/lion-safari-van.jpeg", rect: [0, 480, 720, 480], width: 1200 },
 ];
 
 for (const { out, src, rect, width } of CROPS) {

@@ -26,13 +26,14 @@ import {
   FaqSection,
 } from "../components/ui";
 import { getDestinationBySlug } from "../data/destinations";
+import { DESTINATION_CONTENT } from "../data/destinationContent";
 import { getCurrentSeason } from "../data/safaris";
-import { MapPin, ArrowRight, Sparkles, Calendar } from "lucide-react";
+import { MapPin, ArrowRight, Sparkles, Calendar, Compass, Sun } from "lucide-react";
 
 export default function DestinationDetail() {
   const { slug } = useParams();
   const dest = getDestinationBySlug(slug);
-  // Safaris that actually visit this destination
+  const editorial = dest ? DESTINATION_CONTENT[dest.slug] : null;
   const relatedSafaris = dest ? safarisForDestination(dest) : [];
   const crumbs = dest ? destinationCrumbs(dest) : [];
   const faqs = dest ? destinationFaqs(dest, relatedSafaris) : [];
@@ -139,21 +140,24 @@ export default function DestinationDetail() {
           <div className="lg:col-span-2">
             <AnimatedSection>
               <span className="text-xs uppercase tracking-[0.3em] text-sunset-orange font-body font-bold mb-2 block">
-                Destination Overview
+                Destination Field Guide
               </span>
               <h2 className="text-3xl md:text-4xl font-headline font-bold text-safari-brown mb-6">
                 About {dest.name}
               </h2>
-              <p className="text-safari-brown/85 font-body leading-relaxed text-lg mb-12" data-speakable="true">
-                {dest.description}
-              </p>
+              <div className="space-y-4 text-safari-brown/90 font-body leading-relaxed text-[15px] md:text-base mb-10">
+                <p data-speakable="true">{dest.description}</p>
+                {editorial?.overviewParagraphs?.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </AnimatedSection>
 
             {/* Highlights */}
             <AnimatedSection>
-              <h3 className="text-2xl md:text-3xl font-headline font-bold text-safari-brown mb-6">
-                Signature Highlights
-              </h3>
+              <h2 className="text-2xl md:text-3xl font-headline font-bold text-safari-brown mb-6">
+                Wildlife &amp; Landscape Highlights
+              </h2>
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                 {dest.highlights.map((h, idx) => (
                   <div
@@ -172,12 +176,70 @@ export default function DestinationDetail() {
               </StaggerContainer>
             </AnimatedSection>
 
+            {/* Seasons, Route Fit & Typical Day */}
+            {editorial && (
+              <AnimatedSection className="space-y-6 mb-12">
+                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+                  <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
+                    <Sun size={18} className="text-sunset-orange" />
+                    When to Visit {dest.name}
+                  </h2>
+                  <p className="text-sm text-safari-brown/90 leading-relaxed">
+                    {editorial.bestTimeDetail}
+                  </p>
+                </div>
+
+                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+                  <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
+                    <Compass size={18} className="text-sunset-orange" />
+                    Distances &amp; How {dest.name} Fits a Safari Route
+                  </h2>
+                  <p className="text-sm text-safari-brown/90 leading-relaxed mb-4">
+                    {editorial.routeFit}
+                  </p>
+                  {editorial.nearbyLinks?.length > 0 && (
+                    <div className="pt-3 border-t border-savannah-gold/20">
+                      <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-2">
+                        Parks commonly paired with {dest.name}
+                      </p>
+                      <ul className="space-y-1.5 text-sm">
+                        {editorial.nearbyLinks.map((nb) => (
+                          <li key={nb.slug}>
+                            <Link
+                              to={`/destinations/${nb.slug}`}
+                              className="font-bold text-safari-brown underline decoration-savannah-gold underline-offset-2 hover:text-sunset-orange"
+                            >
+                              {nb.label}
+                            </Link>
+                            <span className="text-safari-brown/80">
+                              {" "}
+                              — {nb.note}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+                  <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
+                    <Calendar size={18} className="text-sunset-orange" />
+                    What a Typical Day in {dest.name} Looks Like
+                  </h2>
+                  <p className="text-sm text-safari-brown/90 leading-relaxed">
+                    {editorial.typicalDay}
+                  </p>
+                </div>
+              </AnimatedSection>
+            )}
+
             {/* Gallery */}
             {dest.gallery && dest.gallery.length > 0 && (
               <AnimatedSection>
-                <h3 className="text-2xl font-headline font-bold text-safari-brown mb-6">
-                  Gallery
-                </h3>
+                <h2 className="text-2xl font-headline font-bold text-safari-brown mb-6">
+                  Scenes from {dest.name}
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {dest.gallery.map((img, idx) => (
                     <div
@@ -208,7 +270,7 @@ export default function DestinationDetail() {
               {/* Quick Info */}
               <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
                 <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
-                  Quick Info
+                  Quick Facts
                 </h2>
                 <div className="space-y-4 text-sm font-body">
                   <div className="flex items-start gap-3">
@@ -238,22 +300,22 @@ export default function DestinationDetail() {
                     to="/contact"
                     className="btn-plan w-full border-2 border-savannah-gold text-midnight-black hover:bg-savannah-gold/15 font-body font-bold rounded-full py-3 px-6 text-sm inline-flex items-center justify-center gap-2 transition-all"
                   >
-                    Plan Your Adventure
+                    Request a Custom Quote
                   </Link>
                   <Link
                     to="/destinations"
                     className="btn-destinations w-full bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream font-body font-semibold rounded-full py-3 px-6 text-sm inline-flex items-center justify-center gap-2 hover:brightness-110 transition-all"
                   >
-                    View Destinations <ArrowRight size={14} />
+                    All Destinations <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>
 
               {/* Related Safaris */}
-              {relatedSafaris.length > 0 && (
+              {relatedSafaris.length > 0 ? (
                 <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
                   <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
-                    Safaris featuring {dest.name}
+                    Safaris visiting {dest.name}
                   </h2>
                   <div className="space-y-3 font-body">
                     {relatedSafaris.map((safari) => (
@@ -283,7 +345,38 @@ export default function DestinationDetail() {
                     to="/safaris"
                     className="btn-explore w-full bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black text-sm font-body font-bold rounded-full py-3 px-6 mt-5 inline-flex items-center justify-center gap-2 shadow-md hover:brightness-105 transition-all"
                   >
-                    Explore Trips <ArrowRight size={15} />
+                    Compare All Safaris <ArrowRight size={15} />
+                  </Link>
+                </div>
+              ) : (
+                <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
+                  <h2 className="font-headline font-bold text-lg text-safari-brown mb-3">
+                    Custom Private {dest.name} Safaris
+                  </h2>
+                  <p className="text-sm text-safari-brown/80 leading-relaxed mb-4">
+                    We organize private 4x4 itineraries to {dest.name} from
+                    Nairobi tailored to your dates, group size, and preferred
+                    camps — often paired with{" "}
+                    <Link
+                      to="/safari/3-day-amboseli-budget"
+                      className="font-bold text-sunset-orange hover:underline"
+                    >
+                      Amboseli
+                    </Link>{" "}
+                    or the{" "}
+                    <Link
+                      to="/safari/3-day-masai-mara-budget"
+                      className="font-bold text-sunset-orange hover:underline"
+                    >
+                      Masai Mara
+                    </Link>
+                    .
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="btn-explore w-full bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black text-sm font-body font-bold rounded-full py-3 px-6 inline-flex items-center justify-center gap-2 shadow-md hover:brightness-105 transition-all"
+                  >
+                    Ask for a 24h Quote <ArrowRight size={15} />
                   </Link>
                 </div>
               )}

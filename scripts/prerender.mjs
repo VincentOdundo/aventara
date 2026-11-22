@@ -12,6 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { SITE_URL, allPages, htmlFile, markdownPath } from "./routes.mjs";
+import { lastmodForRoute } from "./lastmod.mjs";
 import { buildOgCard } from "./og.mjs";
 import {
   buildDocuments,
@@ -248,7 +249,7 @@ const xmlEntries = pages
     const imgTag = imageUrl
       ? `<image:image><image:loc>${escText(imageUrl)}</image:loc><image:title>${escText(head.imageAlt || head.title)}</image:title></image:image>`
       : "";
-    return `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${today}</lastmod><priority>${p.priority}</priority>${imgTag}</url>`;
+    return `  <url><loc>${SITE_URL}${p.path}</loc><lastmod>${lastmodForRoute(p.path)}</lastmod><priority>${p.priority}</priority>${imgTag}</url>`;
   })
   .join("\n");
 

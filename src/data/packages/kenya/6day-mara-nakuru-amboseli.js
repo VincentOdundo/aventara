@@ -1,6 +1,6 @@
 import { PHOTOS } from "../../photos";
 
-const heroImg = PHOTOS.elephantKiliRight.src;
+const heroImg = PHOTOS.amboseliBullElephant.src;
 
 export const package6DayMaraNakuruAmboseli = {
   id: "6-day-mara-nakuru-amboseli",

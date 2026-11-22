@@ -19,12 +19,10 @@ import { ArrowRight } from "lucide-react";
 import { Photo } from "../components/ui/Photo";
 import { PHOTOS as P } from "../data/photos";
 
-// Centred headline, so the hero is a calm sunset with no animal to hide behind it.
 const heroImg = P.sunsetAcacia.src;
-// The four park cards are portrait (4:5), so each gets a portrait photo of what the card says.
 const maraImg = P.leopardRockTall.src;
 const amboseliImg = P.elephantDust.src;
-const tsavoImg = P.elephantMud.src; // red-mud elephant: Tsavo's red-dusted elephants
+const tsavoImg = P.elephantMud.src;
 const olPejetaImg = P.rhinosTall.src;
 const bannerImg = P.vanSunrise.src;
 
@@ -41,7 +39,7 @@ export default function Kenya() {
     description,
     path: "/kenya",
     image: heroImg,
-    imageAlt: "Kenya safari landscape beneath Mount Kilimanjaro",
+    imageAlt: "Kenya safari acacia silhouette at sunset",
     jsonLd: graph(
       webPageLd({
         path: "/kenya",
@@ -68,35 +66,35 @@ export default function Kenya() {
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           </div>
           <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <span className="font-body font-bold uppercase tracking-[0.4em] text-xs leading-normal mb-6 inline-block text-sunrise-yellow bg-safari-brown/80 border border-savannah-gold/40 rounded-full px-5 py-1.5">
+              East Africa Field Guide
+            </span>
             <h1 className="font-headline font-bold text-5xl md:text-7xl lg:text-8xl text-sand-cream leading-none tracking-tight mb-8">
-              <span className="font-body font-bold uppercase tracking-[0.4em] text-xs leading-normal mb-6 inline-block text-sunrise-yellow bg-safari-brown/80 border border-savannah-gold/40 rounded-full px-5 py-1.5">
-                Kenya Safari Guide
-              </span>
-              <span className="block">Discover the Wild</span>
+              Kenya Safari Guide
             </h1>
-            <p className="font-body text-lg md:text-xl text-sand-cream/85 max-w-2xl mx-auto leading-relaxed mb-10">
-              Kenya remains the soul of safari. From the snow-capped peak of
-              Kilimanjaro to the golden savannahs teeming with the Great
-              Migration.
+            <p className="font-body text-lg md:text-xl text-sand-cream/90 max-w-2xl mx-auto leading-relaxed mb-10">
+              How to plan a 4x4 overland safari from Nairobi — comparing the
+              Masai Mara, Amboseli, Lake Nakuru, Lake Naivasha, Tsavo, and Ol
+              Pejeta across dry and green seasons.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/safaris/kenya"
                 className="btn-explore bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-body font-bold rounded-full px-8 py-4 shadow-lg hover:brightness-105 transition-all inline-flex items-center gap-2"
               >
-                Explore Trips <ArrowRight size={16} />
+                Kenya Safari Packages <ArrowRight size={16} />
               </Link>
               <Link
                 to="/destinations"
                 className="btn-destinations bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/30 font-body font-semibold rounded-full px-8 py-4 hover:brightness-110 transition-all inline-flex items-center gap-2"
               >
-                View Destinations <ArrowRight size={16} />
+                All Park Guides <ArrowRight size={16} />
               </Link>
               <Link
                 to="/contact"
                 className="btn-plan border-2 border-savannah-gold text-sand-cream hover:bg-savannah-gold/15 font-body font-semibold rounded-full px-8 py-4 transition-all inline-flex items-center gap-2"
               >
-                Plan Your Adventure
+                Request a Quote
               </Link>
             </div>
             <div className="mt-6 flex justify-center">
@@ -105,28 +103,93 @@ export default function Kenya() {
           </div>
         </section>
 
-        <section className="px-8 md:px-16 lg:px-24 py-24 bg-sand-cream">
+        {/* Planning Overview */}
+        <section className="px-8 md:px-16 lg:px-24 pt-20 pb-8 bg-sand-cream">
+          <div className="max-w-5xl mx-auto">
+            <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-3 block">
+              Practical Kenya Safari Planning
+            </span>
+            <h2 className="font-headline font-bold text-3xl md:text-4xl text-safari-brown mb-6">
+              Why Kenya Works So Well for Overland 4x4 Safaris
+            </h2>
+            <div className="space-y-4 text-safari-brown/90 font-body leading-relaxed text-[15px] md:text-base">
+              <p data-speakable="true">
+                Kenya&apos;s strongest advantage for travellers is geography:
+                Nairobi sits right at the centre of the country&apos;s wildlife
+                network, putting{" "}
+                <Link to="/destinations/nairobi-national-park" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Nairobi National Park
+                </Link>{" "}
+                20 minutes away,{" "}
+                <Link to="/destinations/lake-naivasha" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Lake Naivasha
+                </Link>{" "}
+                and{" "}
+                <Link to="/destinations/hells-gate" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Hell&apos;s Gate
+                </Link>{" "}
+                two hours north-west,{" "}
+                <Link to="/destinations/lake-nakuru" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Lake Nakuru
+                </Link>{" "}
+                three hours away,{" "}
+                <Link to="/destinations/amboseli" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Amboseli
+                </Link>{" "}
+                four hours south-east, and the{" "}
+                <Link to="/destinations/masai-mara" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Masai Mara
+                </Link>{" "}
+                five to six hours west on paved roads. You can link multiple
+                contrasting ecosystems in a single 4x4 Land Cruiser without
+                paying for costly bush flights.
+              </p>
+              <p>
+                From our City Market dispatch base in Nairobi, Cima Brava
+                Adventures runs daily shared 4x4 departures (capped at 7 guests
+                with guaranteed window seats) as well as private itineraries
+                covering bespoke northern and coastal sanctuaries like{" "}
+                <Link to="/destinations/ol-pejeta" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Ol Pejeta Conservancy
+                </Link>{" "}
+                and{" "}
+                <Link to="/destinations/tsavo" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
+                  Tsavo National Park
+                </Link>
+                . Every published multi-day rate already includes non-resident
+                park entry fees, en-suite camps or lodges, full-board meals, and
+                JKIA or city hotel transfers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-8 md:px-16 lg:px-24 py-16 bg-sand-cream">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7">
               <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-4 block">
-                Curated Journeys
+                Signature Parks &amp; Conservancies
               </span>
               <h2 className="font-headline font-bold text-4xl md:text-5xl text-safari-brown mb-12">
-                National Parks
+                Kenya&apos;s Key Wildlife Areas
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Link to="/destinations/masai-mara" className="group cursor-pointer block">
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
                     <Photo
                       className="w-full h-full group-hover:scale-110 transition-transform duration-700"
-                      src={maraImg} loading="lazy" decoding="async" />
+                      src={maraImg}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
-                    Maasai Mara
+                    Masai Mara
                   </h3>
                   <p className="text-safari-brown/80 font-body text-sm leading-relaxed">
-                    The stage for nature’s greatest show, where millions of
-                    wildebeest brave crocodile-infested waters.
+                    Open short-grass savannah holding Kenya&apos;s highest year-round
+                    density of lions, cheetahs, and leopards, plus July–October
+                    Mara River migration crossings.
                   </p>
                 </Link>
 
@@ -134,14 +197,18 @@ export default function Kenya() {
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
                     <Photo
                       className="w-full h-full group-hover:scale-110 transition-transform duration-700"
-                      src={amboseliImg} loading="lazy" decoding="async" />
+                      src={amboseliImg}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
                     Amboseli
                   </h3>
                   <p className="text-safari-brown/80 font-body text-sm leading-relaxed">
-                    Home to the continent's largest 'tuskers' walking in the
-                    shadow of the world's highest free-standing mountain.
+                    Over 1,600 free-ranging elephants striding across dry
+                    lakebeds and emerald swamps beneath Mount Kilimanjaro&apos;s
+                    glaciers — just 45 minutes from the Tanzania border.
                   </p>
                 </Link>
 
@@ -149,14 +216,18 @@ export default function Kenya() {
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
                     <Photo
                       className="w-full h-full group-hover:scale-110 transition-transform duration-700"
-                      src={tsavoImg} loading="lazy" decoding="async" />
+                      src={tsavoImg}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
-                    Tsavo
+                    Tsavo East &amp; West
                   </h3>
                   <p className="text-safari-brown/80 font-body text-sm leading-relaxed">
-                    A vast, wild landscape of red-dusted elephants, ancient lava
-                    flows, and endless horizons.
+                    Kenya&apos;s largest wilderness between Nairobi and Mombasa:
+                    red-dusted elephants along the Galana River, Shetani lava
+                    flows, and crystal-clear Mzima Springs on custom routes.
                   </p>
                 </Link>
 
@@ -164,96 +235,112 @@ export default function Kenya() {
                   <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
                     <Photo
                       className="w-full h-full group-hover:scale-110 transition-transform duration-700"
-                      src={olPejetaImg} loading="lazy" decoding="async" />
+                      src={olPejetaImg}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
-                    Ol Pejeta &amp; Laikipia
+                    Ol Pejeta Conservancy
                   </h3>
                   <p className="text-safari-brown/80 font-body text-sm leading-relaxed">
-                    A Laikipia conservancy hosting the last two Northern White
-                    Rhinos, a chimpanzee sanctuary and Big Five game drives.
+                    Laikipia&apos;s pioneering Big Five conservancy protecting
+                    East Africa&apos;s largest black rhino stronghold, the last
+                    two northern white rhinos, and Kenya&apos;s only chimpanzee
+                    sanctuary.
                   </p>
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 sticky top-[80px] space-y-16">
+            <div className="lg:col-span-5 sticky top-[80px] space-y-12">
               <div className="bg-surface-container-low border border-savannah-gold/25 p-10 rounded-2xl editorial-shadow">
                 <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-4 block">
-                  Curated Journeys
+                  Kenya Entry &amp; Park Fees
                 </span>
                 <h2 className="font-headline font-bold text-3xl text-safari-brown mb-6">
-                  Unique Wildlife Experiences
+                  Essential Logistics Before You Fly
                 </h2>
-                <ul className="space-y-6 font-body">
-                  <li className="flex gap-4">
-                    <span className="material-symbols-outlined material-fill text-sunset-orange">
-                      landscape
-                    </span>
-                    <div>
-                      <p className="font-semibold text-midnight-black">
-                        The Great Migration
-                      </p>
-                      <p className="text-sm text-safari-brown/80">
-                        Witness the dramatic Mara River crossings between July
-                        and October.
-                      </p>
-                    </div>
+                <ul className="space-y-5 font-body text-sm text-safari-brown/85">
+                  <li>
+                    <p className="font-semibold text-midnight-black mb-1">
+                      Kenya eTA (Electronic Travel Authorisation)
+                    </p>
+                    <p>
+                      Most international visitors must apply online at least
+                      3–5 working days before arriving at JKIA. Keep a printed
+                      or PDF approval ready at check-in.
+                    </p>
                   </li>
-                  <li className="flex gap-4">
-                    <span className="material-symbols-outlined material-fill text-sunset-orange">
-                      pets
-                    </span>
-                    <div>
-                      <p className="font-semibold text-midnight-black">
-                        Elephant Herds of Amboseli
-                      </p>
-                      <p className="text-sm text-safari-brown/80">
-                        Up-close encounters with elephant families in
-                        their marshland habitat.
-                      </p>
-                    </div>
+                  <li>
+                    <p className="font-semibold text-midnight-black mb-1">
+                      Seasonal Masai Mara Conservation Fees
+                    </p>
+                    <p>
+                      Narok County charges lower non-resident Masai Mara entry
+                      fees from January 1 to June 30 and doubles them July 1 to
+                      December 31 — explaining the low vs high season price gap.
+                    </p>
                   </li>
-                  <li className="flex gap-4">
-                    <span className="material-symbols-outlined material-fill text-sunset-orange">
-                      verified_user
-                    </span>
-                    <div>
-                      <p className="font-semibold text-midnight-black">
-                        Rhino Sanctuaries
-                      </p>
-                      <p className="text-sm text-safari-brown/80">
-                        Intimate visits to Ol Pejeta or Lake Nakuru to witness
-                        critically protected black and white rhinos.
-                      </p>
-                    </div>
+                  <li>
+                    <p className="font-semibold text-midnight-black mb-1">
+                      Combining Kenya With Tanzania or Diani Beach
+                    </p>
+                    <p>
+                      Add our{" "}
+                      <Link to="/safari/half-day-nairobi-tour" className="font-bold text-sunset-orange hover:underline">
+                        Nairobi Half-Day Tour
+                      </Link>{" "}
+                      for layovers, connect from Amboseli onto the Emali SGR
+                      train to Mombasa/Diani, or cross at Namanga on our{" "}
+                      <Link to="/safaris/combined" className="font-bold text-sunset-orange hover:underline">
+                        10–12 day Kenya &amp; Tanzania safaris
+                      </Link>
+                      .
+                    </p>
                   </li>
                 </ul>
               </div>
 
               <div>
                 <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-4 block">
-                  Curated Journeys
+                  People &amp; Landscapes
                 </span>
                 <h2 className="font-headline font-bold text-3xl text-safari-brown mb-6">
-                  Cultural Heritage
+                  Maasai Cultural Visits &amp; Rift Valley Lakes
                 </h2>
                 <p className="text-safari-brown/85 font-body leading-relaxed mb-6">
-                  Journey into the heart of the Maasai and Samburu territories.
-                  Engage with proud guardians of the savanna, learning ancient
-                  tracking skills and the wisdom of living in harmony with the
-                  wild.
+                  Beyond 4x4 game drives, every Masai Mara and Amboseli package
+                  offers an optional US$20 visit to a neighbouring Maasai
+                  manyatta, while Rift Valley itineraries add freshwater hippo
+                  cruises at Lake Naivasha and cycling among zebras in Hell&apos;s
+                  Gate.
                 </p>
                 <div className="flex -space-x-4 overflow-hidden">
-                  <Photo alt=""
+                  <Photo
+                    alt=""
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
-                    src={P.lionessFace.src} loading="lazy" decoding="async" focus="50% 38%" />
-                  <Photo alt=""
+                    src={P.lionessFace.src}
+                    loading="lazy"
+                    decoding="async"
+                    focus="50% 38%"
+                  />
+                  <Photo
+                    alt=""
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
-                    src={P.leopardRockTall.src} loading="lazy" decoding="async" focus="40% 25%" />
-                  <Photo alt=""
+                    src={P.leopardRockTall.src}
+                    loading="lazy"
+                    decoding="async"
+                    focus="40% 25%"
+                  />
+                  <Photo
+                    alt=""
                     className="inline-block h-16 w-16 rounded-full ring-4 ring-sand-cream"
-                    src={P.elephantDust.src} loading="lazy" decoding="async" focus="35% 55%" />
+                    src={P.elephantDust.src}
+                    loading="lazy"
+                    decoding="async"
+                    focus="35% 55%"
+                  />
                 </div>
               </div>
             </div>
@@ -265,10 +352,10 @@ export default function Kenya() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div className="max-w-2xl">
                 <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-4 block">
-                  Timing your Adventure
+                  Timing Your Kenya Trip
                 </span>
                 <h2 className="font-headline font-bold text-4xl md:text-5xl text-safari-brown">
-                  Best Times to Visit
+                  Best Seasons to Visit Kenya
                 </h2>
               </div>
               <div className="h-px flex-1 bg-savannah-gold/30 hidden md:block mb-4"></div>
@@ -277,31 +364,33 @@ export default function Kenya() {
               <div className="bg-surface p-10 rounded-2xl editorial-shadow border border-savannah-gold/25">
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="font-headline font-bold text-2xl text-safari-brown">
-                    Peak Season
+                    Dry &amp; Migration Peak
                   </h3>
                   <span className="font-body font-bold text-xs px-4 py-1.5 bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black rounded-full uppercase tracking-wider">
-                    June - October
+                    July – October
                   </span>
                 </div>
-                <p className="text-safari-brown/80 font-body leading-relaxed">
-                  The cooler dry season coincides with the Great Migration in
-                  the Maasai Mara. Wildlife viewing is at its easiest as animals
-                  congregate around permanent water sources.
+                <p className="text-safari-brown/85 font-body leading-relaxed">
+                  Cool, dry mornings and clear Kilimanjaro views in Amboseli
+                  coincide with over a million wildebeest and zebra crossing
+                  into the Masai Mara. Book early if travelling July–September,
+                  when high-season park fees and camp demand peak.
                 </p>
               </div>
               <div className="bg-surface p-10 rounded-2xl editorial-shadow border border-savannah-gold/25">
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="font-headline font-bold text-2xl text-safari-brown">
-                    The Green Season
+                    Value &amp; Green Season
                   </h3>
                   <span className="font-body font-bold text-xs px-4 py-1.5 bg-safari-brown text-sunrise-yellow rounded-full uppercase tracking-wider">
-                    January - March
+                    January – June
                   </span>
                 </div>
-                <p className="text-safari-brown/80 font-body leading-relaxed">
-                  A photographer’s dream with lush green landscapes and dramatic
-                  afternoon skies. Perfect for birdwatching and witnessing the
-                  calving season in many parks.
+                <p className="text-safari-brown/85 font-body leading-relaxed">
+                  January to March offers warm dry mornings, short green grass,
+                  calving plains game, and dramatically lower low-season Mara
+                  rates. April and May bring afternoon rains, lush backdrops,
+                  migratory birds, and the quietest tracks of the year.
                 </p>
               </div>
             </div>
@@ -319,12 +408,16 @@ export default function Kenya() {
                   Published Kenya Safaris from Nairobi
                 </h2>
               </div>
-              <div className="flex flex-wrap gap-3 text-xs font-body">
+              <div className="flex flex-wrap gap-2.5 text-xs font-body">
                 {[
+                  { label: "Masai Mara", to: "/destinations/masai-mara" },
+                  { label: "Amboseli", to: "/destinations/amboseli" },
                   { label: "Lake Nakuru", to: "/destinations/lake-nakuru" },
                   { label: "Lake Naivasha", to: "/destinations/lake-naivasha" },
                   { label: "Hell's Gate", to: "/destinations/hells-gate" },
                   { label: "Nairobi National Park", to: "/destinations/nairobi-national-park" },
+                  { label: "Ol Pejeta", to: "/destinations/ol-pejeta" },
+                  { label: "Tsavo", to: "/destinations/tsavo" },
                 ].map((park) => (
                   <Link
                     key={park.to}
@@ -374,7 +467,11 @@ export default function Kenya() {
           <div className="absolute inset-0 z-0">
             <Photo
               className="w-full h-full"
-              src={bannerImg} loading="lazy" decoding="async" focus="70% 90%" />
+              src={bannerImg}
+              loading="lazy"
+              decoding="async"
+              focus="70% 90%"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-midnight-black/75 via-midnight-black/20 to-midnight-black/25"></div>
           </div>
           <div className="relative z-10 text-center text-sand-cream max-w-3xl mx-auto">
@@ -382,20 +479,20 @@ export default function Kenya() {
               Wild by Nature. Guided by Heart.
             </p>
             <h2 className="font-headline font-bold text-4xl md:text-6xl mb-10 leading-tight text-sand-cream">
-              Your story in the savannah begins here.
+              Start Your Kenya Safari From Nairobi
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/safaris/kenya"
                 className="btn-explore bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black px-10 py-4 rounded-full font-body font-bold text-sm uppercase tracking-wider hover:brightness-105 transition-all shadow-xl inline-flex items-center gap-2"
               >
-                Explore Trips <ArrowRight size={16} />
+                Explore Kenya Trips <ArrowRight size={16} />
               </Link>
               <Link
                 to="/contact"
                 className="btn-plan border-2 border-savannah-gold text-sand-cream hover:bg-savannah-gold/15 px-10 py-4 rounded-full font-body font-semibold text-sm uppercase tracking-wider transition-all inline-flex items-center gap-2"
               >
-                Plan Your Adventure
+                Request a Quote
               </Link>
             </div>
           </div>
