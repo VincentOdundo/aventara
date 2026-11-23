@@ -62,7 +62,7 @@ export default function sitemap() {
   ].map((entry) => {
     const img = absImg(entry.image || HERO_BY_ROUTE[entry.path]);
     return {
-      url: `${SITE_URL}${entry.path}`,
+      url: entry.path === "/" ? SITE_URL : `${SITE_URL}${entry.path}`,
       lastModified: lastmodMap[entry.path] || "2026-11-23",
       priority: entry.priority,
       ...(img ? { images: [img] } : {}),
