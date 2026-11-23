@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Instagram,
   Mail,
@@ -8,16 +8,13 @@ import {
   ArrowUpRight,
   ArrowRight,
 } from "lucide-react";
-import logo from "../../pages/cima_logo.png";
+import logo from "../../assets/cima_logo.png";
 import magicalKenya from "../../assets/partners/magical-kenya.png";
 import tanzaniaUnforgettable from "../../assets/partners/tanzania-unforgettable.png";
 
-// Destination and partner marks. To add another (e.g. Amref), put its logo in
-// src/assets, add it to PARTNERS in scripts/build-assets.mjs, run `npm run assets`,
-// then add one entry here.
 const PARTNER_LOGOS = [
-  { name: "Magical Kenya", href: "https://magicalkenya.com", src: magicalKenya, width: 410, height: 240 },
-  { name: "Tanzania, Unforgettable", href: "https://www.tanzaniatourism.go.tz", src: tanzaniaUnforgettable, width: 706, height: 240 },
+  { name: "Magical Kenya", href: "https://magicalkenya.com", src: magicalKenya },
+  { name: "Tanzania, Unforgettable", href: "https://www.tanzaniatourism.go.tz", src: tanzaniaUnforgettable },
 ];
 
 export default function Footer() {
@@ -38,6 +35,7 @@ export default function Footer() {
                 viewBox="0 0 320 18"
                 className="w-56 md:w-72 h-4 mt-1 mx-auto md:mx-0 text-sunrise-yellow"
                 fill="none"
+                aria-hidden="true"
               >
                 <path
                   d="M4 13C78 4 195 3 316 9"
@@ -51,14 +49,14 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              to="/safaris"
+              href="/safaris"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full btn-explore bg-gradient-to-b from-sunrise-yellow to-savannah-gold text-midnight-black font-bold text-sm hover:brightness-105 transition-all"
             >
               Explore Trips
               <ArrowRight size={16} />
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-savannah-gold text-sand-cream font-bold text-sm hover:bg-savannah-gold/15 transition-all"
             >
               Plan Your Adventure
@@ -72,16 +70,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-block mb-6">
-              <img
+            <Link href="/" className="inline-block mb-6">
+              <Image
                 src={logo}
                 alt="Cima Brava Adventures"
-                className="h-16 md:h-20 lg:h-24 w-auto" loading="lazy" decoding="async" />
+                className="h-16 md:h-20 lg:h-24 w-auto"
+              />
             </Link>
             <p className="text-sand-cream/75 text-sm leading-relaxed mb-8 max-w-sm">
-              Curating East African safari expeditions that
-              connect travelers with the untamed wilderness, golden savannahs,
-              and rich heritage of Kenya and Tanzania.
+              Curating East African safari expeditions that connect travelers
+              with the untamed wilderness, golden savannahs, and rich heritage
+              of Kenya and Tanzania.
             </p>
             <div className="flex gap-3">
               <a
@@ -100,12 +99,7 @@ export default function Footer() {
                 className="w-11 h-11 rounded-full bg-sand-cream/10 border border-savannah-gold/30 text-sunrise-yellow flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all duration-300"
                 aria-label="TikTok"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.7a8.16 8.16 0 004.76 1.52V6.77a4.83 4.83 0 01-1-.08z" />
                 </svg>
               </a>
@@ -134,7 +128,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.to}>
                   <Link
-                    to={link.to}
+                    href={link.to}
                     className="text-sm text-sand-cream/75 hover:text-sunrise-yellow transition-colors flex items-center gap-1 group"
                   >
                     {link.label}
@@ -165,7 +159,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.to}>
                   <Link
-                    to={link.to}
+                    href={link.to}
                     className="text-sm text-sand-cream/75 hover:text-sunrise-yellow transition-colors"
                   >
                     {link.label}
@@ -189,7 +183,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.to}>
                   <Link
-                    to={link.to}
+                    href={link.to}
                     className="text-sm text-sand-cream/75 hover:text-sunrise-yellow transition-colors"
                   >
                     {link.label}
@@ -248,13 +242,9 @@ export default function Footer() {
                   aria-label={p.name}
                   className="flex h-20 md:h-24 items-center justify-center rounded-2xl bg-white px-6 border border-savannah-gold/40 shadow-md hover:-translate-y-0.5 hover:border-savannah-gold transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={p.src}
                     alt={p.name}
-                    width={p.width}
-                    height={p.height}
-                    loading="lazy"
-                    decoding="async"
                     className="h-11 md:h-14 w-auto object-contain"
                   />
                 </a>
@@ -271,34 +261,31 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Cima Brava Adventures. All rights
             reserved.
           </p>
-          {/* Site credit. Acid green (#CCFF00) is the BYND/LABS brand colour. */}
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-7 flex justify-center print:hidden">
-          <a
-            href="https://bynd.co.ke/labs"
-            target="_blank"
-            rel="noopener"
-            className="group inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.24em] text-sand-cream/60 hover:text-sand-cream/85 transition-colors"
-          >
-            <span>Built by</span>
-            <span className="font-bold text-[#CCFF00] px-1.5 py-0.5 -mx-0.5 ">
-              BYND/LABS
-            </span>
-          </a>
-        </div>
+          <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-7 flex justify-center print:hidden">
+            <a
+              href="https://bynd.co.ke/labs"
+              target="_blank"
+              rel="noopener"
+              className="group inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.24em] text-sand-cream/60 hover:text-sand-cream/85 transition-colors"
+            >
+              <span>Built by</span>
+              <span className="font-bold text-[#CCFF00] px-1.5 py-0.5 -mx-0.5 ">
+                BYND/LABS
+              </span>
+            </a>
+          </div>
           <div className="flex gap-6 text-xs text-sand-cream/60">
-            <Link to="/sitemap" className="hover:text-sunrise-yellow transition-colors">
+            <Link href="/sitemap" className="hover:text-sunrise-yellow transition-colors">
               Sitemap
             </Link>
-            <Link to="/contact" className="hover:text-sunrise-yellow transition-colors">
+            <Link href="/contact" className="hover:text-sunrise-yellow transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/contact" className="hover:text-sunrise-yellow transition-colors">
+            <Link href="/contact" className="hover:text-sunrise-yellow transition-colors">
               Terms of Service
             </Link>
           </div>
         </div>
-
-        
       </div>
     </footer>
   );

@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
-export function AnimatedSection({ children, className = "", animation = "up", delay = 0 }) {
+export function AnimatedSection({ children, className = "", animation = "up", delay = 0, id }) {
   const { ref, isVisible } = useScrollAnimation();
-  
+
   const animationClass = {
     up: "animate-on-scroll",
     left: "animate-on-scroll-left",
@@ -13,6 +14,7 @@ export function AnimatedSection({ children, className = "", animation = "up", de
 
   return (
     <div
+      id={id}
       ref={ref}
       className={`${animationClass} ${isVisible ? "visible" : ""} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -24,7 +26,7 @@ export function AnimatedSection({ children, className = "", animation = "up", de
 
 export function StaggerContainer({ children, className = "" }) {
   const { ref, isVisible } = useScrollAnimation();
-  
+
   return (
     <div
       ref={ref}

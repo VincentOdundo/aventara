@@ -58,8 +58,20 @@ import lionessLyingSrc from "../assets/lion-lonely.jpeg";
 import rhinosTallSrc from "../assets/rhino_plain.jpeg";
 import leopardVanSrc from "../assets/cheater-safari.jpeg";
 
-const wide = (src, alt, focus) => ({ src, alt, focus, shape: "wide" });
-const tall = (src, alt, focus) => ({ src, alt, focus, shape: "tall" });
+const wide = (img, alt, focus) => ({
+  image: img,
+  src: typeof img === "string" ? img : img.src,
+  alt,
+  focus,
+  shape: "wide",
+});
+const tall = (img, alt, focus) => ({
+  image: img,
+  src: typeof img === "string" ? img : img.src,
+  alt,
+  focus,
+  shape: "tall",
+});
 
 export const PHOTOS = {
   /* ---- wide, high resolution: safe for full-bleed heroes ---- */
@@ -293,9 +305,12 @@ export const PHOTOS = {
   ),
 };
 
-/** Meta for any imported photo URL, so <Photo> can find its focus and alt. */
+/** Meta for any imported photo URL or StaticImageData, so <Photo> can find its image, focus and alt. */
 export const PHOTO_META = new Map(
-  Object.values(PHOTOS).map((photo) => [photo.src, photo]),
+  Object.values(PHOTOS).flatMap((photo) => [
+    [photo.src, photo],
+    [photo.image, photo],
+  ]),
 );
 
 export const focusOf = (src) => PHOTO_META.get(src)?.focus;

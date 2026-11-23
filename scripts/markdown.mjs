@@ -1,11 +1,5 @@
-// Builds the Markdown versions of the public pages, /sitemap.md and /llms.txt.
-//
-// Everything here is generated from the same data modules the HTML pages use
-// (handed in from the server bundle), so a price or itinerary change reaches
-// the web page, the structured data and the Markdown in the same build.
-// These files are a publisher's reading aid for LLM clients. They are not a
-// ranking mechanism and nothing guarantees any engine fetches them.
-import { JSDOM } from "jsdom";
+// Builds the Markdown versions of the public pages, /sitemap.md, /llms.txt and /llms-full.txt
+// directly from the shared data modules (no jsdom scraping required).
 import { SITE_URL, markdownPath } from "./routes.mjs";
 
 const abs = (path) => `${SITE_URL}${path}`;
@@ -19,7 +13,6 @@ const table = (head, rows) =>
   ].join("\n");
 const bullets = (items) => items.map((i) => `- ${i}`).join("\n");
 
-/** Header block every document starts with. */
 function header({ title, purpose, path, date }) {
   return [
     `# ${title}`,
@@ -29,7 +22,7 @@ function header({ title, purpose, path, date }) {
     `- Canonical page: ${abs(path)}`,
     "- Language: English",
     `- Last generated: ${date}`,
-    "- Source: generated from the same data as the web page by Cima Brava Adventures",
+    "- Source: generated from the same data modules as the Next.js web page by Cima Brava Adventures",
     "",
   ].join("\n");
 }
@@ -39,6 +32,7 @@ const footer = (ctx) =>
     "",
     "## Contact and booking",
     "",
+    "- Office: City Market, Muindi Mbingu Street, Nairobi, Kenya",
     `- WhatsApp: ${ctx.company.PHONE_DISPLAY} (https://wa.me/${ctx.WHATSAPP_NUMBER})`,
     `- Email: ${ctx.CONTACT_EMAIL}`,
     `- All safari packages and prices: ${abs("/safaris.md")}`,
@@ -46,18 +40,18 @@ const footer = (ctx) =>
     "",
   ].join("\n");
 
-const faqBlock = (faqs) =>
-  faqs.map((f) => `### ${f.q}\n\n${f.a}`).join("\n\n");
+const faqBlock = (faqs) => faqs.map((f) => `### ${f.q}\n\n${f.a}`).join("\n\n");
 
 /* ---------- one safari ---------- */
 
 function safariDoc(safari, ctx) {
-  const { seo } = ctx;
+  const { seo, SAFARI_CONTENT } = ctx;
   const { usd, durationLabel } = seo;
   const route = seo.startAndEnd(safari);
   const stays = seo.staysOf(safari);
   const parks = seo.destinationsForSafari(safari);
   const category = seo.CATEGORIES[seo.categoryOf(safari)];
+  const editorial = SAFARI_CONTENT?.[safari.slug];
   const single = (s) => (safari.singlePrice ? usd(safari.singlePrice[s]) : "on request");
 
   const facts = [
@@ -85,10 +79,13 @@ function safariDoc(safari, ctx) {
   return [
     header({
       title: safari.title,
-      purpose: `${safari.subtitle} Price by season, day-by-day itinerary, inclusions and booking details.`,
+      purpose: `${safari.subtitle} Price by season, day-by-day itinerary, logistics, inclusions and FAQs.`,
       path: `/safari/${safari.slug}`,
-      date: ctx.date,
+      date: ctx.lastmodForRoute(`/safari/${safari.slug}`),
     }),
+    ...(editorial?.overviewParagraphs?.length
+      ? ["## Why choose this route", "", editorial.overviewParagraphs.join("\n\n"), ""]
+      : []),
     "## Price per person (US dollars)",
     "",
     table(
@@ -107,6 +104,19 @@ function safariDoc(safari, ctx) {
     "",
     bullets(facts),
     "",
+    ...(editorial?.logistics
+      ? [
+          "## Route logistics",
+          "",
+          bullets([
+            `Departure & return: ${editorial.logistics.departure}`,
+            `Road legs: ${editorial.logistics.driving}`,
+            `Vehicle: ${editorial.logistics.vehicle}`,
+            `Stays & luggage: ${editorial.logistics.stayAndLuggage}`,
+          ]),
+          "",
+        ]
+      : []),
     "## Highlights",
     "",
     bullets(safari.highlights),
@@ -160,11 +170,12 @@ const safariRows = (safaris, ctx) =>
 const SAFARI_HEAD = ["Safari", "Length", "Low season, per person", "High season, per person", "Places visited"];
 
 function hubDoc(country, ctx) {
-  const { seo, allPackages, safariPackages, SEASONS } = ctx;
+  const { seo, allPackages, safariPackages, SEASONS, HUB_CONTENT } = ctx;
   const category = seo.CATEGORIES[country];
   const safaris = country ? allPackages[country] : safariPackages;
   const path = country ? `/safaris/${country}` : "/safaris";
   const title = country ? `${category.label}: packages and prices` : "Kenya and Tanzania safari packages and prices";
+  const guide = HUB_CONTENT?.[country || "all"];
 
   const sections = country
     ? [table(SAFARI_HEAD, safariRows(safaris, ctx))]
@@ -182,10 +193,11 @@ function hubDoc(country, ctx) {
   return [
     header({
       title,
-      purpose: "Every safari in this collection with its length, per-person price for low and high season, and the places it visits. Each row links to the full itinerary.",
+      purpose: "Every safari in this collection with its length, per-person price for low and high season, and the places it visits.",
       path,
-      date: ctx.date,
+      date: ctx.lastmodForRoute(path),
     }),
+    ...(guide ? [`## ${guide.heading}`, "", guide.paragraphs.join("\n\n"), ""] : []),
     "## Packages",
     "",
     `Prices are per person in US dollars when two or more travellers share a room. ${SEASONS.low.label}: ${SEASONS.low.dates}. ${SEASONS.high.label}: ${SEASONS.high.dates}.`,
@@ -204,20 +216,34 @@ function hubDoc(country, ctx) {
 function destinationDoc(dest, ctx) {
   const safaris = ctx.seo.safarisForDestination(dest);
   const faqs = ctx.seo.destinationFaqs(dest, safaris);
+  const editorial = ctx.DESTINATION_CONTENT?.[dest.slug];
   return [
     header({
       title: `${dest.name}, ${dest.country}`,
-      purpose: `${dest.tagline}. What to expect, the best time to visit and the safaris that go there.`,
+      purpose: `${dest.tagline}. What to expect, seasons, road distances and the safaris that go there.`,
       path: `/destinations/${dest.slug}`,
-      date: ctx.date,
+      date: ctx.lastmodForRoute(`/destinations/${dest.slug}`),
     }),
     "## About",
     "",
     dest.description,
     "",
+    ...(editorial?.overviewParagraphs?.length ? [editorial.overviewParagraphs.join("\n\n"), ""] : []),
     `- Country: ${dest.country}`,
     `- Best time to visit: ${dest.bestTime}`,
     "",
+    ...(editorial
+      ? [
+          "## Seasons, Route Fit & Typical Day",
+          "",
+          `### When to visit\n\n${editorial.bestTimeDetail}`,
+          "",
+          `### Distances & route fit\n\n${editorial.routeFit}`,
+          "",
+          `### Typical day\n\n${editorial.typicalDay}`,
+          "",
+        ]
+      : []),
     "## Highlights",
     "",
     bullets(dest.highlights),
@@ -226,7 +252,7 @@ function destinationDoc(dest, ctx) {
     "",
     safaris.length
       ? table(SAFARI_HEAD, safariRows(safaris, ctx))
-      : `No published itinerary visits ${dest.name} yet. A private safari can be built on request.`,
+      : `No scheduled itinerary visits ${dest.name}. A private custom 4x4 safari from Nairobi can be quoted within 24 hours.`,
     "",
     "## Questions and answers",
     "",
@@ -239,9 +265,9 @@ function destinationsDoc(ctx) {
   return [
     header({
       title: "Safari destinations in Kenya and Tanzania",
-      purpose: "The parks and reserves on our routes, with the best time to visit each and a link to its guide.",
+      purpose: "The 12 parks and reserves on our routes, with best time to visit and links to full field guides.",
       path: "/destinations",
-      date: ctx.date,
+      date: ctx.lastmodForRoute("/destinations"),
     }),
     table(
       ["Destination", "Country", "Best time to visit", "Safaris"],
@@ -249,14 +275,18 @@ function destinationsDoc(ctx) {
         `[${d.name}](${abs(`/destinations/${d.slug}.md`)})`,
         d.country,
         d.bestTime,
-        String(ctx.seo.safarisForDestination(d).length),
+        String(ctx.seo.safarisForDestination(d).length || "Custom"),
       ]),
     ),
+    "",
+    "## Questions and answers",
+    "",
+    faqBlock(ctx.seo.destinationsHubFaqs()),
     footer(ctx),
   ].join("\n");
 }
 
-/* ---------- home ---------- */
+/* ---------- home & company / country prose docs ---------- */
 
 function homeDoc(ctx) {
   const { seo, safariPackages, company } = ctx;
@@ -265,9 +295,9 @@ function homeDoc(ctx) {
       title: "Cima Brava Adventures: Kenya and Tanzania budget safaris from Nairobi",
       purpose: "Who Cima Brava Adventures is, what every safari price includes, and where to find each package, price and park guide.",
       path: "/",
-      date: ctx.date,
+      date: ctx.lastmodForRoute("/"),
     }),
-    "Cima Brava Adventures is a Nairobi-based safari operator. We run shared and private 4x4 safaris across Kenya and Tanzania, and the per-person price we publish already covers park fees, accommodation, meals and transfers.",
+    "Cima Brava Adventures is a City Market, Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person rates cover park fees, accommodation, meals and transfers on multi-day safaris.",
     "",
     "## What every multi-day safari price includes",
     "",
@@ -300,13 +330,89 @@ function homeDoc(ctx) {
   ].join("\n");
 }
 
+function countryGuideDoc(country, ctx) {
+  const isKenya = country === "kenya";
+  const path = `/${country}`;
+  const packages = ctx.allPackages[country];
+  const parks = ctx.destinations.filter((d) => d.country === (isKenya ? "Kenya" : "Tanzania"));
+  return [
+    header({
+      title: isKenya
+        ? "Kenya Safari Guide: Parks, Seasons & Budget Trips"
+        : "Tanzania Safari Guide: Serengeti, Ngorongoro & Budget Trips",
+      purpose: isKenya
+        ? "Overland 4x4 safari planning from Nairobi across Masai Mara, Amboseli, Lake Nakuru, Naivasha, Tsavo and Ol Pejeta."
+        : "Northern Circuit 4x4 safari planning from Arusha across Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara.",
+      path,
+      date: ctx.lastmodForRoute(path),
+    }),
+    isKenya
+      ? "Nairobi sits at the hub of Kenya's park network: Nairobi National Park is 20 minutes from CBD, Lake Naivasha and Hell's Gate are 2 hours north-west, Lake Nakuru is 3 hours away, Amboseli is 4 hours south-east, and the Masai Mara is 5 to 6 hours west via Narok."
+      : "Northern Tanzania's circuit out of Arusha connects Tarangire and Lake Manyara (~2 hours west) with the Ngorongoro Crater rim (~3.5 hours) and central Serengeti Seronera plains (~6–7 hours), or combines with Kenya overland at the Namanga border.",
+    "",
+    "## Park guides",
+    "",
+    bullets(parks.map((p) => `[${p.name}](${abs(`/destinations/${p.slug}.md`)}): ${p.tagline}`)),
+    "",
+    "## Published packages",
+    "",
+    table(SAFARI_HEAD, safariRows(packages, ctx)),
+    "",
+    "## Questions and answers",
+    "",
+    faqBlock(ctx.seo.countryFaqs(country)),
+    footer(ctx),
+  ].join("\n");
+}
+
+function aboutDoc(ctx) {
+  return [
+    header({
+      title: "About Cima Brava Adventures — Nairobi Safari Operator",
+      purpose: "City Market, Nairobi operator running shared (max 7 guests per 4x4) and private safaris across Kenya and Tanzania.",
+      path: "/about",
+      date: ctx.lastmodForRoute("/about"),
+    }),
+    "Cima Brava Adventures operates directly from City Market in central Nairobi without overseas booking brokers. Every multi-day itinerary displays exact low-season (Jan 1 – Jun 30) and high-season (Jul 1 – Dec 31) US dollar rates with statutory park fees, full-board meals, accommodation, and transfers included.",
+    "",
+    "## Operating principles",
+    "",
+    bullets([
+      "Published USD pricing for both 2+ sharing and single rooms",
+      "Custom pop-up roof 4x4 Land Cruisers capped at 7 guests (guaranteed window seats)",
+      "Licensed English-speaking Kenyan and Tanzanian driver-guides",
+      "Free cancellation up to 30 days before departure",
+    ]),
+    footer(ctx),
+  ].join("\n");
+}
+
+function contactDoc(ctx) {
+  const { seo, company } = ctx;
+  return [
+    header({
+      title: "Contact Cima Brava Adventures — City Market, Nairobi",
+      purpose: "Direct WhatsApp, email, City Market Nairobi office details, pickup zones, and booking FAQs.",
+      path: "/contact",
+      date: ctx.lastmodForRoute("/contact"),
+    }),
+    bullets([
+      "Operations base: City Market, Muindi Mbingu Street, Nairobi, Kenya",
+      `Phone & WhatsApp: ${company.PHONE_DISPLAY} (https://wa.me/${ctx.WHATSAPP_NUMBER})`,
+      `Email: ${ctx.CONTACT_EMAIL}`,
+      "Pickup coverage: Nairobi CBD, City Market, Westlands, Kilimani, Karen, Lang'ata, Wilson Airport, JKIA, and Arusha hotels",
+      "Quote turnaround: Within 24 hours",
+    ]),
+    "",
+    "## Questions and answers",
+    "",
+    faqBlock(seo.contactFaqs()),
+    footer(ctx),
+  ].join("\n");
+}
+
 /* ---------- company profile ---------- */
 
-/**
- * COMPANY_PROFILE.md is hand-written prose around two data tables. The rate
- * card and the day-by-day tables are rebuilt from the package data here, so
- * the document cannot keep an old price. Returns the refreshed document.
- */
 export function refreshCompanyProfile(source, ctx) {
   const { seo, allPackages, safariPackages } = ctx;
   const { usd, durationLabel } = seo;
@@ -361,83 +467,9 @@ export function refreshCompanyProfile(source, ctx) {
   return md;
 }
 
-/* ---------- pages whose text lives in the component, not in data ---------- */
-
-/**
- * Converts a prerendered page's <main> to Markdown: headings, paragraphs,
- * list items and links. Used for the guide and company pages, where the copy
- * is written in JSX. Buttons, forms, icons and images are dropped.
- */
-export function htmlToMarkdown(html) {
-  const dom = new JSDOM(html);
-  const main = dom.window.document.querySelector("main");
-  if (!main) return "";
-  main.querySelectorAll("script, style, svg, button, form, nav, noscript, img").forEach((n) => n.remove());
-
-  const inline = (node) => {
-    let out = "";
-    for (const child of node.childNodes) {
-      if (child.nodeType === 3) out += child.textContent;
-      else if (child.nodeType === 1) {
-        const text = inline(child);
-        if (child.tagName === "A" && text.trim()) {
-          const href = child.getAttribute("href") || "";
-          const url = href.startsWith("/") ? abs(href) : href;
-          out += /^(https?:|mailto:|tel:)/.test(url) ? `[${text.trim()}](${url})` : text;
-        } else if (child.tagName === "BR") out += " ";
-        else out += ` ${text} `;
-      }
-    }
-    return out.replace(/\s+/g, " ");
-  };
-
-  const BLOCKS = { H1: "# ", H2: "## ", H3: "### ", H4: "#### ", H5: "##### ", P: "", LI: "- " };
-  const lines = [];
-  const walk = (node) => {
-    for (const child of node.childNodes) {
-      if (child.nodeType === 3) {
-        const text = child.textContent.replace(/\s+/g, " ").trim();
-        if (text.length > 1) lines.push(text);
-      } else if (child.nodeType === 1) {
-        if (child.tagName in BLOCKS) {
-          const text = inline(child).trim();
-          if (text) lines.push(BLOCKS[child.tagName] + text);
-        } else if (child.tagName === "A") {
-          const text = inline({ childNodes: [child] }).trim();
-          if (text) lines.push(text);
-        } else walk(child);
-      }
-    }
-  };
-  walk(main);
-
-  // Blank line between blocks, but keep consecutive list items together.
-  return lines
-    .map((line, i) => (i && !(line.startsWith("- ") && lines[i - 1].startsWith("- ")) ? `\n${line}` : line))
-    .join("\n");
-}
-
-function proseDoc(page, rendered, ctx) {
-  const body = htmlToMarkdown(rendered.html).replace(/^# .*\n?/m, "").trim();
-  return [
-    header({
-      title: cleanTitle(rendered.seo.title),
-      purpose: rendered.seo.description,
-      path: page.path,
-      date: ctx.date,
-    }),
-    body,
-    footer(ctx),
-  ].join("\n");
-}
-
 /* ---------- the corpus ---------- */
 
-/**
- * Returns [{ path, body, page, title, purpose }] for every page that has a
- * Markdown version. `rendered` maps a page path to its { html, seo }.
- */
-export function buildDocuments(pages, rendered, ctx) {
+export function buildDocuments(pages, metaByPath, ctx) {
   const safaris = new Map(ctx.safariPackages.map((s) => [`/safari/${s.slug}`, s]));
   const dests = new Map(ctx.destinations.map((d) => [`/destinations/${d.slug}`, d]));
   const docs = [];
@@ -445,7 +477,7 @@ export function buildDocuments(pages, rendered, ctx) {
   for (const page of pages) {
     const path = markdownPath(page);
     if (!path) continue;
-    const head = rendered.get(page.path).seo;
+    const head = metaByPath.get(page.path);
     let body;
     if (page.path === "/") body = homeDoc(ctx);
     else if (page.path === "/safaris") body = hubDoc(null, ctx);
@@ -453,8 +485,12 @@ export function buildDocuments(pages, rendered, ctx) {
     else if (safaris.has(page.path)) body = safariDoc(safaris.get(page.path), ctx);
     else if (page.path === "/destinations") body = destinationsDoc(ctx);
     else if (dests.has(page.path)) body = destinationDoc(dests.get(page.path), ctx);
+    else if (page.path === "/kenya") body = countryGuideDoc("kenya", ctx);
+    else if (page.path === "/tanzania") body = countryGuideDoc("tanzania", ctx);
+    else if (page.path === "/about") body = aboutDoc(ctx);
+    else if (page.path === "/contact") body = contactDoc(ctx);
     else if (page.path === "/company-profile") body = ctx.companyProfile;
-    else body = proseDoc(page, rendered.get(page.path), ctx);
+    else continue;
 
     docs.push({
       path,
@@ -491,7 +527,7 @@ export function sitemapMarkdown(pages, docs, ctx) {
           .filter((p) => p.topic === topic)
           .map((p) => {
             const doc = byPage.get(p.path);
-            const head = ctx.rendered.get(p.path).seo;
+            const head = ctx.metaByPath.get(p.path);
             return [
               cleanTitle(head.title),
               abs(p.path),
@@ -519,17 +555,17 @@ export function llmsTxt(pages, docs, ctx) {
   return [
     "# Cima Brava Adventures",
     "",
-    "> Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices are in US dollars and cover park fees, accommodation, meals and transfers on multi-day safaris.",
+    "> City Market, Nairobi safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices are in US dollars and cover park fees, accommodation, meals and transfers on multi-day safaris.",
     "",
-    "If you are an LLM looking for site information, use the content map to locate the relevant topic and its linked Markdown answer, or fetch /llms-full.txt for the entire rate card, itineraries and park guides in a single file. Use that document's cited sources and canonical page; if the requested information is absent, report that gap.",
+    "If you are an LLM looking for site information, use the content map to locate the relevant topic and its linked Markdown answer, or fetch /llms-full.txt for the entire rate card, itineraries and park guides in a single file.",
     "",
-    `Prices change by season: low season is ${ctx.SEASONS.low.dates} and high season is ${ctx.SEASONS.high.dates}. These files are regenerated from the live rate card on every site build (last: ${ctx.date}).`,
+    `Prices change by season: low season is ${ctx.SEASONS.low.dates} and high season is ${ctx.SEASONS.high.dates}.`,
     "",
     "## Start here",
     "",
     `- [Full LLM corpus](${abs("/llms-full.txt")}): complete rate card, every day-by-day itinerary, park guides, FAQs and terms in one file`,
     `- [Content map](${abs("/sitemap.md")}): every public page with its Markdown version and what it answers`,
-    link(doc("/safaris"), "all packages in one table with low and high season prices, plus general booking questions"),
+    link(doc("/safaris"), "all packages in one table with low and high season prices"),
     link(doc("/"), "who we are and what every safari price includes"),
     "",
     "## Safari packages",
@@ -552,7 +588,7 @@ export function llmsTxt(pages, docs, ctx) {
     "",
     link(doc("/company-profile"), "full rate card, every itinerary day by day, inclusions, terms and how to book"),
     link(doc("/about"), "who runs the safaris"),
-    link(doc("/contact"), "WhatsApp, email and how to request a quote"),
+    link(doc("/contact"), "City Market office, WhatsApp, email and how to request a quote"),
     "",
     "## Optional",
     "",
@@ -563,7 +599,6 @@ export function llmsTxt(pages, docs, ctx) {
   ].join("\n");
 }
 
-/** Single-file Markdown corpus containing every safari, park guide, rate table and FAQ. */
 export function llmsFullTxt(docs, ctx) {
   const sections = [
     "# Cima Brava Adventures — Full Knowledge Base",

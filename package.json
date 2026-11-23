@@ -2,24 +2,22 @@
   "name": "cima-brava-adventures",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "node scripts/generate-seo-files.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
-    "preview": "vite preview",
+    "dev": "next dev",
+    "build": "node scripts/build-seo-artifacts.mjs && next build",
+    "start": "next start",
     "assets": "node scripts/build-assets.mjs"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.2",
-    "@vitejs/plugin-react": "^6.0.1",
-    "jsdom": "^29.0.0",
     "sharp": "^0.35.5",
-    "tailwindcss": "^4.2.2",
-    "vite": "^8.0.1"
+    "tailwindcss": "^4.2.2"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
     "lucide-react": "^0.577.0",
+    "next": "^16.4.6",
+    "postcss": "^8.5.33",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1"
+    "react-dom": "^19.2.4"
   },
   "type": "module"
 }

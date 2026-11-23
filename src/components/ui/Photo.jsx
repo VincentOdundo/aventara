@@ -1,20 +1,59 @@
-import React from "react";
+import Image from "next/image";
 import { PHOTO_META } from "../../data/photos";
 
 /**
- * <img> that keeps the subject in frame. Looks the photo up in the registry
- * (src/data/photos.js) and applies its focal point as object-position, so the
- * same picture stays correctly cropped in a wide hero, a square card and a
- * narrow phone viewport. `alt` and `focus` can still be overridden per use.
+ * Next.js Image wrapper that keeps the wildlife subject framed cleanly across
+ * viewports using each photo's registered focal point (`focus`).
  */
-export function Photo({ src, alt, focus, className = "", style, ...rest }) {
+export function Photo({
+  src,
+  alt,
+  focus,
+  fill,
+  sizes,
+  priority,
+  fetchPriority,
+  decoding: _decoding,
+  loading: _loading,
+  className = "",
+  style,
+  ...rest
+}) {
   const meta = PHOTO_META.get(src);
+  const imgSrc = meta?.image ?? src;
+  const resolvedAlt = alt ?? meta?.alt ?? "";
+  const resolvedFocus = focus ?? meta?.focus ?? "50% 50%";
+  const isPriority = Boolean(priority || fetchPriority === "high");
+  const isFill = Boolean(fill || /\b(?:absolute|inset-0)\b/.test(className));
+  const hasBlur = Boolean(typeof imgSrc === "object" && imgSrc?.blurDataURL);
+
+  if (isFill) {
+    return (
+      <Image
+        src={imgSrc}
+        alt={resolvedAlt}
+        fill
+        sizes={sizes || "100vw"}
+        priority={isPriority}
+        placeholder={hasBlur ? "blur" : "empty"}
+        className={`object-cover ${className}`}
+        style={{ objectPosition: resolvedFocus, ...style }}
+        {...rest}
+      />
+    );
+  }
+
   return (
-    <img
-      src={src}
-      alt={alt ?? meta?.alt ?? ""}
+    <Image
+      src={imgSrc}
+      alt={resolvedAlt}
+      width={typeof imgSrc === "object" ? imgSrc.width || 1200 : 1200}
+      height={typeof imgSrc === "object" ? imgSrc.height || 800 : 800}
+      sizes={sizes || "(max-width: 768px) 100vw, 50vw"}
+      priority={isPriority}
+      placeholder={hasBlur ? "blur" : "empty"}
       className={`object-cover ${className}`}
-      style={{ objectPosition: focus ?? meta?.focus ?? "50% 50%", ...style }}
+      style={{ objectPosition: resolvedFocus, ...style }}
       {...rest}
     />
   );

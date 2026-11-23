@@ -31,8 +31,10 @@ export const durationLabel = (days) =>
   days === 0.5 ? "Half day" : `${days} days`;
 export const isoDuration = (days) =>
   days === 0.5 ? "PT4H" : `P${days}D`;
-export const absoluteUrl = (path) =>
-  /^https?:/.test(path) ? path : `${SITE_URL}${path}`;
+export const absoluteUrl = (path) => {
+  const s = typeof path === "string" ? path : path?.src || "/";
+  return /^https?:/.test(s) ? s : `${SITE_URL}${s.startsWith("/") ? s : `/${s}`}`;
+};
 
 /** Share card (og:image) for a page. Generated at build time by scripts/og.mjs. */
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 };

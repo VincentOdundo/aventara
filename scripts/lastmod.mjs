@@ -23,33 +23,33 @@ if (fs.existsSync(packageDir)) {
 }
 
 function sourceFilesForRoute(routePath) {
-  if (routePath === "/") return ["src/pages/Home.jsx", "src/data/company.js", "index.html"];
-  if (routePath === "/safaris" || routePath.startsWith("/safaris/")) {
-    return ["src/pages/SafarisHub.jsx", "src/data/hubContent.js", "src/data/packages/index.js"];
+  if (routePath === "/") return ["src/app/page.jsx", "src/data/company.js", "src/app/layout.jsx"];
+  if (routePath === "/safaris") {
+    return ["src/app/safaris/page.jsx", "src/data/hubContent.js", "src/data/packages/index.js"];
+  }
+  if (routePath.startsWith("/safaris/")) {
+    return ["src/app/safaris/[country]/page.jsx", "src/data/hubContent.js", "src/data/packages/index.js"];
   }
   if (routePath.startsWith("/safari/")) {
     const slug = routePath.slice("/safari/".length);
     const pkgFile = safariFileBySlug.get(slug);
-    return [pkgFile, "src/data/safariContent.js", "src/pages/SafariDetail.jsx"].filter(Boolean);
+    return [pkgFile, "src/data/safariContent.js", "src/app/safari/[slug]/page.jsx"].filter(Boolean);
   }
   if (routePath === "/destinations") {
-    return ["src/pages/DestinationsHub.jsx", "src/data/destinations.js"];
+    return ["src/app/destinations/page.jsx", "src/data/destinations.js"];
   }
   if (routePath.startsWith("/destinations/")) {
-    return ["src/data/destinations.js", "src/data/destinationContent.js", "src/pages/DestinationDetail.jsx"];
+    return ["src/data/destinations.js", "src/data/destinationContent.js", "src/app/destinations/[slug]/page.jsx"];
   }
-  if (routePath === "/kenya") return ["src/pages/Kenya.jsx"];
-  if (routePath === "/tanzania") return ["src/pages/Tanzania.jsx"];
-  if (routePath === "/company-profile") return ["src/pages/CompanyProfile.jsx", "COMPANY_PROFILE.md"];
-  if (routePath === "/about") return ["src/pages/About.jsx", "src/data/company.js"];
-  if (routePath === "/contact") return ["src/pages/Contact.jsx", "src/data/company.js"];
-  if (routePath === "/gallery") return ["src/pages/Gallery.jsx", "src/data/photos.js"];
-  return ["src/App.jsx"];
+  if (routePath === "/kenya") return ["src/app/kenya/page.jsx"];
+  if (routePath === "/tanzania") return ["src/app/tanzania/page.jsx"];
+  if (routePath === "/company-profile") return ["src/app/company-profile/page.jsx", "COMPANY_PROFILE.md"];
+  if (routePath === "/about") return ["src/app/about/page.jsx", "src/data/company.js"];
+  if (routePath === "/contact") return ["src/app/contact/page.jsx", "src/data/company.js"];
+  if (routePath === "/gallery") return ["src/app/gallery/page.jsx", "src/data/photos.js"];
+  return ["src/app/layout.jsx"];
 }
 
-// Track files with uncommitted local changes so freshly edited routes get
-// their working-tree modification date while untouched routes keep their last
-// real commit date.
 const dirtyFiles = new Set();
 try {
   const out = execFileSync("git", ["status", "--porcelain"], { encoding: "utf8" });
@@ -59,7 +59,7 @@ try {
     dirtyFiles.add(file);
   }
 } catch {
-  // Outside git (e.g. shallow tarball deploy); mtime fallback handles it.
+  // Outside git; mtime fallback handles it.
 }
 
 const gitDateCache = new Map();

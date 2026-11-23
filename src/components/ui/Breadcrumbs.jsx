@@ -1,10 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 /**
- * Visible breadcrumb trail. Takes the same list the page passes to
- * breadcrumbLd(), so what readers see and what the markup says stay equal.
+ * Visible breadcrumb trail. Matches breadcrumbLd() 1:1.
  * `tone="light"` is for use over dark hero images.
  */
 export function Breadcrumbs({ crumbs, tone = "dark", className = "" }) {
@@ -33,7 +31,7 @@ export function Breadcrumbs({ crumbs, tone = "dark", className = "" }) {
               ) : (
                 <>
                   <Link
-                    to={crumb.path}
+                    href={crumb.path}
                     className={`underline-offset-2 hover:underline ${
                       light ? "hover:text-sand-cream" : "hover:text-sunset-orange"
                     }`}

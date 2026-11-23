@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function Button({
   children,
@@ -42,7 +41,7 @@ export function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link href={to} className={classes} {...props}>
         {children}
       </Link>
     );
