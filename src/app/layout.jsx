@@ -6,7 +6,7 @@ import { WhatsAppFloat } from "../components/ui/WhatsAppCTA";
 import { JsonLd } from "../components/seo/JsonLd";
 import { ORG_ID, SITE_NAME, SITE_URL, WEBSITE_ID, ogImageUrl, usd } from "../lib/seo";
 import { CONTACT_EMAIL, safariPackages } from "../data/safaris";
-import { PHONE_DISPLAY, SOCIAL_LINKS } from "../data/company";
+import { BRAND_ALTERNATE_NAMES, BRAND_NAME, PHONE_DISPLAY, SOCIAL_LINKS } from "../data/company";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -42,8 +42,9 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: BRAND_NAME,
   title: {
-    default: "Kenya & Tanzania Budget Safaris from Nairobi | Cima Brava Adventures",
+    default: "Cima Brava Adventures Safaris — Kenya & Tanzania Budget Safaris",
     template: "%s | Cima Brava Adventures",
   },
   description:
@@ -72,7 +73,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: SITE_NAME,
+    siteName: BRAND_NAME,
   },
   twitter: {
     card: "summary_large_image",
@@ -94,8 +95,16 @@ function globalOrgGraph() {
       {
         "@type": "TravelAgency",
         "@id": ORG_ID,
-        name: SITE_NAME,
-        alternateName: ["Cima Brava", "Cima Brava Safaris", "Cima Brava Adventures Safaris"],
+        name: BRAND_NAME,
+        alternateName: BRAND_ALTERNATE_NAMES,
+        brand: {
+          "@type": "Brand",
+          "@id": `${SITE_URL}/#brand`,
+          name: "Cima Brava",
+          alternateName: BRAND_ALTERNATE_NAMES,
+          slogan: "Wild by Nature. Guided by Heart.",
+          logo: `${SITE_URL}/favicon.png`,
+        },
         slogan: "Wild by Nature. Guided by Heart.",
         url: `${SITE_URL}/`,
         logo: {
@@ -169,7 +178,13 @@ function globalOrgGraph() {
       {
         "@type": "WebSite",
         "@id": WEBSITE_ID,
-        name: SITE_NAME,
+        name: BRAND_NAME,
+        alternateName: [
+          "Cima Brava",
+          "Cima Brava Safaris",
+          "Cima Brava Adventures",
+          "Cima Brava Adventure Safaris",
+        ],
         url: `${SITE_URL}/`,
         inLanguage: "en",
         publisher: { "@id": ORG_ID },

@@ -1,6 +1,16 @@
 // Company facts shared by the Company Profile page, the FAQ sections and the
 // structured data. Change a term here and every page that quotes it follows.
 
+export const BRAND_NAME = "Cima Brava Adventures Safaris";
+export const BRAND_ALTERNATE_NAMES = [
+  "Cima Brava",
+  "Cima Brava Safaris",
+  "Cima Brava Adventures",
+  "Cima Brava Adventure Safaris",
+  "CimaBrava",
+  "CimaBrava Safaris",
+];
+
 export const PHONE_DISPLAY = "+254 112 346 049";
 export const MAX_GUESTS_PER_VEHICLE = 7;
 

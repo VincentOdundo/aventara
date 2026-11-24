@@ -50,9 +50,9 @@ const duration = (days) => (days === 0.5 ? "Half day" : `${days} days`);
 const minPrice = Math.min(...safariPackages.map((p) => p.price.low));
 const maxDays = Math.max(...safariPackages.map((p) => p.days));
 
-const title = "Company Profile & 2026–2027 Safari Rates";
+const title = "Cima Brava Safaris — Company Profile & 2026–2027 Rates";
 const description =
-  "Who we are, what every safari price includes, the full 2026–2027 rate card and every itinerary day by day. Download the PDF.";
+  "Official Cima Brava Adventures Safaris company profile: what every safari includes, the full 2026–2027 USD rate card, and every itinerary day by day.";
 
 export const metadata = buildMetadata({
   title,

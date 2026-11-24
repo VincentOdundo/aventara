@@ -1,3 +1,4 @@
+import { BRAND_NAME } from "../data/company";
 import { SITE_NAME, SITE_URL, ogImageUrl } from "./seo";
 
 /**
@@ -48,7 +49,7 @@ export function buildMetadata({
         },
     openGraph: {
       type: ogType,
-      siteName: SITE_NAME,
+      siteName: BRAND_NAME,
       locale: "en_US",
       url: `${SITE_URL}${path}`,
       title: socialTitle,

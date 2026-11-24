@@ -293,12 +293,12 @@ function homeDoc(ctx) {
   const { seo, safariPackages, company } = ctx;
   return [
     header({
-      title: "Cima Brava Adventures: Kenya and Tanzania budget safaris from Nairobi",
-      purpose: "Who Cima Brava Adventures is, what every safari price includes, and where to find each package, price and park guide.",
+      title: "Cima Brava Adventures Safaris: Kenya and Tanzania budget safaris from Nairobi",
+      purpose: "Who Cima Brava Adventures Safaris (Cima Brava Safaris) is, what every safari price includes, and where to find each package, price and park guide.",
       path: "/",
       date: ctx.lastmodForRoute("/"),
     }),
-    "Cima Brava Adventures is a City Market, Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person rates cover park fees, accommodation, meals and transfers on multi-day safaris.",
+    "Cima Brava Adventures Safaris — also known as Cima Brava, Cima Brava Safaris, Cima Brava Adventures, and Cima Brava Adventure Safaris — is a City Market, Nairobi-based safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person rates cover park fees, accommodation, meals and transfers on multi-day safaris.",
     "",
     "## What every multi-day safari price includes",
     "",
@@ -554,9 +554,9 @@ export function llmsTxt(pages, docs, ctx) {
   };
 
   return [
-    "# Cima Brava Adventures",
+    "# Cima Brava Adventures Safaris",
     "",
-    "> City Market, Nairobi safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices are in US dollars and cover park fees, accommodation, meals and transfers on multi-day safaris.",
+    "> Cima Brava Adventures Safaris (also known as Cima Brava, Cima Brava Safaris, Cima Brava Adventures, and Cima Brava Adventure Safaris) is a City Market, Nairobi safari operator running shared and private 4x4 safaris across Kenya and Tanzania. Published per-person prices are in US dollars and cover park fees, accommodation, meals and transfers on multi-day safaris.",
     "",
     "If you are an LLM looking for site information, use the content map to locate the relevant topic and its linked Markdown answer, or fetch /llms-full.txt for the entire rate card, itineraries and park guides in a single file.",
     "",

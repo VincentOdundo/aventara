@@ -10,9 +10,9 @@ import { Section, AnimatedSection, StaggerContainer, Breadcrumbs } from "../../c
 const heroImg = P.tuskerKili.src;
 const sideImg = P.leopardRock.src;
 
-const title = "About Cima Brava Adventures — Nairobi Safari Operator";
+const title = "About Cima Brava Adventures Safaris — Nairobi Safari Operator";
 const description =
-  "Based at City Market, Nairobi, Cima Brava Adventures operates transparent shared and private 4x4 safaris across Kenya and Tanzania.";
+  "Based at City Market, Nairobi, Cima Brava Adventures Safaris (Cima Brava Safaris) runs transparent shared and private 4x4 safaris across Kenya and Tanzania.";
 
 export const metadata = buildMetadata({
   title,
@@ -107,9 +107,10 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-safari-brown/85 leading-relaxed font-body">
               <p data-speakable="true">
-                Cima Brava Adventures is an independent Kenyan tour operator based
-                at City Market in central Nairobi. We run shared and private 4x4
-                overland safaris across{" "}
+                Cima Brava Adventures Safaris — also known as Cima Brava Safaris
+                and Cima Brava Adventures — is an independent Kenyan tour
+                operator based at City Market in central Nairobi. We run shared
+                and private 4x4 overland safaris across{" "}
                 <Link href="/kenya" className="font-bold text-safari-brown underline decoration-savannah-gold hover:text-sunset-orange">
                   Kenya
                 </Link>{" "}

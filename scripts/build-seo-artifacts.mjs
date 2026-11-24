@@ -62,10 +62,10 @@ const dayTripPrice = Math.min(...(allPackages.nairobi || []).map((s) => s.price.
 
 const STATIC_META = {
   "/": {
-    title: "Kenya & Tanzania Budget Safaris from Nairobi | Cima Brava Adventures",
-    ogTitle: "Kenya & Tanzania Budget Safaris from Nairobi",
+    title: "Cima Brava Adventures Safaris — Kenya & Tanzania Budget Safaris",
+    ogTitle: "Cima Brava Adventures Safaris",
     description: seo.truncateText(
-      `Shared and private 4x4 safaris across Kenya & Tanzania from ${seo.usd(minPackagePrice)}/pp (Nairobi tours from ${seo.usd(dayTripPrice)}). Park fees, lodging, meals & transfers included.`,
+      `Cima Brava Adventures Safaris (Cima Brava Safaris) runs shared & private 4x4 Kenya & Tanzania safaris from Nairobi from ${seo.usd(minPackagePrice)}/pp (Nairobi tours from ${seo.usd(dayTripPrice)}).`,
       158,
     ),
     photo: PHOTOS.elephantKiliRight.src,
@@ -121,16 +121,16 @@ const STATIC_META = {
     kicker: "Safaris from Nairobi",
   },
   "/company-profile": {
-    title: "Company Profile & 2026–2027 Safari Rates",
+    title: "Cima Brava Safaris — Company Profile & 2026–2027 Rates",
     description:
-      "Who we are, what every safari price includes, the full 2026–2027 rate card and every itinerary day by day. Download the PDF.",
+      "Official Cima Brava Adventures Safaris company profile: what every safari includes, the full 2026–2027 USD rate card, and every itinerary day by day.",
     photo: PHOTOS.elephantKiliRight.src,
     kicker: "Safaris from Nairobi",
   },
   "/about": {
-    title: "About Cima Brava Adventures — Nairobi Safari Operator",
+    title: "About Cima Brava Adventures Safaris — Nairobi Safari Operator",
     description:
-      "Based at City Market, Nairobi, Cima Brava Adventures operates transparent shared and private 4x4 safaris across Kenya and Tanzania.",
+      "Based at City Market, Nairobi, Cima Brava Adventures Safaris (Cima Brava Safaris) runs transparent shared and private 4x4 safaris across Kenya and Tanzania.",
     photo: PHOTOS.tuskerKili.src,
     kicker: "Safaris from Nairobi",
   },

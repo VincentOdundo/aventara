@@ -292,6 +292,10 @@ export function generalFaqs() {
 
   return [
     {
+      q: "Who is Cima Brava Adventures Safaris?",
+      a: "Cima Brava Adventures Safaris — also known as Cima Brava, Cima Brava Safaris, Cima Brava Adventures, and Cima Brava Adventure Safaris — is an independent safari tour operator based at City Market, Nairobi, Kenya. We run shared (max 7 guests) and private 4x4 safaris across Kenya and Tanzania with published US dollar rates.",
+    },
+    {
       q: "What is the cheapest safari you run?",
       a: `The lowest-priced multi-day safari is the ${cheapest.title} at ${usd(cheapest.price.low)} per person in low season.${
         dayTrips.length

@@ -38,14 +38,14 @@ const fromPrice = Math.min(
   ...safariPackages.filter((s) => s.days >= 1).map((s) => s.price.low),
 );
 const dayTripPrice = Math.min(...allPackages.nairobi.map((s) => s.price.low));
-const homeTitle = "Kenya & Tanzania Budget Safaris from Nairobi";
+const homeTitle = "Cima Brava Adventures Safaris — Kenya & Tanzania Budget Safaris";
 const homeDesc = truncateText(
-  `Shared and private 4x4 safaris across Kenya & Tanzania from ${usd(fromPrice)}/pp (Nairobi tours from ${usd(dayTripPrice)}). Park fees, lodging, meals & transfers included.`,
+  `Cima Brava Adventures Safaris (Cima Brava Safaris) runs shared & private 4x4 Kenya & Tanzania safaris from Nairobi from ${usd(fromPrice)}/pp — park fees, stays & meals included.`,
   158,
 );
 
 export const metadata = buildMetadata({
-  title: `${homeTitle} | Cima Brava Adventures`,
+  title: homeTitle,
   description: homeDesc,
   path: "/",
   imageAlt: P.elephantKiliRight.alt,
@@ -113,7 +113,7 @@ export default function HomePage() {
 
             <div className="relative z-10 flex items-center justify-between gap-4">
               <span className="inline-flex items-center gap-2 text-sunrise-yellow text-xs font-bold uppercase tracking-widest">
-                Cima Brava Adventures
+                Cima Brava Adventures Safaris
               </span>
             </div>
 
@@ -368,8 +368,10 @@ export default function HomePage() {
               The Cima Brava Difference
             </h2>
             <p className="text-safari-brown/80 max-w-2xl mx-auto leading-relaxed font-body">
-              We organize bespoke safaris and craft transformative experiences
-              that connect you with the untamed soul of East Africa.
+              Operating as Cima Brava Adventures Safaris — widely known to
+              travellers as Cima Brava Safaris — our City Market, Nairobi desk
+              runs honest shared and private 4x4 safaris across Kenya and
+              Tanzania.
             </p>
           </AnimatedSection>
 
