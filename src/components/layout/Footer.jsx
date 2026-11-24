@@ -11,6 +11,9 @@ import {
 import logo from "../../assets/cima_logo.png";
 import magicalKenya from "../../assets/partners/magical-kenya.png";
 import tanzaniaUnforgettable from "../../assets/partners/tanzania-unforgettable.png";
+import { SOCIAL_LINKS } from "../../data/company";
+import TripAdvisorIcon from "../ui/TripAdvisorIcon";
+import WhatsAppIcon from "../ui/WhatsAppIcon";
 
 const PARTNER_LOGOS = [
   { name: "Magical Kenya", href: "https://magicalkenya.com", src: magicalKenya },
@@ -82,9 +85,9 @@ export default function Footer() {
               with the untamed wilderness, golden savannahs, and rich heritage
               of Kenya and Tanzania.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <a
-                href="https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full bg-sand-cream/10 border border-savannah-gold/30 text-sunrise-yellow flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all duration-300"
@@ -93,7 +96,7 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://www.tiktok.com/@cima_brava_adventures"
+                href={SOCIAL_LINKS.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full bg-sand-cream/10 border border-savannah-gold/30 text-sunrise-yellow flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all duration-300"
@@ -102,6 +105,25 @@ export default function Footer() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.7a8.16 8.16 0 004.76 1.52V6.77a4.83 4.83 0 01-1-.08z" />
                 </svg>
+              </a>
+              <a
+                href={SOCIAL_LINKS.tripadvisor}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-sand-cream/10 border border-savannah-gold/30 text-sunrise-yellow flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all duration-300"
+                aria-label="Find us on TripAdvisor"
+                title="Find us on TripAdvisor"
+              >
+                <TripAdvisorIcon size={18} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-sand-cream/10 border border-savannah-gold/30 text-sunrise-yellow flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon size={18} />
               </a>
               <a
                 href="mailto:cimabravaadventures@gmail.com"
@@ -190,6 +212,16 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={SOCIAL_LINKS.tripadvisor}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-sand-cream/75 hover:text-sunrise-yellow transition-colors"
+                >
+                  Find us on TripAdvisor
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -29,6 +29,7 @@ import { Section, AnimatedSection, StaggerContainer, FaqSection } from "../compo
 import { SeasonBadge } from "../components/ui/SeasonPrice";
 import WhatsAppIcon from "../components/ui/WhatsAppIcon";
 import { Photo } from "../components/ui/Photo";
+import { TripAdvisorCard } from "../components/ui/TripAdvisorCard";
 import { JsonLd } from "../components/seo/JsonLd";
 import { HomeHeroPhotos } from "../components/home/HomeHeroPhotos";
 import { StatCounter } from "../components/home/StatCounter";
@@ -621,6 +622,11 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ========== TRIPADVISOR TRUST ========== */}
+      <Section className="pt-4 pb-12 md:pb-16 bg-sand-cream">
+        <TripAdvisorCard variant="banner" className="max-w-5xl mx-auto" />
+      </Section>
 
       {/* ========== QUESTIONS ========== */}
       <Section className="py-20 md:py-24 bg-sand-cream">

@@ -35,6 +35,7 @@ const footer = (ctx) =>
     "- Office: City Market, Muindi Mbingu Street, Nairobi, Kenya",
     `- WhatsApp: ${ctx.company.PHONE_DISPLAY} (https://wa.me/${ctx.WHATSAPP_NUMBER})`,
     `- Email: ${ctx.CONTACT_EMAIL}`,
+    `- TripAdvisor: ${ctx.company.TRIPADVISOR_URL}`,
     `- All safari packages and prices: ${abs("/safaris.md")}`,
     `- Content map: ${abs("/sitemap.md")}`,
     "",

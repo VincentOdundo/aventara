@@ -596,12 +596,13 @@ export function safariLd(safari) {
   if (!safari) return null;
   const url = `${SITE_URL}/safari/${safari.slug}`;
   const parks = destinationsForSafari(safari);
+  const opening = SAFARI_CONTENT[safari.slug]?.overviewParagraphs?.[0];
   return {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
     "@id": `${url}#trip`,
     name: safari.title,
-    description: safari.subtitle,
+    description: truncateText(opening || safari.subtitle, 320),
     url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     image: absoluteUrl(safari.image),

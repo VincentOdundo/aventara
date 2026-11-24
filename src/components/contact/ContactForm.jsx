@@ -1,7 +1,11 @@
 "use client";
+import { useState } from "react";
 import { Send } from "lucide-react";
+import { TRIPADVISOR_REVIEW_URL } from "../../data/company";
 
 export function ContactForm() {
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -12,7 +16,8 @@ export function ContactForm() {
 
     const waText = `🌍 *Cima Brava Adventures Contact Form*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📋 Subject: ${subject}\n\n💬 Message:\n${message}\n\n- Sent to cimabravaadventures@gmail.com`;
     const waUrl = `https://wa.me/254112346049?text=${encodeURIComponent(waText)}`;
-    window.open(waUrl, "_blank");
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+    setSubmitted(true);
   };
 
   return (
@@ -97,6 +102,32 @@ export function ContactForm() {
         </a>
         .
       </p>
+      {submitted && (
+        <div className="mt-5 rounded-xl border border-savannah-gold/40 bg-savannah-gold/10 p-4 text-xs text-safari-brown leading-relaxed">
+          <p className="font-bold text-midnight-black mb-1">
+            WhatsApp inquiry ready — thank you!
+          </p>
+          <p>
+            If WhatsApp did not open in a new tab, email your dates directly to{" "}
+            <a
+              href="mailto:cimabravaadventures@gmail.com"
+              className="text-sunset-orange font-semibold underline"
+            >
+              cimabravaadventures@gmail.com
+            </a>{" "}
+            for a confirmed USD quote within 24 hours. Already travelled with us?{" "}
+            <a
+              href={TRIPADVISOR_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sunset-orange font-semibold underline"
+            >
+              Review us on TripAdvisor
+            </a>
+            .
+          </p>
+        </div>
+      )}
     </form>
   );
 }

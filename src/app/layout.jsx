@@ -6,7 +6,7 @@ import { WhatsAppFloat } from "../components/ui/WhatsAppCTA";
 import { JsonLd } from "../components/seo/JsonLd";
 import { ORG_ID, SITE_NAME, SITE_URL, WEBSITE_ID, ogImageUrl, usd } from "../lib/seo";
 import { CONTACT_EMAIL, safariPackages } from "../data/safaris";
-import { PHONE_DISPLAY } from "../data/company";
+import { PHONE_DISPLAY, SOCIAL_LINKS } from "../data/company";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -95,7 +95,7 @@ function globalOrgGraph() {
         "@type": "TravelAgency",
         "@id": ORG_ID,
         name: SITE_NAME,
-        alternateName: ["Cima Brava", "Cima Brava Safaris"],
+        alternateName: ["Cima Brava", "Cima Brava Safaris", "Cima Brava Adventures Safaris"],
         slogan: "Wild by Nature. Guided by Heart.",
         url: `${SITE_URL}/`,
         logo: {
@@ -158,10 +158,13 @@ function globalOrgGraph() {
           },
         },
         sameAs: [
-          "https://www.tiktok.com/@cima_brava_adventures",
-          "https://www.instagram.com/cima_brava_adventures",
-          "https://www.facebook.com/share/187nSmsCH8/",
-        ],
+          SOCIAL_LINKS.tiktok,
+          SOCIAL_LINKS.instagram,
+          SOCIAL_LINKS.facebook,
+          SOCIAL_LINKS.tripadvisor,
+          (process.env.NEXT_PUBLIC_GBP_URL || "").trim(),
+          (process.env.NEXT_PUBLIC_BING_PLACES_URL || "").trim(),
+        ].filter(Boolean),
       },
       {
         "@type": "WebSite",

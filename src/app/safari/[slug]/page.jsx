@@ -40,6 +40,7 @@ import {
 } from "../../../data/safaris";
 import { SAFARI_CONTENT } from "../../../data/safariContent";
 import { Photo } from "../../../components/ui/Photo";
+import { TripAdvisorCard } from "../../../components/ui/TripAdvisorCard";
 import { AnimatedSection, Breadcrumbs, FaqSection } from "../../../components/ui";
 import { JsonLd } from "../../../components/seo/JsonLd";
 import { SafariBookingCard } from "../../../components/safari/SafariBookingCard";
@@ -555,6 +556,8 @@ export default async function SafariDetailPage({ params }) {
                   </div>
                 )}
               </div>
+
+              <TripAdvisorCard variant="compact" className="mt-12" />
             </div>
 
             {/* Sidebar */}

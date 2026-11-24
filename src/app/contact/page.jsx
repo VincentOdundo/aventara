@@ -14,6 +14,9 @@ import { ORG_ID, breadcrumbLd, contactFaqs, faqLd, graph, pageCrumbs, webPageLd 
 import { useWhatsApp } from "../../hooks/useWhatsApp";
 import { PHOTOS as P } from "../../data/photos";
 import { Photo } from "../../components/ui/Photo";
+import { TripAdvisorCard } from "../../components/ui/TripAdvisorCard";
+import TripAdvisorIcon from "../../components/ui/TripAdvisorIcon";
+import { SOCIAL_LINKS } from "../../data/company";
 import { JsonLd } from "../../components/seo/JsonLd";
 import { Section, AnimatedSection, Breadcrumbs, FaqSection } from "../../components/ui";
 import WhatsAppIcon from "../../components/ui/WhatsAppIcon";
@@ -166,9 +169,9 @@ export default function ContactPage() {
                 <p className="text-xs uppercase tracking-widest text-safari-brown font-bold mb-4">
                   Follow Our Field Updates
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <a
-                    href="https://www.instagram.com/cima_brava_adventures?mdxt=MWQ1OHpkOWQ1bHZoaQ%3D%3D&utm_source=qr"
+                    href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -177,7 +180,7 @@ export default function ContactPage() {
                     <Instagram size={18} />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@cima_brava_adventures"
+                    href={SOCIAL_LINKS.tiktok}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TikTok"
@@ -186,13 +189,32 @@ export default function ContactPage() {
                     <TikTokIcon size={18} />
                   </a>
                   <a
-                    href="https://www.facebook.com/share/187nSmsCH8/"
+                    href={SOCIAL_LINKS.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
                     className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
                   >
                     <Facebook size={18} />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.tripadvisor}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Find us on TripAdvisor"
+                    title="Find us on TripAdvisor"
+                    className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
+                  >
+                    <TripAdvisorIcon size={18} />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="w-11 h-11 rounded-full bg-safari-brown text-sand-cream flex items-center justify-center hover:bg-gradient-to-b hover:from-sunrise-yellow hover:to-savannah-gold hover:text-midnight-black transition-all shadow-sm"
+                  >
+                    <WhatsAppIcon size={18} />
                   </a>
                 </div>
               </div>
@@ -300,6 +322,8 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
+
+        <TripAdvisorCard variant="compact" className="mt-12" />
 
         <FaqSection faqs={faqs} title="Booking & quote questions" className="mt-16 max-w-4xl" />
       </Section>

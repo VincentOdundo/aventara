@@ -4,6 +4,18 @@
 export const PHONE_DISPLAY = "+254 112 346 049";
 export const MAX_GUESTS_PER_VEHICLE = 7;
 
+export const TRIPADVISOR_LOCATION_ID = "34838188";
+export const TRIPADVISOR_URL = "https://www.tripadvisor.com/34838188";
+export const TRIPADVISOR_REVIEW_URL = "https://www.tripadvisor.com/UserReviewEdit-d34838188";
+
+export const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/cima_brava_adventures",
+  tiktok: "https://www.tiktok.com/@cima_brava_adventures",
+  facebook: "https://www.facebook.com/share/187nSmsCH8/",
+  tripadvisor: TRIPADVISOR_URL,
+  whatsapp: "https://wa.me/254112346049",
+};
+
 export const INCLUDED = [
   "4x4 safari vehicle with pop-up roof",
   "English-speaking professional driver-guide",
