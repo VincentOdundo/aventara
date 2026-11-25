@@ -163,13 +163,13 @@ export default async function DestinationDetailPage({ params }) {
               <h2 className="text-2xl md:text-3xl font-headline font-bold text-safari-brown mb-6">
                 Wildlife &amp; Landscape Highlights
               </h2>
-              <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+              <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 mb-12">
                 {dest.highlights.map((h, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-3.5 bg-surface-container-low border border-savannah-gold/25 rounded-xl p-5 shadow-sm"
+                    className="flex items-start gap-3 border-t border-safari-brown/12 pt-4"
                   >
-                    <Sparkles size={18} className="text-sunset-orange mt-0.5 flex-shrink-0" />
+                    <Sparkles size={17} className="text-sunset-orange mt-0.5 flex-shrink-0" />
                     <span className="text-sm font-body font-medium text-midnight-black leading-relaxed">
                       {h}
                     </span>
@@ -179,8 +179,8 @@ export default async function DestinationDetailPage({ params }) {
             </AnimatedSection>
 
             {editorial && (
-              <AnimatedSection className="space-y-6 mb-12">
-                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+              <AnimatedSection className="space-y-8 mb-12">
+                <div className="border-t border-safari-brown/15 pt-8">
                   <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
                     <Sun size={18} className="text-sunset-orange" />
                     When to Visit {dest.name}
@@ -190,7 +190,7 @@ export default async function DestinationDetailPage({ params }) {
                   </p>
                 </div>
 
-                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+                <div className="border-t border-safari-brown/15 pt-8">
                   <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
                     <Compass size={18} className="text-sunset-orange" />
                     Distances &amp; How {dest.name} Fits a Safari Route
@@ -199,7 +199,7 @@ export default async function DestinationDetailPage({ params }) {
                     {editorial.routeFit}
                   </p>
                   {editorial.nearbyLinks?.length > 0 && (
-                    <div className="pt-3 border-t border-savannah-gold/20">
+                    <div className="pt-3 border-t border-safari-brown/10">
                       <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-2">
                         Parks commonly paired with {dest.name}
                       </p>
@@ -220,7 +220,7 @@ export default async function DestinationDetailPage({ params }) {
                   )}
                 </div>
 
-                <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+                <div className="border-t border-safari-brown/15 pt-8">
                   <h2 className="text-xl font-headline font-bold text-safari-brown mb-3 flex items-center gap-2">
                     <Calendar size={18} className="text-sunset-orange" />
                     What a Typical Day in {dest.name} Looks Like
@@ -241,7 +241,7 @@ export default async function DestinationDetailPage({ params }) {
                   {dest.gallery.map((img, idx) => (
                     <div
                       key={idx}
-                      className="rounded-xl overflow-hidden h-48 relative border border-savannah-gold/20"
+                      className="rounded-xl overflow-hidden h-48 relative"
                     >
                       <Photo
                         src={img}
@@ -264,8 +264,8 @@ export default async function DestinationDetailPage({ params }) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-[80px] space-y-6">
-              <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
+            <div className="sticky top-[80px] bg-surface-container-low/85 rounded-2xl p-7 divide-y divide-safari-brown/12">
+              <div className="pb-6">
                 <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
                   Quick Facts
                 </h2>
@@ -290,7 +290,7 @@ export default async function DestinationDetailPage({ params }) {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 pt-5 border-t border-savannah-gold/20 space-y-3">
+                <div className="mt-6 pt-5 border-t border-safari-brown/10 space-y-3">
                   <Link
                     href="/contact"
                     className="btn-plan w-full border-2 border-savannah-gold text-midnight-black hover:bg-savannah-gold/15 font-body font-bold rounded-full py-3 px-6 text-sm inline-flex items-center justify-center gap-2 transition-all"
@@ -307,16 +307,16 @@ export default async function DestinationDetailPage({ params }) {
               </div>
 
               {relatedSafaris.length > 0 ? (
-                <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
+                <div className="pt-6">
                   <h2 className="font-headline font-bold text-lg text-safari-brown mb-4">
                     Safaris visiting {dest.name}
                   </h2>
-                  <div className="space-y-3 font-body">
+                  <div className="divide-y divide-safari-brown/10 font-body">
                     {relatedSafaris.map((safari) => (
                       <Link
                         key={safari.id}
                         href={`/safari/${safari.slug}`}
-                        className="flex items-center justify-between py-3 border-b border-savannah-gold/20 last:border-0 group"
+                        className="flex items-center justify-between py-3 group"
                       >
                         <div className="pr-3">
                           <p className="font-bold text-sm text-midnight-black group-hover:text-sunset-orange transition-colors">
@@ -343,7 +343,7 @@ export default async function DestinationDetailPage({ params }) {
                   </Link>
                 </div>
               ) : (
-                <div className="bg-surface border border-savannah-gold/25 rounded-2xl editorial-shadow p-6">
+                <div className="pt-6">
                   <h2 className="font-headline font-bold text-lg text-safari-brown mb-3">
                     Custom Private {dest.name} Safaris
                   </h2>

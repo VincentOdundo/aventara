@@ -19,7 +19,7 @@ export function SafariBookingCard({ safari, initialSeason }) {
   return (
     <div
       id="booking"
-      className="sticky top-[120px] lg:top-[128px] bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-lg p-8 scroll-mt-[120px] lg:scroll-mt-[136px]"
+      className="sticky top-[120px] lg:top-[128px] bg-surface-container-lowest border border-safari-brown/12 rounded-2xl shadow-md p-7 md:p-8 scroll-mt-[120px] lg:scroll-mt-[136px]"
     >
       <SeasonBadge className="mb-4" />
       <PriceDisplay
@@ -57,7 +57,7 @@ export function SafariBookingCard({ safari, initialSeason }) {
 
       {/* Room Rate Breakdown when singlePrice exists */}
       {safari.singlePrice && (
-        <div className="mb-5 rounded-xl border border-savannah-gold/30 bg-savannah-gold/10 p-3 text-xs font-body space-y-1.5">
+        <div className="mb-5 rounded-xl bg-surface-container-low/80 p-3.5 text-xs font-body space-y-1.5">
           <div className="flex justify-between items-center">
             <span className="text-safari-brown/80">2+ People (Sharing)</span>
             <span className="font-bold text-safari-brown">
@@ -107,7 +107,7 @@ export function SafariBookingCard({ safari, initialSeason }) {
       </div>
 
       {/* Total */}
-      <div className="bg-sand-cream border border-savannah-gold/40 rounded-xl p-4 mb-6">
+      <div className="border-y border-safari-brown/12 py-4 mb-6">
         <div className="flex justify-between items-center mb-2 font-body">
           <span className="text-sm text-safari-brown/80">
             ${price.toLocaleString()} × {guests} person{guests > 1 ? "s" : ""}
@@ -116,7 +116,7 @@ export function SafariBookingCard({ safari, initialSeason }) {
             ${totalPrice.toLocaleString()}
           </span>
         </div>
-        <div className="flex justify-between items-center pt-2 border-t border-savannah-gold/25">
+        <div className="flex justify-between items-center pt-2 border-t border-safari-brown/10">
           <span className="font-body font-bold text-lg text-safari-brown">
             Total
           </span>
@@ -148,7 +148,7 @@ export function SafariBookingCard({ safari, initialSeason }) {
       </p>
 
       {/* Quick Info */}
-      <div className="mt-8 pt-6 border-t border-savannah-gold/25 space-y-4 font-body">
+      <div className="mt-8 pt-6 border-t border-safari-brown/12 space-y-4 font-body">
         <div className="flex items-center gap-3 text-sm">
           <Calendar size={16} className="text-sunset-orange" />
           <div>

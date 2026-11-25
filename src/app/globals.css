@@ -45,11 +45,11 @@
   --color-background: var(--color-sand-cream);
   --color-surface: var(--color-sand-cream);
   --color-surface-bright: var(--color-sand-cream);
-  --color-surface-container-lowest: var(--color-sand-cream);
-  --color-surface-container-low: var(--color-sand-cream);
-  --color-surface-container: var(--color-sand-cream);
-  --color-surface-container-high: var(--color-sand-cream);
-  --color-surface-container-highest: var(--color-sand-cream);
+  --color-surface-container-lowest: #FFFBF0;
+  --color-surface-container-low: #F7EED7;
+  --color-surface-container: #F3E7C9;
+  --color-surface-container-high: #EDE0BE;
+  --color-surface-container-highest: #E6D5AC;
   --color-surface-variant: var(--color-sand-cream);
   --color-surface-dim: var(--color-midnight-black);
   --color-surface-tint: var(--color-savannah-gold);

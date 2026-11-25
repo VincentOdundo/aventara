@@ -171,7 +171,7 @@ export default function KenyaPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Link href="/destinations/masai-mara" className="group cursor-pointer block">
-                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low mb-4">
                   <Photo className="w-full h-full group-hover:scale-110 transition-transform duration-700" fill sizes="(max-width: 768px) 100vw, 25vw" src={maraImg} />
                 </div>
                 <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -185,7 +185,7 @@ export default function KenyaPage() {
               </Link>
 
               <Link href="/destinations/amboseli" className="group cursor-pointer pt-12 block">
-                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low mb-4">
                   <Photo className="w-full h-full group-hover:scale-110 transition-transform duration-700" fill sizes="(max-width: 768px) 100vw, 25vw" src={amboseliImg} />
                 </div>
                 <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -199,7 +199,7 @@ export default function KenyaPage() {
               </Link>
 
               <Link href="/destinations/tsavo" className="group cursor-pointer block">
-                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low mb-4">
                   <Photo className="w-full h-full group-hover:scale-110 transition-transform duration-700" fill sizes="(max-width: 768px) 100vw, 25vw" src={tsavoImg} />
                 </div>
                 <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -213,7 +213,7 @@ export default function KenyaPage() {
               </Link>
 
               <Link href="/destinations/ol-pejeta" className="group cursor-pointer pt-12 block">
-                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low border border-savannah-gold/25 mb-4 shadow-md">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-surface-container-low mb-4">
                   <Photo className="w-full h-full group-hover:scale-110 transition-transform duration-700" fill sizes="(max-width: 768px) 100vw, 25vw" src={olPejetaImg} />
                 </div>
                 <h3 className="font-headline font-bold text-2xl text-safari-brown group-hover:text-sunset-orange transition-colors mb-2">
@@ -229,7 +229,7 @@ export default function KenyaPage() {
           </div>
 
           <div className="lg:col-span-5 sticky top-[80px] space-y-12">
-            <div className="bg-surface-container-low border border-savannah-gold/25 p-10 rounded-2xl editorial-shadow">
+            <div className="bg-surface-container-low/85 p-8 md:p-10 rounded-2xl">
               <span className="font-body font-bold text-xs uppercase tracking-widest text-sunset-orange mb-4 block">
                 Kenya Entry &amp; Park Fees
               </span>
@@ -300,7 +300,7 @@ export default function KenyaPage() {
         </div>
       </section>
 
-      <section className="bg-surface-container-low border-y border-savannah-gold/20 py-24 px-8 md:px-16 lg:px-24">
+      <section className="bg-surface-container-low/70 border-y border-safari-brown/12 py-24 px-8 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
@@ -311,11 +311,11 @@ export default function KenyaPage() {
                 Best Seasons to Visit Kenya
               </h2>
             </div>
-            <div className="h-px flex-1 bg-savannah-gold/30 hidden md:block mb-4"></div>
+            <div className="h-px flex-1 bg-safari-brown/15 hidden md:block mb-4"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-surface p-10 rounded-2xl editorial-shadow border border-savannah-gold/25">
-              <div className="flex justify-between items-center mb-6">
+            <div className="border-t border-safari-brown/15 pt-7">
+              <div className="flex justify-between items-center mb-5">
                 <h3 className="font-headline font-bold text-2xl text-safari-brown">
                   Dry &amp; Migration Peak
                 </h3>
@@ -330,7 +330,7 @@ export default function KenyaPage() {
                 high-season park fees and camp demand peak.
               </p>
             </div>
-            <div className="bg-surface p-10 rounded-2xl editorial-shadow border border-savannah-gold/25">
+            <div className="border-t border-safari-brown/15 pt-7">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="font-headline font-bold text-2xl text-safari-brown">
                   Value &amp; Green Season
@@ -375,7 +375,7 @@ export default function KenyaPage() {
                 <Link
                   key={park.to}
                   href={park.to}
-                  className="px-3.5 py-1.5 rounded-full border border-savannah-gold/50 font-bold text-safari-brown hover:text-sunset-orange hover:border-sunset-orange transition-colors"
+                  className="px-3.5 py-1.5 rounded-full bg-surface-container-low font-bold text-safari-brown hover:bg-safari-brown hover:text-sand-cream transition-colors"
                 >
                   {park.label}
                 </Link>
@@ -388,7 +388,7 @@ export default function KenyaPage() {
               <Link
                 key={pkg.slug}
                 href={`/safari/${pkg.slug}`}
-                className="bg-sand-cream border border-savannah-gold/35 rounded-2xl p-5 hover:border-sunset-orange transition-all shadow-sm flex flex-col justify-between"
+                className="bg-surface-container-lowest border border-safari-brown/10 rounded-xl p-5 hover:border-safari-brown/30 transition-all flex flex-col justify-between"
               >
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-1">
@@ -401,7 +401,7 @@ export default function KenyaPage() {
                     {pkg.destinations.join(" · ")}
                   </p>
                 </div>
-                <p className="text-sm font-bold text-safari-brown pt-3 border-t border-savannah-gold/20">
+                <p className="text-sm font-bold text-safari-brown pt-3 border-t border-safari-brown/10">
                   From {usd(pkg.price.low)} low / {usd(pkg.price.high)} high
                 </p>
               </Link>

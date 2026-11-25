@@ -33,7 +33,7 @@ export const metadata = buildMetadata({
 function DestinationCard({ dest }) {
   return (
     <Link href={`/destinations/${dest.slug}`} className="group">
-      <div className="bg-surface border border-savannah-gold/25 hover:border-savannah-gold/60 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+      <div className="bg-surface-container-lowest border border-safari-brown/10 hover:border-safari-brown/25 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-500 h-full flex flex-col">
         <div className="relative h-60 overflow-hidden">
           <Photo
             src={dest.image}
@@ -58,7 +58,7 @@ function DestinationCard({ dest }) {
           <p className="text-sm text-safari-brown/80 font-body leading-relaxed mb-5 flex-grow line-clamp-3">
             {dest.description}
           </p>
-          <div className="pt-4 border-t border-savannah-gold/20 flex items-center justify-between mt-auto">
+          <div className="pt-4 border-t border-safari-brown/10 flex items-center justify-between mt-auto">
             <span className="text-safari-brown group-hover:text-sunset-orange text-xs font-body font-bold uppercase tracking-wider transition-colors">
               Explore Destination
             </span>
@@ -164,7 +164,7 @@ export default function DestinationsHubPage() {
       </Section>
 
       {/* Tanzania */}
-      <section className="py-20 md:py-28 bg-surface-container-low border-t border-savannah-gold/20">
+      <section className="py-20 md:py-28 bg-surface-container-low/70 border-t border-safari-brown/12">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
@@ -199,7 +199,7 @@ export default function DestinationsHubPage() {
       </section>
 
       {/* Destination FAQs */}
-      <Section className="py-16 md:py-20 bg-sand-cream border-t border-savannah-gold/20">
+      <Section className="py-16 md:py-20 bg-sand-cream border-t border-safari-brown/12">
         <FaqSection
           faqs={faqs}
           title="Kenya & Tanzania safari destinations: questions and answers"

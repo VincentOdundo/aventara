@@ -247,8 +247,8 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+        <div className="mt-16 border-t border-safari-brown/15 pt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
               Pickup &amp; Service Areas
             </h2>
@@ -265,7 +265,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div>
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
               What to Include for a Fast Quote
             </h2>
@@ -289,7 +289,7 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <div className="bg-surface-container-low border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div>
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-3">
               Why Book Directly With Our Nairobi Desk
             </h2>

@@ -280,8 +280,8 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <AnimatedSection className="mb-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 border-y border-safari-brown/15 divide-y md:divide-y-0 md:divide-x divide-safari-brown/12">
             {[
               { label: "All Packages", to: "/safaris", count: safariCountsByCountry.all },
               { label: "Kenya", to: "/safaris/kenya", count: safariCountsByCountry.kenya },
@@ -291,15 +291,15 @@ export default function HomePage() {
               <Link
                 key={item.label}
                 href={item.to}
-                className="group rounded-2xl border border-savannah-gold/30 bg-sand-cream px-6 py-5 hover:border-savannah-gold hover:bg-safari-brown transition-all duration-300 shadow-sm"
+                className="group py-5 md:px-6 first:md:pl-0 hover:bg-surface-container-low/60 transition-colors"
               >
-                <p className="text-xs uppercase tracking-[0.15em] text-sunset-orange group-hover:text-sunrise-yellow font-bold mb-2">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-sunset-orange font-bold mb-1">
                   Explore
                 </p>
-                <p className="text-lg font-headline font-bold text-midnight-black group-hover:text-sand-cream transition-colors">
+                <p className="text-lg font-headline font-bold text-midnight-black group-hover:text-sunset-orange transition-colors">
                   {item.label}
                 </p>
-                <p className="text-sm text-safari-brown/80 group-hover:text-sand-cream/80 mt-2">
+                <p className="text-sm text-safari-brown/75 mt-1">
                   {item.count} package{item.count !== 1 ? "s" : ""}
                 </p>
               </Link>
@@ -310,7 +310,7 @@ export default function HomePage() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredSafaris.map((safari) => (
             <Link key={safari.id} href={`/safari/${safari.slug}`} className="group">
-              <div className="bg-sand-cream border border-savannah-gold/25 rounded-2xl overflow-hidden hover:shadow-xl hover:border-savannah-gold transition-all duration-500">
+              <div className="bg-surface-container-lowest border border-safari-brown/10 rounded-2xl overflow-hidden hover:shadow-lg hover:border-safari-brown/25 transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
                   <Photo
                     src={safari.image}
@@ -338,7 +338,7 @@ export default function HomePage() {
                   <p className="text-sm text-safari-brown/80 mb-4 line-clamp-2 font-body">
                     {safari.subtitle}
                   </p>
-                  <div className="flex justify-between items-center pt-4 border-t border-savannah-gold/20">
+                  <div className="flex justify-between items-center pt-4 border-t border-safari-brown/10">
                     <div>
                       <span className="text-2xl font-headline font-bold text-safari-brown">
                         ${safari.price[season].toLocaleString()}
@@ -358,9 +358,9 @@ export default function HomePage() {
       </Section>
 
       {/* ========== WHY CHOOSE US ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-savannah-gold/20">
+      <section className="py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-safari-brown/12">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-          <AnimatedSection className="text-center mb-20">
+          <AnimatedSection className="text-center mb-16">
             <span className="text-xs uppercase tracking-[0.35em] text-sunset-orange font-bold block mb-3">
               Wild by Nature · Guided by Heart
             </span>
@@ -375,50 +375,50 @@ export default function HomePage() {
             </p>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {[
               {
-                icon: <Compass size={28} />,
+                icon: <Compass size={22} />,
                 title: "Expert Local Guides",
                 desc: "Kenyan and Tanzanian naturalists with decades of experience, sharing secrets of the bush through stories and tracks.",
               },
               {
-                icon: <Shield size={28} />,
+                icon: <Shield size={22} />,
                 title: "Safety Guaranteed",
                 desc: "Fully insured vehicles, certified drivers, and 24/7 support throughout your journey across East Africa.",
               },
               {
-                icon: <Camera size={28} />,
+                icon: <Camera size={22} />,
                 title: "Photography Ready",
                 desc: "Custom 4x4 pop-top safari vehicles with dust-free camera mounts and guaranteed window seats.",
               },
               {
-                icon: <TreePine size={28} />,
+                icon: <TreePine size={22} />,
                 title: "Conservation First",
                 desc: "Every booking supports local wildlife protection and community empowerment initiatives.",
               },
               {
-                icon: <Users size={28} />,
+                icon: <Users size={22} />,
                 title: "Small Groups",
                 desc: "Maximum 6–7 guests per 4x4 cruiser ensuring intimate, window-seat wildlife encounters.",
               },
               {
-                icon: <Clock size={28} />,
+                icon: <Clock size={22} />,
                 title: "Flexible Booking",
                 desc: "Free cancellation up to 30 days before departure. Reschedule with no extra fees.",
               },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-sand-cream border border-savannah-gold/25 rounded-2xl p-8 group hover:bg-safari-brown hover:text-sand-cream hover:border-savannah-gold transition-all duration-500 shadow-sm"
+                className="border-t border-safari-brown/15 pt-7"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black mb-6 shadow-md group-hover:scale-105 transition-transform duration-500">
+                <div className="flex items-center gap-3 mb-3 text-sunset-orange">
                   {item.icon}
+                  <h3 className="text-lg font-headline font-bold text-midnight-black">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-safari-brown/80 group-hover:text-sand-cream/85 transition-colors duration-500 font-body">
+                <p className="text-sm leading-relaxed text-safari-brown/85 font-body">
                   {item.desc}
                 </p>
               </div>
@@ -465,7 +465,7 @@ export default function HomePage() {
                 <Link
                   key={dest.id}
                   href={`/destinations/${dest.slug}`}
-                  className={`${spanClasses} relative group overflow-hidden rounded-2xl min-h-[240px] border border-safari-brown/15`}
+                  className={`${spanClasses} relative group overflow-hidden rounded-2xl min-h-[240px]`}
                 >
                   <Photo
                     src={dest.bentoPhoto.src}
@@ -500,9 +500,9 @@ export default function HomePage() {
       </Section>
 
       {/* ========== PRICING OVERVIEW ========== */}
-      <section className="min-h-[100svh] py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-savannah-gold/20">
+      <section className="py-24 md:py-32 bg-sand-cream flex flex-col justify-center border-t border-safari-brown/12">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-safari-brown tracking-[-0.02em] mb-6">
               Safari Packages &amp; Pricing
             </h2>
@@ -514,9 +514,9 @@ export default function HomePage() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden shadow-xl">
+            <div className="border-y border-safari-brown/15 overflow-hidden">
               <div className="flex flex-col">
-                <div className="hidden md:grid grid-cols-12 gap-4 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sunrise-yellow px-6 py-4 font-headline font-semibold text-sm">
+                <div className="hidden md:grid grid-cols-12 gap-4 bg-safari-brown text-sunrise-yellow px-6 py-4 font-headline font-semibold text-sm rounded-t-xl">
                   <div className="col-span-3">Safari Package</div>
                   <div className="col-span-2">Days</div>
                   <div className="col-span-3">Destinations</div>
@@ -524,13 +524,13 @@ export default function HomePage() {
                   <div className="col-span-2 text-center">High Season</div>
                 </div>
 
-                <div className="divide-y divide-savannah-gold/20">
+                <div className="divide-y divide-safari-brown/10">
                   {safariPackages.map((safari, idx) => (
                     <div
                       key={safari.id}
-                      className={`group relative flex flex-col md:grid md:grid-cols-12 md:gap-4 md:items-center p-6 md:px-6 md:py-5 transition-colors ${
-                        idx % 2 === 0 ? "bg-sand-cream" : "bg-savannah-gold/5"
-                      } hover:bg-savannah-gold/15`}
+                      className={`group relative flex flex-col md:grid md:grid-cols-12 md:gap-4 md:items-center py-5 md:px-6 transition-colors ${
+                        idx % 2 === 0 ? "bg-sand-cream" : "bg-surface-container-low/45"
+                      } hover:bg-surface-container-low`}
                     >
                       <div className="flex justify-between items-start md:col-span-3 mb-4 md:mb-0">
                         <Link

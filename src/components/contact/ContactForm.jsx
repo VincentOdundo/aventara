@@ -23,7 +23,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-sand-cream border border-savannah-gold/30 rounded-2xl shadow-xl p-8 md:p-10"
+      className="bg-surface-container-lowest border border-safari-brown/12 rounded-2xl shadow-sm p-8 md:p-10"
     >
       <h2 className="text-2xl font-headline font-bold text-safari-brown mb-8">
         Send Us a Safari Inquiry
@@ -38,7 +38,7 @@ export function ContactForm() {
             type="text"
             name="name"
             required
-            className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
+            className="w-full bg-sand-cream border border-safari-brown/20 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
             placeholder="Your name"
           />
         </div>
@@ -50,7 +50,7 @@ export function ContactForm() {
             type="email"
             name="email"
             required
-            className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
+            className="w-full bg-sand-cream border border-safari-brown/20 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold placeholder:text-safari-brown/40"
             placeholder="your@email.com"
           />
         </div>
@@ -62,7 +62,7 @@ export function ContactForm() {
         </label>
         <select
           name="subject"
-          className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold"
+          className="w-full bg-sand-cream border border-safari-brown/20 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold"
         >
           <option>Safari Booking</option>
           <option>Custom Itinerary (Tsavo / Ol Pejeta / Private)</option>
@@ -80,7 +80,7 @@ export function ContactForm() {
           name="message"
           required
           rows="5"
-          className="w-full bg-sand-cream border border-savannah-gold/40 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold resize-none placeholder:text-safari-brown/40"
+          className="w-full bg-sand-cream border border-safari-brown/20 rounded-xl px-4 py-3 text-midnight-black focus:outline-none focus:ring-2 focus:ring-savannah-gold resize-none placeholder:text-safari-brown/40"
           placeholder="Share your travel dates, number of travellers, shared or private 4x4 preference, and parks you want to visit..."
         ></textarea>
       </div>

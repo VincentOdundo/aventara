@@ -65,7 +65,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search package or destination"
-              className="bg-sand-cream text-midnight-black placeholder:text-safari-brown/50 rounded-full pl-9 pr-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold w-64 max-w-[80vw]"
+              className="bg-sand-cream text-midnight-black placeholder:text-safari-brown/50 rounded-full pl-9 pr-4 py-2 text-sm font-body font-medium border border-safari-brown/20 focus:outline-none focus:ring-2 focus:ring-savannah-gold w-64 max-w-[80vw]"
             />
           </div>
           <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
             <select
               value={daysFilter}
               onChange={(e) => setDaysFilter(e.target.value)}
-              className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
+              className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-safari-brown/20 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
             >
               <option value="all">All Durations</option>
               <option value="0-2">0-2 Days</option>
@@ -85,7 +85,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
           <select
             value={budgetFilter}
             onChange={(e) => setBudgetFilter(e.target.value)}
-            className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-savannah-gold/40 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
+            className="bg-sand-cream text-midnight-black rounded-full px-4 py-2 text-sm font-body font-medium border border-safari-brown/20 focus:outline-none focus:ring-2 focus:ring-savannah-gold"
           >
             <option value="all">All Budgets</option>
             <option value="0-800">Under $800</option>
@@ -110,7 +110,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
       </div>
 
       {filteredSafaris.length === 0 ? (
-        <div className="text-center py-20 bg-sand-cream rounded-2xl border border-savannah-gold/30">
+        <div className="text-center py-20 bg-surface-container-low/70 rounded-2xl">
           <p className="text-safari-brown font-body text-lg">
             No safaris match your filters.
           </p>
@@ -135,7 +135,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
               className="group"
               id={`pkg-${safari.slug}`}
             >
-              <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+              <div className="bg-surface-container-lowest border border-safari-brown/10 rounded-2xl overflow-hidden hover:border-safari-brown/25 hover:shadow-lg transition-all duration-500 h-full flex flex-col">
                 <div className="relative h-56 overflow-hidden">
                   <Photo
                     src={safari.image}
@@ -176,7 +176,7 @@ export function SafarisFilterGrid({ baseSafaris, initialSeason, initialQuery = "
                       {safari.destinations.length} Parks
                     </span>
                   </div>
-                  <div className="flex justify-between items-center pt-4 border-t border-savannah-gold/25">
+                  <div className="flex justify-between items-center pt-4 border-t border-safari-brown/10">
                     <div>
                       <span className="text-2xl font-headline font-bold text-safari-brown">
                         ${safari.price[season].toLocaleString()}

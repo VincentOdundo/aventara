@@ -156,7 +156,7 @@ export default function TanzaniaPage() {
             </div>
           </div>
           <div className="md:col-span-5 relative">
-            <div className="aspect-[4/5] bg-surface-container-low border border-savannah-gold/25 relative overflow-hidden rounded-2xl editorial-shadow">
+            <div className="aspect-[4/5] bg-surface-container-low relative overflow-hidden rounded-2xl shadow-lg">
               <Photo className="w-full h-full scale-110" fill sizes="(max-width: 768px) 100vw, 40vw" src={kiliImg} />
             </div>
 
@@ -169,7 +169,7 @@ export default function TanzaniaPage() {
         </div>
       </section>
 
-      <section className="bg-surface-container-low border-y border-savannah-gold/20 py-24 px-8">
+      <section className="bg-surface-container-low/70 border-y border-safari-brown/12 py-24 px-8">
         <div className="max-w-screen-2xl mx-auto">
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <span className="text-sunset-orange font-body font-bold uppercase tracking-widest text-xs mb-3 block">
@@ -188,7 +188,7 @@ export default function TanzaniaPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
             <Link
               href="/destinations/serengeti"
-              className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl cursor-pointer border border-savannah-gold/25 min-h-[280px]"
+              className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl cursor-pointer min-h-[280px]"
             >
               <Photo
                 className="w-full h-full transition-transform duration-700 group-hover:scale-105"
@@ -216,7 +216,7 @@ export default function TanzaniaPage() {
               { img: elephantImg, label: "Tarangire Elephants" },
               { img: rhinoImg, label: "Ngorongoro Rhinos" },
             ].map((item) => (
-              <div key={item.label} className="group relative overflow-hidden rounded-2xl border border-savannah-gold/25 min-h-[220px]">
+              <div key={item.label} className="group relative overflow-hidden rounded-2xl min-h-[220px]">
                 <Photo
                   className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   fill
@@ -261,7 +261,7 @@ export default function TanzaniaPage() {
                 <Sun size={20} className="text-midnight-black" />
               </div>
               <div className="md:w-1/2">
-                <div className="aspect-video relative bg-surface-container-low border border-savannah-gold/25 rounded-2xl overflow-hidden editorial-shadow">
+                <div className="aspect-video relative bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
                   <Photo className="w-full h-full" fill sizes="(max-width: 768px) 100vw, 50vw" src={drySeasonImg} />
                 </div>
               </div>
@@ -287,7 +287,7 @@ export default function TanzaniaPage() {
                 <CloudRain size={20} className="text-sunrise-yellow" />
               </div>
               <div className="md:w-1/2">
-                <div className="aspect-video relative bg-surface-container-low border border-savannah-gold/25 rounded-2xl overflow-hidden editorial-shadow">
+                <div className="aspect-video relative bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
                   <Photo className="w-full h-full" fill sizes="(max-width: 768px) 100vw, 50vw" src={greenSeasonImg} />
                 </div>
               </div>
@@ -362,7 +362,7 @@ export default function TanzaniaPage() {
               <Link
                 key={park.to}
                 href={park.to}
-                className="px-3.5 py-1.5 rounded-full border border-savannah-gold/50 font-bold text-safari-brown hover:text-sunset-orange hover:border-sunset-orange transition-colors"
+                className="px-3.5 py-1.5 rounded-full bg-surface-container-low font-bold text-safari-brown hover:bg-safari-brown hover:text-sand-cream transition-colors"
               >
                 {park.label}
               </Link>
@@ -375,7 +375,7 @@ export default function TanzaniaPage() {
             <Link
               key={pkg.slug}
               href={`/safari/${pkg.slug}`}
-              className="bg-sand-cream border border-savannah-gold/35 rounded-2xl p-5 hover:border-sunset-orange transition-all shadow-sm flex flex-col justify-between"
+              className="bg-surface-container-lowest border border-safari-brown/10 rounded-xl p-5 hover:border-safari-brown/30 transition-all flex flex-col justify-between"
             >
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-sunset-orange mb-1">
@@ -388,7 +388,7 @@ export default function TanzaniaPage() {
                   {pkg.destinations.join(" · ")}
                 </p>
               </div>
-              <p className="text-sm font-bold text-safari-brown pt-3 border-t border-savannah-gold/20">
+              <p className="text-sm font-bold text-safari-brown pt-3 border-t border-safari-brown/10">
                 From {usd(pkg.price.low)} low / {usd(pkg.price.high)} high
               </p>
             </Link>

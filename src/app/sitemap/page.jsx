@@ -60,7 +60,7 @@ export default function SitemapPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div className="border-t border-safari-brown/15 pt-6">
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-4">
               Safari Collections &amp; Country Guides
             </h2>
@@ -102,7 +102,7 @@ export default function SitemapPage() {
             </ul>
           </div>
 
-          <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div className="border-t border-safari-brown/15 pt-6">
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-4">
               Company &amp; Machine-Readable Maps
             </h2>
@@ -151,13 +151,13 @@ export default function SitemapPage() {
           </div>
         </div>
 
-        <div className="mt-10 bg-sand-cream border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+        <div className="mt-10 border-t border-safari-brown/15 pt-6">
           <h2 className="text-xl font-headline font-bold text-safari-brown mb-4">
             Safari Packages ({safariPackages.length})
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5 text-sm">
             {safariPackages.map((s) => (
-              <li key={s.slug} className="flex items-baseline justify-between gap-3 border-b border-savannah-gold/15 pb-1.5">
+              <li key={s.slug} className="flex items-baseline justify-between gap-3 border-b border-safari-brown/10 pb-1.5">
                 <Link href={`/safari/${s.slug}`} className="font-semibold text-safari-brown hover:text-sunset-orange underline-offset-2 hover:underline">
                   {s.title}
                 </Link>
@@ -170,7 +170,7 @@ export default function SitemapPage() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div className="border-t border-safari-brown/15 pt-6">
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-4">
               Kenya Parks &amp; Reserves ({kenyaParks.length})
             </h2>
@@ -185,7 +185,7 @@ export default function SitemapPage() {
             </ul>
           </div>
 
-          <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-6 shadow-sm">
+          <div className="border-t border-safari-brown/15 pt-6">
             <h2 className="text-xl font-headline font-bold text-safari-brown mb-4">
               Tanzania Parks &amp; Reserves ({tanzaniaParks.length})
             </h2>

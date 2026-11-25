@@ -157,14 +157,14 @@ export default function AboutPage() {
 
           <AnimatedSection animation="right">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-savannah-gold/30 relative h-96">
+              <div className="rounded-2xl overflow-hidden shadow-lg relative h-96">
                 <Photo src={sideImg} fill sizes="(max-width: 768px) 100vw, 50vw" className="w-full h-96" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-midnight-black via-safari-brown to-midnight-black text-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-xl">
-                <p className="text-2xl font-headline font-bold text-sunrise-yellow">
+              <div className="mt-5 md:mt-0 md:absolute md:-bottom-6 md:-left-6 bg-safari-brown text-sand-cream rounded-xl px-6 py-4 shadow-lg">
+                <p className="text-xl font-headline font-bold text-sunrise-yellow">
                   City Market, Nairobi
                 </p>
-                <p className="text-sm text-sand-cream/85">
+                <p className="text-xs text-sand-cream/85">
                   Direct dispatch · 17 published itineraries
                 </p>
               </div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <section className="py-20 md:py-28 bg-sand-cream border-t border-savannah-gold/20">
+      <section className="py-20 md:py-28 bg-sand-cream border-t border-safari-brown/12">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="text-center mb-16">
             <span className="text-xs uppercase tracking-[0.3em] text-sunset-orange font-bold mb-3 block">
@@ -188,45 +188,45 @@ export default function AboutPage() {
             </p>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {[
               {
-                icon: <Award size={28} />,
+                icon: <Award size={22} />,
                 title: "Published USD Transparency",
                 desc: "Low and high season per-person rates, single-room prices, optional extras, and inclusions are published openly on every safari page.",
               },
               {
-                icon: <Shield size={28} />,
+                icon: <Shield size={22} />,
                 title: "Honest Wildlife Expectations",
                 desc: "We tell you clearly when Kilimanjaro clouds roll in, why Nakuru flamingo counts fluctuate, and how long each road leg takes — no inflated promises.",
               },
               {
-                icon: <TreePine size={28} />,
+                icon: <TreePine size={22} />,
                 title: "Conservation First",
                 desc: "We enforce strict off-road and wildlife-distance rules and support sanctuaries including Lake Nakuru, Ol Pejeta, and community conservancies.",
               },
               {
-                icon: <Users size={28} />,
+                icon: <Users size={22} />,
                 title: "Small 4x4 Groups (Max 7)",
                 desc: "Shared departures are capped at seven travellers per Land Cruiser so everyone gets a window seat, plus private 4x4 departures on your own dates.",
               },
               {
-                icon: <Heart size={28} />,
+                icon: <Heart size={22} />,
                 title: "Direct Local Accountability",
                 desc: "When you message WhatsApp or email, you speak directly with the Nairobi team coordinating your vehicle, camp check-ins, and border transfers.",
               },
             ].map((value, idx) => (
               <div
                 key={idx}
-                className="bg-sand-cream border border-savannah-gold/25 rounded-2xl p-8 hover:bg-safari-brown hover:text-sand-cream transition-all duration-500 group shadow-sm"
+                className="border-t border-safari-brown/15 pt-7"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sunrise-yellow to-savannah-gold flex items-center justify-center text-midnight-black mb-6 shadow-md">
+                <div className="flex items-center gap-3 mb-3 text-sunset-orange">
                   {value.icon}
+                  <h3 className="text-lg font-headline font-bold text-midnight-black">
+                    {value.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-headline font-bold mb-3 text-midnight-black group-hover:text-sunrise-yellow">
-                  {value.title}
-                </h3>
-                <p className="text-sm text-safari-brown/80 group-hover:text-sand-cream/85 leading-relaxed font-body">
+                <p className="text-sm text-safari-brown/85 leading-relaxed font-body">
                   {value.desc}
                 </p>
               </div>

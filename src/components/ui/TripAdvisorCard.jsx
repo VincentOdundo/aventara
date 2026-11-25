@@ -20,8 +20,10 @@ export function TripAdvisorCard({ variant = "banner", className = "" }) {
 
   return (
     <div
-      className={`rounded-2xl border border-savannah-gold/35 bg-sand-cream shadow-sm ${
-        isBanner ? "p-8 md:p-10" : "p-6"
+      className={`${
+        isBanner
+          ? "rounded-xl bg-surface-container-low/85 border-y border-safari-brown/12 py-8 px-6 md:px-10"
+          : "border-t border-safari-brown/15 pt-8"
       } ${className}`}
     >
       <div
@@ -73,7 +75,7 @@ export function TripAdvisorCard({ variant = "banner", className = "" }) {
       </div>
 
       {WIDGET_UNIQ && (
-        <div className="mt-6 pt-5 border-t border-savannah-gold/25">
+        <div className="mt-6 pt-5 border-t border-safari-brown/12">
           <div id={`TA_selfserveprop${WIDGET_UNIQ}`} className="TA_selfserveprop">
             <ul id="TA_links" className="TA_links">
               <li>

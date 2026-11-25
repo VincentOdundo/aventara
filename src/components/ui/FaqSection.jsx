@@ -16,24 +16,24 @@ export function FaqSection({ faqs, title = "Questions and answers", id = "faq", 
       <h2 className="text-3xl font-headline font-bold text-safari-brown mb-8">
         {title}
       </h2>
-      <div className="space-y-3">
+      <div className="border-t border-safari-brown/15 divide-y divide-safari-brown/15">
         {faqs.map((faq, i) => (
           <details
             key={faq.q}
             open={i === 0}
-            className="group bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden shadow-sm"
+            className="group"
           >
-            <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none hover:bg-savannah-gold/10 transition-colors">
-              <h3 className="text-base font-headline font-bold text-safari-brown">
+            <summary className="flex items-center justify-between gap-4 py-5 cursor-pointer list-none hover:text-sunset-orange transition-colors">
+              <h3 className="text-base font-headline font-bold text-safari-brown group-hover:text-sunset-orange transition-colors">
                 {faq.q}
               </h3>
               <ChevronDown
                 size={18}
                 aria-hidden="true"
-                className="shrink-0 text-safari-brown transition-transform duration-300 group-open:rotate-180"
+                className="shrink-0 text-safari-brown/75 transition-transform duration-300 group-open:rotate-180"
               />
             </summary>
-            <p className="px-5 pb-5 text-safari-brown/85 font-body text-sm leading-relaxed" data-speakable="true">
+            <p className="pb-5 pr-8 text-safari-brown/85 font-body text-sm leading-relaxed" data-speakable="true">
               {faq.a}
             </p>
           </details>

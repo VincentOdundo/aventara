@@ -140,7 +140,7 @@ export default async function SafariDetailPage({ params }) {
       </section>
 
       {/* Sticky Nav Bar */}
-      <section className="bg-sand-cream editorial-shadow sticky top-[64px] lg:top-[72px] z-30 border-b border-savannah-gold/25">
+      <section className="bg-sand-cream sticky top-[64px] lg:top-[72px] z-30 border-b border-safari-brown/12">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center gap-8 overflow-x-auto py-3 text-sm font-body">
           <a href="#overview" className="font-bold text-sunset-orange whitespace-nowrap">
             Overview
@@ -172,42 +172,50 @@ export default async function SafariDetailPage({ params }) {
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-6">
                   Why Choose This Route
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
-                    <Calendar size={20} className="mx-auto text-sunset-orange mb-2" />
-                    <p className="text-xs font-body text-safari-brown/75 font-bold uppercase">
-                      Duration
-                    </p>
-                    <p className="font-headline font-bold text-lg text-safari-brown">
-                      {durationLabel}
-                    </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-y border-safari-brown/15 py-5 mb-8">
+                  <div className="flex items-center gap-3">
+                    <Calendar size={20} className="text-sunset-orange shrink-0" />
+                    <div>
+                      <p className="text-[11px] font-body text-safari-brown/70 font-bold uppercase tracking-wider">
+                        Duration
+                      </p>
+                      <p className="font-headline font-bold text-lg text-safari-brown">
+                        {durationLabel}
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
-                    <MapPin size={20} className="mx-auto text-sunset-orange mb-2" />
-                    <p className="text-xs font-body text-safari-brown/75 font-bold uppercase">
-                      Parks
-                    </p>
-                    <p className="font-headline font-bold text-lg text-safari-brown">
-                      {[...new Set(safari.destinations)].length}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <MapPin size={20} className="text-sunset-orange shrink-0" />
+                    <div>
+                      <p className="text-[11px] font-body text-safari-brown/70 font-bold uppercase tracking-wider">
+                        Parks
+                      </p>
+                      <p className="font-headline font-bold text-lg text-safari-brown">
+                        {[...new Set(safari.destinations)].length}
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
-                    <Utensils size={20} className="mx-auto text-sunset-orange mb-2" />
-                    <p className="text-xs font-body text-safari-brown/75 font-bold uppercase">
-                      Meals
-                    </p>
-                    <p className="font-headline font-bold text-lg text-safari-brown">
-                      {mealsLabel}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <Utensils size={20} className="text-sunset-orange shrink-0" />
+                    <div>
+                      <p className="text-[11px] font-body text-safari-brown/70 font-bold uppercase tracking-wider">
+                        Meals
+                      </p>
+                      <p className="font-headline font-bold text-lg text-safari-brown">
+                        {mealsLabel}
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-sand-cream border border-savannah-gold/30 rounded-2xl p-4 text-center shadow-sm">
-                    <Users size={20} className="mx-auto text-sunset-orange mb-2" />
-                    <p className="text-xs font-body text-safari-brown/75 font-bold uppercase">
-                      Group
-                    </p>
-                    <p className="font-headline font-bold text-lg text-safari-brown">
-                      {maxGroupLabel}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <Users size={20} className="text-sunset-orange shrink-0" />
+                    <div>
+                      <p className="text-[11px] font-body text-safari-brown/70 font-bold uppercase tracking-wider">
+                        Group
+                      </p>
+                      <p className="font-headline font-bold text-lg text-safari-brown">
+                        {maxGroupLabel}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -222,7 +230,7 @@ export default async function SafariDetailPage({ params }) {
                 )}
 
                 {(parks.length > 0 || related.length > 0) && (
-                  <div className="mb-8 rounded-2xl border border-savannah-gold/35 bg-savannah-gold/10 px-5 py-4 text-sm leading-relaxed text-safari-brown font-body">
+                  <div className="mb-8 border-l-2 border-savannah-gold pl-5 py-1 text-sm leading-relaxed text-safari-brown font-body">
                     {editorial?.relatedCopy && <p className="mb-2.5">{editorial.relatedCopy}</p>}
                     <p className="text-xs text-safari-brown/85 flex flex-wrap items-center gap-x-2 gap-y-1">
                       {parks.length > 0 && (
@@ -265,11 +273,11 @@ export default async function SafariDetailPage({ params }) {
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {safari.highlights.map((h, idx) => (
                     <span
                       key={idx}
-                      className="bg-sand-cream border-2 border-savannah-gold text-safari-brown px-4 py-2 rounded-full text-xs font-body font-bold"
+                      className="bg-surface-container-low text-safari-brown px-3.5 py-1.5 rounded-full text-xs font-body font-semibold"
                     >
                       {h}
                     </span>
@@ -280,7 +288,7 @@ export default async function SafariDetailPage({ params }) {
               {/* Always-Visible Seasonal Pricing Table */}
               <div
                 id="seasonal-rates"
-                className="mb-14 scroll-mt-[120px] bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm"
+                className="mb-14 scroll-mt-[120px] bg-surface-container-low/80 rounded-xl p-6 md:p-8"
               >
                 <h2 className="text-2xl font-headline font-bold text-safari-brown mb-2">
                   Per-Person Rates by Season (USD)
@@ -293,14 +301,14 @@ export default async function SafariDetailPage({ params }) {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse text-sm font-body">
                     <thead>
-                      <tr className="border-b border-savannah-gold/40 text-xs uppercase tracking-wider text-safari-brown/80">
+                      <tr className="border-b border-safari-brown/15 text-xs uppercase tracking-wider text-safari-brown/80">
                         <th className="py-3 pr-4 font-bold">Season</th>
                         <th className="py-3 pr-4 font-bold">Travel Dates</th>
                         <th className="py-3 pr-4 font-bold">2+ Sharing (per person)</th>
                         <th className="py-3 font-bold">Single Room (1 traveller)</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-savannah-gold/20 text-safari-brown">
+                    <tbody className="divide-y divide-safari-brown/10 text-safari-brown">
                       <tr>
                         <td className="py-3 pr-4 font-bold">Low Season</td>
                         <td className="py-3 pr-4">{SEASONS.low.dates}</td>
@@ -338,20 +346,20 @@ export default async function SafariDetailPage({ params }) {
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-8">
                   Day-by-Day Itinerary
                 </h2>
-                <div className="space-y-3">
+                <div className="border-t border-safari-brown/15 divide-y divide-safari-brown/15">
                   {safari.itinerary.map((day, idx) => (
                     <details
                       key={day.day}
                       open={idx === 0}
-                      className="group bg-sand-cream border border-savannah-gold/30 rounded-2xl overflow-hidden shadow-sm"
+                      className="group"
                     >
-                      <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-savannah-gold/10 transition-colors">
+                      <summary className="flex items-center justify-between py-5 cursor-pointer list-none hover:text-sunset-orange transition-colors">
                         <div className="flex items-center gap-5">
-                          <span className="text-3xl font-headline font-bold text-savannah-gold w-12">
+                          <span className="text-2xl md:text-3xl font-headline font-bold text-savannah-gold w-12 shrink-0">
                             {String(day.day).padStart(2, "0")}
                           </span>
                           <div>
-                            <h3 className="text-lg font-headline font-bold text-safari-brown">
+                            <h3 className="text-lg font-headline font-bold text-safari-brown group-hover:text-sunset-orange transition-colors">
                               {day.title}
                             </h3>
                             <p className="text-xs font-body text-sunset-orange font-semibold mt-0.5 flex items-center gap-1.5">
@@ -361,12 +369,12 @@ export default async function SafariDetailPage({ params }) {
                         </div>
                         <ChevronDown
                           size={18}
-                          className="text-safari-brown transition-transform duration-300 group-open:rotate-180"
+                          className="text-safari-brown/75 transition-transform duration-300 group-open:rotate-180 shrink-0"
                         />
                       </summary>
-                      <div className="px-6 pb-6 flex flex-col md:flex-row gap-6">
+                      <div className="pb-6 flex flex-col md:flex-row gap-6">
                         {day.image && (
-                          <div className="md:w-1/3 shrink-0 rounded-xl overflow-hidden h-48 relative border border-savannah-gold/25">
+                          <div className="md:w-1/3 shrink-0 rounded-xl overflow-hidden h-48 relative">
                             <Photo
                               src={day.image}
                               fill
@@ -379,13 +387,13 @@ export default async function SafariDetailPage({ params }) {
                           <p className="text-safari-brown/85 font-body text-sm leading-relaxed whitespace-pre-line">
                             {day.description}
                           </p>
-                          <div className="flex flex-wrap gap-3 text-xs font-body">
-                            <span className="flex items-center gap-1.5 bg-sand-cream border border-savannah-gold/40 text-safari-brown px-3.5 py-1.5 rounded-full font-bold">
+                          <div className="flex flex-wrap gap-2.5 text-xs font-body">
+                            <span className="flex items-center gap-1.5 bg-surface-container-low text-safari-brown px-3.5 py-1.5 rounded-full font-semibold">
                               <Utensils size={12} className="text-sunset-orange" />{" "}
                               {day.meals}
                             </span>
                             {day.accommodation && (
-                              <span className="flex items-center gap-1.5 bg-sand-cream border border-savannah-gold/40 text-safari-brown px-3.5 py-1.5 rounded-full font-bold">
+                              <span className="flex items-center gap-1.5 bg-surface-container-low text-safari-brown px-3.5 py-1.5 rounded-full font-semibold">
                                 <Hotel size={12} className="text-sunset-orange" />{" "}
                                 {day.accommodation}
                               </span>
@@ -400,7 +408,7 @@ export default async function SafariDetailPage({ params }) {
 
               {/* Route & Practical Logistics */}
               {editorial?.logistics && (
-                <div className="mb-14 bg-sand-cream border border-savannah-gold/35 rounded-2xl p-6 shadow-sm">
+                <div className="mb-14 border-t border-safari-brown/15 pt-10">
                   <h2 className="text-2xl font-headline font-bold text-safari-brown mb-5">
                     Route Logistics, Vehicle &amp; Packing Notes
                   </h2>
@@ -453,8 +461,8 @@ export default async function SafariDetailPage({ params }) {
                 <h2 className="text-3xl font-headline font-bold text-safari-brown mb-8">
                   What&apos;s Included
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="border-t-2 border-safari-brown/20 pt-5">
                     <h3 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                       ✓ Included
                     </h3>
@@ -467,7 +475,7 @@ export default async function SafariDetailPage({ params }) {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-sand-cream border border-crane-red/30 rounded-2xl p-6 shadow-sm">
+                  <div className="border-t-2 border-crane-red/35 pt-5">
                     <h3 className="font-headline font-bold text-lg mb-4 text-crane-red">
                       ✗ Excluded
                     </h3>
@@ -483,7 +491,7 @@ export default async function SafariDetailPage({ params }) {
                 </div>
 
                 {safari.optionalActivities && safari.optionalActivities.length > 0 && (
-                  <div className="mt-8 bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                  <div className="mt-10 border-t border-safari-brown/15 pt-8">
                     <h3 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                       Optional Add-On Experiences
                     </h3>
@@ -491,7 +499,7 @@ export default async function SafariDetailPage({ params }) {
                       {safari.optionalActivities.map((act, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center justify-between gap-4 px-4 py-3 rounded-xl bg-savannah-gold/10 border border-savannah-gold/25 text-sm font-body"
+                          className="flex items-center justify-between gap-4 px-4 py-3 rounded-lg bg-surface-container-low/75 text-sm font-body"
                         >
                           <span className="font-medium text-safari-brown">{act.name}</span>
                           <span className="font-bold text-sunset-orange shrink-0">
@@ -511,9 +519,9 @@ export default async function SafariDetailPage({ params }) {
               />
 
               {/* Park guides and similar trips */}
-              <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
                 {parks.length > 0 && (
-                  <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                  <div className="border-t border-safari-brown/15 pt-6">
                     <h2 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                       Parks on this safari
                     </h2>
@@ -533,7 +541,7 @@ export default async function SafariDetailPage({ params }) {
                   </div>
                 )}
                 {related.length > 0 && (
-                  <div className="bg-sand-cream border border-savannah-gold/40 rounded-2xl p-6 shadow-sm">
+                  <div className="border-t border-safari-brown/15 pt-6">
                     <h2 className="font-headline font-bold text-lg mb-4 text-safari-brown">
                       Related itineraries
                     </h2>
